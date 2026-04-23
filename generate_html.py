@@ -110,7 +110,7 @@ def generate_html(language="en"):
             ]
         },
         {
-            "class": "Uniform",
+            "class": "k-Uniform",
             "entries": [
                 {"ref": "Dynkin (1963)", "search": ["Dynkin"], "type": "Prob", "val": "\\( 1/e \\approx 0.367 \\)"},
                 {"ref": "Kleinberg (2005) / Soto et al. (2021)", "search": ["Kleinberg"], "type": "Prob", "val": "\\( 1 - O(\\sqrt{\\frac{\\log \\rho}{\\rho}}) \\)"},
