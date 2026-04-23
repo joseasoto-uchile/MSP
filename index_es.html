@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey on Matroid Secretary Problem</title>
+    
+    <!-- MathJax for rendering LaTeX -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        :root {
+            --bg-color: #f4f4f9;
+            --text-color: #333;
+            --container-bg: #fff;
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --border-color: #e0e0e0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .lang-switch {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: rgba(255,255,255,0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+        }
+        
+        .lang-switch a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 5px;
+        }
+        
+        .lang-switch a.active {
+            text-decoration: underline;
+            color: var(--secondary-color);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            background: var(--container-bg);
+            padding: 2rem 4rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        /* Tabs Styles */
+        .tabs {
+            display: flex;
+            border-bottom: 2px solid var(--border-color);
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-button {
+            background: none;
+            border: none;
+            outline: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #777;
+            cursor: pointer;
+            transition: 0.3s;
+            border-bottom: 3px solid transparent;
+        }
+
+        .tab-button:hover {
+            color: var(--primary-color);
+        }
+
+        .tab-button.active {
+            color: var(--secondary-color);
+            border-bottom: 3px solid var(--secondary-color);
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeEffect 0.5s;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeEffect {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        h3 {
+            color: var(--secondary-color);
+            margin-top: 2rem;
+        }
+
+        .definition {
+            background-color: #e8f4f8;
+            border-left: 4px solid var(--secondary-color);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .paper-card {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .paper-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+
+        .paper-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+
+        .paper-authors {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        .paper-summary {
+            font-size: 0.95rem;
+            color: #444;
+        }
+
+        .paper-link {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .paper-link:hover {
+            background-color: #2980b9;
+        }
+        
+        .bibtex-toggle {
+            background-color: #34495e;
+            border: none;
+            cursor: pointer;
+        }
+
+        .bibtex-container {
+            display: none;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-top: 1rem;
+            font-family: monospace;
+            white-space: pre-wrap;
+            overflow-x: auto;
+        }
+
+        /* Table Styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.95em;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+        }
+
+        table thead tr {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            text-align: left;
+        }
+
+        table th,
+        table td {
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+        }
+
+        table tbody tr {
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        table tbody tr:nth-of-type(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="lang-switch">
+            <a href="index.html" class="">EN</a> | 
+            <a href="index_es.html" class="active">ES</a>
+        </div>
+        <h1>Survey on Matroid Secretary Problem</h1>
+        <p>Notas de Clase, Tabla de Competitividades (Extensiva) y Lista de Lectura</p>
+    </header>
+
+    <div class="container">
+        <!-- Tabs Nav -->
+        <div class="tabs">
+            <button class="tab-button active" onclick="openTab(event, 'lecture-notes')">Notas de Clase</button>
+            <button class="tab-button" onclick="openTab(event, 'ratios-table')">Competitividades Extensivas</button>
+            <button class="tab-button" onclick="openTab(event, 'reading-list')">Lista de Lectura (48)</button>
+        </div>
+
+        <!-- Tab 1: Lecture Notes -->
+        <section id="lecture-notes" class="tab-content active">
+            <h2>Lecture Notes</h2>
+            
+            <h3>1. Matroides</h3>
+            <p>Un <strong>matroide</strong> es una estructura combinatoria que generaliza el concepto de independencia lineal en espacios vectoriales. Formalmente, un matroide \( M \) es un par \( (E, \mathcal{I}) \), donde \( E \) es un conjunto finito (llamado conjunto base) y \( \mathcal{I} \) es una familia de subconjuntos de \( E \) (llamados conjuntos independientes) que satisface los siguientes axiomas:</p>
+            <div class="definition">
+                <ol>
+                    <li>El conjunto vacío es independiente: \( \emptyset \in \mathcal{I} \).</li>
+                    <li>Propiedad hereditaria: Si \( A \in \mathcal{I} \) y \( B \subseteq A \), entonces \( B \in \mathcal{I} \).</li>
+                    <li>Propiedad de aumento (o intercambio): Si \( A, B \in \mathcal{I} \) y \( |A| > |B| \), existe un elemento \( x \in A \setminus B \) tal que \( B \cup \{x\} \in \mathcal{I} \).</li>
+                </ol>
+            </div>
+            <p>Los conjuntos independientes maximales de un matroide se llaman <strong>bases</strong>. Todas las bases de un matroide tienen el mismo tamaño, conocido como el <strong>rango</strong> del matroide, denotado por \( r(M) \).</p>
+
+            <h3>2. El Problema Clásico de la Secretaria</h3>
+            <p>En el problema clásico, \( n \) candidatos se presentan de forma secuencial y aleatoria. Se debe decidir inmediatamente después de entrevistar a cada candidato si se le contrata o se le rechaza. El objetivo es maximizar la probabilidad de contratar al <strong>mejor</strong> candidato. El algoritmo óptimo consiste en observar a los primeros \( n/e \) candidatos sin contratar a ninguno, y luego contratar al primer candidato que sea mejor que todos los observados hasta el momento. Este algoritmo logra una probabilidad de éxito de \( 1/e \).</p>
+
+            <h3>3. El Problema de la Secretaria en Matroides (Matroid Secretary Problem)</h3>
+            <p>Introducido por Babaioff, Immorlica y Kleinberg (2007), el <strong>Matroid Secretary Problem</strong> combina la parada óptima con la optimización combinatoria. Supongamos que tenemos un matroide \( M = (E, \mathcal{I}) \) con una función de peso \( w: E \to \mathbb{R}^+ \) asignada a cada elemento.</p>
+            <div class="definition">
+                <p><strong>Dinámica del Problema:</strong></p>
+                <ul>
+                    <li>Los elementos de \( E \) se revelan de forma secuencial en un orden aleatorio uniforme.</li>
+                    <li>Cuando un elemento \( e \) es revelado, se descubre su peso \( w(e) \).</li>
+                    <li>Se debe tomar una decisión irrevocable e inmediata: aceptar o rechazar \( e \).</li>
+                    <li>El conjunto de elementos aceptados en cualquier momento debe ser un conjunto independiente \( I \in \mathcal{I} \).</li>
+                </ul>
+            </div>
+            <p><strong>Objetivo:</strong> Diseñar un algoritmo online que maximice el valor esperado de los elementos seleccionados, comparado con la base de peso máximo en offline. La gran conjetura (Matroid Secretary Conjecture) afirma que existe un algoritmo con un factor de competitividad constante \( O(1) \) para cualquier matroide.</p>
+        </section>
+
+        <!-- Tab 2: Ratios Table -->
+        <section id="ratios-table" class="tab-content">
+            <h2>Competitividades por Clase de Matroide y Modelo (Extensivo)</h2>
+            <p>La siguiente tabla consolida la evolución cronológica y los mejores resultados conocidos para diversas clases de matroides, extraídos exhaustivamente de la literatura actual y de nuestra lista de lectura.</p>
+            
+            <h3>Modelo Estándar (Zero Information, Random Order)</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Clase de Matroide</th>
+                        <th>Ratio de Competitividad / Garantía</th>
+                        <th>Referencias y Evolución</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td><strong>General (Conjetura Principal)</strong></td>
+                        <td>\( O(\log \log r) \)</td>
+                        <td>BIK 2007 (\( O(\log r) \)) &rarr; Chakraborty & Lachish 2012 (\( O(\sqrt{\log r}) \)) &rarr; Lachish 2014 / Feldman, Svensson, Zenklusen 2014 (\( O(\log \log r) \)).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Uniforme (Clásico / K-Secretarias)</strong></td>
+                        <td>\( 1/e \) (Prob. Éxito) / \( 1-O(1/\sqrt{k}) \)</td>
+                        <td>Dynkin (Classic); Kleinberg 2005 (1-O(1/\(\sqrt{k}\))); Gujjar et al., 2025 (k-Fold).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Partición (Partition Matroid)</strong></td>
+                        <td>Constante \( 1-1/e \)</td>
+                        <td>Directo del clásico, o \( e/(e-1) \) competitivo.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Gráfico</strong></td>
+                        <td>\( 3.95 \) (y \( 3.77 \) para grafos simples)</td>
+                        <td>BIK 2007 (\( 16 \)) &rarr; Korula & Pál 2009 (\( 2e \approx 5.43 \)) &rarr; Soto, Turkieltaub, Verdugo 2018 (\( 4 \)) &rarr; Banihashem et al. 2025 (\( 3.95 \)).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cográfico</strong></td>
+                        <td>\( 3e \approx 8.15 \)</td>
+                        <td>Soto 2011.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Laminar</strong></td>
+                        <td>\( 4.75 \)-competitivo</td>
+                        <td>Im & Wang 2011 (\( 16000/3 \)) &rarr; Jaillet, Soto, Zenklusen 2012 (\( 3\sqrt{3}e \approx 14.12 \)) &rarr; Huang, Parsaeian, Zhu 2023 (\( 4.75 \)).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Transversal</strong></td>
+                        <td>Constante \( O(1) \)</td>
+                        <td>Dimand et al. 2006 / BIK 2007 (\( 16 \)); Ma, Tang, Wang 2011 (Constante también para valoraciones submodulares).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Regular y Max-Flow Min-Cut</strong></td>
+                        <td>Constante \( O(1) \)</td>
+                        <td>Dinitz & Kortsarz 2012 (Por descomposición de Seymour).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Truncado (Truncated Matroids)</strong></td>
+                        <td>Conserva \( O(1) \)</td>
+                        <td>Si \( M \) admite un algoritmo \( c \)-competitivo, su truncamiento a rango \( k \) admite uno \( O(c) \)-competitivo (Soto 2011).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>K-Column Sparse Linear</strong></td>
+                        <td>\( k \cdot e \)</td>
+                        <td>Soto 2011.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Paving y Casi Todos los Matroides</strong></td>
+                        <td>\( 2+o(1) \)</td>
+                        <td>Huynh & Nelson 2016 (Para casi todos los matroides representables. Conjeturan incluir los paving).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Intersección de Matroides</strong></td>
+                        <td>\( O(1) \) (Si el número de matroides es constante)</td>
+                        <td>Feldman, Svensson, Zenklusen 2017.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Otros Modelos y Variantes</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Modelo / Variante</th>
+                        <th>Clase de Matroide</th>
+                        <th>Ratio de Competitividad / Garantía</th>
+                        <th>Referencias y Evolución</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td><strong>Random Assignment</strong></td>
+                        <td>General</td>
+                        <td>Constante \( O(1) \) (aprox. \( 8.54 \))</td>
+                        <td>Soto 2011 (Conociendo el matroide); Santiago, Sergeev, Zenklusen 2023 (Constante incluso sin conocer el matroide).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Free Order</strong></td>
+                        <td>General</td>
+                        <td>\( 9 \)-competitivo</td>
+                        <td>Jaillet, Soto, Zenklusen 2012. El algoritmo elige el orden de las entrevistas.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Valoración Submodular</strong></td>
+                        <td>General</td>
+                        <td>Requiere Shortlists o Restricciones</td>
+                        <td>Shadravan 2020 (Shortlists proporcionales al rango logran ratios constantes).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sistemas de Independencia (Downward Closed)</strong></td>
+                        <td>Sistemas de Independencia</td>
+                        <td>\( O(\log n \log r) \)</td>
+                        <td>Rubinstein 2016 (Aproximación para restricciones más generales que los matroides).</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Tab 3: Reading List -->
+        <section id="reading-list" class="tab-content">
+            <h2>Lista de Lectura y Bibliografía</h2>
+            <p>A continuación se presentan <strong>48</strong> artículos relevantes sobre el Problema de la Secretaria en Matroides, incluyendo su exportación en <strong>BibTeX</strong>.</p>
+
+            <div class="paper-card">
+                <h3 class="paper-title">1. Matroid Secretary Is Equivalent to Contention Resolution</h3>
+                <div class="paper-authors">Por: Shaddin Dughmi</div>
+                <div class="paper-summary">
+                    <strong>Resumen:</strong> We show that the matroid secretary problem is equivalent to correlated contention resolution in the online random-order model. Specifically, the matroid secretary conjecture is true if and only if every matroid admits an online random-order contention resolution scheme which, given an arbitrary (possibly correlated) prior distribution over subsets of the ground set, matches the balance ratio of the best offline scheme for that distribution up to a constant. We refer to such a scheme as universal. Our result indicates that the core challenge of the matroid secretary problem lies in resolving contention for positively correlated inputs, in particular when the positive correlation is benign in as much as offline contention resolution is concerned. Our result builds on our previous work which establishes one direction of this equivalence, namely that the secretary conjecture implies universal random-order contention resolution, as well as a weak converse, which derives a matroid secretary algorithm from a random-order contention resolution scheme with only partial knowledge of the distribution. It is this weak converse that we strengthen in this paper: We show that universal random-order contention resolution for matroids, in the usual setting of a fully known prior distribution, suffices to resolve the matroid secretary conjecture in the affirmative. Our proof is the composition of three reductions. First, we use duality arguments to reduce the matroid secretary problem to the matroid prophet secretary problem with arbitrarily correlated distributions. Second, we introduce a generalization of contention resolution we term labeled contention resolution, to which we reduce the correlated matroid prophet secretary problem. Finally, we combine duplication of elements with limiting arguments to reduce labeled contention resolution to classical contention resolution.
+                </div>
+                <a href="papers/2103.04205v3.pdf" class="paper-link" target="_blank">Leer PDF Local</a>
+                <a href="https://arxiv.org/pdf/2103.04205v3.pdf" class="paper-link" target="_blank" style="background-color: #7f8c8d; margin-left: 10px;">Ver en arXiv</a>
+                <button class="paper-link bibtex-toggle" style="margin-left: 10px;" onclick="toggleBibtex('bibtex-0')">Mostrar BibTeX</button>
+                
+                <div id="bibtex-0" class="bibtex-container">@article{Dughmi2021matroid,
+  title={Matroid Secretary Is Equivalent to Contention Resolution},
+  author={Shaddin Dughmi},
+  journal={arXiv preprint arXiv:2103.04205},
+  year={2021}
+}</div>
+            </div>
+
+            <div class="paper-card">
+                <h3 class="paper-title">2. Advances on Matroid Secretary Problems: Free Order Model and Laminar Case</h3>
+                <div class="paper-authors">Por: Patrick Jaillet, José A. Soto, Rico Zenklusen</div>
+                <div class="paper-summary">
+                    <strong>Resumen:</strong> The most well-known conjecture in the context of matroid secretary problems claims the existence of a constant-factor approximation applicable to any matroid. Whereas this conjecture remains open, modified forms of it were shown to be true, when assuming that the assignment of weights to the secretaries is not adversarial but uniformly random (Soto [SODA 2011], Oveis Gharan and Vondrák [ESA 2011]). However, so far, there was no variant of the matroid secretary problem with adversarial weight assignment for which a constant-factor approximation was found. We address this point by presenting a 9-approximation for the \emph{free order model}, a model suggested shortly after the introduction of the matroid secretary problem, and for which no constant-factor approximation was known so far. The free order model is a relaxed version of the original matroid secretary problem, with the only difference that one can choose the order in which secretaries are interviewed. Furthermore, we consider the classical matroid secretary problem for the special case of laminar matroids. Only recently, a constant-factor approximation has been found for this case, using a clever but rather involved method and analysis (Im and Wang, [SODA 2011]) that leads to a 16000/3-approximation. This is arguably the most involved special case of the matroid secretary problem for which a constant-factor approximation is known. We present a considerably simpler and stronger $3\sqrt{3}e\approx 14.12$-approximation, based on reducing the problem to a matroid secretary problem on a partition matroid.
+                </div>
+                <a href="papers/1207.1333v2.pdf" class="paper-link" target="_blank">Leer PDF Local</a>
+                <a href="https://arxiv.org/pdf/1207.1333v2.pdf" class="paper-link" target="_blank" style="background-color: #7f8c8d; margin-left: 10px;">Ver en arXiv</a>
+                <button class="paper-link bibtex-toggle" style="margin-left: 10px;" onclick="toggleBibtex('bibtex-1')">Mostrar BibTeX</button>
+                
+                <div id="bibtex-1" class="bibtex-container">@article{Jaillet2012advances,
+  title={Advances on Matroid Secretary Problems: Free Order Model and Laminar Case},
+  author={Patrick Jaillet and José A. Soto and Rico Zenklusen},
+  journal={arXiv preprint arXiv:1207.1333},
+  year={2012}
+}</div>
+            </div>
+
+            <div class="paper-card">
+                <h3 class="paper-title">3. A Framework for the Secretary Problem on the Intersection of Matroids</h3>
+                <div class="paper-authors">Por: Moran Feldman, Ola Svensson, Rico Zenklusen</div>
+                <div class="paper-summary">
+                    <strong>Resumen:</strong> The secretary problem became one of the most prominent online selection problems due to its numerous applications in online mechanism design. The task is to select a maximum weight subset of elements subject to given constraints, where elements arrive one-by-one in random order, revealing a weight upon arrival. The decision whether to select an element has to be taken immediately after its arrival. The different applications that map to the secretary problem ask for different constraint families to be handled. The most prominent ones are matroid constraints, which both capture many relevant settings and admit strongly competitive secretary algorithms. However, dealing with more involved constraints proved to be much more difficult, and strong algorithms are known only for a few specific settings. In this paper, we present a general framework for dealing with the secretary problem over the intersection of several matroids. This framework allows us to combine and exploit the large set of matroid secretary algorithms known in the literature. As one consequence, we get constant-competitive secretary algorithms over the intersection of any constant number of matroids whose corresponding (single-)matroid secretary problems are currently known to have a constant-competitive algorithm. Moreover, we show that our results extend to submodular objectives.
+                </div>
+                <a href="papers/1704.02608v1.pdf" class="paper-link" target="_blank">Leer PDF Local</a>
+                <a href="https://arxiv.org/pdf/1704.02608v1.pdf" class="paper-link" target="_blank" style="background-color: #7f8c8d; margin-left: 10px;">Ver en arXiv</a>
+                <button class="paper-link bibtex-toggle" style="margin-left: 10px;" onclick="toggleBibtex('bibtex-2')">Mostrar BibTeX</button>
+                
+                <div id="bibtex-2" class="bibtex-container">@article{Feldman2017a,
+  title={A Framework for the Secretary Problem on the Intersection of Matroids},
+  author={Moran Feldman and Ola Svensson and Rico Zenklusen},
+  journal={arXiv preprint arXiv:1704.02608},
+  year={2017}
+}</div>
+            </div>
+
+            <div class="paper-card">
+                <h3 class="paper-title">4. The matroid secretary problem for minor-closed classes and random matroids</h3>
+                <div class="paper-authors">Por: Tony Huynh, Peter Nelson</div>
+                <div class="paper-summary">
+                    <strong>Resumen:</strong> We prove that for every proper minor-closed class $M$ of matroids representable over a prime field, there exists a constant-competitive matroid secretary algorithm for the matroids in $M$. This result relies on the extremely powerful matroid minor structure theory being developed by Geelen, Gerards and Whittle. We also note that for asymptotically almost all matroids, the matroid secretary algorithm that selects a random basis, ignoring weights, is $(2+o(1))$-competitive. In fact, assuming the conjecture that almost all matroids are paving, there is a $(1+o(1))$-competitive algorithm for almost all matroids.
+                </div>
+                <a href="papers/1603.06822v5.pdf" class="paper-link" target="_blank">Leer PDF Local</a>
+                <a href="https://arxiv.org/pdf/1603.06822v5.pdf" class="paper-link" target="_blank" style="background-color: #7f8c8d; margin-left: 10px;">Ver en arXiv</a>
+                <button class="paper-link bibtex-toggle" style="margin-left: 10px;" onclick="toggleBibtex('bibtex-3')">Mostrar BibTeX</button>
+                
+                <div id="bibtex-3" class="bibtex-container">@article{Huynh2016the,
+  title={The matroid secretary problem for minor-closed classes and random matroids},
+  author={Tony Huynh and Peter Nelson},
+  journal={arXiv preprint arXiv:1603.06822},
+  year={2016}
+}</div>
+            </div>
+
+            <div class="paper-card">
+                <h3 class="paper-title">5. Improved algorithms and analysis for the laminar matroid secretary problem</h3>
+                <div class="paper-authors">Por: David Harris, Manish Purohit</div>
+                <div class="paper-summary">
+                    <strong>Resumen:</strong> In a matroid secretary problem, one is presented with a sequence of objects of various weights in a random order, and must choose irrevocably to accept or reject each item. There is a further constraint that the set of items selected must form an independent set of an associated matroid. Constant-competitive algorithms (algorithms whose expected solution weight is within a constant factor of the optimal) are known for many types of matroid secretary problems. We examine the laminar matroid and show an algorithm achieving provably 0.053 competitive ratio.
+                </div>
+                <a href="papers/1301.4958v1.pdf" class="paper-link" target="_blank">Leer PDF Local</a>
+                <a href="https://arxiv.org/pdf/1301.4958v1.pdf" class="paper-link" target="_blank" style="background-color: #7f8c8d; margin-left: 10px;">Ver en arXiv</a>
+                <button class="paper-link bibtex-toggle" style="margin-left: 10px;" onclick="toggleBibtex('bibtex-4')">Mostrar BibTeX</button>
+                
+                <div id="bibtex-4" class="bibtex-container">@article{Harris2013improved,
+  title={Improved algorithms and analysis for the laminar matroid secretary problem},
+  author={David Harris and Manish Purohit},
+  journal={arXiv preprint arXiv:1301.4958},
+  year={2013}
+}</div>
+            </div>
+
+            <div class="paper-card">
+                <h3 class="paper-title">6. On Variants of the Matroid Secretary Problem</h3>
+                <div class="paper-authors">Por: Shayan Oveis Gharan, Jan Vondrák</div>
+                <div class="paper-summary">
+                    <strong>Resumen:</strong> We present a number of positive and negative results for variants of the matroid secretary problem. Most notably, we design a constant-factor competitive algorithm for the "random assignment" model where the weights are assigned randomly to the elements of a matroid, and then the elements arrive on-line in an adversarial order (extending a result of Soto \cite{Soto11}). This is under the assumption that the matroid is known in advance. If the matroid is unknown in advance, we present an $O(\log r \log n)$-approximation, and prove that a better than $O(\log n / \log \log n)$ approximation is impossible. This resolves an open question posed by Babaioff et al. \cite{BIK07}. As a natural special case, we also consider the classical secretary problem where the number of candidates $n$ is unknown in advance. If $n$ is chosen by an adversary from $\{1,...,N\}$, we provide a nearly tight answer, by providing an algorithm that chooses the best candidate with probability at least $1/(H_{N-1}+1)$ and prove that a probability better than $1/H_N$ cannot be achieved (where $H_N$ is the $N$-th harmonic number).
+                </div>
+                <a href="papers/1104.4081v2.pdf" class="paper-link" target="_blank">Leer PDF Local</a>
+                <a href="https://arxiv.org/pdf/1104.4081v2.pdf" class="paper-link" target="_blank" style="background-color: #7f8c8d; margin-left: 10px;">Ver en arXiv</a>
+                <button class="paper-link bibtex-toggle" style="margin-left: 10px;" onclick="toggleBibtex('bibtex-5')">Mostrar BibTeX</button>
+                
+                <div id="bibtex-5" class="bibtex-container">@article{Gharan2011on,
+  title={On Variants of the Matroid Secretary Problem},
+  author={Shayan Oveis Gharan and Jan Vondrák},
+  journal={arXiv preprint arXiv:1104.4081},
+  year={2011}
+}</div>
+            </div>
+
+            <div class="paper-card">
+                <h3 class="paper-title">7. Extension of Simple Algorithms to the Matroid Secretary Problem</h3>
+                <div class="paper-authors">Por: Simon Park</div>
+                <div class="paper-summary">
+                    <strong>Resumen:</strong> Whereas there are simple algorithms that are proven to be optimal for the Classical and the Multiple Choice Secretary Problem, the Matroid Secretary Problem is less thoroughly understood. This paper proposes the generalization of some simple algorithms from the Classical and Multiple Choice versions on the Matroid Secretary Problem. Out of two algorithms that make decisions based on samples, like the Dynkin's algorithm, one is proven to be an instance of Greedy Algorithm (Bahrani et al., 2022), while the other is not. A generalized version of the Virtual Algorithm (Babaioff et al., 2018) obtains a constant competitive ratio for the Hat Graph, the adversarial example for Greedy Algorithms, but fails to do so when a slight modificiation is introduced to the graph. We show that there is no algorithm with Strong Forbidden Sets (Soto et al., 2021) of size 1 on all graphic matroids.
+                </div>
+                <a href="papers/2211.02755v1.pdf" class="paper-link" target="_blank">Leer PDF Local</a>
+                <a href="https://arxiv.org/pdf/2211.02755v1.pdf" class="paper-link" target="_blank" style="background-color: #7f8c8d; margin-left: 10px;">Ver en arXiv</a>
+                <button class="paper-link bibtex-toggle" style="margin-left: 10px;" onclick="toggleBibtex('bibtex-6')">Mostrar BibTeX</button>
+                
+                <div id="bibtex-6" class="bibtex-container">@article{Park2022extension,
+  title={Extension of Simple Algorithms to the Matroid Secretary Problem},
+  author={Simon Park},
+  journal={arXiv preprint arXiv:2211.02755},
+  year={2022}
+}</div>
+            </div>
+
+            <div class="paper-card">
+                <h3 class="paper-title">8. Formal Barriers to Simple Algorithms for the Matroid Secretary Problem</h3>
+                <div class="paper-authors">Por: Maryam Bahrani, Hedyeh Beyhaghi, Sahil Singla, S. Matthew Weinberg</div>
+                <div class="paper-summary">
+                    <strong>Resumen:</strong> Babaioff et al. [BIK2007] introduced the matroid secretary problem in 2007, a natural extension of the classic single-choice secretary problem to matroids, and conjectured that a constant-competitive online algorithm exists. The conjecture still remains open despite substantial partial progress, including constant-competitive algorithms for numerous special cases of matroids, and an $O(\log \log \text{rank})$-competitive algorithm in the general case. Many of these algorithms follow principled frameworks. The limits of these frameworks are previously unstudied, and prior work establishes only that a handful of particular algorithms cannot resolve the matroid secretary conjecture. We initiate the study of impossibility results for frameworks to resolve this conjecture. We establish impossibility results for a natural class of greedy algorithms and for randomized partition algorithms, both of which contain known algorithms that resolve special cases.
+                </div>
+                <a href="papers/2111.04114v1.pdf" class="paper-link" target="_blank">Leer PDF Local</a>
+                <a href="https://arxiv.org/pdf/2111.04114v1.pdf" class="paper-link" target="_blank" style="background-color: #7f8c8d; margin-left: 10px;">Ver en arXiv</a>
+                <button class="paper-link bibtex-toggle" style="margin-left: 10px;" onclick="toggleBibtex('bibtex-7')">Mostrar BibTeX</button>
+                
+                <div id="bibtex-7" class="bibtex-container">@article{Bahrani2021formal,
+  title={Formal Barriers to Simple Algorithms for the Matroid Secretary Problem},
+  author={Maryam Bahrani and Hedyeh Beyhaghi and Sahil Singla and S. Matthew Weinberg},
+  journal={arXiv preprint arXiv:2111.04114},
+  year={2021}
+}</div>
+            </div>
+
+            <div class="paper-card">
+                <h3 class="paper-title">9. The $k$-Fold Matroid Secretary Problem</h3>
+                <div class="paper-authors">Por: Rishi Gujjar, Kevin Hua, Robert Kleinberg, Frederick V. Qiu</div>
+                <div class="paper-summary">
+                    <strong>Resumen:</strong> In the matroid secretary problem, elements $N := [n]$ of a matroid $\mathcal{M} \subseteq 2^N$ arrive in random order. When an element arrives, its weight is revealed and a choice must be made to accept or reject the element, subject to the constraint that the accepted set $S \in \mathcal{M}$. Kleinberg'05 gives a $(1-O(1/\sqrt{k}))$-competitive algorithm when $\mathcal{M}$ is a $k$-uniform matroid. We generalize their result, giving a $(1-O(\sqrt{\log(n)/k}))$-competitive algorithm when $\mathcal{M}$ is a $k$-fold matroid union.
+                </div>
+                <a href="papers/2512.06611v1.pdf" class="paper-link" target="_blank">Leer PDF Local</a>
+                <a href="https://arxiv.org/pdf/2512.06611v1.pdf" class="paper-link" target="_blank" style="background-color: #7f8c8d; margin-left: 10px;">Ver en arXiv</a>
+                <button class="paper-link bibtex-toggle" style="margin-left: 10px;" onclick="toggleBibtex('bibtex-8')">Mostrar BibTeX</button>
+                
+                <div id="bibtex-8" class="bibtex-container">@article{Gujjar2025the,
+  title={The $k$-Fold Matroid Secretary Problem},
+  author={Rishi Gujjar and Kevin Hua and Robert Kleinberg and Frederick V. Qiu},
+  journal={arXiv preprint arXiv:2512.06611},
+  year={2025}
+}</div>
+            </div>
+
+            <div class="paper-card">
+                <h3 class="paper-title">10. Beating Competitive Ratio 4 for Graphic Matroid Secretary</h3>
+                <div class="paper-authors">Por: Kiarash Banihashem, MohammadTaghi Hajiaghayi, Dariusz R. Kowalski, Piotr Krysta, Danny Mittal, Jan Olkowski</div>
+                <div class="paper-summary">
+                    <strong>Resumen:</strong> One of the classic problems in online decision-making is the *secretary problem* where to goal is to maximize the probability of choosing the largest number from a randomly ordered sequence. A natural extension allows selecting multiple values under a combinatorial constraint. Babaioff, Immorlica, Kempe, and Kleinberg (SODA'07, JACM'18) introduced the *matroid secretary conjecture*, suggesting an $O(1)$-competitive algorithm exists for matroids. Many works since have attempted to obtain algorithms for both general matroids and specific classes of matroids. The ultimate goal is to obtain an $e$-competitive algorithm, and the *strong matroid secretary conjecture* states that this is possible for general matroids. A key class of matroids is the *graphic matroid*, where a set of graph edges is independent if it contains no cycle. The rich combinatorial structure of graphs makes them a natural first step towards solving a problem for general matroids. Babaioff et al. (SODA'07, JACM'18) first studied the graphic matroid setting, achieving a $16$-competitive algorithm. Subsequent works have improved the competitive ratio, most recently to 4 by Soto, Turkieltaub, and Verdugo (SODA'18). We break this $4$-competitive barrier, presenting a new algorithm with a competitive ratio of $3.95$. For simple graphs, we further improve this to $3.77$. Intuitively, solving the problem for simple graphs is easier since they lack length-two cycles. A natural question is whether a ratio arbitrarily close to $e$ can be achieved by assuming sufficiently large girth. We answer this affirmatively, showing a competitive ratio arbitrarily close to $e$ even for constant girth values, supporting the strong matroid secretary conjecture. We also prove this bound is tight: for any constant $g$, no algorithm can achieve a ratio better than $e$ even when the graph has girth at least $g$.
+                </div>
+                <a href="papers/2501.08846v1.pdf" class="paper-link" target="_blank">Leer PDF Local</a>
+                <a href="https://arxiv.org/pdf/2501.08846v1.pdf" class="paper-link" target="_blank" style="background-color: #7f8c8d; margin-left: 10px;">Ver en arXiv</a>
+                <button class="paper-link bibtex-toggle" style="margin-left: 10px;" onclick="toggleBibtex('bibtex-9')">Mostrar BibTeX</button>
+                
+                <div id="bibtex-9" class="bibtex-container">@article{Banihashem2025beating,
+  title={Beating Competitive Ratio 4 for Graphic Matroid Secretary},
+  author={Kiarash Banihashem and MohammadTaghi Hajiaghayi and Dariusz R. Kowalski and Piotr Krysta and Danny Mittal and Jan Olkowski},
+  journal={arXiv preprint arXiv:2501.08846},
+  year={2025}
+}</div>
+            </div>
+
+            <div class="paper-card">
+                <h3 class="paper-title">11. Constant-Competitiveness for Random Assignment Matroid Secretary Without Knowing the Matroid</h3>
+                <div class="paper-authors">Por: Richard Santiago, Ivan Sergeev, Rico Zenklusen</div>
+                <div class="paper-summary">
+                    <strong>Resumen:</strong> The Matroid Secretary Conjecture is a notorious open problem in online optimization. It claims the existence of an $O(1)$-competitive algorithm for the Matroid Secretary Problem (MSP). Here, the elements of a weighted matroid appear one-by-one, revealing their weight at appearance, and the task is to select elements online with the goal to get an independent set of largest possible weight. $O(1)$-competitive MSP algorithms have so far only been obtained for restricted matroid classes and for MSP variations, including Random-Assignment MSP (RA-MSP), where an adversary fixes a number of weights equal to the ground set size of the matroid, which then get assigned randomly to the elements of the ground set. Unfortunately, these approaches heavily rely on knowing the full matroid upfront. This is an arguably undesirable requirement, and there are good reasons to believe that an approach towards resolving the MSP Conjecture should not rely on it. Thus, both Soto [SIAM Journal on Computing 2013] and Oveis Gharan & Vondrak [Algorithmica 2013] raised as an open question whether RA-MSP admits an $O(1)$-competitive algorithm even without knowing the matroid upfront. In this work, we answer this question affirmatively. Our result makes RA-MSP the first well-known MSP variant with an $O(1)$-competitive algorithm that does not need to know the underlying matroid upfront and without any restriction on the underlying matroid. Our approach is based on first approximately learning the rank-density curve of the matroid, which we then exploit algorithmically.
+                </div>
+                <a href="papers/2305.05353v1.pdf" class="paper-link" target="_blank">Leer PDF Local</a>
+                <a href="https://arxiv.org/pdf/2305.05353v1.pdf" class="paper-link" target="_blank" style="background-color: #7f8c8d; margin-left: 10px;">Ver en arXiv</a>
+                <button class="paper-link bibtex-toggle" style="margin-left: 10px;" onclick="toggleBibtex('bibtex-10')">Mostrar BibTeX</button>
+                
+                <div id="bibtex-10" class="bibtex-container">@article{Santiago2023constantcompetitiveness,
+  title={Constant-Competitiveness for Random Assignment Matroid Secretary Without Knowing the Matroid},
+  author={Richard Santiago and Ivan Sergeev and Rico Zenklusen},
+  journal={arXiv preprint arXiv:2305.05353},
+  year={2023}
+}</div>
+            </div>
+
+            <div class="paper-card">
+                <h3 class="paper-title">12. Matroid Secretary Problem in the Random Assignment Model</h3>
+                <div class="paper-authors">Por: José A. Soto</div>
+                <div class="paper-summary">
+                    <strong>Resumen:</strong> In the Matroid Secretary Problem, introduced by Babaioff et al. [SODA 2007], the elements of a given matroid are presented to an online algorithm in random order. When an element is revealed, the algorithm learns its weight and decides whether or not to select it under the restriction that the selected elements form an independent set in the matroid. The objective is to maximize the total weight of the chosen elements. In the most studied version of this problem, the algorithm has no information about the weights beforehand. We refer to this as the zero information model. In this paper we study a different model, also proposed by Babaioff et al., in which the relative order of the weights is random in the matroid. To be precise, in the random assignment model, an adversary selects a collection of weights that are randomly assigned to the elements of the matroid. Later, the elements are revealed to the algorithm in a random order independent of the assignment. Our main result is the first constant competitive algorithm for the matroid secretary problem in the random assignment model. This solves an open question of Babaioff et al. Our algorithm achieves a competitive ratio of $2e^2/(e-1)$. It exploits the notion of principal partition of a matroid, its decomposition into uniformly dense minors, and a $2e$-competitive algorithm for uniformly dense matroids we also develop. As additional results, we present simple constant competitive algorithms in the zero information model for various classes of matroids including cographic, low density and the case when every element is in a small cocircuit. In the same model, we also give a $ke$-competitive algorithm for $k$-column sparse linear matroids, and a new $O(\log r)$-competitive algorithm for general matroids of rank $r$ which only uses the relative order of the weights seen and not their numerical value, as previously needed.
+                </div>
+                <a href="papers/1007.2152v1.pdf" class="paper-link" target="_blank">Leer PDF Local</a>
+                <a href="https://arxiv.org/pdf/1007.2152v1.pdf" class="paper-link" target="_blank" style="background-color: #7f8c8d; margin-left: 10px;">Ver en arXiv</a>
+                <button class="paper-link bibtex-toggle" style="margin-left: 10px;" onclick="toggleBibtex('bibtex-11')">Mostrar BibTeX</button>
+                
+                <div id="bibtex-11" class="bibtex-container">@article{Soto2010matroid,
+  title={Matroid Secretary Problem in the Random Assignment Model},
+  author={José A. Soto},
+  journal={arXiv preprint arXiv:1007.2152},
+  year={2010}
+}</div>
+            </div>
+
+            <div class="paper-card">
+                <h3 class="paper-title">13. The Simulated Greedy Algorithm for Several Submodular Matroid Secretary Problems</h3>
+                <div class="paper-authors">Por: Tengyu Ma, Bo Tang, Yajun Wang</div>
+                <div class="paper-summary">
+                    <strong>Resumen:</strong> We study the matroid secretary problems with submodular valuation functions. In these problems, the elements arrive in random order. When one element arrives, we have to make an immediate and irrevocable decision on whether to accept it or not. The set of accepted elements must form an {\em independent set} in a predefined matroid. Our objective is to maximize the value of the accepted elements. In this paper, we focus on the case that the valuation function is a non-negative and monotonically non-decreasing submodular function. We introduce a general algorithm for such {\em submodular matroid secretary problems}. In particular, we obtain constant competitive algorithms for the cases of laminar matroids and transversal matroids. Our algorithms can be further applied to any independent set system defined by the intersection of a {\em constant} number of laminar matroids, while still achieving constant competitive ratios. Notice that laminar matroids generalize uniform matroids and partition matroids. On the other hand, when the underlying valuation function is linear, our algorithm achieves a competitive ratio of 9.6 for laminar matroids, which significantly improves the previous result.
+                </div>
+                <a href="papers/1107.2188v3.pdf" class="paper-link" target="_blank">Leer PDF Local</a>
+                <a href="https://arxiv.org/pdf/1107.2188v3.pdf" class="paper-link" target="_blank" style="background-color: #7f8c8d; margin-left: 10px;">Ver en arXiv</a>
+                <button class="paper-link bibtex-toggle" style="margin-left: 10px;" onclick="toggleBibtex('bibtex-12')">Mostrar BibTeX</button>
+                
+                <div id="bibtex-12" class="bibtex-container">@article{Ma2011the,
+  title={The Simulated Greedy Algorithm for Several Submodular Matroid Secretary Problems},
+  author={Tengyu Ma and Bo Tang and Yajun Wang},
+  journal={arXiv preprint arXiv:1107.2188},
+  year={2011}
+}</div>
+            </div>
+
+            <div class="paper-card">
+                <h3 class="paper-title">14. Matroid Partition Property and the Secretary Problem</h3>
+                <div class="paper-authors">Por: Dorna Abdolazimi, Anna R. Karlin, Nathan Klein, Shayan Oveis Gharan</div>
+                <div class="paper-summary">
+                    <strong>Resumen:</strong> A matroid $\mathcal{M}$ on a set $E$ of elements has the $α$-partition property, for some $α>0$, if it is possible to (randomly) construct a partition matroid $\mathcal{P}$ on (a subset of) elements of $\mathcal{M}$ such that every independent set of $\mathcal{P}$ is independent in $\mathcal{M}$ and for any weight function $w:E\to\mathbb{R}_{\geq 0}$, the expected value of the optimum of the matroid secretary problem on $\mathcal{P}$ is at least an $α$-fraction of the optimum on $\mathcal{M}$. We show that the complete binary matroid, ${\cal B}_d$ on $\mathbb{F}_2^d$ does not satisfy the $α$-partition property for any constant $α>0$ (independent of $d$). Furthermore, we refute a recent conjecture of Bérczi, Schwarcz, and Yamaguchi by showing the same matroid is $2^d/d$-colorable but cannot be reduced to an $α2^d/d$-colorable partition matroid for any $α$ that is sublinear in $d$.
+                </div>
+                <a href="papers/2111.12436v1.pdf" class="paper-link" target="_blank">Leer PDF Local</a>
+                <a href="https://arxiv.org/pdf/2111.12436v1.pdf" class="paper-link" target="_blank" style="background-color: #7f8c8d; margin-left: 10px;">Ver en arXiv</a>
+                <button class="paper-link bibtex-toggle" style="margin-left: 10px;" onclick="toggleBibtex('bibtex-13')">Mostrar BibTeX</button>
+                
+                <div id="bibtex-13" class="bibtex-container">@article{Abdolazimi2021matroid,
+  title={Matroid Partition Property and the Secretary Problem},
+  author={Dorna Abdolazimi and Anna R. Karlin and Nathan Klein and Shayan Oveis Gharan},
+  journal={arXiv preprint arXiv:2111.12436},
+  year={2021}
+}</div>
+            </div>
+
+            <div class="paper-card">
+                <h3 class="paper-title">15. Matroid Secretary for Regular and Decomposable Matroids</h3>
+                <div class="paper-authors">Por: Michael Dinitz, Guy Kortsarz</div>
+                <div class="paper-summary">
+                    <strong>Resumen:</strong> In the matroid secretary problem we are given a stream of elements and asked to choose a set of elements that maximizes the total value of the set, subject to being an independent set of a matroid given in advance. The difficulty comes from the assumption that decisions are irrevocable: if we choose to accept an element when it is presented by the stream then we can never get rid of it, and if we choose not to accept it then we cannot later add it. Babaioff, Immorlica, and Kleinberg [SODA 2007] introduced this problem, gave O(1)-competitive algorithms for certain classes of matroids, and conjectured that every matroid admits an O(1)-competitive algorithm. However, most matroids that are known to admit an O(1)-competitive algorithm can be easily represented using graphs (e.g. graphic and transversal matroids). In particular, there is very little known about F-representable matroids (the class of matroids that can be represented as elements of a vector space over a field F), which are one of the foundational matroid classes. Moreover, most of the known techniques are as dependent on graph theory as they are on matroid theory. We go beyond graphs by giving an O(1)-competitive algorithm for regular matroids (the class of matroids that are representable over every field), and use techniques that are matroid-theoretic rather than graph-theoretic. We use the regular matroid decomposition theorem of Seymour to decompose any regular matroid into matroids which are either graphic, cographic, or isomorphic to R_{10}, and then show how to combine algorithms for these basic classes into an algorithm for regular matroids. This allows us to generalize beyond regular matroids to any class of matroids that admits such a decomposition into classes for which we already have good algorithms. In particular, we give an O(1)-competitive algorithm for the class of max-flow min-cut matroids.
+                </div>
+                <a href="papers/1207.5146v1.pdf" class="paper-link" target="_blank">Leer PDF Local</a>
+                <a href="https://arxiv.org/pdf/1207.5146v1.pdf" class="paper-link" target="_blank" style="background-color: #7f8c8d; margin-left: 10px;">Ver en arXiv</a>
+                <button class="paper-link bibtex-toggle" style="margin-left: 10px;" onclick="toggleBibtex('bibtex-14')">Mostrar BibTeX</button>
+                
+                <div id="bibtex-14" class="bibtex-container">@article{Dinitz2012matroid,
+  title={Matroid Secretary for Regular and Decomposable Matroids},
+  author={Michael Dinitz and Guy Kortsarz},
+  journal={arXiv preprint arXiv:1207.5146},
+  year={2012}
+}</div>
+            </div>
+
+            <div class="paper-card">
+                <h3 class="paper-title">16. The Outer Limits of Contention Resolution on Matroids and Connections to the Secretary Problem</h3>
+                <div class="paper-authors">Por: Shaddin Dughmi</div>
+                <div class="paper-summary">
+                    <strong>Resumen:</strong> Contention resolution schemes have proven to be a useful and unifying abstraction for a variety of constrained optimization problems, in both offline and online arrival models. Much of prior work restricts attention to product distributions for the input set of elements, and studies contention resolution for increasingly general packing constraints, both offline and online. In this paper, we instead focus on generalizing the input distribution, restricting attention to matroid constraints in both the offline and online random arrival models. In particular, we study contention resolution when the input set is arbitrarily distributed, and may exhibit positive and/or negative correlations between elements. We characterize the distributions for which offline contention resolution is possible, and establish some of their basic closure properties. Our characterization can be interpreted as a distributional generalization of the matroid covering theorem. For the online random arrival model, we show that contention resolution is intimately tied to the secretary problem via two results. First, we show that a competitive algorithm for the matroid secretary problem implies that online contention resolution is essentially as powerful as offline contention resolution for matroids, so long as the algorithm is given the input distribution. Second, we reduce the matroid secretary problem to the design of an online contention resolution scheme of a particular form.
+                </div>
+                <a href="papers/1909.04268v3.pdf" class="paper-link" target="_blank">Leer PDF Local</a>
+                <a href="https://arxiv.org/pdf/1909.04268v3.pdf" class="paper-link" target="_blank" style="background-color: #7f8c8d; margin-left: 10px;">Ver en arXiv</a>
+                <button class="paper-link bibtex-toggle" style="margin-left: 10px;" onclick="toggleBibtex('bibtex-15')">Mostrar BibTeX</button>
+                
+                <div id="bibtex-15" class="bibtex-container">@article{Dughmi2019the,
+  title={The Outer Limits of Contention Resolution on Matroids and Connections to the Secretary Problem},
+  author={Shaddin Dughmi},
+  journal={arXiv preprint arXiv:1909.04268},
+  year={2019}
+}</div>
+            </div>
+
+            <div class="paper-card">
+                <h3 class="paper-title">17. Beyond matroids: Secretary Problem and Prophet Inequality with general constraints</h3>
+                <div class="paper-authors">Por: Aviad Rubinstein</div>
+                <div class="paper-summary">
+                    <strong>Resumen:</strong> We study generalizations of the "Prophet Inequality" and "Secretary Problem", where the algorithm is restricted to an arbitrary downward-closed set system. For {0,1}-values, we give O(log n)-competitive algorithms for both problems. This is close to the Ω(log n / loglog n) lower bound due to Babaioff, Immorlica, and Kleinberg. For general values, our results translate to O(log n log r)-competitive algorithms, where r is the cardinality of the largest feasible set. This resolves (up to the O(log r loglog n) factors) an open question posed to us by Bobby Kleinberg.
+                </div>
+                <a href="papers/1604.00357v2.pdf" class="paper-link" target="_blank">Leer PDF Local</a>
+                <a href="https://arxiv.org/pdf/1604.00357v2.pdf" class="paper-link" target="_blank" style="background-color: #7f8c8d; margin-left: 10px;">Ver en arXiv</a>
+                <button class="paper-link bibtex-toggle" style="margin-left: 10px;" onclick="toggleBibtex('bibtex-16')">Mostrar BibTeX</button>
+                
+                <div id="bibtex-16" class="bibtex-container">@article{Rubinstein2016beyond,
+  title={Beyond matroids: Secretary Problem and Prophet Inequality with general constraints},
+  author={Aviad Rubinstein},
+  journal={arXiv preprint arXiv:1604.00357},
+  year={2016}
+}</div>
+            </div>
+
+            <div class="paper-card">
+                <h3 class="paper-title">18. A Simple $O(\log\log(\mathrm{rank}))$-Competitive Algorithm for the Matroid Secretary Problem</h3>
+                <div class="paper-authors">Por: Moran Feldman, Ola Svensson, Rico Zenklusen</div>
+                <div class="paper-summary">
+                    <strong>Resumen:</strong> Only recently progress has been made in obtaining $o(\log(\mathrm{rank}))$-competitive algorithms for the matroid secretary problem. More precisely, Chakraborty and Lachish (2012) presented a $O(\sqrt{\log(\mathrm{rank})})$-competitive procedure, and Lachish (2014) later presented a $O(\log\log(\mathrm{rank}))$-competitive algorithm. Both these algorithms and their analyses are very involved, which is also reflected in the extremely high constants in their competitive ratios. Using different tools, we present a considerably simpler $O(\log\log(\mathrm{rank}))$-competitive algorithm for the matroid secretary problem. Our algorithm can be interpreted as a distribution over a simple type of matroid secretary algorithms which are easy to analyze. Due to the simplicity of our procedure, we are also able to vastly improve on the hidden constant in the competitive ratio.
+                </div>
+                <a href="papers/1404.4473v2.pdf" class="paper-link" target="_blank">Leer PDF Local</a>
+                <a href="https://arxiv.org/pdf/1404.4473v2.pdf" class="paper-link" target="_blank" style="background-color: #7f8c8d; margin-left: 10px;">Ver en arXiv</a>
+                <button class="paper-link bibtex-toggle" style="margin-left: 10px;" onclick="toggleBibtex('bibtex-17')">Mostrar BibTeX</button>
+                
+                <div id="bibtex-17" class="bibtex-container">@article{Feldman2014a,
+  title={A Simple $O(\log\log(\mathrm{rank}))$-Competitive Algorithm for the Matroid Secretary Problem},
+  author={Moran Feldman and Ola Svensson and Rico Zenklusen},
+  journal={arXiv preprint arXiv:1404.4473},
+  year={2014}
+}</div>
+            </div>
+
+            <div class="paper-card">
+                <h3 class="paper-title">19. Laminar Matroid Secretary: Greedy Strikes Back</h3>
+                <div class="paper-authors">Por: Zhiyi Huang, Zahra Parsaeian, Zixuan Zhu</div>
+                <div class="paper-summary">
+                    <strong>Resumen:</strong> We show that a simple greedy algorithm is $4.75$ probability-competitive for the Laminar Matroid Secretary Problem, improving the $3\sqrt{3} \approx 5.196$-competitive algorithm based on the forbidden sets technique (Soto, Turkieltaub, and Verdugo, 2018).
+                </div>
+                <a href="papers/2308.09880v2.pdf" class="paper-link" target="_blank">Leer PDF Local</a>
+                <a href="https://arxiv.org/pdf/2308.09880v2.pdf" class="paper-link" target="_blank" style="background-color: #7f8c8d; margin-left: 10px;">Ver en arXiv</a>
+                <button class="paper-link bibtex-toggle" style="margin-left: 10px;" onclick="toggleBibtex('bibtex-18')">Mostrar BibTeX</button>
+                
+                <div id="bibtex-18" class="bibtex-container">@article{Huang2023laminar,
+  title={Laminar Matroid Secretary: Greedy Strikes Back},
+  author={Zhiyi Huang and Zahra Parsaeian and Zixuan Zhu},
+  journal={arXiv preprint arXiv:2308.09880},
+  year={2023}
+}</div>
+            </div>
+
+            <div class="paper-card">
+                <h3 class="paper-title">20. Submodular Matroid Secretary Problem with Shortlists</h3>
+                <div class="paper-authors">Por: Mohammad Shadravan</div>
+                <div class="paper-summary">
+                    <strong>Resumen:</strong> In the matroid secretary problem, the elements of a matroid $\mathcal{M}$ arrive in random order. Once we observe an item we need to irrevocably decide whether or not to accept it. The set of selected elements should form an independent set of the matroid. The goal is to maximize the total sum of the values assigned to these elements. We introduce a version of this problem motivated by the shortlist model in [Agrawal et al.]. In this setting, the algorithm is allowed to choose a subset of items as part of a shortlist, possibly more than $k=rk(\mathcal{M})$ items. Then, after seeing the entire input, the algorithm can choose an independent subset from the shortlist. Furthermore we generalize the objective function to any monotone submodular function. Is there an online algorithm achieve a constant competitive ratio using a shortlist of size $O(k)$? We design an algorithm that achieves a $\frac{1}{2}(1-1/e^2-ε-O(1/k))$ competitive ratio for any constant $ε>0$, using a shortlist of size $O(k)$. This is especially surprising considering that the best known competitive ratio for the matroid secretary problem is $O(\log \log k)$. An important application of our algorithm is for the random order streaming of submodular functions. We show that our algorithm can be implemented in the streaming setting using $O(k)$ memory. It achieves a $\frac{1}{2}(1-1/e^2-ε-O(1/k))$ approximation. The previously best known approximation ratio for streaming submodular maximization under matroid constraint is 0.25 (adversarial order) due to [Feldman et al.], [Chekuri et al.], and [Chakrabarti et al.]. Moreover, we generalize our results to the case of p-matchoid constraints and give a $\frac{1}{p+1}(1-1/e^{p+1}-ε-O(1/k))$ approximation using $O(k)$ memory, which asymptotically approaches the best known offline guarantee $\frac{1}{p+1}$ [Nemhauser et al.]
+                </div>
+                <a href="papers/2001.00894v1.pdf" class="paper-link" target="_blank">Leer PDF Local</a>
+                <a href="https://arxiv.org/pdf/2001.00894v1.pdf" class="paper-link" target="_blank" style="background-color: #7f8c8d; margin-left: 10px;">Ver en arXiv</a>
+                <button class="paper-link bibtex-toggle" style="margin-left: 10px;" onclick="toggleBibtex('bibtex-19')">Mostrar BibTeX</button>
+                
+                <div id="bibtex-19" class="bibtex-container">@article{Shadravan2020submodular,
+  title={Submodular Matroid Secretary Problem with Shortlists},
+  author={Mohammad Shadravan},
+  journal={arXiv preprint arXiv:2001.00894},
+  year={2020}
+}</div>
+            </div>
+
+            <div class="paper-card">
+                <h3 class="paper-title">21. Matroid Secretary via Labeling Schemes</h3>
+                <div class="paper-authors">Por: Kristóf Bérczi, Vasilis Livanos, José Soto, Victor Verdugo</div>
+                <div class="paper-summary">
+                    <strong>Resumen:</strong> The Matroid Secretary Problem (MSP) is one of the most prominent settings for online resource allocation and optimal stopping. A decision-maker is presented with a ground set of elements $E$ revealed sequentially and in random order. Upon arrival, an irrevocable decision is made in a take-it-or-leave-it fashion, subject to a feasibility constraint on the set of selected elements captured by a matroid defined over $E$. The decision-maker only has ordinal access to compare the elements, and the goal is to design an algorithm that selects every element of the optimal basis with probability at least $α$ (i.e., $α$-probability-competitive). While the existence of a constant probability-competitive algorithm for MSP remains a major open question, simple greedy policies are at the core of state-of-the-art algorithms for several matroid classes. We introduce a flexible and general algorithmic framework to analyze greedy-like algorithms for MSP based on constructing a language associated with the matroid. Using this language, we establish a lower bound on the probability-competitiveness of the algorithm by studying a corresponding Poisson point process that governs the words' distribution in the language. Using our framework, we break the state-of-the-art guarantee for laminar matroids by settling the probability-competitiveness of the greedy-improving algorithm to be exactly $1-\ln(2) \approx 0.3068$. We also showcase the capabilities of our framework in graphic matroids, to show a probability-competitiveness of $0.2693$ for simple graphs and $0.2504$ for general graphs.
+                </div>
+                <a href="papers/2411.12069v2.pdf" class="paper-link" target="_blank">Leer PDF Local</a>
+                <a href="https://arxiv.org/pdf/2411.12069v2.pdf" class="paper-link" target="_blank" style="background-color: #7f8c8d; margin-left: 10px;">Ver en arXiv</a>
+                <button class="paper-link bibtex-toggle" style="margin-left: 10px;" onclick="toggleBibtex('bibtex-20')">Mostrar BibTeX</button>
+                
+                <div id="bibtex-20" class="bibtex-container">@article{Brczi2024matroid,
+  title={Matroid Secretary via Labeling Schemes},
+  author={Kristóf Bérczi and Vasilis Livanos and José Soto and Victor Verdugo},
+  journal={arXiv preprint arXiv:2411.12069},
+  year={2024}
+}</div>
+            </div>
+
+            <div class="paper-card">
+                <h3 class="paper-title">22. Strong Algorithms for the Ordinal Matroid Secretary Problem</h3>
+                <div class="paper-authors">Por: José A. Soto, Abner Turkieltaub, Victor Verdugo</div>
+                <div class="paper-summary">
+                    <strong>Resumen:</strong> In the ordinal Matroid Secretary Problem (MSP), elements from a weighted matroid are presented in random order to an algorithm that must incrementally select a large weight independent set. However, the algorithm can only compare pairs of revealed elements without using its numerical value. An algorithm is $α$ probability-competitive if every element from the optimum appears with probability $1/α$ in the output. We present a technique to design algorithms with strong probability-competitive ratios, improving the guarantees for almost every matroid class considered in the literature: e.g., we get ratios of 4 for graphic matroids (improving on $2e$ by Korula and Pál [ICALP 2009]) and of 5.19 for laminar matroids (improving on 9.6 by Ma et al. [THEOR COMPUT SYST 2016]). We also obtain new results for superclasses of $k$ column sparse matroids, for hypergraphic matroids, certain gammoids and graph packing matroids, and a $1+O(\sqrt{\log ρ/ρ})$ probability-competitive algorithm for uniform matroids of rank $ρ$ based on Kleinberg's $1+O(\sqrt{1/ρ})$ utility-competitive algorithm [SODA 2005] for that class. Our second contribution are algorithms for the ordinal MSP on arbitrary matroids of rank $ρ$. We devise an $O(\log ρ)$ probability-competitive algorithm and an $O(\log\log ρ)$ ordinal-competitive algorithm, a weaker notion of competitiveness but stronger than the utility variant. These are based on the $O(\log\log ρ)$ utility-competitive algorithm by Feldman et al.~[SODA 2015].
+                </div>
+                <a href="papers/1802.01997v1.pdf" class="paper-link" target="_blank">Leer PDF Local</a>
+                <a href="https://arxiv.org/pdf/1802.01997v1.pdf" class="paper-link" target="_blank" style="background-color: #7f8c8d; margin-left: 10px;">Ver en arXiv</a>
+                <button class="paper-link bibtex-toggle" style="margin-left: 10px;" onclick="toggleBibtex('bibtex-21')">Mostrar BibTeX</button>
+                
+                <div id="bibtex-21" class="bibtex-container">@article{Soto2018strong,
+  title={Strong Algorithms for the Ordinal Matroid Secretary Problem},
+  author={José A. Soto and Abner Turkieltaub and Victor Verdugo},
+  journal={arXiv preprint arXiv:1802.01997},
+  year={2018}
+}</div>
+            </div>
+
+            <div class="paper-card">
+                <h3 class="paper-title">23. Secretary problem: graphs, matroids and greedoids</h3>
+                <div class="paper-authors">Por: Wojciech Kordecki</div>
+                <div class="paper-summary">
+                    <strong>Resumen:</strong> In the paper the generalisation of the well known "secretary problem" is considered. The aim of the paper is to give a generalised model in such a way that the chosen set of the possible best $k$ elements have to be independent of all rejected elements. This condition is formulated using the theory of greedoids and in their special cases -- matroids and antimatroids. Examples of some special cases of greedoids (uniform, graphical matroids and binary trees) are considered.
+                </div>
+                <a href="papers/1801.00814v1.pdf" class="paper-link" target="_blank">Leer PDF Local</a>
+                <a href="https://arxiv.org/pdf/1801.00814v1.pdf" class="paper-link" target="_blank" style="background-color: #7f8c8d; margin-left: 10px;">Ver en arXiv</a>
+                <button class="paper-link bibtex-toggle" style="margin-left: 10px;" onclick="toggleBibtex('bibtex-22')">Mostrar BibTeX</button>
+                
+                <div id="bibtex-22" class="bibtex-container">@article{Kordecki2018secretary,
+  title={Secretary problem: graphs, matroids and greedoids},
+  author={Wojciech Kordecki},
+  journal={arXiv preprint arXiv:1801.00814},
+  year={2018}
+}</div>
+            </div>
+
+            <div class="paper-card">
+                <h3 class="paper-title">24. Prophet Secretary for Combinatorial Auctions and Matroids</h3>
+                <div class="paper-authors">Por: Soheil Ehsani, MohammadTaghi Hajiaghayi, Thomas Kesselheim, Sahil Singla</div>
+                <div class="paper-summary">
+                    <strong>Resumen:</strong> The secretary and the prophet inequality problems are central to the field of Stopping Theory. Recently, there has been a lot of work in generalizing these models to multiple items because of their applications in mechanism design. The most important of these generalizations are to matroids and to combinatorial auctions (extends bipartite matching). Kleinberg-Weinberg \cite{KW-STOC12} and Feldman et al. \cite{feldman2015combinatorial} show that for adversarial arrival order of random variables the optimal prophet inequalities give a $1/2$-approximation. For many settings, however, it's conceivable that the arrival order is chosen uniformly at random, akin to the secretary problem. For such a random arrival model, we improve upon the $1/2$-approximation and obtain $(1-1/e)$-approximation prophet inequalities for both matroids and combinatorial auctions. This also gives improvements to the results of Yan \cite{yan2011mechanism} and Esfandiari et al. \cite{esfandiari2015prophet} who worked in the special cases where we can fully control the arrival order or when there is only a single item. Our techniques are threshold based. We convert our discrete problem into a continuous setting and then give a generic template on how to dynamically adjust these thresholds to lower bound the expected total welfare.
+                </div>
+                <a href="papers/1710.11213v2.pdf" class="paper-link" target="_blank">Leer PDF Local</a>
+                <a href="https://arxiv.org/pdf/1710.11213v2.pdf" class="paper-link" target="_blank" style="background-color: #7f8c8d; margin-left: 10px;">Ver en arXiv</a>
+                <button class="paper-link bibtex-toggle" style="margin-left: 10px;" onclick="toggleBibtex('bibtex-23')">Mostrar BibTeX</button>
+                
+                <div id="bibtex-23" class="bibtex-container">@article{Ehsani2017prophet,
+  title={Prophet Secretary for Combinatorial Auctions and Matroids},
+  author={Soheil Ehsani and MohammadTaghi Hajiaghayi and Thomas Kesselheim and Sahil Singla},
+  journal={arXiv preprint arXiv:1710.11213},
+  year={2017}
+}</div>
+            </div>
+
+            <div class="paper-card">
+                <h3 class="paper-title">25. O(log log rank) Competitive-Ratio for the Matroid Secretary Problem</h3>
+                <div class="paper-authors">Por: Oded Lachish</div>
+                <div class="paper-summary">
+                    <strong>Resumen:</strong> In the \textit{Matroid Secretary Problem} (MSP), the elements of the ground set of a Matroid are revealed on-line one by one, each together with its value. An algorithm for the MSP is \textit{Matroid-Unknown} if, at every stage of its execution: (i) it only knows the elements that have been revealed so far and their values, and (ii) it has access to an oracle for testing whether or not any subset of the elements that have been revealed so far is an independent set. An algorithm is \textit{Known-Cardinality} if, in addition to (i) and (ii), it also initially knows the cardinality of the ground set of the Matroid. We present here a Known-Cardinality and \textit{Order-Oblivious} algorithm that, with constant probability, selects an independent set of elements, whose value is at least the optimal value divided by $O(\log{\logρ})$, where $ρ$ is the rank of the Matroid; that is, the algorithm has a \textit{competitive-ratio} of $O(\log{\logρ})$. The best previous results for a Known-Cardinality algorithm are a competitive-ratio of $O(\logρ)$, by Babaioff \textit{et al.} (2007), and a competitive-ratio of $O(\sqrt{\logρ})$, by Chakraborty and Lachish (2012). In many non-trivial cases the algorithm we present has a competitive-ratio that is better than the $O(\log{\logρ})$. The cases in which it fails to do so are easily characterized. Understanding these cases may lead to improved algorithms for the problem or, conversely, to non-trivial lower bounds.
+                </div>
+                <a href="papers/1403.7343v4.pdf" class="paper-link" target="_blank">Leer PDF Local</a>
+                <a href="https://arxiv.org/pdf/1403.7343v4.pdf" class="paper-link" target="_blank" style="background-color: #7f8c8d; margin-left: 10px;">Ver en arXiv</a>
+                <button class="paper-link bibtex-toggle" style="margin-left: 10px;" onclick="toggleBibtex('bibtex-24')">Mostrar BibTeX</button>
+                
+                <div id="bibtex-24" class="bibtex-container">@article{Lachish2014olog,
+  title={O(log log rank) Competitive-Ratio for the Matroid Secretary Problem},
+  author={Oded Lachish},
+  journal={arXiv preprint arXiv:1403.7343},
+  year={2014}
+}</div>
+            </div>
+
+            <div class="paper-card">
+                <h3 class="paper-title">26. The secretary returns</h3>
+                <div class="paper-authors">Por: Shai Vardi</div>
+                <div class="paper-summary">
+                    <strong>Resumen:</strong> In the online random-arrival model, an algorithm receives a sequence of n requests that arrive in a random order. The algorithm is expected to make an irrevocable decision with regard to each request based only on the observed history. We consider the following natural extension of this model: each request arrives k times, and the arrival order is a random permutation of the kn arrivals; the algorithm is expected to make a decision regarding each request only upon its last arrival. We focus primarily on the case when k=2, which can also be interpreted as each request arriving at, and departing from the system, at a random time. We examine the secretary problem: the problem of selecting the best secretary when the secretaries are presented online according to a random permutation. We show that when each secretary arrives twice, we can achieve a competitive ratio of ~0.768 (compared to 1/e in the classical secretary problem), and that it is optimal. We also show that without any knowledge about the number of secretaries or their arrival times, we can still hire the best secretary with probability at least 2/3, in contrast to the impossibility of achieving a constant success probability in the classical setting. We extend our results to the matroid secretary problem, introduced by Babaioff et al., (2007) and show a simple algorithm that achieves a 2-approximation to the maximal weighted basis in the new model (for k=2). We show that this approximation factor can be improved in special cases of the matroid secretary problem; in particular, we give a 16/9-competitive algorithm for the returning edge-weighted bipartite matching problem.
+                </div>
+                <a href="papers/1404.0614v2.pdf" class="paper-link" target="_blank">Leer PDF Local</a>
+                <a href="https://arxiv.org/pdf/1404.0614v2.pdf" class="paper-link" target="_blank" style="background-color: #7f8c8d; margin-left: 10px;">Ver en arXiv</a>
+                <button class="paper-link bibtex-toggle" style="margin-left: 10px;" onclick="toggleBibtex('bibtex-25')">Mostrar BibTeX</button>
+                
+                <div id="bibtex-25" class="bibtex-container">@article{Vardi2014the,
+  title={The secretary returns},
+  author={Shai Vardi},
+  journal={arXiv preprint arXiv:1404.0614},
+  year={2014}
+}</div>
+            </div>
+
+            <div class="paper-card">
+                <h3 class="paper-title">27. Combinatorial Secretary Problems with Ordinal Information</h3>
+                <div class="paper-authors">Por: Martin Hoefer, Bojana Kodric</div>
+                <div class="paper-summary">
+                    <strong>Resumen:</strong> The secretary problem is a classic model for online decision making. Recently, combinatorial extensions such as matroid or matching secretary problems have become an important tool to study algorithmic problems in dynamic markets. Here the decision maker must know the numerical value of each arriving element, which can be a demanding informational assumption. In this paper, we initiate the study of combinatorial secretary problems with ordinal information, in which the decision maker only needs to be aware of a preference order consistent with the values of arrived elements. The goal is to design online algorithms with small competitive ratios. For a variety of combinatorial problems, such as bipartite matching, general packing LPs, and independent set with bounded local independence number, we design new algorithms that obtain constant competitive ratios. For the matroid secretary problem, we observe that many existing algorithms for special matroid structures maintain their competitive ratios even in the ordinal model. In these cases, the restriction to ordinal information does not represent any additional obstacle. Moreover, we show that ordinal variants of the submodular matroid secretary problems can be solved using algorithms for the linear versions by extending [Feldman and Zenklusen, 2015]. In contrast, we provide a lower bound of $Ω(\sqrt{n}/(\log n))$ for algorithms that are oblivious to the matroid structure, where $n$ is the total number of elements. This contrasts an upper bound of $O(\log n)$ in the cardinal model, and it shows that the technique of thresholding is not sufficient for good algorithms in the ordinal model.
+                </div>
+                <a href="papers/1702.01290v3.pdf" class="paper-link" target="_blank">Leer PDF Local</a>
+                <a href="https://arxiv.org/pdf/1702.01290v3.pdf" class="paper-link" target="_blank" style="background-color: #7f8c8d; margin-left: 10px;">Ver en arXiv</a>
+                <button class="paper-link bibtex-toggle" style="margin-left: 10px;" onclick="toggleBibtex('bibtex-26')">Mostrar BibTeX</button>
+                
+                <div id="bibtex-26" class="bibtex-container">@article{Hoefer2017combinatorial,
+  title={Combinatorial Secretary Problems with Ordinal Information},
+  author={Martin Hoefer and Bojana Kodric},
+  journal={arXiv preprint arXiv:1702.01290},
+  year={2017}
+}</div>
+            </div>
+
+            <div class="paper-card">
+                <h3 class="paper-title">28. The Submodular Secretary Problem Goes Linear</h3>
+                <div class="paper-authors">Por: Moran Feldman, Rico Zenklusen</div>
+                <div class="paper-summary">
+                    <strong>Resumen:</strong> During the last decade, the matroid secretary problem (MSP) became one of the most prominent classes of online selection problems. Partially linked to its numerous applications in mechanism design, substantial interest arose also in the study of nonlinear versions of MSP, with a focus on the submodular matroid secretary problem (SMSP). So far, O(1)-competitive algorithms have been obtained for SMSP over some basic matroid classes. This created some hope that, analogously to the matroid secretary conjecture, one may even obtain O(1)-competitive algorithms for SMSP over any matroid. However, up to now, most questions related to SMSP remained open, including whether SMSP may be substantially more difficult than MSP; and more generally, to what extend MSP and SMSP are related. Our goal is to address these points by presenting general black-box reductions from SMSP to MSP. In particular, we show that any O(1)-competitive algorithm for MSP, even restricted to a particular matroid class, can be transformed in a black-box way to an O(1)-competitive algorithm for SMSP over the same matroid class. This implies that the matroid secretary conjecture is equivalent to the same conjecture for SMSP. Hence, in this sense SMSP is not harder than MSP. Also, to find O(1)-competitive algorithms for SMSP over a particular matroid class, it suffices to consider MSP over the same matroid class. Using our reductions we obtain many first and improved O(1)-competitive algorithms for SMSP over various matroid classes by leveraging known algorithms for MSP. Moreover, our reductions imply an O(loglog(rank))-competitive algorithm for SMSP, thus, matching the currently best asymptotic algorithm for MSP, and substantially improving on the previously best O(log(rank))-competitive algorithm for SMSP.
+                </div>
+                <a href="papers/1507.08384v1.pdf" class="paper-link" target="_blank">Leer PDF Local</a>
+                <a href="https://arxiv.org/pdf/1507.08384v1.pdf" class="paper-link" target="_blank" style="background-color: #7f8c8d; margin-left: 10px;">Ver en arXiv</a>
+                <button class="paper-link bibtex-toggle" style="margin-left: 10px;" onclick="toggleBibtex('bibtex-27')">Mostrar BibTeX</button>
+                
+                <div id="bibtex-27" class="bibtex-container">@article{Feldman2015the,
+  title={The Submodular Secretary Problem Goes Linear},
+  author={Moran Feldman and Rico Zenklusen},
+  journal={arXiv preprint arXiv:1507.08384},
+  year={2015}
+}</div>
+            </div>
+
+            <div class="paper-card">
+                <h3 class="paper-title">29. Algorithms for Secretary Problems on Graphs and Hypergraphs</h3>
+                <div class="paper-authors">Por: Nitish Korula, Martin Pal</div>
+                <div class="paper-summary">
+                    <strong>Resumen:</strong> We examine several online matching problems, with applications to Internet advertising reservation systems. Consider an edge-weighted bipartite graph G, with partite sets L, R. We develop an 8-competitive algorithm for the following secretary problem: Initially given R, and the size of L, the algorithm receives the vertices of L sequentially, in a random order. When a vertex l \in L is seen, all edges incident to l are revealed, together with their weights. The algorithm must immediately either match l to an available vertex of R, or decide that l will remain unmatched. Dimitrov and Plaxton show a 16-competitive algorithm for the transversal matroid secretary problem, which is the special case with weights on vertices, not edges. (Equivalently, one may assume that for each l \in L, the weights on all edges incident to l are identical.) We use a similar algorithm, but simplify and improve the analysis to obtain a better competitive ratio for the more general problem. Perhaps of more interest is the fact that our analysis is easily extended to obtain competitive algorithms for similar problems, such as to find disjoint sets of edges in hypergraphs where edges arrive online. We also introduce secretary problems with adversarially chosen groups. Finally, we give a 2e-competitive algorithm for the secretary problem on graphic matroids, where, with edges appearing online, the goal is to find a maximum-weight acyclic subgraph of a given graph.
+                </div>
+                <a href="papers/0807.1139v1.pdf" class="paper-link" target="_blank">Leer PDF Local</a>
+                <a href="https://arxiv.org/pdf/0807.1139v1.pdf" class="paper-link" target="_blank" style="background-color: #7f8c8d; margin-left: 10px;">Ver en arXiv</a>
+                <button class="paper-link bibtex-toggle" style="margin-left: 10px;" onclick="toggleBibtex('bibtex-28')">Mostrar BibTeX</button>
+                
+                <div id="bibtex-28" class="bibtex-container">@article{Korula2008algorithms,
+  title={Algorithms for Secretary Problems on Graphs and Hypergraphs},
+  author={Nitish Korula and Martin Pal},
+  journal={arXiv preprint arXiv:0807.1139},
+  year={2008}
+}</div>
+            </div>
+
+            <div class="paper-card">
+                <h3 class="paper-title">30. Online Matroid Embeddings</h3>
+                <div class="paper-authors">Por: Andrés Cristi, Paul Dütting, Robert Kleinberg, Renato Paes Leme, Neel Patel</div>
+                <div class="paper-summary">
+                    <strong>Resumen:</strong> We introduce the notion of an online matroid embedding, which is an algorithm for mapping an unknown matroid that is revealed in an online fashion to a larger-but-known matroid. We establish the existence of such an embedding for binary matroids, and use it to relate variants of the binary matroid secretary problem to each other, showing that seemingly simpler problems are in fact equivalent to seemingly harder ones (up to constant-factors). Specifically, we show this to be the case for the version of the matroid secretary problem in which the matroid is not known in advance, and where it is known in advance. We also show that the version with known matroid structure, is equivalent to the problem where weights are not fully adversarial but drawn from a known pairwise-independent distribution.
+                </div>
+                <a href="papers/2407.10316v2.pdf" class="paper-link" target="_blank">Leer PDF Local</a>
+                <a href="https://arxiv.org/pdf/2407.10316v2.pdf" class="paper-link" target="_blank" style="background-color: #7f8c8d; margin-left: 10px;">Ver en arXiv</a>
+                <button class="paper-link bibtex-toggle" style="margin-left: 10px;" onclick="toggleBibtex('bibtex-29')">Mostrar BibTeX</button>
+                
+                <div id="bibtex-29" class="bibtex-container">@article{Cristi2024online,
+  title={Online Matroid Embeddings},
+  author={Andrés Cristi and Paul Dütting and Robert Kleinberg and Renato Paes Leme and Neel Patel},
+  journal={arXiv preprint arXiv:2407.10316},
+  year={2024}
+}</div>
+            </div>
+
+            <div class="paper-card">
+                <h3 class="paper-title">31. Improved Submodular Secretary Problem with Shortlists</h3>
+                <div class="paper-authors">Por: Mohammad Shadravan</div>
+                <div class="paper-summary">
+                    <strong>Resumen:</strong> First, for the for the submodular $k$-secretary problem with shortlists [1], we provide a near optimal $1-1/e-ε$ approximation using shortlist of size $O(k poly(1/ε))$. In particular, we improve the size of shortlist used in \cite{us} from $O(k 2^{poly(1/ε)})$ to $O(k poly(1/ε))$. As a result, we provide a near optimal approximation algorithm for random-order streaming of monotone submodular functions under cardinality constraints, using memory $O(k poly(1/ε))$. It exponentially improves the running time and memory of \cite{us} in terms of $1/ε$. Next we generalize the problem to matroid constraints, which we refer to as submodular matroid secretary problem with shortlists. It is a variant of the \textit{matroid secretary problem} \cite{feldman2014simple}, in which the algorithm is allowed to have a shortlist. We design an algorithm that achieves a $\frac{1}{2}(1-1/e^2 -ε)$ competitive ratio for any constant $ε>0$, using a shortlist of size $O(k poly(\frac{1}ε))$. Moreover, we generalize our results to the case of $p$-matchoid constraints and give a $\frac{1}{p+1}(1-1/e^{p+1}-ε)$ approximation using shortlist of size $O(k poly(\frac{1}ε))$. It asymptotically approaches the best known offline guarantee $\frac{1}{p+1}$ [22]. Furthermore, we show that our algorithms can be implemented in the streaming setting using $O(k poly(\frac{1}ε))$ memory.
+                </div>
+                <a href="papers/2010.01901v2.pdf" class="paper-link" target="_blank">Leer PDF Local</a>
+                <a href="https://arxiv.org/pdf/2010.01901v2.pdf" class="paper-link" target="_blank" style="background-color: #7f8c8d; margin-left: 10px;">Ver en arXiv</a>
+                <button class="paper-link bibtex-toggle" style="margin-left: 10px;" onclick="toggleBibtex('bibtex-30')">Mostrar BibTeX</button>
+                
+                <div id="bibtex-30" class="bibtex-container">@article{Shadravan2020improved,
+  title={Improved Submodular Secretary Problem with Shortlists},
+  author={Mohammad Shadravan},
+  journal={arXiv preprint arXiv:2010.01901},
+  year={2020}
+}</div>
+            </div>
+
+            <div class="paper-card">
+                <h3 class="paper-title">32. Robust Secretary and Prophet Algorithms for Packing Integer Programs</h3>
+                <div class="paper-authors">Por: C. J. Argue, Anupam Gupta, Marco Molinaro, Sahil Singla</div>
+                <div class="paper-summary">
+                    <strong>Resumen:</strong> We study the problem of solving Packing Integer Programs (PIPs) in the online setting, where columns in $[0,1]^d$ of the constraint matrix are revealed sequentially, and the goal is to pick a subset of the columns that sum to at most $B$ in each coordinate while maximizing the objective. Excellent results are known in the secretary setting, where the columns are adversarially chosen, but presented in a uniformly random order. However, these existing algorithms are susceptible to adversarial attacks: they try to "learn" characteristics of a good solution, but tend to over-fit to the model, and hence a small number of adversarial corruptions can cause the algorithm to fail. In this paper, we give the first robust algorithms for Packing Integer Programs, specifically in the recently proposed Byzantine Secretary framework. Our techniques are based on a two-level use of online learning, to robustly learn an approximation to the optimal value, and then to use this robust estimate to pick a good solution. These techniques are general and we use them to design robust algorithms for PIPs in the prophet model as well, specifically in the Prophet-with-Augmentations framework. We also improve known results in the Byzantine Secretary framework: we make the non-constructive results algorithmic and improve the existing bounds for single-item and matroid constraints.
+                </div>
+                <a href="papers/2112.12920v1.pdf" class="paper-link" target="_blank">Leer PDF Local</a>
+                <a href="https://arxiv.org/pdf/2112.12920v1.pdf" class="paper-link" target="_blank" style="background-color: #7f8c8d; margin-left: 10px;">Ver en arXiv</a>
+                <button class="paper-link bibtex-toggle" style="margin-left: 10px;" onclick="toggleBibtex('bibtex-31')">Mostrar BibTeX</button>
+                
+                <div id="bibtex-31" class="bibtex-container">@article{Argue2021robust,
+  title={Robust Secretary and Prophet Algorithms for Packing Integer Programs},
+  author={C. J. Argue and Anupam Gupta and Marco Molinaro and Sahil Singla},
+  journal={arXiv preprint arXiv:2112.12920},
+  year={2021}
+}</div>
+            </div>
+
+            <div class="paper-card">
+                <h3 class="paper-title">33. Free-order secretary for two-sided independence systems</h3>
+                <div class="paper-authors">Por: Kristóf Bérczi, Vasilis Livanos, José A. Soto, Victor Verdugo</div>
+                <div class="paper-summary">
+                    <strong>Resumen:</strong> The Matroid Secretary Problem is a central question in online optimization, modeling sequential decision-making under combinatorial constraints. We introduce a bipartite graph framework that unifies and extends several known formulations, including the bipartite matching, matroid intersection, and random-order matroid secretary problems. In this model, elements form a bipartite graph between agents and items, and the objective is to select a matching that satisfies feasibility constraints on both sides, given by two independence systems. We study the free-order setting, where the algorithm may adaptively choose the next element to reveal. For $k$-matroid intersection, we leverage a core lemma by (Feldman, Svensson and Zenklusen, 2022) to design an $Ω(1/k^2)$-competitive algorithm, extending known results for single matroids. Building on this, we identify the structural property underlying our approach and introduce $k$-growth systems. We establish a generalized core lemma for $k$-growth systems, showing that a suitably defined set of critical elements retains a $Ω(1/k^2)$ fraction of the optimal weight. Using this lemma, we extend our $Ω(1/k^2)$-competitive algorithm to $k$-growth systems for the edge-arrival model. We then study the agent-arrival model, which presents unique challenges to our framework. We extend the core lemma to this model and then apply it to obtain an $Ω(β/k^2)$-competitive algorithm for $k$-growth systems, where $β$ denotes the competitiveness of a special type of order-oblivious algorithm for the item-side constraint. Finally, we relax the matching assumption and extend our results to the case of multiple item selection, where agents have individual independence systems coupled by a global item-side constraint. We obtain constant-competitive algorithms for fundamental cases such as partition matroids and $k$-matching constraints.
+                </div>
+                <a href="papers/2511.04390v1.pdf" class="paper-link" target="_blank">Leer PDF Local</a>
+                <a href="https://arxiv.org/pdf/2511.04390v1.pdf" class="paper-link" target="_blank" style="background-color: #7f8c8d; margin-left: 10px;">Ver en arXiv</a>
+                <button class="paper-link bibtex-toggle" style="margin-left: 10px;" onclick="toggleBibtex('bibtex-32')">Mostrar BibTeX</button>
+                
+                <div id="bibtex-32" class="bibtex-container">@article{Brczi2025freeorder,
+  title={Free-order secretary for two-sided independence systems},
+  author={Kristóf Bérczi and Vasilis Livanos and José A. Soto and Victor Verdugo},
+  journal={arXiv preprint arXiv:2511.04390},
+  year={2025}
+}</div>
+            </div>
+
+            <div class="paper-card">
+                <h3 class="paper-title">34. Sample-Based Matroid Prophet Inequalities</h3>
+                <div class="paper-authors">Por: Hu Fu, Pinyan Lu, Zhihao Gavin Tang, Hongxun Wu, Jinzhao Wu, Qianfan Zhang</div>
+                <div class="paper-summary">
+                    <strong>Resumen:</strong> We study matroid prophet inequalities when distributions are unknown and accessible only through samples. While single-sample prophet inequalities for special matroids are known, no constant-factor competitive algorithm with even a sublinear number of samples was known for general matroids. Adding more to the stake, the single-sample version of the question for general matroids has close (two-way) connections with the long-standing matroid secretary conjecture. In this work, we give a $(\frac14 - \varepsilon)$-competitive matroid prophet inequality with only $O_\varepsilon(\mathrm{poly} \log n)$ samples. Our algorithm consists of two parts: (i) a novel quantile-based reduction from matroid prophet inequalities to online contention resolution schemes (OCRSs) with $O_\varepsilon(\log n)$ samples, and (ii) a $(\frac14 - \varepsilon)$-selectable matroid OCRS with $O_\varepsilon(\mathrm{poly} \log n)$ samples which carefully addresses an adaptivity challenge.
+                </div>
+                <a href="papers/2406.12799v1.pdf" class="paper-link" target="_blank">Leer PDF Local</a>
+                <a href="https://arxiv.org/pdf/2406.12799v1.pdf" class="paper-link" target="_blank" style="background-color: #7f8c8d; margin-left: 10px;">Ver en arXiv</a>
+                <button class="paper-link bibtex-toggle" style="margin-left: 10px;" onclick="toggleBibtex('bibtex-33')">Mostrar BibTeX</button>
+                
+                <div id="bibtex-33" class="bibtex-container">@article{Fu2024samplebased,
+  title={Sample-Based Matroid Prophet Inequalities},
+  author={Hu Fu and Pinyan Lu and Zhihao Gavin Tang and Hongxun Wu and Jinzhao Wu and Qianfan Zhang},
+  journal={arXiv preprint arXiv:2406.12799},
+  year={2024}
+}</div>
+            </div>
+
+            <div class="paper-card">
+                <h3 class="paper-title">35. Constrained Non-Monotone Submodular Maximization: Offline and Secretary Algorithms</h3>
+                <div class="paper-authors">Por: Anupam Gupta, Aaron Roth, Grant Schoenebeck, Kunal Talwar</div>
+                <div class="paper-summary">
+                    <strong>Resumen:</strong> Constrained submodular maximization problems have long been studied, with near-optimal results known under a variety of constraints when the submodular function is monotone. The case of non-monotone submodular maximization is less understood: the first approximation algorithms even for the unconstrainted setting were given by Feige et al. (FOCS '07). More recently, Lee et al. (STOC '09, APPROX '09) show how to approximately maximize non-monotone submodular functions when the constraints are given by the intersection of p matroid constraints; their algorithm is based on local-search procedures that consider p-swaps, and hence the running time may be n^Omega(p), implying their algorithm is polynomial-time only for constantly many matroids. In this paper, we give algorithms that work for p-independence systems (which generalize constraints given by the intersection of p matroids), where the running time is poly(n,p). Our algorithm essentially reduces the non-monotone maximization problem to multiple runs of the greedy algorithm previously used in the monotone case. Our idea of using existing algorithms for monotone functions to solve the non-monotone case also works for maximizing a submodular function with respect to a knapsack constraint: we get a simple greedy-based constant-factor approximation for this problem. With these simpler algorithms, we are able to adapt our approach to constrained non-monotone submodular maximization to the (online) secretary setting, where elements arrive one at a time in random order, and the algorithm must make irrevocable decisions about whether or not to select each element as it arrives. We give constant approximations in this secretary setting when the algorithm is constrained subject to a uniform matroid or a partition matroid, and give an O(log k) approximation when it is constrained by a general matroid of rank k.
+                </div>
+                <a href="papers/1003.1517v2.pdf" class="paper-link" target="_blank">Leer PDF Local</a>
+                <a href="https://arxiv.org/pdf/1003.1517v2.pdf" class="paper-link" target="_blank" style="background-color: #7f8c8d; margin-left: 10px;">Ver en arXiv</a>
+                <button class="paper-link bibtex-toggle" style="margin-left: 10px;" onclick="toggleBibtex('bibtex-34')">Mostrar BibTeX</button>
+                
+                <div id="bibtex-34" class="bibtex-container">@article{Gupta2010constrained,
+  title={Constrained Non-Monotone Submodular Maximization: Offline and Secretary Algorithms},
+  author={Anupam Gupta and Aaron Roth and Grant Schoenebeck and Kunal Talwar},
+  journal={arXiv preprint arXiv:1003.1517},
+  year={2010}
+}</div>
+            </div>
+
+            <div class="paper-card">
+                <h3 class="paper-title">36. Secretary and Online Matching Problems with Machine Learned Advice</h3>
+                <div class="paper-authors">Por: Antonios Antoniadis, Themis Gouleakis, Pieter Kleer, Pavel Kolev</div>
+                <div class="paper-summary">
+                    <strong>Resumen:</strong> The classical analysis of online algorithms, due to its worst-case nature, can be quite pessimistic when the input instance at hand is far from worst-case. Often this is not an issue with machine learning approaches, which shine in exploiting patterns in past inputs in order to predict the future. However, such predictions, although usually accurate, can be arbitrarily poor. Inspired by a recent line of work, we augment three well-known online settings with machine learned predictions about the future, and develop algorithms that take them into account. In particular, we study the following online selection problems: (i) the classical secretary problem, (ii) online bipartite matching and (iii) the graphic matroid secretary problem. Our algorithms still come with a worst-case performance guarantee in the case that predictions are subpar while obtaining an improved competitive ratio (over the best-known classical online algorithm for each problem) when the predictions are sufficiently accurate. For each algorithm, we establish a trade-off between the competitive ratios obtained in the two respective cases.
+                </div>
+                <a href="papers/2006.01026v2.pdf" class="paper-link" target="_blank">Leer PDF Local</a>
+                <a href="https://arxiv.org/pdf/2006.01026v2.pdf" class="paper-link" target="_blank" style="background-color: #7f8c8d; margin-left: 10px;">Ver en arXiv</a>
+                <button class="paper-link bibtex-toggle" style="margin-left: 10px;" onclick="toggleBibtex('bibtex-35')">Mostrar BibTeX</button>
+                
+                <div id="bibtex-35" class="bibtex-container">@article{Antoniadis2020secretary,
+  title={Secretary and Online Matching Problems with Machine Learned Advice},
+  author={Antonios Antoniadis and Themis Gouleakis and Pieter Kleer and Pavel Kolev},
+  journal={arXiv preprint arXiv:2006.01026},
+  year={2020}
+}</div>
+            </div>
+
+            <div class="paper-card">
+                <h3 class="paper-title">37. Building a Good Team: Secretary Problems and the Supermodular Degree</h3>
+                <div class="paper-authors">Por: Moran Feldman, Rani Izsak</div>
+                <div class="paper-summary">
+                    <strong>Resumen:</strong> In the Secretary Problem, one has to hire the best among n candidates. The candidates are interviewed, one at a time, at a random order, and one has to decide on the spot, whether to hire a candidate or continue interviewing. It is well known that the best candidate can be hired with a probability of 1/e (Dynkin, 1963). Recent works extend this problem to settings in which multiple candidates can be hired, subject to some constraint. Here, one wishes to hire a set of candidates maximizing a given set function. Almost all extensions considered in the literature assume the objective set function is either linear or submodular. Unfortunately, real world functions might not have either of these properties. Consider, for example, a scenario where one hires researchers for a project. Indeed, it can be that some researchers can substitute others for that matter. However, it can also be that some combinations of researchers result in synergy (see, e.g, Woolley et al., Science 2010, for a research about collective intelligence). The first phenomenon can be modeled by a submoudlar set function, while the latter cannot. In this work, we study the secretary problem with an arbitrary non-negative monotone function, subject to a general matroid constraint. It is not difficult to prove that, generally, only very poor results can be obtained for this class of objective functions. We tackle this hardness by combining the following: 1.Parametrizing our algorithms by the supermodular degree of the objective function (defined by Feige and Izsak, ITCS 2013), which, roughly speaking, measures the distance of a function from being submodular. 2.Suggesting an (arguably) natural model that permits approximation guarantees that are polynomial in the supermodular degree (as opposed to the standard model which allows only exponential guarantees).
+                </div>
+                <a href="papers/1507.06199v1.pdf" class="paper-link" target="_blank">Leer PDF Local</a>
+                <a href="https://arxiv.org/pdf/1507.06199v1.pdf" class="paper-link" target="_blank" style="background-color: #7f8c8d; margin-left: 10px;">Ver en arXiv</a>
+                <button class="paper-link bibtex-toggle" style="margin-left: 10px;" onclick="toggleBibtex('bibtex-36')">Mostrar BibTeX</button>
+                
+                <div id="bibtex-36" class="bibtex-container">@article{Feldman2015building,
+  title={Building a Good Team: Secretary Problems and the Supermodular Degree},
+  author={Moran Feldman and Rani Izsak},
+  journal={arXiv preprint arXiv:1507.06199},
+  year={2015}
+}</div>
+            </div>
+
+            <div class="paper-card">
+                <h3 class="paper-title">38. Packing Returning Secretaries</h3>
+                <div class="paper-authors">Por: Martin Hoefer, Lisa Wilhelmi</div>
+                <div class="paper-summary">
+                    <strong>Resumen:</strong> We study online secretary problems with returns in combinatorial packing domains with $n$ candidates that arrive sequentially over time in random order. The goal is to accept a feasible packing of candidates of maximum total value. In the first variant, each candidate arrives exactly twice. All $2n$ arrivals occur in random order. We propose a simple 0.5-competitive algorithm that can be combined with arbitrary approximation algorithms for the packing domain, even when the total value of candidates is a subadditive function. For bipartite matching, we obtain an algorithm with competitive ratio at least $0.5721 - o(1)$ for growing $n$, and an algorithm with ratio at least $0.5459$ for all $n \ge 1$. We extend all algorithms and ratios to $k \ge 2$ arrivals per candidate. In the second variant, there is a pool of undecided candidates. In each round, a random candidate from the pool arrives. Upon arrival a candidate can be either decided (accept/reject) or postponed (returned into the pool). We mainly focus on minimizing the expected number of postponements when computing an optimal solution. An expected number of $Θ(n \log n)$ is always sufficient. For matroids, we show that the expected number can be reduced to $O(r \log (n/r))$, where $r \le n/2$ is the minimum of the ranks of matroid and dual matroid. For bipartite matching, we show a bound of $O(r \log n)$, where $r$ is the size of the optimum matching. For general packing, we show a lower bound of $Ω(n \log \log n)$, even when the size of the optimum is $r = Θ(\log n)$.
+                </div>
+                <a href="papers/1810.11216v2.pdf" class="paper-link" target="_blank">Leer PDF Local</a>
+                <a href="https://arxiv.org/pdf/1810.11216v2.pdf" class="paper-link" target="_blank" style="background-color: #7f8c8d; margin-left: 10px;">Ver en arXiv</a>
+                <button class="paper-link bibtex-toggle" style="margin-left: 10px;" onclick="toggleBibtex('bibtex-37')">Mostrar BibTeX</button>
+                
+                <div id="bibtex-37" class="bibtex-container">@article{Hoefer2018packing,
+  title={Packing Returning Secretaries},
+  author={Martin Hoefer and Lisa Wilhelmi},
+  journal={arXiv preprint arXiv:1810.11216},
+  year={2018}
+}</div>
+            </div>
+
+            <div class="paper-card">
+                <h3 class="paper-title">39. Simple Random Order Contention Resolution for Graphic Matroids with Almost no Prior Information</h3>
+                <div class="paper-authors">Por: Richard Santiago, Ivan Sergeev, Rico Zenklusen</div>
+                <div class="paper-summary">
+                    <strong>Resumen:</strong> Random order online contention resolution schemes (ROCRS) are structured online rounding algorithms with numerous applications and links to other well-known online selection problems, like the matroid secretary conjecture. We are interested in ROCRS subject to a matroid constraint, which is among the most studied constraint families. Previous ROCRS required to know upfront the full fractional point to be rounded as well as the matroid. It is unclear to what extent this is necessary. Fu, Lu, Tang, Turkieltaub, Wu, Wu, and Zhang (SOSA 2022) shed some light on this question by proving that no strong (constant-selectable) online or even offline contention resolution scheme exists if the fractional point is unknown, not even for graphic matroids. In contrast, we show, in a setting with slightly more knowledge and where the fractional point reveals one by one, that there is hope to obtain strong ROCRS by providing a simple constant-selectable ROCRS for graphic matroids that only requires to know the size of the ground set in advance. Moreover, our procedure holds in the more general adversarial order with a sample setting, where, after sampling a random constant fraction of the elements, all remaining (non-sampled) elements may come in adversarial order.
+                </div>
+                <a href="papers/2211.15146v1.pdf" class="paper-link" target="_blank">Leer PDF Local</a>
+                <a href="https://arxiv.org/pdf/2211.15146v1.pdf" class="paper-link" target="_blank" style="background-color: #7f8c8d; margin-left: 10px;">Ver en arXiv</a>
+                <button class="paper-link bibtex-toggle" style="margin-left: 10px;" onclick="toggleBibtex('bibtex-38')">Mostrar BibTeX</button>
+                
+                <div id="bibtex-38" class="bibtex-container">@article{Santiago2022simple,
+  title={Simple Random Order Contention Resolution for Graphic Matroids with Almost no Prior Information},
+  author={Richard Santiago and Ivan Sergeev and Rico Zenklusen},
+  journal={arXiv preprint arXiv:2211.15146},
+  year={2022}
+}</div>
+            </div>
+
+            <div class="paper-card">
+                <h3 class="paper-title">40. Universal Online Contention Resolution with Preselected Order</h3>
+                <div class="paper-authors">Por: Junyao Zhao</div>
+                <div class="paper-summary">
+                    <strong>Resumen:</strong> Online contention resolution scheme (OCRS) is a powerful technique for online decision making, which--in the case of matroids--given a matroid and a prior distribution of active elements, selects a subset of active elements that satisfies the matroid constraint in an online fashion. OCRS has been studied mostly for product distributions in the literature. Recently, universal OCRS, that works even for correlated distributions, has gained interest, because it naturally generalizes the classic notion, and its existence in the random-order arrival model turns out to be equivalent to the matroid secretary conjecture. However, currently very little is known about how to design universal OCRSs for any arrival model. In this work, we consider a natural and relatively flexible arrival model, where the OCRS is allowed to preselect (i.e., non-adaptively select) the arrival order of the elements, and within this model, we design simple and optimal universal OCRSs that are computationally efficient. In the course of deriving our OCRSs, we also discover an efficient reduction from universal online contention resolution to the matroid secretary problem for any arrival model, answering a question from Dughmi (2020).
+                </div>
+                <a href="papers/2504.16327v1.pdf" class="paper-link" target="_blank">Leer PDF Local</a>
+                <a href="https://arxiv.org/pdf/2504.16327v1.pdf" class="paper-link" target="_blank" style="background-color: #7f8c8d; margin-left: 10px;">Ver en arXiv</a>
+                <button class="paper-link bibtex-toggle" style="margin-left: 10px;" onclick="toggleBibtex('bibtex-39')">Mostrar BibTeX</button>
+                
+                <div id="bibtex-39" class="bibtex-container">@article{Zhao2025universal,
+  title={Universal Online Contention Resolution with Preselected Order},
+  author={Junyao Zhao},
+  journal={arXiv preprint arXiv:2504.16327},
+  year={2025}
+}</div>
+            </div>
+
+            <div class="paper-card">
+                <h3 class="paper-title">41. Maximizing Profit with Convex Costs in the Random-order Model</h3>
+                <div class="paper-authors">Por: Anupam Gupta, Ruta Mehta, Marco Molinaro</div>
+                <div class="paper-summary">
+                    <strong>Resumen:</strong> Suppose a set of requests arrives online: each request gives some value $v_i$ if accepted, but requires using some amount of each of $d$ resources. Our cost is a convex function of the vector of total utilization of these $d$ resources. Which requests should be accept to maximize our profit, i.e., the sum of values of the accepted demands, minus the convex cost? We consider this problem in the random-order a.k.a. secretary model, and show an $O(d)$-competitive algorithm for the case where the convex cost function is also supermodular. If the set of accepted demands must also be independent in a given matroid, we give an $O(d^3 α)$-competitive algorithm for the supermodular case, and an improved $O(d^2α)$ if the convex cost function is also separable. Here $α$ is the competitive ratio of the best algorithm for the submodular secretary problem. These extend and improve previous results known for this problem. Our techniques are simple but use powerful ideas from convex duality, which give clean interpretations of existing work, and allow us to give the extensions and improvements.
+                </div>
+                <a href="papers/1804.08172v1.pdf" class="paper-link" target="_blank">Leer PDF Local</a>
+                <a href="https://arxiv.org/pdf/1804.08172v1.pdf" class="paper-link" target="_blank" style="background-color: #7f8c8d; margin-left: 10px;">Ver en arXiv</a>
+                <button class="paper-link bibtex-toggle" style="margin-left: 10px;" onclick="toggleBibtex('bibtex-40')">Mostrar BibTeX</button>
+                
+                <div id="bibtex-40" class="bibtex-container">@article{Gupta2018maximizing,
+  title={Maximizing Profit with Convex Costs in the Random-order Model},
+  author={Anupam Gupta and Ruta Mehta and Marco Molinaro},
+  journal={arXiv preprint arXiv:1804.08172},
+  year={2018}
+}</div>
+            </div>
+
+            <div class="paper-card">
+                <h3 class="paper-title">42. Single-Sample Prophet Inequalities Revisited</h3>
+                <div class="paper-authors">Por: Constantine Caramanis, Matthew Faw, Orestis Papadigenopoulos, Emmanouil Pountourakis</div>
+                <div class="paper-summary">
+                    <strong>Resumen:</strong> The study of the prophet inequality problem in the limited information regime was initiated by Azar et al. [SODA'14] in the pursuit of prior-independent posted-price mechanisms. As they show, $O(1)$-competitive policies are achievable using only a single sample from the distribution of each agent. A notable portion of their results relies on reducing the design of single-sample prophet inequalities (SSPIs) to that of order-oblivious secretary (OOS) policies. The above reduction comes at the cost of not fully utilizing the available samples. However, to date, this is essentially the only method for proving SSPIs for many combinatorial sets. Very recently, Rubinstein et al. [ITCS'20] give a surprisingly simple algorithm which achieves the optimal competitive ratio for the single-choice SSPI problem $-$ a result which is unobtainable going through the reduction to secretary problems. Motivated by this discrepancy, we study the competitiveness of simple SSPI policies directly, without appealing to results from OOS literature. In this direction, we first develop a framework for analyzing policies against a greedy-like prophet solution. Using this framework, we obtain the first SSPI for general (non-bipartite) matching environments, as well as improved competitive ratios for transversal and truncated partition matroids. Second, motivated by the observation that many OOS policies for matroids decompose the problem into independent rank-$1$ instances, we provide a meta-theorem which applies to any matroid satisfying this partition property. Leveraging the recent results by Rubinstein et al., we obtain improved competitive guarantees (most by a factor of $2$) for a number of matroids captured by the reduction of Azar et al. Finally, we discuss applications of our SSPIs to the design of mechanisms for multi-dimensional limited information settings with improved revenue and welfare guarantees.
+                </div>
+                <a href="papers/2103.13089v2.pdf" class="paper-link" target="_blank">Leer PDF Local</a>
+                <a href="https://arxiv.org/pdf/2103.13089v2.pdf" class="paper-link" target="_blank" style="background-color: #7f8c8d; margin-left: 10px;">Ver en arXiv</a>
+                <button class="paper-link bibtex-toggle" style="margin-left: 10px;" onclick="toggleBibtex('bibtex-41')">Mostrar BibTeX</button>
+                
+                <div id="bibtex-41" class="bibtex-container">@article{Caramanis2021singlesample,
+  title={Single-Sample Prophet Inequalities Revisited},
+  author={Constantine Caramanis and Matthew Faw and Orestis Papadigenopoulos and Emmanouil Pountourakis},
+  journal={arXiv preprint arXiv:2103.13089},
+  year={2021}
+}</div>
+            </div>
+
+            <div class="paper-card">
+                <h3 class="paper-title">43. Online Ordinal Problems: Optimality of Comparison-based Algorithms and their Cardinal Complexity</h3>
+                <div class="paper-authors">Por: Nick Gravin, Enze Sun, Zhihao Gavin Tang</div>
+                <div class="paper-summary">
+                    <strong>Resumen:</strong> We consider ordinal online problems, i.e., tasks that only require pairwise comparisons between elements of the input. A classic example is the secretary problem and the game of googol, as well as its multiple combinatorial extensions such as $(J,K)$-secretary, $2$-sided game of googol, ordinal-competitive matroid secretary. A natural approach to these tasks is to use ordinal algorithms that at each step only consider relative ranking among the arrived elements, without looking at the numerical values of the input. We formally study the question of how cardinal algorithms can improve upon ordinal algorithms. We give first a universal construction of the input distribution for any ordinal online problem, such that the advantage of any cardinal algorithm over the ordinal algorithms is at most $1+\varepsilon$ for arbitrary small $\varepsilon> 0$. As an implication, previous lower bounds for the aforementioned variants of secretary problems hold not only against ordinal algorithms, but also against any online algorithm. However, the value range of the input elements in our construction is huge: $N=O\left(\frac{n^3\cdot n!\cdot n!}{\varepsilon}\right)\uparrow\uparrow(n-1)$ (tower of exponents) for an input sequence of length $n$. As a second result, we identify a class of natural ordinal problems and find cardinal algorithm with a matching advantage of $1+ Ω\left(\frac{1}{\log^{(c)}N}\right),$ where $\log^{(c)}N=\log\ldots\log N$ with $c$ iterative logs and $c$ is an arbitrary constant. Further, we introduce the cardinal complexity for any given ordinal online task: the minimum size $N(\varepsilon)$ of different numerical values in the input such the advantage of cardinal over ordinal algorithms is at most $1+\varepsilon$. As a third result, we show that the game of googol has much lower cardinal complexity of $N=O\left(\left(\frac{n}{\varepsilon}\right)^n\right)$.
+                </div>
+                <a href="papers/2204.01418v3.pdf" class="paper-link" target="_blank">Leer PDF Local</a>
+                <a href="https://arxiv.org/pdf/2204.01418v3.pdf" class="paper-link" target="_blank" style="background-color: #7f8c8d; margin-left: 10px;">Ver en arXiv</a>
+                <button class="paper-link bibtex-toggle" style="margin-left: 10px;" onclick="toggleBibtex('bibtex-42')">Mostrar BibTeX</button>
+                
+                <div id="bibtex-42" class="bibtex-container">@article{Gravin2022online,
+  title={Online Ordinal Problems: Optimality of Comparison-based Algorithms and their Cardinal Complexity},
+  author={Nick Gravin and Enze Sun and Zhihao Gavin Tang},
+  journal={arXiv preprint arXiv:2204.01418},
+  year={2022}
+}</div>
+            </div>
+
+            <div class="paper-card">
+                <h3 class="paper-title">44. On Submodular Prophet Inequalities and Correlation Gap</h3>
+                <div class="paper-authors">Por: Chandra Chekuri, Vasilis Livanos</div>
+                <div class="paper-summary">
+                    <strong>Resumen:</strong> Prophet inequalities and secretary problems have been extensively studied in recent years due to their elegance, connections to online algorithms, stochastic optimization, and mechanism design problems in game theoretic settings. Rubinstein and Singla developed a notion of combinatorial prophet inequalities in order to generalize the standard prophet inequality setting to combinatorial valuation functions such as submodular and subadditive functions. For non-negative submodular functions they demonstrated a constant factor prophet inequality for matroid constraints. Along the way they showed a variant of the correlation gap for non-negative submodular functions. In this paper we revisit their notion of correlation gap as well as the standard notion of correlation gap and prove much tighter and cleaner bounds. Via these bounds and other insights we obtain substantially improved constant factor combinatorial prophet inequalities for both monotone and non-monotone submodular functions over any constraint that admits an Online Contention Resolution Scheme. In addition to improved bounds we describe efficient polynomial-time algorithms that achieve these bounds.
+                </div>
+                <a href="papers/2107.03662v1.pdf" class="paper-link" target="_blank">Leer PDF Local</a>
+                <a href="https://arxiv.org/pdf/2107.03662v1.pdf" class="paper-link" target="_blank" style="background-color: #7f8c8d; margin-left: 10px;">Ver en arXiv</a>
+                <button class="paper-link bibtex-toggle" style="margin-left: 10px;" onclick="toggleBibtex('bibtex-43')">Mostrar BibTeX</button>
+                
+                <div id="bibtex-43" class="bibtex-container">@article{Chekuri2021on,
+  title={On Submodular Prophet Inequalities and Correlation Gap},
+  author={Chandra Chekuri and Vasilis Livanos},
+  journal={arXiv preprint arXiv:2107.03662},
+  year={2021}
+}</div>
+            </div>
+
+            <div class="paper-card">
+                <h3 class="paper-title">45. Online Combinatorial Assignment in Independence Systems</h3>
+                <div class="paper-authors">Por: Javier Marinkovic, José A. Soto, Victor Verdugo</div>
+                <div class="paper-summary">
+                    <strong>Resumen:</strong> We consider an online multi-weighted generalization of several classic online optimization problems, called the online combinatorial assignment problem. We are given an independence system over a ground set of elements and agents that arrive online one by one. Upon arrival, each agent reveals a weight function over the elements of the ground set. If the independence system is given by the matchings of a hypergraph we recover the combinatorial auction problem, where every node represents an item to be sold, and every edge represents a bundle of items. For combinatorial auctions, Kesselheim et al. showed upper bounds of O(loglog(k)/log(k)) and $O(\log \log(n)/\log(n))$ on the competitiveness of any online algorithm, even in the random order model, where $k$ is the maximum bundle size and $n$ is the number of items. We provide an exponential improvement on these upper bounds to show that the competitiveness of any online algorithm in the prophet IID setting is upper bounded by $O(\log(k)/k)$, and $O(\log(n)/\sqrt{n})$. Furthermore, using linear programming, we provide new and improved guarantees for the $k$-bounded online combinatorial auction problem (i.e., bundles of size at most $k$). We show a $(1-e^{-k})/k$-competitive algorithm in the prophet IID model, a $1/(k+1)$-competitive algorithm in the prophet-secretary model using a single sample per agent, and a $k^{-k/(k-1)}$-competitive algorithm in the secretary model. Our algorithms run in polynomial time and work in more general independence systems where the offline combinatorial assignment problem admits the existence of a polynomial-time randomized algorithm that we call certificate sampler. We show that certificate samplers have a nice interplay with random order models, and we also provide new polynomial-time competitive algorithms for some classes of matroids, matroid intersections, and matchoids.
+                </div>
+                <a href="papers/2311.00890v1.pdf" class="paper-link" target="_blank">Leer PDF Local</a>
+                <a href="https://arxiv.org/pdf/2311.00890v1.pdf" class="paper-link" target="_blank" style="background-color: #7f8c8d; margin-left: 10px;">Ver en arXiv</a>
+                <button class="paper-link bibtex-toggle" style="margin-left: 10px;" onclick="toggleBibtex('bibtex-44')">Mostrar BibTeX</button>
+                
+                <div id="bibtex-44" class="bibtex-container">@article{Marinkovic2023online,
+  title={Online Combinatorial Assignment in Independence Systems},
+  author={Javier Marinkovic and José A. Soto and Victor Verdugo},
+  journal={arXiv preprint arXiv:2311.00890},
+  year={2023}
+}</div>
+            </div>
+
+            <div class="paper-card">
+                <h3 class="paper-title">46. Combinatorial Prophet Inequalities</h3>
+                <div class="paper-authors">Por: Aviad Rubinstein, Sahil Singla</div>
+                <div class="paper-summary">
+                    <strong>Resumen:</strong> We introduce a novel framework of Prophet Inequalities for combinatorial valuation functions. For a (non-monotone) submodular objective function over an arbitrary matroid feasibility constraint, we give an $O(1)$-competitive algorithm. For a monotone subadditive objective function over an arbitrary downward-closed feasibility constraint, we give an $O(\log n \log^2 r)$-competitive algorithm (where $r$ is the cardinality of the largest feasible subset). Inspired by the proof of our subadditive prophet inequality, we also obtain an $O(\log n \cdot \log^2 r)$-competitive algorithm for the Secretary Problem with a monotone subadditive objective function subject to an arbitrary downward-closed feasibility constraint. Even for the special case of a cardinality feasibility constraint, our algorithm circumvents an $Ω(\sqrt{n})$ lower bound by Bateni, Hajiaghayi, and Zadimoghaddam \cite{BHZ13-submodular-secretary_original} in a restricted query model. En route to our submodular prophet inequality, we prove a technical result of independent interest: we show a variant of the Correlation Gap Lemma for non-monotone submodular functions.
+                </div>
+                <a href="papers/1611.00665v1.pdf" class="paper-link" target="_blank">Leer PDF Local</a>
+                <a href="https://arxiv.org/pdf/1611.00665v1.pdf" class="paper-link" target="_blank" style="background-color: #7f8c8d; margin-left: 10px;">Ver en arXiv</a>
+                <button class="paper-link bibtex-toggle" style="margin-left: 10px;" onclick="toggleBibtex('bibtex-45')">Mostrar BibTeX</button>
+                
+                <div id="bibtex-45" class="bibtex-container">@article{Rubinstein2016combinatorial,
+  title={Combinatorial Prophet Inequalities},
+  author={Aviad Rubinstein and Sahil Singla},
+  journal={arXiv preprint arXiv:1611.00665},
+  year={2016}
+}</div>
+            </div>
+
+            <div class="paper-card">
+                <h3 class="paper-title">47. Single-Sample Prophet Inequalities via Greedy-Ordered Selection</h3>
+                <div class="paper-authors">Por: Constantine Caramanis, Paul Dütting, Matthew Faw, Federico Fusco, Philip Lazos, Stefano Leonardi, Orestis Papadigenopoulos, Emmanouil Pountourakis, Rebecca Reiffenhäuser</div>
+                <div class="paper-summary">
+                    <strong>Resumen:</strong> We study single-sample prophet inequalities (SSPIs), i.e., prophet inequalities where only a single sample from each prior distribution is available. Besides a direct, and optimal, SSPI for the basic single choice problem [Rubinstein et al., 2020], most existing SSPI results were obtained via an elegant, but inherently lossy, reduction to order-oblivious secretary (OOS) policies [Azar et al., 2014]. Motivated by this discrepancy, we develop an intuitive and versatile greedy-based technique that yields SSPIs directly rather than through the reduction to OOSs. Our results can be seen as generalizing and unifying a number of existing results in the area of prophet and secretary problems. Our algorithms significantly improve on the competitive guarantees for a number of interesting scenarios (including general matching with edge arrivals, bipartite matching with vertex arrivals, and certain matroids), and capture new settings (such as budget additive combinatorial auctions). Complementing our algorithmic results, we also consider mechanism design variants. Finally, we analyze the power and limitations of different SSPI approaches by providing a partial converse to the reduction from SSPI to OOS given by Azar et al.
+                </div>
+                <a href="papers/2111.03174v2.pdf" class="paper-link" target="_blank">Leer PDF Local</a>
+                <a href="https://arxiv.org/pdf/2111.03174v2.pdf" class="paper-link" target="_blank" style="background-color: #7f8c8d; margin-left: 10px;">Ver en arXiv</a>
+                <button class="paper-link bibtex-toggle" style="margin-left: 10px;" onclick="toggleBibtex('bibtex-46')">Mostrar BibTeX</button>
+                
+                <div id="bibtex-46" class="bibtex-container">@article{Caramanis2021singlesample,
+  title={Single-Sample Prophet Inequalities via Greedy-Ordered Selection},
+  author={Constantine Caramanis and Paul Dütting and Matthew Faw and Federico Fusco and Philip Lazos and Stefano Leonardi and Orestis Papadigenopoulos and Emmanouil Pountourakis and Rebecca Reiffenhäuser},
+  journal={arXiv preprint arXiv:2111.03174},
+  year={2021}
+}</div>
+            </div>
+
+            <div class="paper-card">
+                <h3 class="paper-title">48. Prophet Inequalities with Limited Information</h3>
+                <div class="paper-authors">Por: Pablo D. Azar, Robert Kleinberg, S. Matthew Weinberg</div>
+                <div class="paper-summary">
+                    <strong>Resumen:</strong> In the classical prophet inequality, a gambler observes a sequence of stochastic rewards $V_1,...,V_n$ and must decide, for each reward $V_i$, whether to keep it and stop the game or to forfeit the reward forever and reveal the next value $V_i$. The gambler's goal is to obtain a constant fraction of the expected reward that the optimal offline algorithm would get. Recently, prophet inequalities have been generalized to settings where the gambler can choose $k$ items, and, more generally, where he can choose any independent set in a matroid. However, all the existing algorithms require the gambler to know the distribution from which the rewards $V_1,...,V_n$ are drawn. The assumption that the gambler knows the distribution from which $V_1,...,V_n$ are drawn is very strong. Instead, we work with the much simpler assumption that the gambler only knows a few samples from this distribution. We construct the first single-sample prophet inequalities for many settings of interest, whose guarantees all match the best possible asymptotically, \emph{even with full knowledge of the distribution}. Specifically, we provide a novel single-sample algorithm when the gambler can choose any $k$ elements whose analysis is based on random walks with limited correlation. In addition, we provide a black-box method for converting specific types of solutions to the related \emph{secretary problem} to single-sample prophet inequalities, and apply it to several existing algorithms. Finally, we provide a constant-sample prophet inequality for constant-degree bipartite matchings. We apply these results to design the first posted-price and multi-dimensional auction mechanisms with limited information in settings with asymmetric bidders.
+                </div>
+                <a href="papers/1307.3736v1.pdf" class="paper-link" target="_blank">Leer PDF Local</a>
+                <a href="https://arxiv.org/pdf/1307.3736v1.pdf" class="paper-link" target="_blank" style="background-color: #7f8c8d; margin-left: 10px;">Ver en arXiv</a>
+                <button class="paper-link bibtex-toggle" style="margin-left: 10px;" onclick="toggleBibtex('bibtex-47')">Mostrar BibTeX</button>
+                
+                <div id="bibtex-47" class="bibtex-container">@article{Azar2013prophet,
+  title={Prophet Inequalities with Limited Information},
+  author={Pablo D. Azar and Robert Kleinberg and S. Matthew Weinberg},
+  journal={arXiv preprint arXiv:1307.3736},
+  year={2013}
+}</div>
+            </div>
+
+        </section>
+    </div>
+
+    <!-- Script for Tabs and BibTeX -->
+    <script>
+        function openTab(evt, tabId) {
+            var i, tabcontent, tablinks;
+            
+            // Hide all tab content
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+                tabcontent[i].className = tabcontent[i].className.replace(" active", "");
+            }
+            
+            // Remove active class from all buttons
+            tablinks = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            
+            // Show current tab and add active class to button
+            document.getElementById(tabId).style.display = "block";
+            document.getElementById(tabId).className += " active";
+            evt.currentTarget.className += " active";
+        }
+
+        function toggleBibtex(id) {
+            var el = document.getElementById(id);
+            if (el.style.display === "block") {
+                el.style.display = "none";
+            } else {
+                el.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
