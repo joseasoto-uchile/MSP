@@ -596,7 +596,8 @@ def generate_html(language="en"):
             else:
                 ref_html = entry['ref']
             
-            html += "                    <tr>\n"
+            row_class = "group-start" if i == 0 else ""
+            html += f"                    <tr class='{row_class}'>\n"
             if i == 0:
                 html += f"                        <td rowspan='{rowspan}' class='class-cell'>{group['class']}</td>\n"
             html += f"                        <td>{ref_html}</td>\n"
