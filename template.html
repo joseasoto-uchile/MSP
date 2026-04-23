@@ -9,8 +9,6 @@
     <meta property="og:type" content="website">
     <title>{title}</title>
     
-    <!-- MathJax for rendering LaTeX -->
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
     <style>
@@ -71,6 +69,7 @@
             text-decoration: underline;
             text-underline-offset: 4px;
             opacity: 1;
+            pointer-events: none;
         }
 
         h1 {
@@ -112,7 +111,7 @@
             padding: 1rem 1.5rem;
             font-size: 1.1rem;
             font-weight: 600;
-            color: #718096;
+            color: #4a5568;
             cursor: pointer;
             transition: all 0.2s;
             border-bottom: 3px solid transparent;
@@ -379,7 +378,7 @@
             text-align: center;
             padding: 2rem;
             margin-top: 3rem;
-            color: #718096;
+            color: #4a5568;
             font-size: 0.9rem;
         }
         footer p {

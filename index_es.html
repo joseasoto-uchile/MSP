@@ -9,8 +9,6 @@
     <meta property="og:type" content="website">
     <title>Survey on Matroid Secretary Problem</title>
     
-    <!-- MathJax for rendering LaTeX -->
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
     <style>
@@ -71,6 +69,7 @@
             text-decoration: underline;
             text-underline-offset: 4px;
             opacity: 1;
+            pointer-events: none;
         }
 
         h1 {
@@ -112,7 +111,7 @@
             padding: 1rem 1.5rem;
             font-size: 1.1rem;
             font-weight: 600;
-            color: #718096;
+            color: #4a5568;
             cursor: pointer;
             transition: all 0.2s;
             border-bottom: 3px solid transparent;
@@ -379,7 +378,7 @@
             text-align: center;
             padding: 2rem;
             margin-top: 3rem;
-            color: #718096;
+            color: #4a5568;
             font-size: 0.9rem;
         }
         footer p {
@@ -442,7 +441,7 @@
         <!-- Tab 2: Ratios Table -->
         <section id="ratios-table" class="tab-content" role="tabpanel" aria-labelledby="btn-ratios-table">
             <h2>Evolución Cronológica de Garantías Competitivas</h2>
-            <p>La siguiente tabla agrupa los resultados por clase de matroide, detallando la constante exacta o fórmula alcanzada por cada paper a lo largo de la historia. Todas las constantes han sido normalizadas para que <strong>valores $\le 1$ representen el factor de aproximación</strong> (es decir, $1/\alpha$ donde $\alpha$ es el ratio competitivo tradicional $\ge 1$). Se indica si la garantía es <strong>Probability-Competitive</strong> ($p$) o el tradicional <strong>Ratio de Utilidad</strong>.</p>
+            <p>La siguiente tabla agrupa los resultados por clase de matroide, detallando la constante exacta o fórmula alcanzada por cada paper a lo largo de la historia. Todas las constantes han sido normalizadas para que <strong>valores \( \le 1 \) representen el factor de aproximación</strong> (es decir, \( 1/\alpha \) donde \( \alpha \) es el ratio competitivo tradicional \( \ge 1 \)). Se indica si la garantía es <strong>Probability-Competitive</strong> (\( p \)) o el tradicional <strong>Ratio de Utilidad</strong>.</p>
             
             <div style="overflow-x: auto;">
                 <table>
