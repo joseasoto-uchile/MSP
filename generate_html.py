@@ -10,11 +10,11 @@ def generate_html(language="en"):
     # Translations
     t = {
         "title": "Survey on Matroid Secretary Problem",
-        "subtitle": "Lecture Notes, Extensive Competitive Ratios and Reading List" if is_en else "Notas de Clase, Tabla de Competitividades (Extensiva) y Lista de Lectura",
+        "subtitle": "Lecture Notes, Exhaustive Chronological Guarantees and Reading List" if is_en else "Notas de Clase, Evolución Cronológica y Lista de Lectura",
         "lang_en": "English",
         "lang_es": "Español",
         "tab_notes": "Lecture Notes" if is_en else "Notas de Clase",
-        "tab_ratios": "Extensive Ratios" if is_en else "Competitividades Extensivas",
+        "tab_ratios": "Chronological Bounds" if is_en else "Evolución de Competitividades",
         "tab_list": f"Reading List ({len(papers)})" if is_en else f"Lista de Lectura ({len(papers)})",
         "notes_title": "Lecture Notes",
         "matroids_title": "1. Matroids" if is_en else "1. Matroides",
@@ -33,14 +33,15 @@ def generate_html(language="en"):
         "dyn3": "An irrevocable and immediate decision must be made: accept or reject \\( e \\)." if is_en else "Se debe tomar una decisión irrevocable e inmediata: aceptar o rechazar \\( e \\).",
         "dyn4": "The set of accepted elements at any time must be an independent set \\( I \in \mathcal{I} \\)." if is_en else "El conjunto de elementos aceptados en cualquier momento debe ser un conjunto independiente \\( I \in \mathcal{I} \\).",
         "msp_obj": "<strong>Objective:</strong> Design an online algorithm that maximizes the expected value of the selected elements, compared to the maximum weight basis offline. The grand conjecture (Matroid Secretary Conjecture) states that there exists an algorithm with a constant competitive ratio \\( O(1) \\) for any matroid." if is_en else "<strong>Objetivo:</strong> Diseñar un algoritmo online que maximice el valor esperado de los elementos seleccionados, comparado con la base de peso máximo en offline. La gran conjetura (Matroid Secretary Conjecture) afirma que existe un algoritmo con un factor de competitividad constante \\( O(1) \\) para cualquier matroide.",
-        "ratios_title": "Competitive Ratios by Matroid Class and Model (Extensive)" if is_en else "Competitividades por Clase de Matroide y Modelo (Extensivo)",
-        "ratios_desc": "The following table consolidates the chronological evolution and the best-known results for various matroid classes, extracted exhaustively from current literature and our reading list." if is_en else "La siguiente tabla consolida la evolución cronológica y los mejores resultados conocidos para diversas clases de matroides, extraídos exhaustivamente de la literatura actual y de nuestra lista de lectura.",
-        "standard_model": "Standard Model (Zero Information, Random Order)" if is_en else "Modelo Estándar (Zero Information, Random Order)",
+        
+        "ratios_title": "Chronological Progression of Competitive Guarantees" if is_en else "Evolución Cronológica de Garantías Competitivas",
+        "ratios_desc": "The table below groups results by Matroid Class, detailing the exact constant or formula achieved by each paper historically. We note whether the guarantee is <strong>Probability-Competitive</strong> ($p$) or the traditional <strong>Utility-Competitive Ratio</strong> ($c \\ge 1$). Note that a $p$-probability-competitive algorithm implies a $1/p$ utility-competitive ratio." if is_en else "La siguiente tabla agrupa los resultados por clase de matroide, detallando la constante exacta o fórmula alcanzada por cada paper a lo largo de la historia. Se indica si la garantía es <strong>Probability-Competitive</strong> ($p$) o el tradicional <strong>Ratio Competitivo de Utilidad</strong> ($c \\ge 1$). Un algoritmo con probabilidad $p$ implica un ratio de utilidad de $1/p$.",
+        
         "th_class": "Matroid Class" if is_en else "Clase de Matroide",
-        "th_ratio": "Competitive Ratio / Guarantee" if is_en else "Ratio de Competitividad / Garantía",
-        "th_ref": "References and Evolution" if is_en else "Referencias y Evolución",
-        "other_models": "Other Models and Variants" if is_en else "Otros Modelos y Variantes",
-        "th_model": "Model / Variant" if is_en else "Modelo / Variante",
+        "th_ref": "Reference" if is_en else "Referencia",
+        "th_type": "Guarantee Type" if is_en else "Tipo de Garantía",
+        "th_guarantee": "Exact Constant / Bound" if is_en else "Constante / Cota Exacta",
+        
         "reading_title": "Reading List and Bibliography" if is_en else "Lista de Lectura y Bibliografía",
         "reading_desc": f"Below are <strong>{len(papers)}</strong> relevant articles on the Matroid Secretary Problem, including their export in <strong>BibTeX</strong>." if is_en else f"A continuación se presentan <strong>{len(papers)}</strong> artículos relevantes sobre el Problema de la Secretaria en Matroides, incluyendo su exportación en <strong>BibTeX</strong>.",
         "by": "By:" if is_en else "Por:",
@@ -50,28 +51,102 @@ def generate_html(language="en"):
         "show_bibtex": "Show BibTeX" if is_en else "Mostrar BibTeX"
     }
 
-    # Data for standard model table
-    std_data = [
-        ("General (Main Conjecture)" if is_en else "General (Conjetura Principal)", "\\( O(\\log \\log r) \\)", "BIK 2007 (\\( O(\\log r) \\)) &rarr; Chakraborty & Lachish 2012 (\\( O(\\sqrt{\\log r}) \\)) &rarr; Lachish 2014 / Feldman, Svensson, Zenklusen 2014 (\\( O(\\log \\log r) \\))."),
-        ("Uniform (Classic / K-Secretaries)" if is_en else "Uniforme (Clásico / K-Secretarias)", "\\( 1/e \\) (Success Prob.) / \\( 1-O(1/\\sqrt{k}) \\)" if is_en else "\\( 1/e \\) (Prob. Éxito) / \\( 1-O(1/\\sqrt{k}) \\)", "Dynkin (Classic); Kleinberg 2005 (1-O(1/\\(\\sqrt{k}\\))); Gujjar et al., 2025 (k-Fold)."),
-        ("Partition (Partition Matroid)" if is_en else "Partición (Partition Matroid)", f"Constant \\( 1-1/e \\)" if is_en else f"Constante \\( 1-1/e \\)", "Follows from classical, or \\( e/(e-1) \\) competitive." if is_en else "Directo del clásico, o \\( e/(e-1) \\) competitivo."),
-        ("Graphic" if is_en else "Gráfico", "\\( 3.95 \\) (and \\( 3.77 \\) for simple graphs)" if is_en else "\\( 3.95 \\) (y \\( 3.77 \\) para grafos simples)", "BIK 2007 (\\( 16 \\)) &rarr; Korula & Pál 2009 (\\( 2e \\approx 5.43 \\)) &rarr; Soto, Turkieltaub, Verdugo 2018 (\\( 4 \\)) &rarr; Banihashem et al. 2025 (\\( 3.95 \\))."),
-        ("Cographic" if is_en else "Cográfico", "\\( 3e \\approx 8.15 \\)", "Soto 2011."),
-        ("Laminar" if is_en else "Laminar", "\\( 4.75 \\)-competitive" if is_en else "\\( 4.75 \\)-competitivo", "Im & Wang 2011 (\\( 16000/3 \\)) &rarr; Jaillet, Soto, Zenklusen 2012 (\\( 3\\sqrt{3}e \\approx 14.12 \\)) &rarr; Huang, Parsaeian, Zhu 2023 (\\( 4.75 \\))."),
-        ("Transversal" if is_en else "Transversal", f"Constant \\( O(1) \\)" if is_en else f"Constante \\( O(1) \\)", "Dimand et al. 2006 / BIK 2007 (\\( 16 \\)); Ma, Tang, Wang 2011 (Constant also for submodular valuations)." if is_en else "Dimand et al. 2006 / BIK 2007 (\\( 16 \\)); Ma, Tang, Wang 2011 (Constante también para valoraciones submodulares)."),
-        ("Regular & Max-Flow Min-Cut" if is_en else "Regular y Max-Flow Min-Cut", f"Constant \\( O(1) \\)" if is_en else f"Constante \\( O(1) \\)", "Dinitz & Kortsarz 2012 (Via Seymour's decomposition)." if is_en else "Dinitz & Kortsarz 2012 (Por descomposición de Seymour)."),
-        ("Truncated Matroids" if is_en else "Truncado (Truncated Matroids)", f"Preserves \\( O(1) \\)" if is_en else f"Conserva \\( O(1) \\)", "If \\( M \\) admits a \\( c \\)-competitive algorithm, its truncation to rank \\( k \\) admits an \\( O(c) \\)-competitive one (Soto 2011)." if is_en else "Si \\( M \\) admite un algoritmo \\( c \\)-competitivo, su truncamiento a rango \\( k \\) admite uno \\( O(c) \\)-competitivo (Soto 2011)."),
-        ("K-Column Sparse Linear" if is_en else "K-Column Sparse Linear", "\\( k \\cdot e \\)", "Soto 2011."),
-        ("Paving & Almost All Matroids" if is_en else "Paving y Casi Todos los Matroides", "\\( 2+o(1) \\)", "Huynh & Nelson 2016 (For almost all representable matroids. Conjectured to include paving)." if is_en else "Huynh & Nelson 2016 (Para casi todos los matroides representables. Conjeturan incluir los paving)."),
-        ("Matroid Intersection" if is_en else "Intersección de Matroides", "\\( O(1) \\) (If number of matroids is constant)" if is_en else "\\( O(1) \\) (Si el número de matroides es constante)", "Feldman, Svensson, Zenklusen 2017.")
-    ]
-    
-    # Data for other models
-    other_data = [
-        ("Random Assignment", "General", f"Constant \\( O(1) \\) (approx. \\( 8.54 \\))" if is_en else f"Constante \\( O(1) \\) (aprox. \\( 8.54 \\))", "Soto 2011 (Knowing the matroid); Santiago, Sergeev, Zenklusen 2023 (Constant even without knowing the matroid)." if is_en else "Soto 2011 (Conociendo el matroide); Santiago, Sergeev, Zenklusen 2023 (Constante incluso sin conocer el matroide)."),
-        ("Free Order", "General", "\\( 9 \\)-competitive" if is_en else "\\( 9 \\)-competitivo", "Jaillet, Soto, Zenklusen 2012. The algorithm chooses the interview order." if is_en else "Jaillet, Soto, Zenklusen 2012. El algoritmo elige el orden de las entrevistas."),
-        ("Submodular Valuation" if is_en else "Valoración Submodular", "General", "Requires Shortlists or Restrictions" if is_en else "Requiere Shortlists o Restricciones", "Shadravan 2020 (Shortlists proportional to the rank achieve constant ratios)." if is_en else "Shadravan 2020 (Shortlists proporcionales al rango logran ratios constantes)."),
-        ("Independence Systems (Downward Closed)" if is_en else "Sistemas de Independencia (Downward Closed)", "Independence Systems" if is_en else "Sistemas de Independencia", "\\( O(\\log n \\log r) \\)", "Rubinstein 2016 (Approximation for restrictions more general than matroids)." if is_en else "Rubinstein 2016 (Aproximación para restricciones más generales que los matroides).")
+    # Data structure grouped by class
+    # Type: 'Prob' (probability-competitive) or 'Util' (utility-competitive ratio >= 1)
+    table_data = [
+        {
+            "class": "Graphic",
+            "entries": [
+                {"ref": "Babaioff, Immorlica, Kleinberg (2007)", "type": "Util", "val": "\\( 16 \\)"},
+                {"ref": "Korula & Pál (2009)", "type": "Util", "val": "\\( 2e \\approx 5.43 \\)"},
+                {"ref": "Soto, Turkieltaub, Verdugo (2018/2021)", "type": "Prob", "val": "\\( 1/4 = 0.25 \\)"},
+                {"ref": "Bérczi, Livanos, Soto, Verdugo (2025)", "type": "Prob", "val": "\\( 0.2504 \\) (Gen) / \\( 0.2693 \\) (Simple)"},
+                {"ref": "Banihashem et al. (2025)", "type": "Util", "val": "\\( 3.95 \\) (Gen) / \\( 3.77 \\) (Simple)"}
+            ]
+        },
+        {
+            "class": "Laminar",
+            "entries": [
+                {"ref": "Im & Wang (2011)", "type": "Util", "val": "\\( 16000/3 \\approx 5333 \\)"},
+                {"ref": "Jaillet, Soto, Zenklusen (2012)", "type": "Util", "val": "\\( 3\\sqrt{3}e \\approx 14.12 \\)"},
+                {"ref": "Soto, Turkieltaub, Verdugo (2018/2021)", "type": "Prob", "val": "\\( \\frac{1}{3\\sqrt{3}} \\approx 0.192 \\)"},
+                {"ref": "Huang, Parsaeian, Zhu (2023)", "type": "Util", "val": "\\( 4.75 \\)"},
+                {"ref": "Bérczi, Livanos, Soto, Verdugo (2025)", "type": "Prob", "val": "\\( 1 - \\ln(2) \\approx 0.3068 \\)"}
+            ]
+        },
+        {
+            "class": "Transversal",
+            "entries": [
+                {"ref": "Dimand et al. (2006) / BIK (2007)", "type": "Util", "val": "\\( 16 \\)"},
+                {"ref": "Ma, Tang, Wang (2011)", "type": "Util", "val": "\\( O(1) \\) (Submodular)"}
+            ]
+        },
+        {
+            "class": "Rank-2 Matroids",
+            "entries": [
+                {"ref": "Bérczi, Livanos, Soto, Verdugo (2025)", "type": "Prob", "val": "\\( 0.3462 \\)"}
+            ]
+        },
+        {
+            "class": "Cographic",
+            "entries": [
+                {"ref": "Soto (2011)", "type": "Util", "val": "\\( 3e \\approx 8.15 \\)"}
+            ]
+        },
+        {
+            "class": "Uniform",
+            "entries": [
+                {"ref": "Dynkin (1963)", "type": "Prob", "val": "\\( 1/e \\)"},
+                {"ref": "Kleinberg (2005) / Soto et al. (2021)", "type": "Prob", "val": "\\( 1 - O(\\sqrt{\\frac{\\log \\rho}{\\rho}}) \\)"},
+                {"ref": "Gujjar et al. (2025)", "type": "Prob", "val": "\\( 1 - O(\\sqrt{\\frac{\\log(n)}{k}}) \\) (k-Fold)"}
+            ]
+        },
+        {
+            "class": "Partition",
+            "entries": [
+                {"ref": "Folklore", "type": "Prob", "val": "\\( 1 - 1/e \\)"}
+            ]
+        },
+        {
+            "class": "Regular & Max-Flow Min-Cut",
+            "entries": [
+                {"ref": "Dinitz & Kortsarz (2012)", "type": "Util", "val": "\\( O(1) \\)"}
+            ]
+        },
+        {
+            "class": "K-Column Sparse Linear",
+            "entries": [
+                {"ref": "Soto (2011)", "type": "Util", "val": "\\( k \\cdot e \\)"}
+            ]
+        },
+        {
+            "class": "Paving",
+            "entries": [
+                {"ref": "Huynh & Nelson (2016)", "type": "Util", "val": "\\( 2+o(1) \\)"}
+            ]
+        },
+        {
+            "class": "General Matroids (Random Order)",
+            "entries": [
+                {"ref": "Babaioff, Immorlica, Kleinberg (2007)", "type": "Util", "val": "\\( O(\\log r) \\)"},
+                {"ref": "Chakraborty & Lachish (2012)", "type": "Util", "val": "\\( O(\\sqrt{\\log r}) \\)"},
+                {"ref": "Lachish (2014) / Feldman et al. (2014)", "type": "Util", "val": "\\( O(\\log \\log r) \\)"},
+                {"ref": "Soto, Turkieltaub, Verdugo (2021)", "type": "Prob", "val": "\\( O(\\log r) \\) (Ordinal access)"}
+            ]
+        },
+        {
+            "class": "General (Random Assignment Model)",
+            "entries": [
+                {"ref": "Soto (2011)", "type": "Util", "val": "\\( \\frac{2e^2}{e-1} \\approx 8.54 \\)"},
+                {"ref": "Santiago, Sergeev, Zenklusen (2023)", "type": "Util", "val": "\\( O(1) \\) (Without knowing matroid)"}
+            ]
+        },
+        {
+            "class": "General (Free Order Model)",
+            "entries": [
+                {"ref": "Jaillet, Soto, Zenklusen (2012)", "type": "Util", "val": "\\( 9 \\)"}
+            ]
+        }
     ]
         
     html = f"""<!DOCTYPE html>
@@ -90,13 +165,14 @@ def generate_html(language="en"):
             --bg-color: #f4f4f9;
             --text-color: #333;
             --container-bg: #fff;
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --border-color: #e0e0e0;
+            --primary-color: #1a365d;
+            --secondary-color: #2b6cb0;
+            --accent-color: #ebf8ff;
+            --border-color: #e2e8f0;
         }}
 
         body {{
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             line-height: 1.6;
             background-color: var(--bg-color);
             color: var(--text-color);
@@ -105,95 +181,118 @@ def generate_html(language="en"):
         }}
 
         header {{
-            background-color: var(--primary-color);
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
-            padding: 2rem 0;
+            padding: 3rem 0;
             text-align: center;
             position: relative;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }}
         
         .lang-switch {{
             position: absolute;
             top: 20px;
-            right: 20px;
-            background-color: rgba(255,255,255,0.2);
-            padding: 5px 15px;
-            border-radius: 20px;
+            right: 30px;
+            background-color: rgba(255,255,255,0.15);
+            padding: 8px 20px;
+            border-radius: 30px;
+            backdrop-filter: blur(5px);
         }}
         
         .lang-switch a {{
             color: white;
             text-decoration: none;
             font-weight: bold;
-            margin: 0 5px;
+            margin: 0 8px;
+            letter-spacing: 1px;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }}
+        
+        .lang-switch a:hover {{
+            opacity: 1;
         }}
         
         .lang-switch a.active {{
             text-decoration: underline;
-            color: var(--secondary-color);
+            text-underline-offset: 4px;
+            opacity: 1;
         }}
 
         h1 {{
             margin: 0;
-            font-size: 2.5rem;
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }}
+        
+        header p {{
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-top: 0.5rem;
         }}
 
         .container {{
-            max-width: 900px;
-            margin: 2rem auto;
+            max-width: 1000px;
+            margin: -2rem auto 3rem;
             background: var(--container-bg);
-            padding: 2rem 4rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 2.5rem 4rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            position: relative;
+            z-index: 10;
         }}
 
         /* Tabs Styles */
         .tabs {{
             display: flex;
             border-bottom: 2px solid var(--border-color);
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
+            margin-bottom: 2.5rem;
+            gap: 10px;
         }}
 
         .tab-button {{
             background: none;
             border: none;
             outline: none;
-            padding: 1rem 2rem;
+            padding: 1rem 1.5rem;
             font-size: 1.1rem;
-            font-weight: bold;
-            color: #777;
+            font-weight: 600;
+            color: #718096;
             cursor: pointer;
-            transition: 0.3s;
+            transition: all 0.2s;
             border-bottom: 3px solid transparent;
+            border-radius: 6px 6px 0 0;
         }}
 
         .tab-button:hover {{
             color: var(--primary-color);
+            background-color: var(--accent-color);
         }}
 
         .tab-button.active {{
             color: var(--secondary-color);
             border-bottom: 3px solid var(--secondary-color);
+            background-color: var(--accent-color);
         }}
 
         .tab-content {{
             display: none;
-            animation: fadeEffect 0.5s;
+            animation: fadeIn 0.4s ease-in-out;
         }}
 
         .tab-content.active {{
             display: block;
         }}
 
-        @keyframes fadeEffect {{
-            from {{opacity: 0;}}
-            to {{opacity: 1;}}
+        @keyframes fadeIn {{
+            from {{ opacity: 0; transform: translateY(5px); }}
+            to {{ opacity: 1; transform: translateY(0); }}
         }}
 
         h2 {{
             color: var(--primary-color);
-            border-bottom: 2px solid var(--secondary-color);
+            border-bottom: 2px solid var(--accent-color);
             padding-bottom: 0.5rem;
             margin-top: 1rem;
         }}
@@ -204,84 +303,24 @@ def generate_html(language="en"):
         }}
 
         .definition {{
-            background-color: #e8f4f8;
+            background-color: var(--accent-color);
             border-left: 4px solid var(--secondary-color);
-            padding: 1rem;
-            margin: 1rem 0;
-            border-radius: 0 4px 4px 0;
-        }}
-
-        .paper-card {{
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
             padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
         }}
 
-        .paper-card:hover {{
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-        }}
-
-        .paper-title {{
-            font-size: 1.25rem;
-            font-weight: bold;
-            color: var(--primary-color);
-            margin-top: 0;
-        }}
-
-        .paper-authors {{
-            font-style: italic;
-            color: #555;
-            margin-bottom: 1rem;
-        }}
-
-        .paper-summary {{
-            font-size: 0.95rem;
-            color: #444;
-        }}
-
-        .paper-link {{
-            display: inline-block;
-            margin-top: 1rem;
-            padding: 0.5rem 1rem;
-            background-color: var(--secondary-color);
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: bold;
-        }}
-
-        .paper-link:hover {{
-            background-color: #2980b9;
-        }}
-        
-        .bibtex-toggle {{
-            background-color: #34495e;
-            border: none;
-            cursor: pointer;
-        }}
-
-        .bibtex-container {{
-            display: none;
-            background-color: #2c3e50;
-            color: #ecf0f1;
-            padding: 1rem;
-            border-radius: 4px;
-            margin-top: 1rem;
-            font-family: monospace;
-            white-space: pre-wrap;
-            overflow-x: auto;
-        }}
-
-        /* Table Styles */
+        /* Modern Table Styles */
         table {{
             width: 100%;
-            border-collapse: collapse;
-            margin: 1.5rem 0;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 2rem 0;
             font-size: 0.95em;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
         }}
 
         table thead tr {{
@@ -290,18 +329,149 @@ def generate_html(language="en"):
             text-align: left;
         }}
 
-        table th,
+        table th {{
+            padding: 15px 20px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            font-size: 0.85em;
+        }}
+
         table td {{
-            padding: 12px 15px;
-            border: 1px solid var(--border-color);
-        }}
-
-        table tbody tr {{
+            padding: 12px 20px;
             border-bottom: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+        }}
+        
+        table td:last-child {{
+            border-right: none;
         }}
 
-        table tbody tr:nth-of-type(even) {{
-            background-color: #f9f9f9;
+        table tbody tr:last-child td {{
+            border-bottom: none;
+        }}
+
+        table tbody tr:hover td:not(.class-cell) {{
+            background-color: #f7fafc;
+        }}
+        
+        td.class-cell {{
+            background-color: #edf2f7;
+            font-weight: 700;
+            color: var(--primary-color);
+            vertical-align: middle;
+            font-size: 1.05em;
+        }}
+        
+        .badge {{
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }}
+        
+        .badge.prob {{
+            background-color: #e6ffed;
+            color: #1e7e34;
+            border: 1px solid #c3e6cb;
+        }}
+        
+        .badge.util {{
+            background-color: #e2e3e5;
+            color: #383d41;
+            border: 1px solid #d6d8db;
+        }}
+
+        .paper-card {{
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            background: white;
+            transition: all 0.3s ease;
+        }}
+
+        .paper-card:hover {{
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+            border-color: #cbd5e0;
+        }}
+
+        .paper-title {{
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 0;
+            line-height: 1.3;
+        }}
+
+        .paper-authors {{
+            font-style: italic;
+            color: #4a5568;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }}
+
+        .paper-summary {{
+            font-size: 0.95rem;
+            color: #4a5568;
+            line-height: 1.6;
+        }}
+
+        .action-buttons {{
+            margin-top: 1.2rem;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }}
+
+        .paper-link {{
+            display: inline-block;
+            padding: 0.6rem 1.2rem;
+            background-color: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background-color 0.2s;
+            border: none;
+            cursor: pointer;
+        }}
+
+        .paper-link:hover {{
+            background-color: #2c5282;
+        }}
+        
+        .paper-link.secondary {{
+            background-color: #718096;
+        }}
+        
+        .paper-link.secondary:hover {{
+            background-color: #4a5568;
+        }}
+        
+        .paper-link.dark {{
+            background-color: #2d3748;
+        }}
+        
+        .paper-link.dark:hover {{
+            background-color: #1a202c;
+        }}
+
+        .bibtex-container {{
+            display: none;
+            background-color: #1a202c;
+            color: #e2e8f0;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+            white-space: pre-wrap;
+            overflow-x: auto;
+            border-left: 4px solid var(--secondary-color);
         }}
     </style>
 </head>
@@ -361,48 +531,33 @@ def generate_html(language="en"):
             <h2>{t['ratios_title']}</h2>
             <p>{t['ratios_desc']}</p>
             
-            <h3>{t['standard_model']}</h3>
             <table>
                 <thead>
                     <tr>
                         <th>{t['th_class']}</th>
-                        <th>{t['th_ratio']}</th>
                         <th>{t['th_ref']}</th>
+                        <th style="width: 120px; text-align: center;">{t['th_type']}</th>
+                        <th>{t['th_guarantee']}</th>
                     </tr>
                 </thead>
                 <tbody>
 """
-    for c, r, ref in std_data:
-        html += f"""
-                    <tr>
-                        <td><strong>{c}</strong></td>
-                        <td>{r}</td>
-                        <td>{ref}</td>
-                    </tr>"""
-    html += f"""
-                </tbody>
-            </table>
+    
+    for group in table_data:
+        entries = group["entries"]
+        rowspan = len(entries)
+        for i, entry in enumerate(entries):
+            badge_class = "prob" if entry["type"] == "Prob" else "util"
+            badge_text = "Prob" if entry["type"] == "Prob" else "Util"
+            
+            html += "                    <tr>\n"
+            if i == 0:
+                html += f"                        <td rowspan='{rowspan}' class='class-cell'>{group['class']}</td>\n"
+            html += f"                        <td>{entry['ref']}</td>\n"
+            html += f"                        <td style='text-align: center;'><span class='badge {badge_class}'>{badge_text}</span></td>\n"
+            html += f"                        <td style='font-weight: 500;'>{entry['val']}</td>\n"
+            html += "                    </tr>\n"
 
-            <h3>{t['other_models']}</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>{t['th_model']}</th>
-                        <th>{t['th_class']}</th>
-                        <th>{t['th_ratio']}</th>
-                        <th>{t['th_ref']}</th>
-                    </tr>
-                </thead>
-                <tbody>
-"""
-    for m, c, r, ref in other_data:
-        html += f"""
-                    <tr>
-                        <td><strong>{m}</strong></td>
-                        <td>{c}</td>
-                        <td>{r}</td>
-                        <td>{ref}</td>
-                    </tr>"""
     html += f"""
                 </tbody>
             </table>
@@ -420,13 +575,17 @@ def generate_html(language="en"):
             <div class="paper-card">
                 <h3 class="paper-title">{i+1}. {paper['title']}</h3>
                 <div class="paper-authors">{t['by']} {paper['authors']}</div>
+                <div class="paper-authors" style="color: var(--secondary-color); font-weight: 600; margin-top: -0.5rem; margin-bottom: 1rem;">
+                    {paper.get('venue', 'arXiv preprint')}
+                </div>
                 <div class="paper-summary">
                     <strong>{t['abstract']}</strong> {paper['summary']}
                 </div>
-                <a href="{paper['local_pdf']}" class="paper-link" target="_blank">{t['read_local']}</a>
-                <a href="{paper['pdf_url']}" class="paper-link" target="_blank" style="background-color: #7f8c8d; margin-left: 10px;">{t['view_arxiv']}</a>
-                <button class="paper-link bibtex-toggle" style="margin-left: 10px;" onclick="toggleBibtex('{bibtex_id}')">{t['show_bibtex']}</button>
-                
+                <div class="action-buttons">
+                    <a href="{paper['local_pdf']}" class="paper-link" target="_blank">{t['read_local']}</a>
+                    <a href="{paper['pdf_url']}" class="paper-link secondary" target="_blank">{t['view_arxiv']}</a>
+                    <button class="paper-link dark bibtex-toggle" onclick="toggleBibtex('{bibtex_id}')">{t['show_bibtex']}</button>
+                </div>
                 <div id="{bibtex_id}" class="bibtex-container">{paper.get('bibtex', 'No BibTeX available.')}</div>
             </div>
 """

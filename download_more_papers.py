@@ -10,7 +10,7 @@ def clean_text(text):
         return ""
     return re.sub(r'\s+', ' ', text).strip()
 
-def generate_bibtex(paper_id, title, authors, year):
+def generate_bibtex(paper_id, title, authors, year, venue):
     # authors: "Name 1, Name 2" -> "Name 1 and Name 2"
     author_bib = " and ".join(authors.split(", "))
     first_author_last = authors.split(",")[0].split(" ")[-1] if authors else "Unknown"
@@ -22,7 +22,7 @@ def generate_bibtex(paper_id, title, authors, year):
     bib = f"""@article{{{key},
   title={{{title}}},
   author={{{author_bib}}},
-  journal={{arXiv preprint arXiv:{paper_id}}},
+  journal={{{venue}}},
   year={{{year}}}
 }}"""
     return bib
@@ -61,6 +61,20 @@ def download_more_papers():
             authors.append(name)
         authors_str = ', '.join(authors)
             
+        arxiv_ns = {'arxiv': 'http://arxiv.org/schemas/atom'}
+        
+        # extract arxiv id
+        id_str = entry.find('atom:id', ns).text
+        paper_id = id_str.split('/')[-1]
+        paper_id_clean = paper_id.split('v')[0] if 'v' in paper_id else paper_id
+        
+        journal_ref = entry.find('arxiv:journal_ref', arxiv_ns)
+        if journal_ref is not None and journal_ref.text:
+            venue = clean_text(journal_ref.text)
+        else:
+            venue = f"arXiv preprint arXiv:{paper_id_clean}"
+
+            
         pdf_url = ""
         for link in entry.findall('atom:link', ns):
             if link.attrib.get('title') == 'pdf':
@@ -70,16 +84,10 @@ def download_more_papers():
         if pdf_url and not pdf_url.endswith('.pdf'):
             pdf_url += '.pdf'
             
-        # extract arxiv id
-        id_str = entry.find('atom:id', ns).text
-        paper_id = id_str.split('/')[-1]
-        # handle versions like 2103.04205v3
-        paper_id_clean = paper_id.split('v')[0] if 'v' in paper_id else paper_id
-        
         filename = f"{paper_id}.pdf"
         filepath = os.path.join('papers', filename)
         
-        bibtex = generate_bibtex(paper_id_clean, title, authors_str, year)
+        bibtex = generate_bibtex(paper_id_clean, title, authors_str, year, venue)
         
         print(f"[{i+1}/{max_results}] Checking/Downloading {title}...")
         try:
@@ -92,6 +100,7 @@ def download_more_papers():
         papers.append({
             'title': title,
             'authors': authors_str,
+            'venue': venue,
             'summary': summary,
             'published': published,
             'pdf_url': pdf_url,
