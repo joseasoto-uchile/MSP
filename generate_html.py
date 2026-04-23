@@ -1,5 +1,19 @@
 import json
 import os
+import re
+import urllib.parse
+
+def find_paper_index(papers, search_terms):
+    """
+    Search for a paper in the list using keywords (e.g. authors or year).
+    Returns the index if found, else -1.
+    """
+    for i, p in enumerate(papers):
+        text_to_search = (p['authors'] + " " + p['title'] + " " + p.get('venue', '')).lower()
+        # If all search terms are in the text, it's a match
+        if all(term.lower() in text_to_search for term in search_terms):
+            return i
+    return -1
 
 def generate_html(language="en"):
     with open('papers_metadata.json', 'r', encoding='utf-8') as f:
@@ -35,12 +49,12 @@ def generate_html(language="en"):
         "msp_obj": "<strong>Objective:</strong> Design an online algorithm that maximizes the expected value of the selected elements, compared to the maximum weight basis offline. The grand conjecture (Matroid Secretary Conjecture) states that there exists an algorithm with a constant competitive ratio \\( O(1) \\) for any matroid." if is_en else "<strong>Objetivo:</strong> Diseñar un algoritmo online que maximice el valor esperado de los elementos seleccionados, comparado con la base de peso máximo en offline. La gran conjetura (Matroid Secretary Conjecture) afirma que existe un algoritmo con un factor de competitividad constante \\( O(1) \\) para cualquier matroide.",
         
         "ratios_title": "Chronological Progression of Competitive Guarantees" if is_en else "Evolución Cronológica de Garantías Competitivas",
-        "ratios_desc": "The table below groups results by Matroid Class, detailing the exact constant or formula achieved by each paper historically. We note whether the guarantee is <strong>Probability-Competitive</strong> ($p$) or the traditional <strong>Utility-Competitive Ratio</strong> ($c \\ge 1$). Note that a $p$-probability-competitive algorithm implies a $1/p$ utility-competitive ratio." if is_en else "La siguiente tabla agrupa los resultados por clase de matroide, detallando la constante exacta o fórmula alcanzada por cada paper a lo largo de la historia. Se indica si la garantía es <strong>Probability-Competitive</strong> ($p$) o el tradicional <strong>Ratio Competitivo de Utilidad</strong> ($c \\ge 1$). Un algoritmo con probabilidad $p$ implica un ratio de utilidad de $1/p$.",
+        "ratios_desc": "The table below groups results by Matroid Class, detailing the exact constant or formula achieved by each paper historically. All constants have been normalized so that <strong>values $\\le 1$ represent the approximation factor</strong> (i.e. $1/\\alpha$ where $\\alpha$ is the traditional competitive ratio $\\ge 1$). We also note whether the guarantee is <strong>Probability-Competitive</strong> ($p$) or the traditional <strong>Utility-Competitive Ratio</strong>." if is_en else "La siguiente tabla agrupa los resultados por clase de matroide, detallando la constante exacta o fórmula alcanzada por cada paper a lo largo de la historia. Todas las constantes han sido normalizadas para que <strong>valores $\\le 1$ representen el factor de aproximación</strong> (es decir, $1/\\alpha$ donde $\\alpha$ es el ratio competitivo tradicional $\\ge 1$). Se indica si la garantía es <strong>Probability-Competitive</strong> ($p$) o el tradicional <strong>Ratio de Utilidad</strong>.",
         
         "th_class": "Matroid Class" if is_en else "Clase de Matroide",
         "th_ref": "Reference" if is_en else "Referencia",
         "th_type": "Guarantee Type" if is_en else "Tipo de Garantía",
-        "th_guarantee": "Exact Constant / Bound" if is_en else "Constante / Cota Exacta",
+        "th_guarantee": "Exact Bound ($\\le 1$)" if is_en else "Cota Exacta ($\\le 1$)",
         
         "reading_title": "Reading List and Bibliography" if is_en else "Lista de Lectura y Bibliografía",
         "reading_desc": f"Below are <strong>{len(papers)}</strong> relevant articles on the Matroid Secretary Problem, including their export in <strong>BibTeX</strong>." if is_en else f"A continuación se presentan <strong>{len(papers)}</strong> artículos relevantes sobre el Problema de la Secretaria en Matroides, incluyendo su exportación en <strong>BibTeX</strong>.",
@@ -52,99 +66,101 @@ def generate_html(language="en"):
     }
 
     # Data structure grouped by class
-    # Type: 'Prob' (probability-competitive) or 'Util' (utility-competitive ratio >= 1)
+    # "search" are keywords to find the paper in the reading list for auto-linking
     table_data = [
         {
             "class": "Graphic",
             "entries": [
-                {"ref": "Babaioff, Immorlica, Kleinberg (2007)", "type": "Util", "val": "\\( 16 \\)"},
-                {"ref": "Korula & Pál (2009)", "type": "Util", "val": "\\( 2e \\approx 5.43 \\)"},
-                {"ref": "Soto, Turkieltaub, Verdugo (2018/2021)", "type": "Prob", "val": "\\( 1/4 = 0.25 \\)"},
-                {"ref": "Bérczi, Livanos, Soto, Verdugo (2025)", "type": "Prob", "val": "\\( 0.2504 \\) (Gen) / \\( 0.2693 \\) (Simple)"},
-                {"ref": "Banihashem et al. (2025)", "type": "Util", "val": "\\( 3.95 \\) (Gen) / \\( 3.77 \\) (Simple)"}
+                {"ref": "Babaioff, Immorlica, Kleinberg (2007)", "search": ["Babaioff", "Kleinberg", "2007"], "type": "Util", "val": "\\( 1/16 = 0.0625 \\)"},
+                {"ref": "Korula & Pál (2009)", "search": ["Korula", "Pál"], "type": "Util", "val": "\\( 1/(2e) \\approx 0.184 \\)"},
+                {"ref": "Soto, Turkieltaub, Verdugo (2018/2021)", "search": ["Soto", "Turkieltaub", "ordinal"], "type": "Prob", "val": "\\( 1/4 = 0.25 \\)"},
+                {"ref": "Banihashem et al. (2025)", "search": ["Banihashem", "graphic"], "type": "Util", "val": "\\( 1/3.95 \\approx 0.253 \\) (Gen) / \\( 1/3.77 \\approx 0.265 \\) (Simple)"},
+                {"ref": "Bérczi, Livanos, Soto, Verdugo (2025)", "search": ["Livanos", "labeling"], "type": "Prob", "val": "\\( 0.2504 \\) (Gen) / \\( 0.2693 \\) (Simple)"}
             ]
         },
         {
             "class": "Laminar",
             "entries": [
-                {"ref": "Im & Wang (2011)", "type": "Util", "val": "\\( 16000/3 \\approx 5333 \\)"},
-                {"ref": "Jaillet, Soto, Zenklusen (2012)", "type": "Util", "val": "\\( 3\\sqrt{3}e \\approx 14.12 \\)"},
-                {"ref": "Soto, Turkieltaub, Verdugo (2018/2021)", "type": "Prob", "val": "\\( \\frac{1}{3\\sqrt{3}} \\approx 0.192 \\)"},
-                {"ref": "Huang, Parsaeian, Zhu (2023)", "type": "Util", "val": "\\( 4.75 \\)"},
-                {"ref": "Bérczi, Livanos, Soto, Verdugo (2025)", "type": "Prob", "val": "\\( 1 - \\ln(2) \\approx 0.3068 \\)"}
+                {"ref": "Im & Wang (2011)", "search": ["Im", "Wang"], "type": "Util", "val": "\\( 3/16000 \\approx 0.00018 \\)"},
+                {"ref": "Jaillet, Soto, Zenklusen (2012)", "search": ["Jaillet", "Zenklusen"], "type": "Util", "val": "\\( \\frac{1}{3\\sqrt{3}e} \\approx 0.070 \\)"},
+                {"ref": "Soto, Turkieltaub, Verdugo (2018/2021)", "search": ["Soto", "ordinal"], "type": "Prob", "val": "\\( \\frac{1}{3\\sqrt{3}} \\approx 0.192 \\)"},
+                {"ref": "Huang, Parsaeian, Zhu (2023)", "search": ["Parsaeian"], "type": "Util", "val": "\\( 1/4.75 \\approx 0.210 \\)"},
+                {"ref": "Bérczi, Livanos, Soto, Verdugo (2025)", "search": ["Livanos", "labeling"], "type": "Prob", "val": "\\( 1 - \\ln(2) \\approx 0.3068 \\)"}
             ]
         },
         {
             "class": "Transversal",
             "entries": [
-                {"ref": "Dimand et al. (2006) / BIK (2007)", "type": "Util", "val": "\\( 16 \\)"},
-                {"ref": "Ma, Tang, Wang (2011)", "type": "Util", "val": "\\( O(1) \\) (Submodular)"}
+                {"ref": "Babaioff, Immorlica, Kleinberg (2007)", "search": ["Babaioff", "Kleinberg", "2007"], "type": "Util", "val": "\\( 1/16 = 0.0625 \\)"},
+                {"ref": "Dimitrov & Plaxton (2012)", "search": ["Dimitrov", "Plaxton"], "type": "Util", "val": "\\( 1/8 = 0.125 \\)"},
+                {"ref": "Kesselheim et al. (2013)", "search": ["Kesselheim"], "type": "Util", "val": "\\( 1/e \\approx 0.367 \\)"},
+                {"ref": "Soto, Turkieltaub, Verdugo (2021)", "search": ["Soto", "ordinal"], "type": "Prob", "val": "\\( 1/e \\approx 0.367 \\)"}
             ]
         },
         {
             "class": "Rank-2 Matroids",
             "entries": [
-                {"ref": "Bérczi, Livanos, Soto, Verdugo (2025)", "type": "Prob", "val": "\\( 0.3462 \\)"}
+                {"ref": "Bérczi, Livanos, Soto, Verdugo (2025)", "search": ["Livanos", "labeling"], "type": "Prob", "val": "\\( 0.3462 \\)"}
             ]
         },
         {
             "class": "Cographic",
             "entries": [
-                {"ref": "Soto (2011)", "type": "Util", "val": "\\( 3e \\approx 8.15 \\)"}
+                {"ref": "Soto (2011)", "search": ["Soto", "random assignment"], "type": "Util", "val": "\\( 1/(3e) \\approx 0.122 \\)"}
             ]
         },
         {
             "class": "Uniform",
             "entries": [
-                {"ref": "Dynkin (1963)", "type": "Prob", "val": "\\( 1/e \\)"},
-                {"ref": "Kleinberg (2005) / Soto et al. (2021)", "type": "Prob", "val": "\\( 1 - O(\\sqrt{\\frac{\\log \\rho}{\\rho}}) \\)"},
-                {"ref": "Gujjar et al. (2025)", "type": "Prob", "val": "\\( 1 - O(\\sqrt{\\frac{\\log(n)}{k}}) \\) (k-Fold)"}
+                {"ref": "Dynkin (1963)", "search": ["Dynkin"], "type": "Prob", "val": "\\( 1/e \\approx 0.367 \\)"},
+                {"ref": "Kleinberg (2005) / Soto et al. (2021)", "search": ["Kleinberg"], "type": "Prob", "val": "\\( 1 - O(\\sqrt{\\frac{\\log \\rho}{\\rho}}) \\)"},
+                {"ref": "Gujjar et al. (2025)", "search": ["Gujjar"], "type": "Prob", "val": "\\( 1 - O(\\sqrt{\\frac{\\log(n)}{k}}) \\) (k-Fold)"}
             ]
         },
         {
             "class": "Partition",
             "entries": [
-                {"ref": "Folklore", "type": "Prob", "val": "\\( 1 - 1/e \\)"}
+                {"ref": "Folklore", "search": ["Folklore"], "type": "Prob", "val": "\\( 1 - 1/e \\approx 0.632 \\)"}
             ]
         },
         {
             "class": "Regular & Max-Flow Min-Cut",
             "entries": [
-                {"ref": "Dinitz & Kortsarz (2012)", "type": "Util", "val": "\\( O(1) \\)"}
+                {"ref": "Dinitz & Kortsarz (2012)", "search": ["Dinitz"], "type": "Util", "val": "\\( O(1) \\)"}
             ]
         },
         {
             "class": "K-Column Sparse Linear",
             "entries": [
-                {"ref": "Soto (2011)", "type": "Util", "val": "\\( k \\cdot e \\)"}
+                {"ref": "Soto (2011)", "search": ["Soto", "random assignment"], "type": "Util", "val": "\\( 1/(k \\cdot e) \\)"}
             ]
         },
         {
             "class": "Paving",
             "entries": [
-                {"ref": "Huynh & Nelson (2016)", "type": "Util", "val": "\\( 2+o(1) \\)"}
+                {"ref": "Huynh & Nelson (2016)", "search": ["Huynh"], "type": "Util", "val": "\\( \\approx 1/2 = 0.5 \\)"}
             ]
         },
         {
             "class": "General Matroids (Random Order)",
             "entries": [
-                {"ref": "Babaioff, Immorlica, Kleinberg (2007)", "type": "Util", "val": "\\( O(\\log r) \\)"},
-                {"ref": "Chakraborty & Lachish (2012)", "type": "Util", "val": "\\( O(\\sqrt{\\log r}) \\)"},
-                {"ref": "Lachish (2014) / Feldman et al. (2014)", "type": "Util", "val": "\\( O(\\log \\log r) \\)"},
-                {"ref": "Soto, Turkieltaub, Verdugo (2021)", "type": "Prob", "val": "\\( O(\\log r) \\) (Ordinal access)"}
+                {"ref": "Babaioff, Immorlica, Kleinberg (2007)", "search": ["Babaioff", "Kleinberg", "2007"], "type": "Util", "val": "\\( \\Omega(1/\\log \\rho) \\)"},
+                {"ref": "Chakraborty & Lachish (2012)", "search": ["Lachish"], "type": "Util", "val": "\\( \\Omega(1/\\sqrt{\\log \\rho}) \\)"},
+                {"ref": "Lachish (2014) / Feldman et al. (2014)", "search": ["Feldman"], "type": "Util", "val": "\\( \\Omega(1/\\log \\log \\rho) \\)"},
+                {"ref": "Soto, Turkieltaub, Verdugo (2021)", "search": ["Soto", "ordinal"], "type": "Prob", "val": "\\( \\Omega(1/\\log \\rho) \\) (Ordinal access)"}
             ]
         },
         {
             "class": "General (Random Assignment Model)",
             "entries": [
-                {"ref": "Soto (2011)", "type": "Util", "val": "\\( \\frac{2e^2}{e-1} \\approx 8.54 \\)"},
-                {"ref": "Santiago, Sergeev, Zenklusen (2023)", "type": "Util", "val": "\\( O(1) \\) (Without knowing matroid)"}
+                {"ref": "Soto (2011)", "search": ["Soto", "random assignment"], "type": "Util", "val": "\\( \\frac{e-1}{2e^2} \\approx 0.117 \\)"},
+                {"ref": "Santiago, Sergeev, Zenklusen (2023)", "search": ["Santiago", "Sergeev"], "type": "Util", "val": "\\( \\Omega(1) \\) (Without knowing matroid)"}
             ]
         },
         {
             "class": "General (Free Order Model)",
             "entries": [
-                {"ref": "Jaillet, Soto, Zenklusen (2012)", "type": "Util", "val": "\\( 9 \\)"}
+                {"ref": "Jaillet, Soto, Zenklusen (2012)", "search": ["Jaillet", "Zenklusen"], "type": "Util", "val": "\\( 1/4 = 0.25 \\)"}
             ]
         }
     ]
@@ -178,6 +194,7 @@ def generate_html(language="en"):
             color: var(--text-color);
             margin: 0;
             padding: 0;
+            scroll-behavior: smooth;
         }}
 
         header {{
@@ -289,6 +306,15 @@ def generate_html(language="en"):
             from {{ opacity: 0; transform: translateY(5px); }}
             to {{ opacity: 1; transform: translateY(0); }}
         }}
+        
+        @keyframes highlightCard {{
+            0% {{ box-shadow: 0 0 0 4px rgba(66, 153, 225, 0.6); transform: scale(1.02); }}
+            100% {{ box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); transform: scale(1); }}
+        }}
+
+        .highlight-animation {{
+            animation: highlightCard 2s ease-out;
+        }}
 
         h2 {{
             color: var(--primary-color);
@@ -361,6 +387,19 @@ def generate_html(language="en"):
             color: var(--primary-color);
             vertical-align: middle;
             font-size: 1.05em;
+        }}
+        
+        a.table-link {{
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px dashed var(--secondary-color);
+            cursor: pointer;
+        }}
+        
+        a.table-link:hover {{
+            color: var(--primary-color);
+            border-bottom-style: solid;
         }}
         
         .badge {{
@@ -489,9 +528,9 @@ def generate_html(language="en"):
     <div class="container">
         <!-- Tabs Nav -->
         <div class="tabs">
-            <button class="tab-button active" onclick="openTab(event, 'lecture-notes')">{t['tab_notes']}</button>
-            <button class="tab-button" onclick="openTab(event, 'ratios-table')">{t['tab_ratios']}</button>
-            <button class="tab-button" onclick="openTab(event, 'reading-list')">{t['tab_list']}</button>
+            <button class="tab-button active" id="btn-lecture-notes" onclick="openTab(event, 'lecture-notes')">{t['tab_notes']}</button>
+            <button class="tab-button" id="btn-ratios-table" onclick="openTab(event, 'ratios-table')">{t['tab_ratios']}</button>
+            <button class="tab-button" id="btn-reading-list" onclick="openTab(event, 'reading-list')">{t['tab_list']}</button>
         </div>
 
         <!-- Tab 1: Lecture Notes -->
@@ -550,10 +589,17 @@ def generate_html(language="en"):
             badge_class = "prob" if entry["type"] == "Prob" else "util"
             badge_text = "Prob" if entry["type"] == "Prob" else "Util"
             
+            # Find paper index to create hyperlink
+            p_idx = find_paper_index(papers, entry.get("search", []))
+            if p_idx != -1:
+                ref_html = f"<a class='table-link' onclick='goToPaper({p_idx})'>{entry['ref']}</a>"
+            else:
+                ref_html = entry['ref']
+            
             html += "                    <tr>\n"
             if i == 0:
                 html += f"                        <td rowspan='{rowspan}' class='class-cell'>{group['class']}</td>\n"
-            html += f"                        <td>{entry['ref']}</td>\n"
+            html += f"                        <td>{ref_html}</td>\n"
             html += f"                        <td style='text-align: center;'><span class='badge {badge_class}'>{badge_text}</span></td>\n"
             html += f"                        <td style='font-weight: 500;'>{entry['val']}</td>\n"
             html += "                    </tr>\n"
@@ -572,7 +618,7 @@ def generate_html(language="en"):
     for i, paper in enumerate(papers):
         bibtex_id = f"bibtex-{i}"
         html += f"""
-            <div class="paper-card">
+            <div class="paper-card" id="paper-card-{i}">
                 <h3 class="paper-title">{i+1}. {paper['title']}</h3>
                 <div class="paper-authors">{t['by']} {paper['authors']}</div>
                 <div class="paper-authors" style="color: var(--secondary-color); font-weight: 600; margin-top: -0.5rem; margin-bottom: 1rem;">
@@ -614,8 +660,13 @@ def generate_html(language="en"):
             
             // Show current tab and add active class to button
             document.getElementById(tabId).style.display = "block";
-            document.getElementById(tabId).className += " active";
-            evt.currentTarget.className += " active";
+            
+            if (evt && evt.currentTarget) {
+                evt.currentTarget.className += " active";
+            } else {
+                // If triggered by JS directly without event
+                document.getElementById('btn-' + tabId).className += " active";
+            }
         }
 
         function toggleBibtex(id) {
@@ -625,6 +676,23 @@ def generate_html(language="en"):
             } else {
                 el.style.display = "block";
             }
+        }
+        
+        function goToPaper(idx) {
+            // Switch tab
+            openTab(null, 'reading-list');
+            
+            // Wait for display to apply
+            setTimeout(() => {
+                var card = document.getElementById('paper-card-' + idx);
+                card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                
+                // Add highlight animation
+                card.classList.remove('highlight-animation');
+                // Trigger reflow
+                void card.offsetWidth;
+                card.classList.add('highlight-animation');
+            }, 100);
         }
     </script>
 </body>
