@@ -1,0 +1,141 @@
+[
+  {
+    "paper_title": "Secretary Problems: Laminar Matroid and Intersection of Matroids",
+    "paper_authors": "Sungjin Im, Yajun Wang",
+    "bad_bibs": [
+      {
+        "key": "DBLP:conf/soda/ImW11",
+        "bib_title": "Secretary Problems: Laminar Matroid and Interval Scheduling",
+        "bib_authors": "Sungjin Im and\n                  Yajun Wang",
+        "title_match": false,
+        "author_match": true
+      }
+    ]
+  },
+  {
+    "paper_title": "Matroids, Secretary Problems, and Online Mechanisms",
+    "paper_authors": "Moshe Babaioff, Nicole Immorlica, Robert Kleinberg",
+    "bad_bibs": [
+      {
+        "key": "DBLP:journals/jacm/BabaioffIKKM18",
+        "bib_title": "Matroid Secretary Problems",
+        "bib_authors": "Moshe Babaioff and Nicole Immorlica and David Kempe and Robert Kleinberg",
+        "title_match": false,
+        "author_match": true
+      }
+    ]
+  },
+  {
+    "paper_title": "Matroid Secretary Problem in the Random Assignment Model",
+    "paper_authors": "José A. Soto",
+    "bad_bibs": [
+      {
+        "key": "DBLP:journals/siamcomp/Soto13",
+        "bib_title": "Matroid Secretary Problem in the Random-Assignment Model",
+        "bib_authors": "Jos{\\'{e",
+        "title_match": true,
+        "author_match": false
+      },
+      {
+        "key": "DBLP:conf/soda/Soto11",
+        "bib_title": "Matroid Secretary Problem in the Random Assignment Model",
+        "bib_authors": "Jos{\\'{e",
+        "title_match": true,
+        "author_match": false
+      },
+      {
+        "key": "DBLP:journals/corr/abs-1007-2152",
+        "bib_title": "Matroid Secretary Problem in the Random Assignment Model",
+        "bib_authors": "Jos{\\'{e",
+        "title_match": true,
+        "author_match": false
+      }
+    ]
+  },
+  {
+    "paper_title": "A Simple $O(\\log\\log(\\mathrm{rank}))$-Competitive Algorithm for the Matroid Secretary Problem",
+    "paper_authors": "Moran Feldman, Ola Svensson, Rico Zenklusen",
+    "bad_bibs": [
+      {
+        "key": "DBLP:journals/siamcomp/FeldmanSZ22",
+        "bib_title": "A Framework for the Secretary Problem on the Intersection of Matroids",
+        "bib_authors": "Moran Feldman and\n                  Ola Svensson and\n                  Rico Zenk",
+        "title_match": false,
+        "author_match": true
+      }
+    ]
+  },
+  {
+    "paper_title": "Matroid Secretary via Labeling Schemes",
+    "paper_authors": "Kristóf Bérczi, Vasilis Livanos, José Soto, Victor Verdugo",
+    "bad_bibs": [
+      {
+        "key": "DBLP:conf/ipco/BercziLSV25",
+        "bib_title": "Matroid Secretary via Labeling Schemes",
+        "bib_authors": "Krist{\\'{o",
+        "title_match": true,
+        "author_match": false
+      },
+      {
+        "key": "DBLP:journals/corr/abs-2411-12069",
+        "bib_title": "Matroid Secretary via Labeling Schemes",
+        "bib_authors": "Krist{\\'{o",
+        "title_match": true,
+        "author_match": false
+      }
+    ]
+  },
+  {
+    "paper_title": "Strong Algorithms for the Ordinal Matroid Secretary Problem",
+    "paper_authors": "José A. Soto, Abner Turkieltaub, Victor Verdugo",
+    "bad_bibs": [
+      {
+        "key": "DBLP:journals/mor/SotoTV21",
+        "bib_title": "Strong Algorithms for the Ordinal Matroid Secretary Problem",
+        "bib_authors": "Jos{\\'{e",
+        "title_match": true,
+        "author_match": false
+      },
+      {
+        "key": "DBLP:conf/soda/SotoTV18",
+        "bib_title": "Strong Algorithms for the Ordinal Matroid Secretary Problem",
+        "bib_authors": "Jos{\\'{e",
+        "title_match": true,
+        "author_match": false
+      },
+      {
+        "key": "DBLP:journals/corr/abs-1802-01997",
+        "bib_title": "Strong Algorithms for the Ordinal Matroid Secretary Problem",
+        "bib_authors": "Jos{\\'{e",
+        "title_match": true,
+        "author_match": false
+      }
+    ]
+  },
+  {
+    "paper_title": "Online Matroid Embeddings",
+    "paper_authors": "Andrés Cristi, Paul Dütting, Robert Kleinberg, Renato Paes Leme, Neel Patel",
+    "bad_bibs": [
+      {
+        "key": "DBLP:journals/corr/abs-2407-10316",
+        "bib_title": "Online Matroid Embeddings",
+        "bib_authors": "Andr{\\'{e",
+        "title_match": true,
+        "author_match": false
+      }
+    ]
+  },
+  {
+    "paper_title": "Free-order secretary for two-sided independence systems",
+    "paper_authors": "Kristóf Bérczi, Vasilis Livanos, José A. Soto, Victor Verdugo",
+    "bad_bibs": [
+      {
+        "key": "DBLP:journals/corr/abs-2511-04390",
+        "bib_title": "Free-order secretary for two-sided independence systems",
+        "bib_authors": "Krist{\\'{o",
+        "title_match": true,
+        "author_match": false
+      }
+    ]
+  }
+]

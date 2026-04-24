@@ -1,0 +1,4 @@
+- `[x]` Update `papers_metadata.json` to inject inferred `"tags"` arrays for all papers.
+- `[x]` Update `template.html` to add CSS styles for tags, wrap tables in `<details>`, and add JS filtering logic.
+- `[x]` Update `generate_html.py` to fix enumeration (independent counters for Core and Related) and inject `data-tags` attributes and visual tags.
+- `[x]` Regenerate HTML files.

@@ -1,0 +1,426 @@
+[
+    {
+        "original_title": "A Multiple-Choice Secretary Algorithm with Applications to Online Auctions",
+        "original_venue": "SODA 2005",
+        "original_bibtex": "@inproceedings{kleinberg2005multiple,\n  title={A multiple-choice secretary algorithm with applications to online auctions},\n  author={Kleinberg, Robert},\n  booktitle={Proceedings of the sixteenth annual ACM-SIAM symposium on Discrete algorithms},\n  pages={630--631},\n  year={2005},\n  organization={Society for Industrial and Applied Mathematics}\n}",
+        "dblp_results": [
+            {
+                "key": "conf/soda/Kleinberg05",
+                "venue": "SODA",
+                "year": "2005",
+                "bibtex": "@inproceedings{DBLP:conf/soda/Kleinberg05,\n  author       = {Robert D. Kleinberg},\n  title        = {A multiple-choice secretary algorithm with applications to online\n                  auctions},\n  booktitle    = {Proceedings of the Sixteenth Annual {ACM-SIAM} Symposium on Discrete\n                  Algorithms, {SODA} 2005, Vancouver, British Columbia, Canada, January\n                  23-25, 2005},\n  pages        = {630--631},\n  publisher    = {{SIAM}},\n  year         = {2005},\n  url          = {http://dl.acm.org/citation.cfm?id=1070432.1070519},\n  timestamp    = {Fri, 07 Dec 2012 17:02:09 +0100},\n  biburl       = {https://dblp.org/rec/conf/soda/Kleinberg05.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}\n\n",
+                "info": {
+                    "authors": {
+                        "author": {
+                            "@pid": "k/RDKleinberg",
+                            "text": "Robert D. Kleinberg"
+                        }
+                    },
+                    "title": "A multiple-choice secretary algorithm with applications to online auctions.",
+                    "venue": "SODA",
+                    "pages": "630-631",
+                    "year": "2005",
+                    "type": "Conference and Workshop Papers",
+                    "access": "closed",
+                    "key": "conf/soda/Kleinberg05",
+                    "ee": "http://dl.acm.org/citation.cfm?id=1070432.1070519",
+                    "url": "https://dblp.org/rec/conf/soda/Kleinberg05"
+                }
+            }
+        ]
+    },
+    {
+        "original_title": "Improved Competitive Ratio for the Matroid Secretary Problem",
+        "original_venue": "SODA 2012",
+        "original_bibtex": "@inproceedings{chakraborty2012improved,\n  title={Improved competitive ratio for the matroid secretary problem},\n  author={Chakraborty, Sourav and Lachish, Oded},\n  booktitle={Proceedings of the twenty-third annual ACM-SIAM symposium on Discrete Algorithms},\n  pages={1141--1153},\n  year={2012},\n  organization={SIAM}\n}",
+        "dblp_results": [
+            {
+                "key": "conf/soda/ChakrabortyL12",
+                "venue": "SODA",
+                "year": "2012",
+                "bibtex": "@inproceedings{DBLP:conf/soda/ChakrabortyL12,\n  author       = {Sourav Chakraborty and\n                  Oded Lachish},\n  editor       = {Yuval Rabani},\n  title        = {Improved competitive ratio for the matroid secretary problem},\n  booktitle    = {Proceedings of the Twenty-Third Annual {ACM-SIAM} Symposium on Discrete\n                  Algorithms, {SODA} 2012, Kyoto, Japan, January 17-19, 2012},\n  pages        = {1702--1712},\n  publisher    = {{SIAM}},\n  year         = {2012},\n  url          = {https://doi.org/10.1137/1.9781611973099.135},\n  doi          = {10.1137/1.9781611973099.135},\n  timestamp    = {Tue, 14 Oct 2025 19:39:21 +0200},\n  biburl       = {https://dblp.org/rec/conf/soda/ChakrabortyL12.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}\n\n",
+                "info": {
+                    "authors": {
+                        "author": [
+                            {
+                                "@pid": "89/3488-1",
+                                "text": "Sourav Chakraborty 0001"
+                            },
+                            {
+                                "@pid": "06/6269",
+                                "text": "Oded Lachish"
+                            }
+                        ]
+                    },
+                    "title": "Improved competitive ratio for the matroid secretary problem.",
+                    "venue": "SODA",
+                    "pages": "1702-1712",
+                    "year": "2012",
+                    "type": "Conference and Workshop Papers",
+                    "access": "open",
+                    "key": "conf/soda/ChakrabortyL12",
+                    "doi": "10.1137/1.9781611973099.135",
+                    "ee": "https://doi.org/10.1137/1.9781611973099.135",
+                    "url": "https://dblp.org/rec/conf/soda/ChakrabortyL12"
+                }
+            }
+        ]
+    },
+    {
+        "original_title": "Competitive Weighted Matching in Transversal Matroids",
+        "original_venue": "ICALP 2012",
+        "original_bibtex": "@inproceedings{dimitrov2012competitive,\n  title={Competitive weighted matching in transversal matroids},\n  author={Dimitrov, Nenad and Plaxton, C Greg},\n  booktitle={Automata, Languages, and Programming: 39th International Colloquium, ICALP 2012},\n  pages={397--408},\n  year={2012},\n  organization={Springer}\n}",
+        "dblp_results": [
+            {
+                "key": "journals/algorithmica/DimitrovP12",
+                "venue": "Algorithmica",
+                "year": "2012",
+                "bibtex": "@article{DBLP:journals/algorithmica/DimitrovP12,\n  author       = {Nedialko B. Dimitrov and\n                  C. Greg Plaxton},\n  title        = {Competitive Weighted Matching in Transversal Matroids},\n  journal      = {Algorithmica},\n  volume       = {62},\n  number       = {1-2},\n  pages        = {333--348},\n  year         = {2012},\n  url          = {https://doi.org/10.1007/s00453-010-9457-2},\n  doi          = {10.1007/S00453-010-9457-2},\n  timestamp    = {Wed, 17 May 2017 14:25:15 +0200},\n  biburl       = {https://dblp.org/rec/journals/algorithmica/DimitrovP12.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}\n\n",
+                "info": {
+                    "authors": {
+                        "author": [
+                            {
+                                "@pid": "28/6335",
+                                "text": "Nedialko B. Dimitrov"
+                            },
+                            {
+                                "@pid": "p/CGPlaxton",
+                                "text": "C. Greg Plaxton"
+                            }
+                        ]
+                    },
+                    "title": "Competitive Weighted Matching in Transversal Matroids.",
+                    "venue": "Algorithmica",
+                    "volume": "62",
+                    "number": "1-2",
+                    "pages": "333-348",
+                    "year": "2012",
+                    "type": "Journal Articles",
+                    "access": "closed",
+                    "key": "journals/algorithmica/DimitrovP12",
+                    "doi": "10.1007/S00453-010-9457-2",
+                    "ee": "https://doi.org/10.1007/s00453-010-9457-2",
+                    "url": "https://dblp.org/rec/journals/algorithmica/DimitrovP12"
+                }
+            }
+        ]
+    },
+    {
+        "original_title": "Secretary Problems: Laminar Matroid and Intersection of Matroids",
+        "original_venue": "SODA 2011",
+        "original_bibtex": "@inproceedings{im2011secretary,\n  title={Secretary problems: laminar matroid and intersection of matroids},\n  author={Im, Sungjin and Wang, Yajun},\n  booktitle={Proceedings of the twenty-second annual ACM-SIAM symposium on Discrete Algorithms},\n  pages={400--409},\n  year={2011},\n  organization={SIAM}\n}",
+        "dblp_results": []
+    },
+    {
+        "original_title": "An Optimal Online Algorithm for Bipartite Matching and Generalizations to Matroids",
+        "original_venue": "SODA 2013",
+        "original_bibtex": "@inproceedings{kesselheim2013optimal,\n  title={An optimal online algorithm for bipartite matching and generalizations to matroids},\n  author={Kesselheim, Thomas and Radke, Klaus and T{\\\"o}nnis, Andreas and V{\\\"o}cking, Berthold},\n  booktitle={Proceedings of the twenty-fourth annual ACM-SIAM symposium on Discrete algorithms},\n  pages={589--600},\n  year={2013},\n  organization={SIAM}\n}",
+        "dblp_results": []
+    },
+    {
+        "original_title": "Matroids, Secretary Problems, and Online Mechanisms",
+        "original_venue": "SODA 2007",
+        "original_bibtex": "@inproceedings{babaioff2007matroids,\n  title={Matroids, secretary problems, and online mechanisms},\n  author={Babaioff, Moshe and Immorlica, Nicole and Kleinberg, Robert},\n  booktitle={Proceedings of the eighteenth annual ACM-SIAM symposium on Discrete algorithms},\n  pages={434--443},\n  year={2007},\n  organization={Society for Industrial and Applied Mathematics}\n}",
+        "dblp_results": []
+    },
+    {
+        "original_title": "Matroid Secretary Is Equivalent to Contention Resolution",
+        "original_venue": "ITCS 2022",
+        "original_bibtex": "@article{Dughmi2021matroid,\n  title={Matroid Secretary Is Equivalent to Contention Resolution},\n  author={Shaddin Dughmi},\n  journal={arXiv preprint arXiv:2103.04205},\n  year={2021}\n}\n\n@inproceedings{Dughmi22,\n  author       = {Shaddin Dughmi},\n  title        = {Matroid Secretary Is Equivalent to Contention Resolution},\n  booktitle    = {ITCS 2022},\n  year         = {2022}\n}",
+        "dblp_results": []
+    },
+    {
+        "original_title": "Advances on Matroid Secretary Problems: Free Order Model and Laminar Case",
+        "original_venue": "Math. Oper. Res. 2016",
+        "original_bibtex": "@article{Jaillet2012advances,\n  title={Advances on Matroid Secretary Problems: Free Order Model and Laminar Case},\n  author={Patrick Jaillet and Jos\u00e9 A. Soto and Rico Zenklusen},\n  journal={arXiv preprint arXiv:1207.1333},\n  year={2012}\n}\n\n@inproceedings{JailletSZ13,\n  author       = {Patrick Jaillet and Jos{'{e}} A. Soto and Rico Zenklusen},\n  title        = {Advances on Matroid Secretary Problems: Free Order Model and Laminar Case},\n  booktitle    = {IPCO 2013},\n  year         = {2013}\n}\n\n@article{JailletSZ16,\n  author       = {Patrick Jaillet and Jos{'{e}} A. Soto and Rico Zenklusen},\n  title        = {Advances on Matroid Secretary Problems: Free Order Model and Laminar Case},\n  journal      = {Math. Oper. Res.},\n  year         = {2016}\n}",
+        "dblp_results": []
+    },
+    {
+        "original_title": "A Framework for the Secretary Problem on the Intersection of Matroids",
+        "original_venue": "SIAM J. Comput. 2022",
+        "original_bibtex": "@article{Feldman2017a,\n  title={A Framework for the Secretary Problem on the Intersection of Matroids},\n  author={Moran Feldman and Ola Svensson and Rico Zenklusen},\n  journal={arXiv preprint arXiv:1704.02608},\n  year={2017}\n}",
+        "dblp_results": []
+    },
+    {
+        "original_title": "The matroid secretary problem for minor-closed classes and random matroids",
+        "original_venue": "SIAM J. Discrete Math. 2020",
+        "original_bibtex": "@article{Huynh2016the,\n  title={The matroid secretary problem for minor-closed classes and random matroids},\n  author={Tony Huynh and Peter Nelson},\n  journal={arXiv preprint arXiv:1603.06822},\n  year={2016}\n}\n\n@article{HuynhN20,\n  author       = {Tony Huynh and Peter Nelson},\n  title        = {The Matroid Secretary Problem for Minor-Closed Classes and Random Matroids},\n  journal      = {SIAM J. Discrete Math.},\n  year         = {2020}\n}",
+        "dblp_results": []
+    },
+    {
+        "original_title": "Improved algorithms and analysis for the laminar matroid secretary problem",
+        "original_venue": "CoRR 2013",
+        "original_bibtex": "@article{Harris2013improved,\n  title={Improved algorithms and analysis for the laminar matroid secretary problem},\n  author={David Harris and Manish Purohit},\n  journal={arXiv preprint arXiv:1301.4958},\n  year={2013}\n}",
+        "dblp_results": []
+    },
+    {
+        "original_title": "On Variants of the Matroid Secretary Problem",
+        "original_venue": "Algorithmica 2013",
+        "original_bibtex": "@article{Gharan2011on,\n  title={On Variants of the Matroid Secretary Problem},\n  author={Shayan Oveis Gharan and Jan Vondr\u00e1k},\n  journal={arXiv preprint arXiv:1104.4081},\n  year={2011}\n}\n\n@inproceedings{GharanV11,\n  author       = {Shayan Oveis Gharan and Jan Vondr{'{a}}k},\n  title        = {On Variants of the Matroid Secretary Problem},\n  booktitle    = {ESA 2011},\n  year         = {2011}\n}\n\n@article{GharanV13,\n  author       = {Shayan Oveis Gharan and Jan Vondr{'{a}}k},\n  title        = {On Variants of the Matroid Secretary Problem},\n  journal      = {Algorithmica},\n  year         = {2013}\n}",
+        "dblp_results": []
+    },
+    {
+        "original_title": "Extension of Simple Algorithms to the Matroid Secretary Problem",
+        "original_venue": "CoRR 2022",
+        "original_bibtex": "@article{Park2022extension,\n  title={Extension of Simple Algorithms to the Matroid Secretary Problem},\n  author={Simon Park},\n  journal={arXiv preprint arXiv:2211.02755},\n  year={2022}\n}",
+        "dblp_results": []
+    },
+    {
+        "original_title": "Formal Barriers to Simple Algorithms for the Matroid Secretary Problem",
+        "original_venue": "WINE 2021",
+        "original_bibtex": "@article{Bahrani2021formal,\n  title={Formal Barriers to Simple Algorithms for the Matroid Secretary Problem},\n  author={Maryam Bahrani and Hedyeh Beyhaghi and Sahil Singla and S. Matthew Weinberg},\n  journal={arXiv preprint arXiv:2111.04114},\n  year={2021}\n}",
+        "dblp_results": []
+    },
+    {
+        "original_title": "The $k$-Fold Matroid Secretary Problem",
+        "original_venue": "SOSA 2026",
+        "original_bibtex": "@article{Gujjar2025the,\n  title={The $k$-Fold Matroid Secretary Problem},\n  author={Rishi Gujjar and Kevin Hua and Robert Kleinberg and Frederick V. Qiu},\n  journal={arXiv preprint arXiv:2512.06611},\n  year={2025}\n}",
+        "dblp_results": []
+    },
+    {
+        "original_title": "Beating Competitive Ratio 4 for Graphic Matroid Secretary",
+        "original_venue": "ESA 2025",
+        "original_bibtex": "@article{Banihashem2025beating,\n  title={Beating Competitive Ratio 4 for Graphic Matroid Secretary},\n  author={Kiarash Banihashem and MohammadTaghi Hajiaghayi and Dariusz R. Kowalski and Piotr Krysta and Danny Mittal and Jan Olkowski},\n  journal={arXiv preprint arXiv:2501.08846},\n  year={2025}\n}",
+        "dblp_results": []
+    },
+    {
+        "original_title": "Constant-Competitiveness for Random Assignment Matroid Secretary Without Knowing the Matroid",
+        "original_venue": "Math. Program. 2025",
+        "original_bibtex": "@article{Santiago2023constantcompetitiveness,\n  title={Constant-Competitiveness for Random Assignment Matroid Secretary Without Knowing the Matroid},\n  author={Richard Santiago and Ivan Sergeev and Rico Zenklusen},\n  journal={arXiv preprint arXiv:2305.05353},\n  year={2023}\n}",
+        "dblp_results": []
+    },
+    {
+        "original_title": "Matroid Secretary Problem in the Random Assignment Model",
+        "original_venue": "SIAM J. Comput. 2013",
+        "original_bibtex": "@article{Soto2010matroid,\n  title={Matroid Secretary Problem in the Random Assignment Model},\n  author={Jos\u00e9 A. Soto},\n  journal={arXiv preprint arXiv:1007.2152},\n  year={2010}\n}",
+        "dblp_results": []
+    },
+    {
+        "original_title": "The Simulated Greedy Algorithm for Several Submodular Matroid Secretary Problems",
+        "original_venue": "Theory Comput. Syst. 2016",
+        "original_bibtex": "@article{Ma2011the,\n  title={The Simulated Greedy Algorithm for Several Submodular Matroid Secretary Problems},\n  author={Tengyu Ma and Bo Tang and Yajun Wang},\n  journal={arXiv preprint arXiv:1107.2188},\n  year={2011}\n}\n\n@inproceedings{MaTW13,\n  author       = {Tengyu Ma and Bo Tang and Yajun Wang},\n  title        = {The Simulated Greedy Algorithm for Several Submodular Matroid Secretary Problems},\n  booktitle    = {STACS 2013},\n  year         = {2013}\n}\n\n@article{MaTW16,\n  author       = {Tengyu Ma and Bo Tang and Yajun Wang},\n  title        = {The Simulated Greedy Algorithm for Several Submodular Matroid Secretary Problems},\n  journal      = {Theory Comput. Syst.},\n  year         = {2016}\n}",
+        "dblp_results": []
+    },
+    {
+        "original_title": "Matroid Partition Property and the Secretary Problem",
+        "original_venue": "ITCS 2023",
+        "original_bibtex": "@article{Abdolazimi2021matroid,\n  title={Matroid Partition Property and the Secretary Problem},\n  author={Dorna Abdolazimi and Anna R. Karlin and Nathan Klein and Shayan Oveis Gharan},\n  journal={arXiv preprint arXiv:2111.12436},\n  year={2021}\n}",
+        "dblp_results": []
+    },
+    {
+        "original_title": "Matroid Secretary for Regular and Decomposable Matroids",
+        "original_venue": "SIAM J. Comput. 2014",
+        "original_bibtex": "@article{Dinitz2012matroid,\n  title={Matroid Secretary for Regular and Decomposable Matroids},\n  author={Michael Dinitz and Guy Kortsarz},\n  journal={arXiv preprint arXiv:1207.5146},\n  year={2012}\n}\n\n@article{DinitzK14,\n  author       = {Michael Dinitz and Guy Kortsarz},\n  title        = {Matroid Secretary for Regular and Decomposable Matroids},\n  journal      = {SIAM J. Comput.},\n  year         = {2014}\n}",
+        "dblp_results": []
+    },
+    {
+        "original_title": "The Outer Limits of Contention Resolution on Matroids and Connections to the Secretary Problem",
+        "original_venue": "ICALP 2020",
+        "original_bibtex": "@article{Dughmi2019the,\n  title={The Outer Limits of Contention Resolution on Matroids and Connections to the Secretary Problem},\n  author={Shaddin Dughmi},\n  journal={arXiv preprint arXiv:1909.04268},\n  year={2019}\n}",
+        "dblp_results": []
+    },
+    {
+        "original_title": "Beyond matroids: Secretary Problem and Prophet Inequality with general constraints",
+        "original_venue": "STOC 2016",
+        "original_bibtex": "@article{Rubinstein2016beyond,\n  title={Beyond matroids: Secretary Problem and Prophet Inequality with general constraints},\n  author={Aviad Rubinstein},\n  journal={arXiv preprint arXiv:1604.00357},\n  year={2016}\n}",
+        "dblp_results": []
+    },
+    {
+        "original_title": "A Simple $O(\\log\\log(\\mathrm{rank}))$-Competitive Algorithm for the Matroid Secretary Problem",
+        "original_venue": "SODA 2015",
+        "original_bibtex": "@article{Feldman2014a,\n  title={A Simple $O(\\log\\log(\\mathrm{rank}))$-Competitive Algorithm for the Matroid Secretary Problem},\n  author={Moran Feldman and Ola Svensson and Rico Zenklusen},\n  journal={arXiv preprint arXiv:1404.4473},\n  year={2014}\n}\n\n@inproceedings{FeldmanSZ15,\n  author       = {Moran Feldman and Ola Svensson and Rico Zenklusen},\n  title        = {A Simple {O}(log log rank)-Competitive Algorithm for the Matroid Secretary Problem},\n  booktitle    = {SODA 2015},\n  year         = {2015}\n}",
+        "dblp_results": []
+    },
+    {
+        "original_title": "Laminar Matroid Secretary: Greedy Strikes Back",
+        "original_venue": "ESA 2024",
+        "original_bibtex": "@article{Huang2023laminar,\n  title={Laminar Matroid Secretary: Greedy Strikes Back},\n  author={Zhiyi Huang and Zahra Parsaeian and Zixuan Zhu},\n  journal={arXiv preprint arXiv:2308.09880},\n  year={2023}\n}",
+        "dblp_results": []
+    },
+    {
+        "original_title": "Submodular Matroid Secretary Problem with Shortlists",
+        "original_venue": "CoRR 2020",
+        "original_bibtex": "@article{Shadravan2020submodular,\n  title={Submodular Matroid Secretary Problem with Shortlists},\n  author={Mohammad Shadravan},\n  journal={arXiv preprint arXiv:2001.00894},\n  year={2020}\n}",
+        "dblp_results": []
+    },
+    {
+        "original_title": "Matroid Secretary via Labeling Schemes",
+        "original_venue": "IPCO 2025",
+        "original_bibtex": "@article{Brczi2024matroid,\n  title={Matroid Secretary via Labeling Schemes},\n  author={Krist\u00f3f B\u00e9rczi and Vasilis Livanos and Jos\u00e9 Soto and Victor Verdugo},\n  journal={arXiv preprint arXiv:2411.12069},\n  year={2024}\n}",
+        "dblp_results": []
+    },
+    {
+        "original_title": "Strong Algorithms for the Ordinal Matroid Secretary Problem",
+        "original_venue": "Math. Oper. Res. 2021",
+        "original_bibtex": "@article{Soto2018strong,\n  title={Strong Algorithms for the Ordinal Matroid Secretary Problem},\n  author={Jos\u00e9 A. Soto and Abner Turkieltaub and Victor Verdugo},\n  journal={arXiv preprint arXiv:1802.01997},\n  year={2018}\n}\n\n@inproceedings{SotoTV18,\n  author       = {Jos{'{e}} A. Soto and Abner Turkieltaub and Victor Verdugo},\n  title        = {Strong Algorithms for the Ordinal Matroid Secretary Problem},\n  booktitle    = {SODA 2018},\n  year         = {2018}\n}\n\n@article{SotoTV21,\n  author       = {Jos{'{e}} A. Soto and Abner Turkieltaub and Victor Verdugo},\n  title        = {Strong Algorithms for the Ordinal Matroid Secretary Problem},\n  journal      = {Math. Oper. Res.},\n  year         = {2021}\n}",
+        "dblp_results": []
+    },
+    {
+        "original_title": "Secretary problem: graphs, matroids and greedoids",
+        "original_venue": "CoRR 2018",
+        "original_bibtex": "@article{Kordecki2018secretary,\n  title={Secretary problem: graphs, matroids and greedoids},\n  author={Wojciech Kordecki},\n  journal={Operations Research Forum 2(4) 2021},\n  year={2018}\n}",
+        "dblp_results": []
+    },
+    {
+        "original_title": "Prophet Secretary for Combinatorial Auctions and Matroids",
+        "original_venue": "SODA 2018",
+        "original_bibtex": "@article{Ehsani2017prophet,\n  title={Prophet Secretary for Combinatorial Auctions and Matroids},\n  author={Soheil Ehsani and MohammadTaghi Hajiaghayi and Thomas Kesselheim and Sahil Singla},\n  journal={arXiv preprint arXiv:1710.11213},\n  year={2017}\n}",
+        "dblp_results": []
+    },
+    {
+        "original_title": "O(log log rank) Competitive-Ratio for the Matroid Secretary Problem",
+        "original_venue": "FOCS 2014",
+        "original_bibtex": "@article{Lachish2014olog,\n  title={O(log log rank) Competitive-Ratio for the Matroid Secretary Problem},\n  author={Oded Lachish},\n  journal={arXiv preprint arXiv:1403.7343},\n  year={2014}\n}\n\n@inproceedings{Lachish14,\n  author       = {Oded Lachish},\n  title        = {{O}(log log rank) Competitive-Ratio for the Matroid Secretary Problem},\n  booktitle    = {FOCS 2014},\n  year         = {2014}\n}",
+        "dblp_results": []
+    },
+    {
+        "original_title": "The secretary returns",
+        "original_venue": "CoRR 2014",
+        "original_bibtex": "@article{Vardi2014the,\n  title={The secretary returns},\n  author={Shai Vardi},\n  journal={arXiv preprint arXiv:1404.0614},\n  year={2014}\n}",
+        "dblp_results": []
+    },
+    {
+        "original_title": "Combinatorial Secretary Problems with Ordinal Information",
+        "original_venue": "ICALP 2017",
+        "original_bibtex": "@article{Hoefer2017combinatorial,\n  title={Combinatorial Secretary Problems with Ordinal Information},\n  author={Martin Hoefer and Bojana Kodric},\n  journal={arXiv preprint arXiv:1702.01290},\n  year={2017}\n}",
+        "dblp_results": []
+    },
+    {
+        "original_title": "The Submodular Secretary Problem Goes Linear",
+        "original_venue": "SIAM J. Comput. 2018",
+        "original_bibtex": "@article{Feldman2015the,\n  title={The Submodular Secretary Problem Goes Linear},\n  author={Moran Feldman and Rico Zenklusen},\n  journal={arXiv preprint arXiv:1507.08384},\n  year={2015}\n}",
+        "dblp_results": []
+    },
+    {
+        "original_title": "Algorithms for Secretary Problems on Graphs and Hypergraphs",
+        "original_venue": "ICALP 2009",
+        "original_bibtex": "@article{Korula2008algorithms,\n  title={Algorithms for Secretary Problems on Graphs and Hypergraphs},\n  author={Nitish Korula and Martin Pal},\n  journal={arXiv preprint arXiv:0807.1139},\n  year={2008}\n}",
+        "dblp_results": []
+    },
+    {
+        "original_title": "Online Matroid Embeddings",
+        "original_venue": "CoRR 2024",
+        "original_bibtex": "@article{Cristi2024online,\n  title={Online Matroid Embeddings},\n  author={Andr\u00e9s Cristi and Paul D\u00fctting and Robert Kleinberg and Renato Paes Leme and Neel Patel},\n  journal={arXiv preprint arXiv:2407.10316},\n  year={2024}\n}",
+        "dblp_results": []
+    },
+    {
+        "original_title": "Improved Submodular Secretary Problem with Shortlists",
+        "original_venue": "arXiv preprint arXiv:2010.01901",
+        "original_bibtex": "@article{Shadravan2020improved,\n  title={Improved Submodular Secretary Problem with Shortlists},\n  author={Mohammad Shadravan},\n  journal={arXiv preprint arXiv:2010.01901},\n  year={2020}\n}",
+        "dblp_results": []
+    },
+    {
+        "original_title": "Robust Secretary and Prophet Algorithms for Packing Integer Programs",
+        "original_venue": "arXiv preprint arXiv:2112.12920",
+        "original_bibtex": "@article{Argue2021robust,\n  title={Robust Secretary and Prophet Algorithms for Packing Integer Programs},\n  author={C. J. Argue and Anupam Gupta and Marco Molinaro and Sahil Singla},\n  journal={arXiv preprint arXiv:2112.12920},\n  year={2021}\n}",
+        "dblp_results": []
+    },
+    {
+        "original_title": "Free-order secretary for two-sided independence systems",
+        "original_venue": "arXiv preprint arXiv:2511.04390",
+        "original_bibtex": "@article{Brczi2025freeorder,\n  title={Free-order secretary for two-sided independence systems},\n  author={Krist\u00f3f B\u00e9rczi and Vasilis Livanos and Jos\u00e9 A. Soto and Victor Verdugo},\n  journal={arXiv preprint arXiv:2511.04390},\n  year={2025}\n}",
+        "dblp_results": []
+    },
+    {
+        "original_title": "Sample-Based Matroid Prophet Inequalities",
+        "original_venue": "arXiv preprint arXiv:2406.12799",
+        "original_bibtex": "@article{Fu2024samplebased,\n  title={Sample-Based Matroid Prophet Inequalities},\n  author={Hu Fu and Pinyan Lu and Zhihao Gavin Tang and Hongxun Wu and Jinzhao Wu and Qianfan Zhang},\n  journal={arXiv preprint arXiv:2406.12799},\n  year={2024}\n}",
+        "dblp_results": []
+    },
+    {
+        "original_title": "Constrained Non-Monotone Submodular Maximization: Offline and Secretary Algorithms",
+        "original_venue": "arXiv preprint arXiv:1003.1517",
+        "original_bibtex": "@article{Gupta2010constrained,\n  title={Constrained Non-Monotone Submodular Maximization: Offline and Secretary Algorithms},\n  author={Anupam Gupta and Aaron Roth and Grant Schoenebeck and Kunal Talwar},\n  journal={arXiv preprint arXiv:1003.1517},\n  year={2010}\n}",
+        "dblp_results": []
+    },
+    {
+        "original_title": "Secretary and Online Matching Problems with Machine Learned Advice",
+        "original_venue": "arXiv preprint arXiv:2006.01026",
+        "original_bibtex": "@article{Antoniadis2020secretary,\n  title={Secretary and Online Matching Problems with Machine Learned Advice},\n  author={Antonios Antoniadis and Themis Gouleakis and Pieter Kleer and Pavel Kolev},\n  journal={arXiv preprint arXiv:2006.01026},\n  year={2020}\n}",
+        "dblp_results": []
+    },
+    {
+        "original_title": "Building a Good Team: Secretary Problems and the Supermodular Degree",
+        "original_venue": "arXiv preprint arXiv:1507.06199",
+        "original_bibtex": "@article{Feldman2015building,\n  title={Building a Good Team: Secretary Problems and the Supermodular Degree},\n  author={Moran Feldman and Rani Izsak},\n  journal={arXiv preprint arXiv:1507.06199},\n  year={2015}\n}",
+        "dblp_results": []
+    },
+    {
+        "original_title": "Packing Returning Secretaries",
+        "original_venue": "arXiv preprint arXiv:1810.11216",
+        "original_bibtex": "@article{Hoefer2018packing,\n  title={Packing Returning Secretaries},\n  author={Martin Hoefer and Lisa Wilhelmi},\n  journal={arXiv preprint arXiv:1810.11216},\n  year={2018}\n}",
+        "dblp_results": []
+    },
+    {
+        "original_title": "Simple Random Order Contention Resolution for Graphic Matroids with Almost no Prior Information",
+        "original_venue": "arXiv preprint arXiv:2211.15146",
+        "original_bibtex": "@article{Santiago2022simple,\n  title={Simple Random Order Contention Resolution for Graphic Matroids with Almost no Prior Information},\n  author={Richard Santiago and Ivan Sergeev and Rico Zenklusen},\n  journal={arXiv preprint arXiv:2211.15146},\n  year={2022}\n}",
+        "dblp_results": []
+    },
+    {
+        "original_title": "Universal Online Contention Resolution with Preselected Order",
+        "original_venue": "arXiv preprint arXiv:2504.16327",
+        "original_bibtex": "@article{Zhao2025universal,\n  title={Universal Online Contention Resolution with Preselected Order},\n  author={Junyao Zhao},\n  journal={arXiv preprint arXiv:2504.16327},\n  year={2025}\n}",
+        "dblp_results": []
+    },
+    {
+        "original_title": "Maximizing Profit with Convex Costs in the Random-order Model",
+        "original_venue": "arXiv preprint arXiv:1804.08172",
+        "original_bibtex": "@article{Gupta2018maximizing,\n  title={Maximizing Profit with Convex Costs in the Random-order Model},\n  author={Anupam Gupta and Ruta Mehta and Marco Molinaro},\n  journal={arXiv preprint arXiv:1804.08172},\n  year={2018}\n}",
+        "dblp_results": []
+    },
+    {
+        "original_title": "Single-Sample Prophet Inequalities Revisited",
+        "original_venue": "arXiv preprint arXiv:2103.13089",
+        "original_bibtex": "@article{Caramanis2021singlesample,\n  title={Single-Sample Prophet Inequalities Revisited},\n  author={Constantine Caramanis and Matthew Faw and Orestis Papadigenopoulos and Emmanouil Pountourakis},\n  journal={arXiv preprint arXiv:2103.13089},\n  year={2021}\n}",
+        "dblp_results": []
+    },
+    {
+        "original_title": "Online Ordinal Problems: Optimality of Comparison-based Algorithms and their Cardinal Complexity",
+        "original_venue": "arXiv preprint arXiv:2204.01418",
+        "original_bibtex": "@article{Gravin2022online,\n  title={Online Ordinal Problems: Optimality of Comparison-based Algorithms and their Cardinal Complexity},\n  author={Nick Gravin and Enze Sun and Zhihao Gavin Tang},\n  journal={arXiv preprint arXiv:2204.01418},\n  year={2022}\n}",
+        "dblp_results": []
+    },
+    {
+        "original_title": "On Submodular Prophet Inequalities and Correlation Gap",
+        "original_venue": "arXiv preprint arXiv:2107.03662",
+        "original_bibtex": "@article{Chekuri2021on,\n  title={On Submodular Prophet Inequalities and Correlation Gap},\n  author={Chandra Chekuri and Vasilis Livanos},\n  journal={arXiv preprint arXiv:2107.03662},\n  year={2021}\n}",
+        "dblp_results": []
+    },
+    {
+        "original_title": "Online Combinatorial Assignment in Independence Systems",
+        "original_venue": "arXiv preprint arXiv:2311.00890",
+        "original_bibtex": "@article{Marinkovic2023online,\n  title={Online Combinatorial Assignment in Independence Systems},\n  author={Javier Marinkovic and Jos\u00e9 A. Soto and Victor Verdugo},\n  journal={arXiv preprint arXiv:2311.00890},\n  year={2023}\n}",
+        "dblp_results": []
+    },
+    {
+        "original_title": "Combinatorial Prophet Inequalities",
+        "original_venue": "arXiv preprint arXiv:1611.00665",
+        "original_bibtex": "@article{Rubinstein2016combinatorial,\n  title={Combinatorial Prophet Inequalities},\n  author={Aviad Rubinstein and Sahil Singla},\n  journal={arXiv preprint arXiv:1611.00665},\n  year={2016}\n}",
+        "dblp_results": []
+    },
+    {
+        "original_title": "Single-Sample Prophet Inequalities via Greedy-Ordered Selection",
+        "original_venue": "Proceedings of the 2022 Annual ACM-SIAM Symposium on Discrete Algorithms (SODA 2022)",
+        "original_bibtex": "@article{Caramanis2021singlesample,\n  title={Single-Sample Prophet Inequalities via Greedy-Ordered Selection},\n  author={Constantine Caramanis and Paul D\u00fctting and Matthew Faw and Federico Fusco and Philip Lazos and Stefano Leonardi and Orestis Papadigenopoulos and Emmanouil Pountourakis and Rebecca Reiffenh\u00e4user},\n  journal={Proceedings of the 2022 Annual ACM-SIAM Symposium on Discrete Algorithms (SODA 2022)},\n  year={2021}\n}",
+        "dblp_results": []
+    },
+    {
+        "original_title": "Prophet Inequalities with Limited Information",
+        "original_venue": "arXiv preprint arXiv:1307.3736",
+        "original_bibtex": "@article{Azar2013prophet,\n  title={Prophet Inequalities with Limited Information},\n  author={Pablo D. Azar and Robert Kleinberg and S. Matthew Weinberg},\n  journal={arXiv preprint arXiv:1307.3736},\n  year={2013}\n}",
+        "dblp_results": []
+    },
+    {
+        "original_title": "Revealing Optimal Thresholds for Generalized Secretary Problem via Continuous LP",
+        "original_venue": "SODA 2015",
+        "original_bibtex": "@inproceedings{ChanCJ15,\n  author       = {T.{-}H. Hubert Chan and Fei Chen and Shaofeng H.{-}C. Jiang},\n  title        = {Revealing Optimal Thresholds for Generalized Secretary Problem via Continuous {LP}: Impacts on Online K-Item Auction and Bipartite K-Matching with Random Arrival Order},\n  booktitle    = {SODA 2015},\n  year         = {2015}\n}",
+        "dblp_results": []
+    },
+    {
+        "original_title": "New Results for the k-Secretary Problem",
+        "original_venue": "Algorithmica 2021",
+        "original_bibtex": "@inproceedings{AlbersL19,\n  author       = {Susanne Albers and Leon Ladewig},\n  title        = {New Results for the k-Secretary Problem},\n  booktitle    = {ISAAC 2019},\n  year         = {2019}\n}\n\n@article{AlbersL21,\n  author       = {Susanne Albers and Leon Ladewig},\n  title        = {New Results for the k-Secretary Problem},\n  journal      = {Algorithmica},\n  year         = {2021}\n}",
+        "dblp_results": []
+    }
+]

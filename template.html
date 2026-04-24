@@ -181,11 +181,18 @@
 
         /* Modern Table Styles */
         .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+        .table-collapsible { margin: 2rem 0; }
+        .table-collapsible summary { list-style: none; display: flex; align-items: center; justify-content: space-between; padding: 0.5rem 0; border-bottom: 2px solid var(--accent-color); margin-bottom: 0.5rem; }
+        .table-collapsible summary::-webkit-details-marker { display: none; }
+        .table-collapsible summary h2, .table-collapsible summary h3 { margin: 0; border: none; padding: 0; }
+        .table-collapsible summary::after { content: '▼'; font-size: 0.8rem; color: var(--secondary-color); transition: transform 0.2s; }
+        .table-collapsible[open] summary::after { transform: rotate(180deg); }
+        
         table {
             width: 100%;
             border-collapse: separate;
             border-spacing: 0;
-            margin: 2rem 0;
+            margin: 0;
             font-size: 0.95em;
             border-radius: 8px;
             overflow: hidden;
@@ -420,20 +427,22 @@
             margin: 0;
             opacity: 0.8;
         }
+        /* Tag badges on cards — soft indigo pill, readable on white */
         .tag-badge {
-            background-color: #2b6cb0;
-            color: #fff;
-            padding: 0.2rem 0.55rem;
+            background-color: #e8edf5;
+            color: #2c4a7c;
+            padding: 0.18rem 0.55rem;
             border-radius: 9999px;
-            font-size: 0.72rem;
+            font-size: 0.7rem;
             font-weight: 700;
             display: inline-block;
+            border: 1px solid #c5d3e8;
+            letter-spacing: 0.2px;
         }
+        /* Filter bar pill buttons */
         .tag-filter-btn {
             background-color: white;
             border: 1px solid #cbd5e0;
-            padding: 0.3rem 0.8rem;
-            margin: 0.2rem;
             border-radius: 9999px;
             cursor: pointer;
             font-size: 0.85rem;
@@ -536,28 +545,56 @@
             transition: background 0.2s, opacity 0.3s;
             z-index: 1000;
         }
-        #back-to-top:hover { background: var(--secondary-color); }
+        #back-to-top:hover { background: #2b6cb0; }
         #back-to-top.visible { display: flex; }
+        
+        /* Reading List - Dynamic Numbering with CSS Counters */
+        #reading-list-container { counter-reset: paper-counter; }
+        .paper-card.filterable-card:not([style*="display: none"]) { counter-increment: paper-counter; }
+        .paper-card .paper-title::before { content: counter(paper-counter) ". "; color: var(--secondary-color); font-weight: 800; margin-right: 4px; }
+        
         details > summary { cursor: pointer; outline: none; user-select: none; }
         details > summary h2, details > summary h3 { display: inline-block; }
-        /* Dark mode */
+        /* Dark mode — WCAG AA calibrated */
         @media (prefers-color-scheme: dark) {
             :root {
-                --bg-color: #1a202c;
-                --text-color: #e2e8f0;
-                --container-bg: #2d3748;
-                --primary-color: #90cdf4;
-                --secondary-color: #63b3ed;
-                --accent-color: #2a4365;
-                --border-color: #4a5568;
+                --bg-color: #111827;
+                --text-color: #d1d5db;
+                --container-bg: #1f2937;
+                --primary-color: #f3f4f6;
+                --secondary-color: #60a5fa;
+                --accent-color: #1e3a5f;
+                --border-color: #374151;
             }
-            .paper-card { background: #2d3748; }
-            .tag-filter-btn { background: #2d3748; color: #e2e8f0; }
-            .filter-bar { background: #2d3748; }
-            td.class-cell { background-color: #2a4365; }
-            table tbody tr:hover td:not(.class-cell) { background-color: #374151; }
+            h1, h2, h3 { color: #f3f4f6; }
+            .paper-title { color: #e5e7eb; }
+            .paper-card { background: #1f2937; border-color: #374151; }
+            .paper-card:hover { border-color: #4b6084; }
+            .paper-authors { color: #9ca3af; }
+            .paper-summary { color: #9ca3af; }
+            .tag-badge { background: #1e3a5f; color: #93c5fd; border-color: #2d5a8e; }
+            .tag-filter-btn { background: #1f2937; color: #d1d5db; border-color: #4b5563; }
+            .tag-filter-btn:hover { background: #374151; }
+            .tag-filter-btn.active { background: #2563eb; color: #fff; border-color: #2563eb; }
+            .filter-bar { background: #1a2535; border-color: #374151; }
+            .filter-bar-label { color: #6b7280; }
+            .filter-reset-btn { color: #9ca3af; border-color: #4b5563; }
+            .filter-reset-btn:hover { background: #374151; color: #e5e7eb; }
+            .result-count { color: #6b7280; }
+            .card-toggle-btn { color: #6b7280; border-color: #374151; }
+            .search-input { background: #1f2937; color: #d1d5db; border-color: #4b5563; }
+            td.class-cell { background-color: #1e3a5f; color: #93c5fd; }
+            table thead tr { background-color: #1e3a5f; }
+            table tbody tr:hover td:not(.class-cell) { background-color: #273549; }
+            table td, table th { border-color: #374151; }
+            .definition { background-color: #1e3a5f; border-left-color: #3b82f6; }
+            footer { color: #6b7280; }
+            .tab-button { color: #9ca3af; }
+            .tab-button.active { color: #60a5fa; border-bottom-color: #60a5fa; }
+            .bibtex-container pre { background: #111827; }
         }
 </style>
+
 </head>
 <a href="#main-content" class="skip-link" style="position:absolute;top:-40px;left:0;background:var(--secondary-color);color:white;padding:8px 16px;z-index:9999;border-radius:0 0 6px 0;transition:top 0.2s;" onfocus="this.style.top='0'">Skip to content</a>
 <body>
@@ -622,12 +659,12 @@
 
         <!-- Tab 2: Ratios Table -->
         <section id="ratios-table" class="tab-content" role="tabpanel" aria-labelledby="btn-ratios-table">
-            <details open>
+            <details class="table-collapsible" open>
                 <summary><h2>{ratios_title}</h2></summary>
                 
             <p>{ratios_desc}</p>
             
-            <div style="overflow-x: auto;">
+            <div class="table-scroll">
                 <table>
                     <thead>
                         <tr>
@@ -644,11 +681,11 @@
             </div>
             </details>
 
-            <details open style="margin-top: 3rem;">
-                <summary><h3 style="margin-top: 0;">{variants_title}</h3></summary>
+            <details class="table-collapsible" open style="margin-top: 3rem;">
+                <summary><h3>{variants_title}</h3></summary>
                 
             <p>{variants_desc}</p>
-            <div style="overflow-x: auto;">
+            <div class="table-scroll">
                 <table>
                     <thead>
                         <tr>
@@ -780,9 +817,12 @@
         // ── Navigate from table to paper card ─────────────────────────
         function goToPaper(idx) {
             openTab(null, 'reading-list');
+            const cardId = 'paper-card-' + idx;
+            // Short delay to ensure tab is visible
             setTimeout(() => {
-                const card = document.getElementById('paper-card-' + idx);
+                const card = document.getElementById(cardId);
                 if (!card) return;
+                
                 // Expand card body if collapsed
                 const body = card.querySelector('.card-body');
                 const btn  = card.querySelector('.card-toggle-btn');
@@ -790,13 +830,15 @@
                     body.classList.remove('collapsed');
                     if (btn) btn.textContent = '▼ Hide';
                 }
+                
                 card.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 card.classList.remove('highlight-animation');
                 void card.offsetWidth;
                 card.classList.add('highlight-animation');
-                // Update URL so Back works
-                history.pushState(null, '', '#' + card.id);
-            }, 120);
+                
+                // Update URL hash so the browser registers the jump
+                history.pushState(null, '', '#' + cardId);
+            }, 150);
         }
 
         // ── Filtering ─────────────────────────────────────────────────
