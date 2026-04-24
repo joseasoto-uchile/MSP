@@ -363,10 +363,12 @@ para cada función de peso \(w\) no negativa consistente con el orden subyacente
                     btn_local = f'<a href="{paper["local_pdf"]}" class="paper-link" target="_blank">{t["read_local"]}</a>'
             else:
                 btn_arxiv = f'<a href="{paper["pdf_url"]}" class="paper-link secondary" target="_blank">{t["view_arxiv"]}</a>'
-                btn_local = (f'<a href="{paper["local_pdf"]}" class="paper-link" target="_blank">{t["read_local"]}</a>' if has_local else '')
+                has_local_file = paper.get('local_pdf', '#') not in ('#', '')
+                btn_local = (f'<a href="{paper["local_pdf"]}" class="paper-link" target="_blank">{t["read_local"]}</a>' if has_local_file else '')
         else:
             btn_arxiv = ''
-            btn_local = (f'<a href="{paper["local_pdf"]}" class="paper-link" target="_blank">{t["read_local"]}</a>' if has_local else '')
+            has_local_file = paper.get('local_pdf', '#') not in ('#', '')
+            btn_local = (f'<a href="{paper["local_pdf"]}" class="paper-link" target="_blank">{t["read_local"]}</a>' if has_local_file else '')
 
         btn_dblp   = (f'<a href="{paper["dblp_url"]}" class="paper-link" style="background-color:#3182ce;" target="_blank">DBLP</a>'
                       if paper.get('dblp_url') else '')
