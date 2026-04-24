@@ -633,7 +633,7 @@
         <div class="tabs" role="tablist">
             <button class="tab-button active" id="btn-lecture-notes" role="tab" aria-selected="true" aria-controls="lecture-notes" onclick="openTab(event, 'lecture-notes')">Lecture Notes</button>
             <button class="tab-button" id="btn-ratios-table" role="tab" aria-selected="false" aria-controls="ratios-table" onclick="openTab(event, 'ratios-table')">Chronological Bounds</button>
-            <button class="tab-button" id="btn-reading-list" role="tab" aria-selected="false" aria-controls="reading-list" onclick="openTab(event, 'reading-list')">Reading List (56)</button>
+            <button class="tab-button" id="btn-reading-list" role="tab" aria-selected="false" aria-controls="reading-list" onclick="openTab(event, 'reading-list')">Reading List (57)</button>
         </div>
 
         <!-- Tab 1: Lecture Notes -->
@@ -682,7 +682,7 @@
                 
             <p>The table below groups results by Matroid Class, detailing the exact constant or formula achieved by each paper historically. All constants have been normalized so that <strong>values \( \le 1 \) represent the approximation factor</strong> (i.e. \( 1/\alpha \) where \( \alpha \) is the traditional competitive ratio \( \ge 1 \)). We also note whether the guarantee is <strong>Probability-Competitive</strong> (\( p \)) or the traditional <strong>Utility-Competitive Ratio</strong>.</p>
             <div class="note-box" style="margin: 1rem 0; padding: 0.8rem 1.2rem; background: var(--accent-color); border-left: 4px solid var(--secondary-color); font-size: 0.9rem; line-height: 1.4; color: var(--text-color);">
-                All guarantees are normalized as values \u2264 1. Labels denote notions: Prob (\(p\)), Util (\(u\)), Ordinal (\(o\)). Since \(p\) implies \(u\), every \(p\) row also provides the corresponding utility guarantee.
+                All bounds are normalized as competitive guarantees \u2264 1. 'Prob' is stronger than 'Util'; 'Ordinal' is a distinct guarantee notion.
             </div>
             
             <div class="table-scroll">
@@ -708,7 +708,7 @@
                         <td style='font-weight: 500;'>\( \Omega(1/\sqrt{\log \rho}) \)</td>
                     </tr>
                     <tr class=''>
-                        <td><a class='table-link' href='#paper-card-8' onclick='goToPaper(8); return false;'>Lachish (2014) / Feldman et al. (2015)</a></td>
+                        <td><a class='table-link' href='#paper-card-8' onclick='goToPaper(8); return false;'>Lachish (2014); Feldman, Svensson, Zenklusen (2015)</a></td>
                         <td style='text-align: center;'><span class='badge util'>Util</span></td>
                         <td style='font-weight: 500;'>\( \Omega(1/\log \log \rho) \)</td>
                     </tr>
@@ -818,13 +818,35 @@
                         <td style='font-weight: 500;'>\( 1/(3e) \approx 0.122 \)</td>
                     </tr>
                     <tr class='group-start'>
-                        <td rowspan='4' class='class-cell'>k-Uniform</td>
+                        <td rowspan='1' class='class-cell'>1-Uniform / Classical Secretary</td>
                         <td>Dynkin (1963)</td>
                         <td style='text-align: center;'><span class='badge prob'>Prob</span></td>
                         <td style='font-weight: 500;'>\( 1/e \approx 0.367 \)</td>
                     </tr>
+                    <tr class='group-start'>
+                        <td rowspan='3' class='class-cell'>2-Uniform</td>
+                        <td><a class='table-link' href='#paper-card-56' onclick='goToPaper(56); return false;'>Turkieltaub Melo (PhD thesis, 2025)</a></td>
+                        <td style='text-align: center;'><span class='badge prob'>Prob</span></td>
+                        <td style='font-weight: 500;'>\( 0.4417 \)</td>
+                    </tr>
                     <tr class=''>
-                        <td><a class='table-link' href='#paper-card-0' onclick='goToPaper(0); return false;'>Kleinberg (2005) / Soto et al. (2021)</a></td>
+                        <td><a class='table-link' href='#paper-card-54' onclick='goToPaper(54); return false;'>Chan, Chen, Jiang (2014/2015)</a></td>
+                        <td style='text-align: center;'><span class='badge ordinal'>Ordinal</span></td>
+                        <td style='font-weight: 500;'>\( 0.4886 \)</td>
+                    </tr>
+                    <tr class=''>
+                        <td><a class='table-link' href='#paper-card-54' onclick='goToPaper(54); return false;'>Chan, Chen, Jiang (2014/2015)</a></td>
+                        <td style='text-align: center;'><span class='badge util'>Util</span></td>
+                        <td style='font-weight: 500;'>\( 0.492 \)</td>
+                    </tr>
+                    <tr class='group-start'>
+                        <td rowspan='4' class='class-cell'>k-Uniform</td>
+                        <td><a class='table-link' href='#paper-card-0' onclick='goToPaper(0); return false;'>Kleinberg (2005)</a></td>
+                        <td style='text-align: center;'><span class='badge util'>Util</span></td>
+                        <td style='font-weight: 500;'>\( 1 - O(1/\sqrt{k}) \)</td>
+                    </tr>
+                    <tr class=''>
+                        <td><a class='table-link' href='#paper-card-27' onclick='goToPaper(27); return false;'>Soto, Turkieltaub, Verdugo (2018/2021)</a></td>
                         <td style='text-align: center;'><span class='badge prob'>Prob</span></td>
                         <td style='font-weight: 500;'>\( 1 - O(\sqrt{\frac{\log k}{k}}) \)</td>
                     </tr>
@@ -845,28 +867,37 @@
                         <td style='font-weight: 500;'>\( 1 - O(\sqrt{\frac{\log(n)}{k}}) \)</td>
                     </tr>
                     <tr class='group-start'>
-                        <td rowspan='1' class='class-cell'>Partition</td>
-                        <td>Folklore</td>
-                        <td style='text-align: center;'><span class='badge prob'>Prob</span></td>
-                        <td style='font-weight: 500;'>\( 1/e \approx 0.367 \)</td>
-                    </tr>
-                    <tr class='group-start'>
-                        <td rowspan='1' class='class-cell'>Truncated Partition</td>
-                        <td><a class='table-link' href='#paper-card-5' onclick='goToPaper(5); return false;'>Babaioff, Immorlica, Kleinberg (2007)</a></td>
+                        <td rowspan='3' class='class-cell'>Truncated Partition</td>
+                        <td><a class='table-link' href='#paper-card-5' onclick='goToPaper(5); return false;'>Babaioff, Immorlica, Kleinberg (2007/2018)</a></td>
                         <td style='text-align: center;'><span class='badge util'>Util</span></td>
                         <td style='font-weight: 500;'>\( 1/e^2 \approx 0.135 \)</td>
                     </tr>
+                    <tr class=''>
+                        <td><a class='table-link' href='#paper-card-27' onclick='goToPaper(27); return false;'>Soto, Turkieltaub, Verdugo (2018/2021)</a></td>
+                        <td style='text-align: center;'><span class='badge prob'>Prob</span></td>
+                        <td style='font-weight: 500;'>\( 1/4 = 0.25 \) (2-forbidden)</td>
+                    </tr>
+                    <tr class=''>
+                        <td><a class='table-link' href='#paper-card-26' onclick='goToPaper(26); return false;'>Bérczi, Livanos, Soto, Verdugo (2025)</a></td>
+                        <td style='text-align: center;'><span class='badge prob'>Prob</span></td>
+                        <td style='font-weight: 500;'>\( 1 - \ln(2) \approx 0.3068 \) (laminar)</td>
+                    </tr>
                     <tr class='group-start'>
                         <td rowspan='1' class='class-cell'>Regular & Max-Flow Min-Cut</td>
-                        <td><a class='table-link' href='#paper-card-20' onclick='goToPaper(20); return false;'>Dinitz & Kortsarz (2012/2014)</a></td>
+                        <td><a class='table-link' href='#paper-card-20' onclick='goToPaper(20); return false;'>Dinitz & Kortsarz (2013/2014)</a></td>
                         <td style='text-align: center;'><span class='badge util'>Util</span></td>
                         <td style='font-weight: 500;'>\( 1/(9e) \approx 0.0408 \)</td>
                     </tr>
                     <tr class='group-start'>
-                        <td rowspan='1' class='class-cell'>K-Column Sparse Linear</td>
-                        <td><a class='table-link' href='#paper-card-17' onclick='goToPaper(17); return false;'>Soto (2011)</a></td>
+                        <td rowspan='2' class='class-cell'>k-Column Sparse Linear</td>
+                        <td><a class='table-link' href='#paper-card-17' onclick='goToPaper(17); return false;'>Soto (2011/2013)</a></td>
                         <td style='text-align: center;'><span class='badge util'>Util</span></td>
                         <td style='font-weight: 500;'>\( 1/(k \cdot e) \)</td>
+                    </tr>
+                    <tr class=''>
+                        <td><a class='table-link' href='#paper-card-27' onclick='goToPaper(27); return false;'>Soto, Turkieltaub, Verdugo (2018/2021)</a></td>
+                        <td style='text-align: center;'><span class='badge prob'>Prob</span></td>
+                        <td style='font-weight: 500;'>\( k^{-k/(k-1)} \) (\( k \ge 2 \))</td>
                     </tr>
                     <tr class='group-start'>
                         <td rowspan='3' class='class-cell'>Paving (Huynh & Nelson 2016/2020)</td>
@@ -932,14 +963,14 @@
         <!-- Tab 3: Reading List -->
         <section id="reading-list" class="tab-content" role="tabpanel" aria-labelledby="btn-reading-list">
             <h2>Reading List and Bibliography</h2>
-            <p>Below are <strong>56</strong> relevant articles on the Matroid Secretary Problem, including their export in <strong>BibTeX</strong>.</p>
+            <p>Below are <strong>57</strong> relevant articles on the Matroid Secretary Problem, including their export in <strong>BibTeX</strong>.</p>
 
             <div class="search-container" style="margin-bottom:0.5rem;">
                 <input type="text" id="paperSearch" class="search-input" placeholder="Search by title, author, or keyword..." oninput="filterPapers()">
             </div>
             <div class="filter-bar" id="filter-bar">
                 <span class="filter-bar-label">Filter:</span>
-                <button class='tag-filter-btn active' data-tag='All' onclick='filterByTag("All")'>All</button><button class='tag-filter-btn' data-tag='Contention Resolution' onclick='filterByTag("Contention Resolution")'>Contention Resolution</button><button class='tag-filter-btn' data-tag='Free Order' onclick='filterByTag("Free Order")'>Free Order</button><button class='tag-filter-btn' data-tag='General' onclick='filterByTag("General")'>General</button><button class='tag-filter-btn' data-tag='Graphic' onclick='filterByTag("Graphic")'>Graphic</button><button class='tag-filter-btn' data-tag='Laminar' onclick='filterByTag("Laminar")'>Laminar</button><button class='tag-filter-btn' data-tag='Ordinal Model' onclick='filterByTag("Ordinal Model")'>Ordinal Model</button><button class='tag-filter-btn' data-tag='Paving/Minor-Closed' onclick='filterByTag("Paving/Minor-Closed")'>Paving/Minor-Closed</button><button class='tag-filter-btn' data-tag='Prophet Inequality' onclick='filterByTag("Prophet Inequality")'>Prophet Inequality</button><button class='tag-filter-btn' data-tag='Random Assignment' onclick='filterByTag("Random Assignment")'>Random Assignment</button><button class='tag-filter-btn' data-tag='Submodular' onclick='filterByTag("Submodular")'>Submodular</button><button class='tag-filter-btn' data-tag='Transversal' onclick='filterByTag("Transversal")'>Transversal</button><button class='tag-filter-btn' data-tag='Uniform/Small-k' onclick='filterByTag("Uniform/Small-k")'>Uniform/Small-k</button>
+                <button class='tag-filter-btn active' data-tag='All' onclick='filterByTag("All")'>All</button><button class='tag-filter-btn' data-tag='Contention Resolution' onclick='filterByTag("Contention Resolution")'>Contention Resolution</button><button class='tag-filter-btn' data-tag='Free Order' onclick='filterByTag("Free Order")'>Free Order</button><button class='tag-filter-btn' data-tag='General' onclick='filterByTag("General")'>General</button><button class='tag-filter-btn' data-tag='Graphic' onclick='filterByTag("Graphic")'>Graphic</button><button class='tag-filter-btn' data-tag='Laminar' onclick='filterByTag("Laminar")'>Laminar</button><button class='tag-filter-btn' data-tag='Ordinal Model' onclick='filterByTag("Ordinal Model")'>Ordinal Model</button><button class='tag-filter-btn' data-tag='Paving/Minor-Closed' onclick='filterByTag("Paving/Minor-Closed")'>Paving/Minor-Closed</button><button class='tag-filter-btn' data-tag='Prophet Inequality' onclick='filterByTag("Prophet Inequality")'>Prophet Inequality</button><button class='tag-filter-btn' data-tag='Random Assignment' onclick='filterByTag("Random Assignment")'>Random Assignment</button><button class='tag-filter-btn' data-tag='Rank-2' onclick='filterByTag("Rank-2")'>Rank-2</button><button class='tag-filter-btn' data-tag='Submodular' onclick='filterByTag("Submodular")'>Submodular</button><button class='tag-filter-btn' data-tag='Transversal' onclick='filterByTag("Transversal")'>Transversal</button><button class='tag-filter-btn' data-tag='Uniform/Small-k' onclick='filterByTag("Uniform/Small-k")'>Uniform/Small-k</button>
                 <button class="filter-reset-btn" onclick="resetFilters()" title="Clear all filters">&#10005; Clear</button>
             </div>
             <p class="result-count" id="result-count"></p>
@@ -2353,6 +2384,37 @@
   timestamp    = {Fri, 21 Nov 2025 23:44:11 +0100},
   biburl       = {https://dblp.org/rec/conf/isaac/AlbersL19.bib},
   bibsource    = {dblp computer science bibliography, https://dblp.org}
+}</pre></div>
+                </div>
+            </div>
+
+            <div class="paper-card filterable-card" id="paper-card-56" data-tags="Uniform/Small-k,Rank-2">
+                <div class="card-header" onclick="toggleCard('paper-card-56')">
+                    <div class="card-header-left">
+                        <div style="float:right;margin-left:8px;"><span class="badge tag-badge">Uniform/Small-k</span> <span class="badge tag-badge">Rank-2</span> </div>
+                        <h3 class="paper-title" style="margin-top:0;">Hiring Under Uncertainty and Competition: A Work on Various Extensions of the Secretary Problem
+                            <a class="permalink" href="#paper-card-56" data-id="paper-card-56" title="Copy link" onclick="event.stopPropagation()">&#128279;</a>
+                        </h3>
+                        <div class="paper-authors">By: Abner Turkieltaub Melo</div>
+                    </div>
+                    <button class="card-toggle-btn" onclick="event.stopPropagation(); toggleCard('paper-card-56')" title="Expand/collapse">&#9660; Hide</button>
+                </div>
+                <div class="card-body collapsed">
+                    <ul class="paper-versions" style="color:var(--secondary-color);font-weight:600;margin-top:0.3rem;margin-bottom:0.8rem;list-style-type:disc;padding-left:20px;font-size:0.9em;">
+                        <li>PhD Thesis 2025</li>
+                    </ul>
+                    <div class="paper-summary">
+                        <strong>Abstract:</strong> Contains, among other results, an optimal 0.4417 probability-competitive algorithm for the MSP on uniform rank-2 matroids, and related results for rank-2 matroid secretary problems.
+                    </div>
+                    <div class="action-buttons">
+                        <button class="paper-link dark bibtex-toggle" data-show-label="BibTeX ▾" data-hide-label="BibTeX ▴" onclick="toggleBibtex('bibtex-56')">BibTeX &#9660;</button>
+                    </div>
+                    <div id="bibtex-56" class="bibtex-container"><button class="bibtex-copy-btn" onclick="copyBibtex(this)">Copy</button><span class="bibtex-section-label"># PhD Thesis 2025</span><pre>@phdthesis{TurkieltaubMelo2025,
+  author = {Abner Turkieltaub Melo},
+  title = {Hiring Under Uncertainty and Competition: A Work on Various Extensions of the Secretary Problem},
+  school = {University of British Columbia},
+  year = {2025},
+  url = {https://open.library.ubc.ca/cIRcle/collections/ubctheses/24/items/1.0452345}
 }</pre></div>
                 </div>
             </div>

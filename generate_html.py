@@ -73,7 +73,7 @@ def generate_html(language="en"):
         "read_local": "PDF",
         "view_arxiv": "View on arXiv",
         "show_bibtex": "BibTeX \u25be",
-        "table_note": r"All guarantees are normalized as values \u2264 1. Labels denote notions: Prob (\(p\)), Util (\(u\)), Ordinal (\(o\)). Since \(p\) implies \(u\), every \(p\) row also provides the corresponding utility guarantee." if is_en else r"Todas las garant\u00edas est\u00e1n normalizadas como valores \u2264 1. Las etiquetas denotan nociones: Prob (\(p\)), Util (\(u\)), Ordinal (\(o\)). Como \(p\) implica \(u\), cada fila \(p\) tambi\u00e9n otorga la correspondiente garant\u00eda de utilidad."
+        "table_note": r"All bounds are normalized as competitive guarantees \u2264 1. 'Prob' is stronger than 'Util'; 'Ordinal' is a distinct guarantee notion." if is_en else r"Todas las cotas est\u00e1n normalizadas como garant\u00edas competitivas \u2264 1. 'Prob' es m\u00e1s fuerte que 'Util'; 'Ordinal' es una noci\u00f3n de garant\u00eda distinta."
     }
 
     table_data = [
@@ -82,7 +82,7 @@ def generate_html(language="en"):
             "entries": [
                 {"ref": "Babaioff, Immorlica, Kleinberg (2007)", "search": ["Babaioff", "Kleinberg", "2007"], "type": "Util", "val": r"\( \Omega(1/\log \rho) \)"},
                 {"ref": "Chakraborty & Lachish (2012)", "search": ["Lachish", "Chakraborty"], "type": "Util", "val": r"\( \Omega(1/\sqrt{\log \rho}) \)"},
-                {"ref": "Lachish (2014) / Feldman et al. (2015)", "search": ["Feldman"], "type": "Util", "val": r"\( \Omega(1/\log \log \rho) \)"},
+                {"ref": "Lachish (2014); Feldman, Svensson, Zenklusen (2015)", "search": ["Feldman"], "type": "Util", "val": r"\( \Omega(1/\log \log \rho) \)"},
                 {"ref": "Soto, Turkieltaub, Verdugo (2018/2021)", "search": ["Soto", "ordinal"], "type": "Prob", "val": r"\( \Omega(1/\log \rho) \)"},
                 {"ref": "Soto, Turkieltaub, Verdugo (2018/2021)", "search": ["Soto", "ordinal"], "type": "Ordinal", "val": r"\( \Omega(1/\log \log \rho) \)"}
             ]
@@ -131,10 +131,24 @@ def generate_html(language="en"):
             ]
         },
         {
+            "class": "1-Uniform / Classical Secretary",
+            "entries": [
+                {"ref": "Dynkin (1963)", "search": ["Dynkin"], "type": "Prob", "val": r"\( 1/e \approx 0.367 \)"}
+            ]
+        },
+        {
+            "class": "2-Uniform",
+            "entries": [
+                {"ref": "Turkieltaub Melo (PhD thesis, 2025)", "search": ["Turkieltaub Melo", "PhD"], "type": "Prob", "val": r"\( 0.4417 \)"},
+                {"ref": "Chan, Chen, Jiang (2014/2015)", "search": ["Jiang", "2015"], "type": "Ordinal", "val": r"\( 0.4886 \)"},
+                {"ref": "Chan, Chen, Jiang (2014/2015)", "search": ["Jiang", "2015"], "type": "Util", "val": r"\( 0.492 \)"}
+            ]
+        },
+        {
             "class": "k-Uniform",
             "entries": [
-                {"ref": "Dynkin (1963)", "search": ["Dynkin"], "type": "Prob", "val": r"\( 1/e \approx 0.367 \)"},
-                {"ref": "Kleinberg (2005) / Soto et al. (2021)", "search": ["Kleinberg"], "type": "Prob", "val": r"\( 1 - O(\sqrt{\frac{\log k}{k}}) \)"},
+                {"ref": "Kleinberg (2005)", "search": ["Kleinberg"], "type": "Util", "val": r"\( 1 - O(1/\sqrt{k}) \)"},
+                {"ref": "Soto, Turkieltaub, Verdugo (2018/2021)", "search": ["Soto", "ordinal"], "type": "Prob", "val": r"\( 1 - O(\sqrt{\frac{\log k}{k}}) \)"},
                 {"ref": "Chan, Chen, Jiang (2015)", "search": ["Jiang"], "type": "Prob", "val": r"Exact thresholds (k-choice)"},
                 {"ref": "Albers & Ladewig (2019/2021)", "search": ["Albers"], "type": "Prob", "val": r"\( > 1/e \) for \( k \ge 2 \)"}
             ]
@@ -146,27 +160,24 @@ def generate_html(language="en"):
             ]
         },
         {
-            "class": "Partition",
-            "entries": [
-                {"ref": "Folklore", "search": ["Folklore"], "type": "Prob", "val": r"\( 1/e \approx 0.367 \)"}
-            ]
-        },
-        {
             "class": "Truncated Partition",
             "entries": [
-                {"ref": "Babaioff, Immorlica, Kleinberg (2007)", "search": ["Babaioff", "Kleinberg", "2007"], "type": "Util", "val": r"\( 1/e^2 \approx 0.135 \)"}
+                {"ref": "Babaioff, Immorlica, Kleinberg (2007/2018)", "search": ["Babaioff", "Kleinberg"], "type": "Util", "val": r"\( 1/e^2 \approx 0.135 \)"},
+                {"ref": "Soto, Turkieltaub, Verdugo (2018/2021)", "search": ["Soto", "ordinal"], "type": "Prob", "val": r"\( 1/4 = 0.25 \) (2-forbidden)"},
+                {"ref": "B\u00e9rczi, Livanos, Soto, Verdugo (2025)", "search": ["Livanos"], "type": "Prob", "val": r"\( 1 - \ln(2) \approx 0.3068 \) (laminar)"}
             ]
         },
         {
             "class": "Regular & Max-Flow Min-Cut",
             "entries": [
-                {"ref": "Dinitz & Kortsarz (2012/2014)", "search": ["Dinitz"], "type": "Util", "val": r"\( 1/(9e) \approx 0.0408 \)"}
+                {"ref": "Dinitz & Kortsarz (2013/2014)", "search": ["Dinitz"], "type": "Util", "val": r"\( 1/(9e) \approx 0.0408 \)"}
             ]
         },
         {
-            "class": "K-Column Sparse Linear",
+            "class": "k-Column Sparse Linear",
             "entries": [
-                {"ref": "Soto (2011)", "search": ["Soto", "random assignment"], "type": "Util", "val": r"\( 1/(k \cdot e) \)"}
+                {"ref": "Soto (2011/2013)", "search": ["Soto", "random assignment"], "type": "Util", "val": r"\( 1/(k \cdot e) \)"},
+                {"ref": "Soto, Turkieltaub, Verdugo (2018/2021)", "search": ["Soto", "ordinal"], "type": "Prob", "val": r"\( k^{-k/(k-1)} \) (\( k \ge 2 \))"}
             ]
         },
         {

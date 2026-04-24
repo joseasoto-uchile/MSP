@@ -1237,5 +1237,25 @@
         "tags": [
             "Uniform/Small-k"
         ]
+    },
+    {
+        "title": "Hiring Under Uncertainty and Competition: A Work on Various Extensions of the Secretary Problem",
+        "authors": "Abner Turkieltaub Melo",
+        "venue": "PhD thesis, University of British Columbia",
+        "summary": "Contains, among other results, an optimal 0.4417 probability-competitive algorithm for the MSP on uniform rank-2 matroids, and related results for rank-2 matroid secretary problems.",
+        "published": "2025-01-01T00:00:00Z",
+        "pdf_url": "https://open.library.ubc.ca/cIRcle/collections/ubctheses/24/items/1.0452345",
+        "local_pdf": "#",
+        "bibtex": [
+            "@phdthesis{TurkieltaubMelo2025,\n  author = {Abner Turkieltaub Melo},\n  title = {Hiring Under Uncertainty and Competition: A Work on Various Extensions of the Secretary Problem},\n  school = {University of British Columbia},\n  year = {2025},\n  url = {https://open.library.ubc.ca/cIRcle/collections/ubctheses/24/items/1.0452345}\n}"
+        ],
+        "category": "A",
+        "versions": [
+            "PhD Thesis 2025"
+        ],
+        "tags": [
+            "Uniform/Small-k",
+            "Rank-2"
+        ]
     }
 ]
