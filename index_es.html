@@ -279,32 +279,36 @@
 
         .paper-card {
             border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            background: white;
-            transition: all 0.3s ease;
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            margin-bottom: 0.75rem;
+            background: var(--container-bg);
+            transition: all 0.25s ease;
+            position: relative;
         }
 
         .paper-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.08);
             border-color: #cbd5e0;
         }
 
         .paper-title {
-            font-size: 1.3rem;
+            font-size: 1.15rem;
             font-weight: 700;
             color: var(--primary-color);
-            margin-top: 0;
-            line-height: 1.3;
+            margin: 0;
+            line-height: 1.25;
+            padding-right: 80px; /* Space for the toggle button */
         }
 
         .paper-authors {
             font-style: italic;
             color: #4a5568;
-            margin-bottom: 1rem;
+            margin-bottom: 0;
             font-weight: 500;
+            font-size: 0.9rem;
+            opacity: 0.9;
         }
 
         .paper-summary {
@@ -434,13 +438,14 @@
         .tag-badge {
             background-color: #e8edf5;
             color: #2c4a7c;
-            padding: 0.18rem 0.55rem;
-            border-radius: 9999px;
-            font-size: 0.7rem;
+            padding: 0.12rem 0.45rem;
+            border-radius: 4px;
+            font-size: 0.68rem;
             font-weight: 700;
             display: inline-block;
             border: 1px solid #c5d3e8;
-            letter-spacing: 0.2px;
+            letter-spacing: 0.1px;
+            vertical-align: middle;
         }
         /* Filter bar pill buttons */
         .tag-filter-btn {
@@ -506,16 +511,16 @@
         .card-toggle-btn {
             background: none;
             border: 1px solid var(--border-color);
-            border-radius: 6px;
-            padding: 3px 8px;
-            font-size: 0.8rem;
+            border-radius: 4px;
+            padding: 1px 6px;
+            font-size: 0.72rem;
             cursor: pointer;
-            color: #718096;
+            color: #a0aec0;
             flex-shrink: 0;
-            margin-top: 4px;
             transition: all 0.15s;
-        }
-        .card-toggle-btn:hover { background: var(--accent-color); }
+            font-weight: 600;
+            text-transform: uppercase;
+        }.card-toggle-btn:hover { background: var(--accent-color); }
         .card-body { overflow: hidden; }
         .card-body.collapsed { display: none; }
         /* Permalink icon */
