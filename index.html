@@ -667,12 +667,41 @@
             </div>
             <p><strong>Objective:</strong> Design an online algorithm that maximizes the expected value of the selected elements, compared to the maximum weight basis offline. The grand conjecture (Matroid Secretary Conjecture) states that there exists an algorithm with a constant competitive ratio \( \Omega(1) \) for any matroid.</p>
         
-            <h3 id="special-cases">4. Special Cases and Small Parameters</h3>
-            <p>Certain matroid classes exhibit stronger competitive ratios for small ranks or parameters.</p>
-            <ul>
-                <li><strong>k-Uniform Matroids ($U_{k,n}$):</strong> The multiple-choice secretary problem. Kleinberg (2005) achieves \( 1 - O(1/\sqrt{k}) \). Albers and Ladewig (2019) provide explicit guarantees for small \( k \).</li>
-                <li><strong>Rank-2 Matroids:</strong> General matroids of rank 2. Bérczi et al. (2025) achieved a \( 0.3462 \) probability-competitive ratio.</li>
-            </ul>
+            <h3>Guarantee Notions</h3>
+            <div style="margin-bottom: 2rem;">
+                
+All bounds in the table below are normalized as competitive guarantees \(c \le 1\).
+
+For a maximization online problem, an algorithm is \(c\)-competitive if, for every instance,
+\[
+\mathbb{E}[\operatorname{value}(\operatorname{output})] \ge c \cdot \operatorname{value}(\operatorname{OPT}).
+\]
+
+In the Matroid Secretary Problem with numerical weights revealed online, this is the usual utility-competitive guarantee. In the table, we denote this notion by <strong>"Util"</strong>.
+
+For an MSP instance with a unique optimum \(\operatorname{OPT}\), an algorithm is \(c\) probability-competitive if every element of \(\operatorname{OPT}\) is selected with probability at least \(c\). That is, for every element \(x \in \operatorname{OPT}\),
+\[
+\Pr[x \text{ is selected}] \ge c.
+\]
+
+In the table, we denote this stronger notion by <strong>"Prob"</strong>. A \(c\) probability-competitive guarantee implies a \(c\) utility-competitive guarantee, since
+\[
+\mathbb{E}[w(\operatorname{output})]
+=
+\sum_x w(x)\Pr[x \text{ is selected}]
+\ge
+\sum_{x \in \operatorname{OPT}} w(x)\Pr[x \text{ is selected}]
+\ge
+c \cdot w(\operatorname{OPT}).
+\]
+
+In the ordinal MSP, numerical weights are not revealed to the algorithm. Instead, the algorithm only has access to relative comparisons among already seen elements, together with the matroid independence oracle. A \(c\) ordinal-competitive algorithm is an algorithm in this ordinal-information model that satisfies
+\[
+\mathbb{E}[w(\operatorname{output})] \ge c \cdot w(\operatorname{OPT})
+\]
+for every nonnegative weight function \(w\) consistent with the underlying order. In the table, we denote this by <strong>"Ordinal"</strong>.
+
+            </div>
         </section>
 
         <!-- Tab 2: Ratios Table -->
@@ -682,7 +711,7 @@
                 
             <p>The table below groups results by Matroid Class, detailing the exact constant or formula achieved by each paper historically. All constants have been normalized so that <strong>values \( \le 1 \) represent the approximation factor</strong> (i.e. \( 1/\alpha \) where \( \alpha \) is the traditional competitive ratio \( \ge 1 \)). We also note whether the guarantee is <strong>Probability-Competitive</strong> (\( p \)) or the traditional <strong>Utility-Competitive Ratio</strong>.</p>
             <div class="note-box" style="margin: 1rem 0; padding: 0.8rem 1.2rem; background: var(--accent-color); border-left: 4px solid var(--secondary-color); font-size: 0.9rem; line-height: 1.4; color: var(--text-color);">
-                All bounds are normalized as competitive guarantees \u2264 1. 'Prob' is stronger than 'Util'; 'Ordinal' is a distinct guarantee notion.
+                All bounds are normalized as values \(c \le 1\). 'Prob' is stronger than 'Util'; 'Ordinal' denotes an ordinal-information utility guarantee.
             </div>
             
             <div class="table-scroll">

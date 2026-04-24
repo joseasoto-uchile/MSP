@@ -46,10 +46,72 @@ def generate_html(language="en"):
         "dyn4": r"The set of accepted elements at any time must be an independent set \( I \in \mathcal{I} \)." if is_en else r"El conjunto de elementos aceptados en cualquier momento debe ser un conjunto independiente \( I \in \mathcal{I} \).",
         "msp_obj": r"<strong>Objective:</strong> Design an online algorithm that maximizes the expected value of the selected elements, compared to the maximum weight basis offline. The grand conjecture (Matroid Secretary Conjecture) states that there exists an algorithm with a constant competitive ratio \( \Omega(1) \) for any matroid." if is_en else r"<strong>Objetivo:</strong> Diseñar un algoritmo online que maximice el valor esperado de los elementos seleccionados, comparado con la base de peso máximo en offline. La gran conjetura (Matroid Secretary Conjecture) afirma que existe un algoritmo con un factor de competitividad constante \( \Omega(1) \) para cualquier matroide.",
         
-        "special_cases_title": "4. Special Cases and Small Parameters" if is_en else "4. Casos Especiales y Parámetros Pequeños",
-        "special_cases_desc": "Certain matroid classes exhibit stronger competitive ratios for small ranks or parameters." if is_en else "Ciertas clases de matroides exhiben ratios competitivos más fuertes para rangos o parámetros pequeños.",
-        "k_uniform_desc": r"The multiple-choice secretary problem. Kleinberg (2005) achieves \( 1 - O(1/\sqrt{k}) \). Albers and Ladewig (2019) provide explicit guarantees for small \( k \)." if is_en else r"El problema de la secretaria de opción múltiple. Kleinberg (2005) logra \( 1 - O(1/\sqrt{k}) \). Albers y Ladewig (2019) proveen garantías explícitas para \( k \) pequeño.",
-        "rank_2_desc": r"General matroids of rank 2. Bérczi et al. (2025) achieved a \( 0.3462 \) probability-competitive ratio." if is_en else r"Matroides generales de rango 2. Bérczi et al. (2025) lograron un ratio de probabilidad de \( 0.3462 \).",
+
+        
+        "guarantee_notions_title": "Guarantee Notions" if is_en else "Nociones de Garantía",
+        "guarantee_notions_content": r"""
+All bounds in the table below are normalized as competitive guarantees \(c \le 1\).
+
+For a maximization online problem, an algorithm is \(c\)-competitive if, for every instance,
+\[
+\mathbb{E}[\operatorname{value}(\operatorname{output})] \ge c \cdot \operatorname{value}(\operatorname{OPT}).
+\]
+
+In the Matroid Secretary Problem with numerical weights revealed online, this is the usual utility-competitive guarantee. In the table, we denote this notion by <strong>"Util"</strong>.
+
+For an MSP instance with a unique optimum \(\operatorname{OPT}\), an algorithm is \(c\) probability-competitive if every element of \(\operatorname{OPT}\) is selected with probability at least \(c\). That is, for every element \(x \in \operatorname{OPT}\),
+\[
+\Pr[x \text{ is selected}] \ge c.
+\]
+
+In the table, we denote this stronger notion by <strong>"Prob"</strong>. A \(c\) probability-competitive guarantee implies a \(c\) utility-competitive guarantee, since
+\[
+\mathbb{E}[w(\operatorname{output})]
+=
+\sum_x w(x)\Pr[x \text{ is selected}]
+\ge
+\sum_{x \in \operatorname{OPT}} w(x)\Pr[x \text{ is selected}]
+\ge
+c \cdot w(\operatorname{OPT}).
+\]
+
+In the ordinal MSP, numerical weights are not revealed to the algorithm. Instead, the algorithm only has access to relative comparisons among already seen elements, together with the matroid independence oracle. A \(c\) ordinal-competitive algorithm is an algorithm in this ordinal-information model that satisfies
+\[
+\mathbb{E}[w(\operatorname{output})] \ge c \cdot w(\operatorname{OPT})
+\]
+for every nonnegative weight function \(w\) consistent with the underlying order. In the table, we denote this by <strong>"Ordinal"</strong>.
+""" if is_en else r"""
+Todas las cotas en la tabla inferior están normalizadas como garantías competitivas \(c \le 1\).
+
+Para un problema de maximización online, un algoritmo es \(c\)-competitivo si, para cada instancia,
+\[
+\mathbb{E}[\operatorname{valor}(\operatorname{salida})] \ge c \cdot \operatorname{valor}(\operatorname{OPT}).
+\]
+
+En el Matroid Secretary Problem con pesos numéricos revelados online, esta es la garantía de utilidad competitiva usual. En la tabla, denotamos esta noción como <strong>"Util"</strong>.
+
+Para una instancia de MSP con un único óptimo \(\operatorname{OPT}\), un algoritmo es \(c\) probabilísticamente competitivo si cada elemento de \(\operatorname{OPT}\) es seleccionado con probabilidad al menos \(c\). Es decir, para cada elemento \(x \in \operatorname{OPT}\),
+\[
+\Pr[x \text{ es seleccionado}] \ge c.
+\]
+
+En la tabla, denotamos esta noción más fuerte como <strong>"Prob"</strong>. Una garantía \(c\) probabilísticamente competitiva implica una garantía \(c\) de utilidad competitiva, dado que
+\[
+\mathbb{E}[w(\operatorname{salida})]
+=
+\sum_x w(x)\Pr[x \text{ es seleccionado}]
+\ge
+\sum_{x \in \operatorname{OPT}} w(x)\Pr[x \text{ es seleccionado}]
+\ge
+c \cdot w(\operatorname{OPT}).
+\]
+
+En el MSP ordinal, los pesos numéricos no son revelados al algoritmo. En su lugar, el algoritmo solo tiene acceso a comparaciones relativas entre elementos ya vistos, junto con el oráculo de independencia del matroide. Un algoritmo \(c\) ordinal-competitivo es un algoritmo en este modelo de información ordinal que satisface
+\[
+\mathbb{E}[w(\operatorname{salida})] \ge c \cdot w(\operatorname{OPT})
+\]
+para cada función de peso \(w\) no negativa consistente con el orden subyacente. En la tabla, denotamos esto como <strong>"Ordinal"</strong>.
+""",
         
         "ratios_title": "Chronological Progression of Competitive Guarantees" if is_en else "Evolución Cronológica de Garantías Competitivas",
         "ratios_desc": r"The table below groups results by Matroid Class, detailing the exact constant or formula achieved by each paper historically. All constants have been normalized so that <strong>values \( \le 1 \) represent the approximation factor</strong> (i.e. \( 1/\alpha \) where \( \alpha \) is the traditional competitive ratio \( \ge 1 \)). We also note whether the guarantee is <strong>Probability-Competitive</strong> (\( p \)) or the traditional <strong>Utility-Competitive Ratio</strong>." if is_en else r"La siguiente tabla agrupa los resultados por clase de matroide, detallando la constante exacta o fórmula alcanzada por cada paper a lo largo de la historia. Todas las constantes han sido normalizadas para que <strong>valores \( \le 1 \) representen el factor de aproximación</strong> (es decir, \( 1/\alpha \) donde \( \alpha \) es el ratio competitivo tradicional \( \ge 1 \)). Se indica si la garantía es <strong>Probability-Competitive</strong> (\( p \)) o el tradicional <strong>Ratio de Utilidad</strong>.",
@@ -73,7 +135,7 @@ def generate_html(language="en"):
         "read_local": "PDF",
         "view_arxiv": "View on arXiv",
         "show_bibtex": "BibTeX \u25be",
-        "table_note": r"All bounds are normalized as competitive guarantees \u2264 1. 'Prob' is stronger than 'Util'; 'Ordinal' is a distinct guarantee notion." if is_en else r"Todas las cotas est\u00e1n normalizadas como garant\u00edas competitivas \u2264 1. 'Prob' es m\u00e1s fuerte que 'Util'; 'Ordinal' es una noci\u00f3n de garant\u00eda distinta."
+        "table_note": r"All bounds are normalized as values \(c \le 1\). 'Prob' is stronger than 'Util'; 'Ordinal' denotes an ordinal-information utility guarantee." if is_en else r"Todas las cotas est\u00e1n normalizadas como valores \(c \le 1\). 'Prob' es m\u00e1s fuerte que 'Util'; 'Ordinal' denota una garant\u00eda de utilidad bajo informaci\u00f3n ordinal."
     }
 
     table_data = [

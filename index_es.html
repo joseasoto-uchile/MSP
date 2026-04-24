@@ -667,12 +667,41 @@
             </div>
             <p><strong>Objetivo:</strong> Diseñar un algoritmo online que maximice el valor esperado de los elementos seleccionados, comparado con la base de peso máximo en offline. La gran conjetura (Matroid Secretary Conjecture) afirma que existe un algoritmo con un factor de competitividad constante \( \Omega(1) \) para cualquier matroide.</p>
         
-            <h3 id="special-cases">4. Casos Especiales y Parámetros Pequeños</h3>
-            <p>Ciertas clases de matroides exhiben ratios competitivos más fuertes para rangos o parámetros pequeños.</p>
-            <ul>
-                <li><strong>k-Uniform Matroids ($U_{k,n}$):</strong> El problema de la secretaria de opción múltiple. Kleinberg (2005) logra \( 1 - O(1/\sqrt{k}) \). Albers y Ladewig (2019) proveen garantías explícitas para \( k \) pequeño.</li>
-                <li><strong>Rank-2 Matroids:</strong> Matroides generales de rango 2. Bérczi et al. (2025) lograron un ratio de probabilidad de \( 0.3462 \).</li>
-            </ul>
+            <h3>Nociones de Garantía</h3>
+            <div style="margin-bottom: 2rem;">
+                
+Todas las cotas en la tabla inferior están normalizadas como garantías competitivas \(c \le 1\).
+
+Para un problema de maximización online, un algoritmo es \(c\)-competitivo si, para cada instancia,
+\[
+\mathbb{E}[\operatorname{valor}(\operatorname{salida})] \ge c \cdot \operatorname{valor}(\operatorname{OPT}).
+\]
+
+En el Matroid Secretary Problem con pesos numéricos revelados online, esta es la garantía de utilidad competitiva usual. En la tabla, denotamos esta noción como <strong>"Util"</strong>.
+
+Para una instancia de MSP con un único óptimo \(\operatorname{OPT}\), un algoritmo es \(c\) probabilísticamente competitivo si cada elemento de \(\operatorname{OPT}\) es seleccionado con probabilidad al menos \(c\). Es decir, para cada elemento \(x \in \operatorname{OPT}\),
+\[
+\Pr[x \text{ es seleccionado}] \ge c.
+\]
+
+En la tabla, denotamos esta noción más fuerte como <strong>"Prob"</strong>. Una garantía \(c\) probabilísticamente competitiva implica una garantía \(c\) de utilidad competitiva, dado que
+\[
+\mathbb{E}[w(\operatorname{salida})]
+=
+\sum_x w(x)\Pr[x \text{ es seleccionado}]
+\ge
+\sum_{x \in \operatorname{OPT}} w(x)\Pr[x \text{ es seleccionado}]
+\ge
+c \cdot w(\operatorname{OPT}).
+\]
+
+En el MSP ordinal, los pesos numéricos no son revelados al algoritmo. En su lugar, el algoritmo solo tiene acceso a comparaciones relativas entre elementos ya vistos, junto con el oráculo de independencia del matroide. Un algoritmo \(c\) ordinal-competitivo es un algoritmo en este modelo de información ordinal que satisface
+\[
+\mathbb{E}[w(\operatorname{salida})] \ge c \cdot w(\operatorname{OPT})
+\]
+para cada función de peso \(w\) no negativa consistente con el orden subyacente. En la tabla, denotamos esto como <strong>"Ordinal"</strong>.
+
+            </div>
         </section>
 
         <!-- Tab 2: Ratios Table -->
@@ -682,7 +711,7 @@
                 
             <p>La siguiente tabla agrupa los resultados por clase de matroide, detallando la constante exacta o fórmula alcanzada por cada paper a lo largo de la historia. Todas las constantes han sido normalizadas para que <strong>valores \( \le 1 \) representen el factor de aproximación</strong> (es decir, \( 1/\alpha \) donde \( \alpha \) es el ratio competitivo tradicional \( \ge 1 \)). Se indica si la garantía es <strong>Probability-Competitive</strong> (\( p \)) o el tradicional <strong>Ratio de Utilidad</strong>.</p>
             <div class="note-box" style="margin: 1rem 0; padding: 0.8rem 1.2rem; background: var(--accent-color); border-left: 4px solid var(--secondary-color); font-size: 0.9rem; line-height: 1.4; color: var(--text-color);">
-                Todas las cotas est\u00e1n normalizadas como garant\u00edas competitivas \u2264 1. 'Prob' es m\u00e1s fuerte que 'Util'; 'Ordinal' es una noci\u00f3n de garant\u00eda distinta.
+                Todas las cotas est\u00e1n normalizadas como valores \(c \le 1\). 'Prob' es m\u00e1s fuerte que 'Util'; 'Ordinal' denota una garant\u00eda de utilidad bajo informaci\u00f3n ordinal.
             </div>
             
             <div class="table-scroll">
