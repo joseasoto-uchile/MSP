@@ -72,7 +72,8 @@ def generate_html(language="en"):
         "abstract": "Abstract:" if is_en else "Resumen:",
         "read_local": "PDF",
         "view_arxiv": "View on arXiv",
-        "show_bibtex": "BibTeX ▾"
+        "show_bibtex": "BibTeX \u25be",
+        "table_note": "All guarantees are normalized as values \u2264 1. Rows marked Prob denote probability-competitive guarantees. Since probability-competitive guarantees imply utility-competitive guarantees, every Prob row also gives the corresponding utility guarantee." if is_en else "Todas las garant\u00edas est\u00e1n normalizadas como valores \u2264 1. Las filas marcadas como Prob denotan garant\u00edas probabil\u00edsticas. Dado que las garant\u00edas probabil\u00edsticas implican garant\u00edas de utilidad, cada fila Prob tambi\u00e9n otorga la correspondiente garant\u00eda de utilidad."
     }
 
     table_data = [
@@ -80,10 +81,10 @@ def generate_html(language="en"):
             "class": "Graphic",
             "entries": [
                 {"ref": "Babaioff, Immorlica, Kleinberg (2007)", "search": ["Babaioff", "Kleinberg", "2007"], "type": "Util", "val": r"\( 1/16 = 0.0625 \)"},
-                {"ref": "Korula & Pál (2009)", "search": ["Korula", "Pál"], "type": "Util", "val": r"\( 1/(2e) \approx 0.184 \)"},
+                {"ref": "Korula & P\u00e1l (2009)", "search": ["Korula", "P\u00e1l"], "type": "Util", "val": r"\( 1/(2e) \approx 0.184 \)"},
                 {"ref": "Soto, Turkieltaub, Verdugo (2018/2021)", "search": ["Soto", "Turkieltaub", "ordinal"], "type": "Prob", "val": r"\( 1/4 = 0.25 \)"},
-                {"ref": "Banihashem et al. (2025)", "search": ["Banihashem", "graphic"], "type": "Util", "val": r"\( 1/3.95 \approx 0.253 \) (Gen) / \( 1/3.77 \approx 0.265 \) (Simple)"},
-                {"ref": "Bérczi, Livanos, Soto, Verdugo (2025)", "search": ["Livanos", "labeling"], "type": "Prob", "val": r"\( 0.2504 \) (Gen) / \( 0.2693 \) (Simple)"}
+                {"ref": "Banihashem et al. (2025)", "search": ["Banihashem", "graphic"], "type": "Prob", "val": r"\( 1/3.95 \approx 0.253 \) (General graphs) / \( 1/3.77 \approx 0.265 \) (Simple graphs)"},
+                {"ref": "B\u00e9rczi, Livanos, Soto, Verdugo (2025)", "search": ["Livanos", "labeling"], "type": "Prob", "val": r"\( 0.2504 \) (General graphs) / \( 0.2693 \) (Simple graphs)"}
             ]
         },
         {
@@ -94,8 +95,8 @@ def generate_html(language="en"):
                 {"ref": "Jaillet, Soto, Zenklusen (2012/2016)", "search": ["Jaillet", "Zenklusen"], "type": "Util", "val": r"\( \frac{1}{3\sqrt{3}e} \approx 0.070 \)"},
                 {"ref": "Ma, Tang, Wang (2013/2016)", "search": ["Tang", "submodular"], "type": "Util", "val": r"\( 1/9.6 \approx 0.104 \)"},
                 {"ref": "Soto, Turkieltaub, Verdugo (2018/2021)", "search": ["Soto", "ordinal"], "type": "Prob", "val": r"\( \frac{1}{3\sqrt{3}} \approx 0.192 \)"},
-                {"ref": "Huang, Parsaeian, Zhu (2023)", "search": ["Parsaeian"], "type": "Util", "val": r"\( 1/4.75 \approx 0.210 \)"},
-                {"ref": "Bérczi, Livanos, Soto, Verdugo (2025)", "search": ["Livanos", "labeling"], "type": "Prob", "val": r"\( 1 - \ln(2) \approx 0.3068 \)"}
+                {"ref": "Huang, Parsaeian, Zhu (ESA 2024)", "search": ["Parsaeian"], "type": "Prob", "val": r"\( 1/4.75 \approx 0.2105 \)"},
+                {"ref": "B\u00e9rczi, Livanos, Soto, Verdugo (2025)", "search": ["Livanos", "labeling"], "type": "Prob", "val": r"\( 1 - \ln(2) \approx 0.3068 \)"}
             ]
         },
         {
@@ -103,7 +104,7 @@ def generate_html(language="en"):
             "entries": [
                 {"ref": "Babaioff, Immorlica, Kleinberg (2007)", "search": ["Babaioff", "Kleinberg", "2007"], "type": "Util", "val": r"\( 1/16 = 0.0625 \)"},
                 {"ref": "Dimitrov & Plaxton (2012)", "search": ["Dimitrov", "Plaxton"], "type": "Util", "val": r"\( 1/8 = 0.125 \)"},
-                {"ref": "Kesselheim et al. (2013)", "search": ["Kesselheim"], "type": "Util", "val": r"\( 1/e \approx 0.367 \)"},
+                {"ref": "Kesselheim et al. (ESA 2013)", "search": ["Kesselheim"], "type": "Util", "val": r"\( 1/e \approx 0.367 \)"},
                 {"ref": "Soto, Turkieltaub, Verdugo (2021)", "search": ["Soto", "ordinal"], "type": "Prob", "val": r"\( 1/e \approx 0.367 \)"}
             ]
         },
@@ -131,7 +132,7 @@ def generate_html(language="en"):
         {
             "class": "k-Fold Matroid Union",
             "entries": [
-                {"ref": "Gujjar et al. (2025)", "search": ["Gujjar"], "type": "Prob", "val": r"\( 1 - O(\sqrt{\frac{\log(n)}{k}}) \)"}
+                {"ref": "Gujjar et al. (arXiv 2025 / SOSA 2026)", "search": ["Gujjar"], "type": "Prob", "val": r"\( 1 - O(\sqrt{\frac{\log(n)}{k}}) \)"}
             ]
         },
         {
@@ -186,8 +187,8 @@ def generate_html(language="en"):
         {
             "class": "Random Assignment Model",
             "entries": [
-                {"ref": "Soto (2011)", "search": ["Soto", "random assignment"], "type": "Util", "val": r"\( \frac{e-1}{2e^2} \approx 0.117 \)"},
-                {"ref": "Santiago, Sergeev, Zenklusen (2023)", "search": ["Santiago", "Sergeev"], "type": "Util", "val": r"\( \Omega(1) \) (Without knowing matroid)"}
+                {"ref": "Soto (2011)", "search": ["Soto", "random assignment"], "type": "Util", "val": r"\( (e-1)/(2e^2) \approx 0.117 \)"},
+                {"ref": "Santiago, Sergeev, Zenklusen (2023)", "search": ["Santiago", "Sergeev"], "type": "Util", "val": r"\( \Omega(1) \) (Random Assignment Model, matroid initially unknown)"}
             ]
         },
         {
