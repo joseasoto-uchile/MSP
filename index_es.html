@@ -265,17 +265,9 @@
             font-weight: bold;
         }
         
-        .badge.prob {
-            background-color: #e6ffed;
-            color: #1e7e34;
-            border: 1px solid #c3e6cb;
-        }
-        
-        .badge.util {
-            background-color: #e2e3e5;
-            color: #383d41;
-            border: 1px solid #d6d8db;
-        }
+        .badge.prob { background-color: #38a169; color: white; }
+        .badge.util { background-color: #3182ce; color: white; }
+        .badge.ordinal { background-color: #805ad5; color: white; }
 
         .paper-card {
             border: 1px solid var(--border-color);
@@ -671,11 +663,11 @@
         <!-- Tab 2: Ratios Table -->
         <section id="ratios-table" class="tab-content" role="tabpanel" aria-labelledby="btn-ratios-table">
             <details class="table-collapsible" open>
-                <summary><h2>Evolución Cronológica de Garantías Competitivas</h2></summary>
+                <summary><h2>A. Evolución Cronológica de Garantías Competitivas</h2></summary>
                 
             <p>La siguiente tabla agrupa los resultados por clase de matroide, detallando la constante exacta o fórmula alcanzada por cada paper a lo largo de la historia. Todas las constantes han sido normalizadas para que <strong>valores \( \le 1 \) representen el factor de aproximación</strong> (es decir, \( 1/\alpha \) donde \( \alpha \) es el ratio competitivo tradicional \( \ge 1 \)). Se indica si la garantía es <strong>Probability-Competitive</strong> (\( p \)) o el tradicional <strong>Ratio de Utilidad</strong>.</p>
             <div class="note-box" style="margin: 1rem 0; padding: 0.8rem 1.2rem; background: var(--accent-color); border-left: 4px solid var(--secondary-color); font-size: 0.9rem; line-height: 1.4; color: var(--text-color);">
-                Todas las garantías están normalizadas como valores ≤ 1. Las filas marcadas como Prob denotan garantías probabilísticas. Dado que las garantías probabilísticas implican garantías de utilidad, cada fila Prob también otorga la correspondiente garantía de utilidad.
+                Todas las garant\u00edas est\u00e1n normalizadas como valores \u2264 1. Las etiquetas denotan nociones: Prob (\(p\)), Util (\(u\)), Ordinal (\(o\)). Como \(p\) implica \(u\), cada fila \(p\) tambi\u00e9n otorga la correspondiente garant\u00eda de utilidad.
             </div>
             
             <div class="table-scroll">
@@ -689,6 +681,32 @@
                         </tr>
                     </thead>
                     <tbody>
+                    <tr class='group-start'>
+                        <td rowspan='5' class='class-cell'>General Matroids (Random Order)</td>
+                        <td><a class='table-link' href='#paper-card-5' onclick='goToPaper(5); return false;'>Babaioff, Immorlica, Kleinberg (2007)</a></td>
+                        <td style='text-align: center;'><span class='badge util'>Util</span></td>
+                        <td style='font-weight: 500;'>\( \Omega(1/\log \rho) \)</td>
+                    </tr>
+                    <tr class=''>
+                        <td><a class='table-link' href='#paper-card-1' onclick='goToPaper(1); return false;'>Chakraborty & Lachish (2012)</a></td>
+                        <td style='text-align: center;'><span class='badge util'>Util</span></td>
+                        <td style='font-weight: 500;'>\( \Omega(1/\sqrt{\log \rho}) \)</td>
+                    </tr>
+                    <tr class=''>
+                        <td><a class='table-link' href='#paper-card-8' onclick='goToPaper(8); return false;'>Lachish (2014) / Feldman et al. (2015)</a></td>
+                        <td style='text-align: center;'><span class='badge util'>Util</span></td>
+                        <td style='font-weight: 500;'>\( \Omega(1/\log \log \rho) \)</td>
+                    </tr>
+                    <tr class=''>
+                        <td><a class='table-link' href='#paper-card-27' onclick='goToPaper(27); return false;'>Soto, Turkieltaub, Verdugo (2018/2021)</a></td>
+                        <td style='text-align: center;'><span class='badge prob'>Prob</span></td>
+                        <td style='font-weight: 500;'>\( \Omega(1/\log \rho) \)</td>
+                    </tr>
+                    <tr class=''>
+                        <td><a class='table-link' href='#paper-card-27' onclick='goToPaper(27); return false;'>Soto, Turkieltaub, Verdugo (2018/2021)</a></td>
+                        <td style='text-align: center;'><span class='badge ordinal'>Ordinal</span></td>
+                        <td style='font-weight: 500;'>\( \Omega(1/\log \log \rho) \)</td>
+                    </tr>
                     <tr class='group-start'>
                         <td rowspan='5' class='class-cell'>Graphic</td>
                         <td><a class='table-link' href='#paper-card-5' onclick='goToPaper(5); return false;'>Babaioff, Immorlica, Kleinberg (2007)</a></td>
@@ -793,7 +811,7 @@
                     <tr class=''>
                         <td><a class='table-link' href='#paper-card-0' onclick='goToPaper(0); return false;'>Kleinberg (2005) / Soto et al. (2021)</a></td>
                         <td style='text-align: center;'><span class='badge prob'>Prob</span></td>
-                        <td style='font-weight: 500;'>\( 1 - O(\sqrt{\frac{\log \rho}{\rho}}) \)</td>
+                        <td style='font-weight: 500;'>\( 1 - O(\sqrt{\frac{\log k}{k}}) \)</td>
                     </tr>
                     <tr class=''>
                         <td><a class='table-link' href='#paper-card-54' onclick='goToPaper(54); return false;'>Chan, Chen, Jiang (2015)</a></td>
@@ -851,22 +869,6 @@
                         <td style='text-align: center;'><span class='badge util'>Util</span></td>
                         <td style='font-weight: 500;'>\( 1/(1+o(1)) \approx 1.0 \)</td>
                     </tr>
-                    <tr class='group-start'>
-                        <td rowspan='3' class='class-cell'>Open Conjecture: General Matroids (Random Order)</td>
-                        <td><a class='table-link' href='#paper-card-5' onclick='goToPaper(5); return false;'>Babaioff, Immorlica, Kleinberg (2007)</a></td>
-                        <td style='text-align: center;'><span class='badge util'>Util</span></td>
-                        <td style='font-weight: 500;'>\( \Omega(1/\log \rho) \)</td>
-                    </tr>
-                    <tr class=''>
-                        <td><a class='table-link' href='#paper-card-1' onclick='goToPaper(1); return false;'>Chakraborty & Lachish (2012)</a></td>
-                        <td style='text-align: center;'><span class='badge util'>Util</span></td>
-                        <td style='font-weight: 500;'>\( \Omega(1/\sqrt{\log \rho}) \)</td>
-                    </tr>
-                    <tr class=''>
-                        <td><a class='table-link' href='#paper-card-8' onclick='goToPaper(8); return false;'>Lachish (2014) / Feldman et al. (2015)</a></td>
-                        <td style='text-align: center;'><span class='badge util'>Util</span></td>
-                        <td style='font-weight: 500;'>\( \Omega(1/\log \log \rho) \)</td>
-                    </tr>
 
                     </tbody>
                 </table>
@@ -874,7 +876,7 @@
             </details>
 
             <details class="table-collapsible" open style="margin-top: 3rem;">
-                <summary><h3>Modelos Vecinos y Variantes</h3></summary>
+                <summary><h2>B. Modelos Vecinos y Variantes</h2></summary>
                 
             <p>La siguiente tabla agrupa resultados que se escapan del modelo estándar (ej. orden de llegada relajado, objetivos submodulares, o correlación).</p>
             <div class="table-scroll">
@@ -888,12 +890,6 @@
                         </tr>
                     </thead>
                     <tbody>
-                    <tr class='group-start'>
-                        <td rowspan='1' class='class-cell'>Ordinal Information Model</td>
-                        <td><a class='table-link' href='#paper-card-27' onclick='goToPaper(27); return false;'>Soto, Turkieltaub, Verdugo (2018/2021)</a></td>
-                        <td style='text-align: center;'><span class='badge prob'>Prob</span></td>
-                        <td style='font-weight: 500;'>\( \Omega(1/\log \rho) \)</td>
-                    </tr>
                     <tr class='group-start'>
                         <td rowspan='2' class='class-cell'>Random Assignment Model</td>
                         <td><a class='table-link' href='#paper-card-17' onclick='goToPaper(17); return false;'>Soto (2011)</a></td>

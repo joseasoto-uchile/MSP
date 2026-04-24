@@ -73,7 +73,7 @@ def generate_html(language="en"):
         "read_local": "PDF",
         "view_arxiv": "View on arXiv",
         "show_bibtex": "BibTeX \u25be",
-        "table_note": "All guarantees are normalized as values \u2264 1. Labels denote notions: Prob (\(p\)), Util (\(u\)), Ordinal (\(o\)). Since \(p\) implies \(u\), every \(p\) row also provides the corresponding utility guarantee." if is_en else "Todas las garant\u00edas est\u00e1n normalizadas como valores \u2264 1. Las etiquetas denotan nociones: Prob (\(p\)), Util (\(u\)), Ordinal (\(o\)). Como \(p\) implica \(u\), cada fila \(p\) tambi\u00e9n otorga la correspondiente garant\u00eda de utilidad."
+        "table_note": r"All guarantees are normalized as values \u2264 1. Labels denote notions: Prob (\(p\)), Util (\(u\)), Ordinal (\(o\)). Since \(p\) implies \(u\), every \(p\) row also provides the corresponding utility guarantee." if is_en else r"Todas las garant\u00edas est\u00e1n normalizadas como valores \u2264 1. Las etiquetas denotan nociones: Prob (\(p\)), Util (\(u\)), Ordinal (\(o\)). Como \(p\) implica \(u\), cada fila \(p\) tambi\u00e9n otorga la correspondiente garant\u00eda de utilidad."
     }
 
     table_data = [
@@ -176,7 +176,6 @@ def generate_html(language="en"):
                 {"ref": "Almost all matroids (Random)", "search": ["Huynh"], "type": "Util", "val": r"\( 1/(2+o(1)) \approx 0.5 \)"},
                 {"ref": "Conditional on Paving Conjecture", "search": ["Huynh"], "type": "Util", "val": r"\( 1/(1+o(1)) \approx 1.0 \)"}
             ]
-        },
         }
     ]
 
