@@ -180,6 +180,7 @@
         }
 
         /* Modern Table Styles */
+        .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
         table {
             width: 100%;
             border-collapse: separate;
@@ -346,15 +347,42 @@
         .bibtex-container {
             display: none;
             background-color: #1a202c;
-            color: #e2e8f0;
-            padding: 1.5rem;
             border-radius: 8px;
             margin-top: 1rem;
+            border-left: 4px solid var(--secondary-color);
+            position: relative;
+        }
+        .bibtex-container pre {
+            color: #e2e8f0;
+            padding: 1.5rem;
+            padding-top: 2.8rem;
             font-family: 'Courier New', Courier, monospace;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             white-space: pre-wrap;
             overflow-x: auto;
-            border-left: 4px solid var(--secondary-color);
+            margin: 0;
+        }
+        .bibtex-copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 10px;
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.25);
+            color: #e2e8f0;
+            padding: 3px 10px;
+            border-radius: 5px;
+            font-size: 0.78rem;
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+        .bibtex-copy-btn:hover { background: rgba(255,255,255,0.22); }
+        .bibtex-section-label {
+            color: #63b3ed;
+            font-family: 'Courier New', monospace;
+            font-size: 0.78rem;
+            padding: 0.4rem 1.5rem 0;
+            display: block;
+            opacity: 0.8;
         }
 
         /* Search Bar */
@@ -392,14 +420,13 @@
             margin: 0;
             opacity: 0.8;
         }
-    
         .tag-badge {
-            background-color: #edf2f7;
-            color: #4a5568;
-            padding: 0.2rem 0.5rem;
+            background-color: #2b6cb0;
+            color: #fff;
+            padding: 0.2rem 0.55rem;
             border-radius: 9999px;
-            font-size: 0.75rem;
-            font-weight: 600;
+            font-size: 0.72rem;
+            font-weight: 700;
             display: inline-block;
         }
         .tag-filter-btn {
@@ -412,28 +439,131 @@
             font-size: 0.85rem;
             transition: all 0.2s;
         }
-        .tag-filter-btn:hover {
-            background-color: #edf2f7;
-        }
+        .tag-filter-btn:hover { background-color: #edf2f7; }
         .tag-filter-btn.active {
-            background-color: #3182ce;
+            background-color: #2b6cb0;
             color: white;
-            border-color: #3182ce;
+            border-color: #2b6cb0;
         }
-        details > summary {
+        .filter-bar {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 1rem;
+            background: #f7fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 0.6rem 1rem;
+        }
+        .filter-bar-label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-right: 4px;
+        }
+        .filter-reset-btn {
+            margin-left: auto;
+            background: none;
+            border: 1px solid #cbd5e0;
+            border-radius: 6px;
+            padding: 0.25rem 0.7rem;
+            font-size: 0.8rem;
             cursor: pointer;
-            outline: none;
-            user-select: none;
+            color: #4a5568;
+            transition: all 0.2s;
         }
-        details > summary h2, details > summary h3 {
-            display: inline-block;
+        .filter-reset-btn:hover { background: #e2e8f0; }
+        .result-count {
+            font-size: 0.82rem;
+            color: #718096;
+            margin-bottom: 0.5rem;
+            min-height: 1.2em;
+        }
+        /* Collapsible card body */
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 0.5rem;
+            cursor: pointer;
+        }
+        .card-header-left { flex: 1; }
+        .card-toggle-btn {
+            background: none;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 3px 8px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            color: #718096;
+            flex-shrink: 0;
+            margin-top: 4px;
+            transition: all 0.15s;
+        }
+        .card-toggle-btn:hover { background: var(--accent-color); }
+        .card-body { overflow: hidden; }
+        .card-body.collapsed { display: none; }
+        /* Permalink icon */
+        .permalink {
+            opacity: 0;
+            font-size: 0.85rem;
+            color: #a0aec0;
+            text-decoration: none;
+            margin-left: 6px;
+            transition: opacity 0.15s;
+        }
+        .paper-card:hover .permalink { opacity: 1; }
+        /* Back to top */
+        #back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            font-size: 1.3rem;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+            transition: background 0.2s, opacity 0.3s;
+            z-index: 1000;
+        }
+        #back-to-top:hover { background: var(--secondary-color); }
+        #back-to-top.visible { display: flex; }
+        details > summary { cursor: pointer; outline: none; user-select: none; }
+        details > summary h2, details > summary h3 { display: inline-block; }
+        /* Dark mode */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #1a202c;
+                --text-color: #e2e8f0;
+                --container-bg: #2d3748;
+                --primary-color: #90cdf4;
+                --secondary-color: #63b3ed;
+                --accent-color: #2a4365;
+                --border-color: #4a5568;
+            }
+            .paper-card { background: #2d3748; }
+            .tag-filter-btn { background: #2d3748; color: #e2e8f0; }
+            .filter-bar { background: #2d3748; }
+            td.class-cell { background-color: #2a4365; }
+            table tbody tr:hover td:not(.class-cell) { background-color: #374151; }
         }
 </style>
 </head>
+<a href="#main-content" class="skip-link" style="position:absolute;top:-40px;left:0;background:var(--secondary-color);color:white;padding:8px 16px;z-index:9999;border-radius:0 0 6px 0;transition:top 0.2s;" onfocus="this.style.top='0'">Skip to content</a>
 <body>
 
     <header>
-        <div class="lang-switch">
+        <div class="lang-switch" id="lang-switch">
             <a href="index.html" class="{en_active}">EN</a> | 
             <a href="index_es.html" class="{es_active}">ES</a>
         </div>
@@ -441,7 +571,9 @@
         <p>{subtitle}</p>
     </header>
 
-    <div class="container">
+    <button id="back-to-top" title="Back to top" onclick="window.scrollTo({{top:0,behavior:'smooth'}})">&#8679;</button>
+
+    <div class="container" id="main-content">
         <!-- Tabs Nav -->
         <div class="tabs" role="tablist">
             <button class="tab-button active" id="btn-lecture-notes" role="tab" aria-selected="true" aria-controls="lecture-notes" onclick="openTab(event, 'lecture-notes')">{tab_notes}</button>
@@ -539,10 +671,15 @@
             <h2>{reading_title}</h2>
             <p>{reading_desc}</p>
 
-            <div class="search-container">
-                <input type="text" id="paperSearch" class="search-input" placeholder="{search_placeholder}" onkeyup="filterPapers()">
+            <div class="search-container" style="margin-bottom:0.5rem;">
+                <input type="text" id="paperSearch" class="search-input" placeholder="{search_placeholder}" oninput="filterPapers()">
             </div>
-            {tag_filters_html}
+            <div class="filter-bar" id="filter-bar">
+                <span class="filter-bar-label">Filter:</span>
+                {tag_filters_html}
+                <button class="filter-reset-btn" onclick="resetFilters()" title="Clear all filters">&#10005; Clear</button>
+            </div>
+            <p class="result-count" id="result-count"></p>
             
 
             <h3 style="color: var(--primary-color); margin-top: 1rem;">{core_msp_title}</h3>
@@ -558,106 +695,169 @@
         <p>{disclaimer}</p>
     </footer>
 
-    <!-- Script for Tabs and BibTeX -->
+    <!-- Script for Tabs, BibTeX, Filters, Back-to-top -->
     <script>
+        // ── Tab routing with URL hash ──────────────────────────────────
+        const TAB_IDS = ['lecture-notes', 'ratios-table', 'reading-list'];
+
         function openTab(evt, tabId) {
-            var i, tabcontent, tablinks;
-            
-            // Hide all tab content
-            tabcontent = document.getElementsByClassName("tab-content");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-                tabcontent[i].className = tabcontent[i].className.replace(" active", "");
+            document.querySelectorAll('.tab-content').forEach(el => {
+                el.style.display = 'none';
+                el.classList.remove('active');
+            });
+            document.querySelectorAll('.tab-button').forEach(btn => {
+                btn.classList.remove('active');
+                btn.setAttribute('aria-selected', 'false');
+            });
+            const panel = document.getElementById(tabId);
+            if (panel) { panel.style.display = 'block'; panel.classList.add('active'); }
+            const activator = evt && evt.currentTarget
+                ? evt.currentTarget
+                : document.getElementById('btn-' + tabId);
+            if (activator) {
+                activator.classList.add('active');
+                activator.setAttribute('aria-selected', 'true');
             }
-            
-            // Remove active class from all buttons and update aria
-            tablinks = document.getElementsByClassName("tab-button");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-                tablinks[i].setAttribute("aria-selected", "false");
-            }
-            
-            // Show current tab and add active class to button
-            document.getElementById(tabId).style.display = "block";
-            
-            if (evt && evt.currentTarget) {
-                evt.currentTarget.className += " active";
-                evt.currentTarget.setAttribute("aria-selected", "true");
+            // Update URL hash without scrolling
+            history.replaceState(null, '', '#' + tabId);
+            // Update lang-switch links to preserve hash
+            document.querySelectorAll('#lang-switch a').forEach(a => {
+                a.href = a.href.split('#')[0] + '#' + tabId;
+            });
+        }
+
+        // Restore tab from hash on load
+        (function() {
+            const hash = location.hash.replace('#', '');
+            const tabId = TAB_IDS.includes(hash) ? hash : 'lecture-notes';
+            openTab(null, tabId);
+        })();
+
+        // Arrow-key nav on tablist
+        document.querySelector('.tabs').addEventListener('keydown', e => {
+            const btns = Array.from(document.querySelectorAll('.tab-button'));
+            const idx = btns.indexOf(document.activeElement);
+            if (idx === -1) return;
+            if (e.key === 'ArrowRight') { e.preventDefault(); btns[(idx+1) % btns.length].focus(); }
+            if (e.key === 'ArrowLeft')  { e.preventDefault(); btns[(idx-1+btns.length) % btns.length].focus(); }
+        });
+
+        // ── Collapsible cards ─────────────────────────────────────────
+        function toggleCard(cardId) {
+            const body = document.querySelector('#' + cardId + ' .card-body');
+            const btn  = document.querySelector('#' + cardId + ' .card-toggle-btn');
+            if (!body) return;
+            const collapsed = body.classList.toggle('collapsed');
+            btn.textContent = collapsed ? '▶ Show' : '▼ Hide';
+        }
+
+        // ── BibTeX toggle with label + copy ───────────────────────────
+        function toggleBibtex(id) {
+            const el  = document.getElementById(id);
+            const btn = el.previousElementSibling && el.previousElementSibling.classList.contains('bibtex-toggle')
+                ? el.previousElementSibling
+                : document.querySelector('[onclick="toggleBibtex(\'' + id + '\')"]');
+            if (el.style.display === 'block') {
+                el.style.display = 'none';
+                if (btn) btn.textContent = btn.dataset.showLabel || 'BibTeX ▼';
             } else {
-                // If triggered by JS directly without event
-                var btn = document.getElementById('btn-' + tabId);
-                btn.className += " active";
-                btn.setAttribute("aria-selected", "true");
+                el.style.display = 'block';
+                if (btn) btn.textContent = btn.dataset.hideLabel || 'BibTeX ▲';
             }
         }
 
-        function toggleBibtex(id) {
-            var el = document.getElementById(id);
-            if (el.style.display === "block") {
-                el.style.display = "none";
-            } else {
-                el.style.display = "block";
-            }
+        function copyBibtex(btn) {
+            const container = btn.closest('.bibtex-container');
+            const text = Array.from(container.querySelectorAll('pre'))
+                .map(p => p.textContent).join('\n\n');
+            navigator.clipboard.writeText(text).then(() => {
+                const orig = btn.textContent;
+                btn.textContent = '✓ Copied!';
+                setTimeout(() => btn.textContent = orig, 1800);
+            });
         }
-        
+
+        // ── Navigate from table to paper card ─────────────────────────
         function goToPaper(idx) {
-            // Switch tab
             openTab(null, 'reading-list');
-            
-            // Wait for display to apply
             setTimeout(() => {
-                var card = document.getElementById('paper-card-' + idx);
+                const card = document.getElementById('paper-card-' + idx);
+                if (!card) return;
+                // Expand card body if collapsed
+                const body = card.querySelector('.card-body');
+                const btn  = card.querySelector('.card-toggle-btn');
+                if (body && body.classList.contains('collapsed')) {
+                    body.classList.remove('collapsed');
+                    if (btn) btn.textContent = '▼ Hide';
+                }
                 card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                
-                // Add highlight animation
                 card.classList.remove('highlight-animation');
-                // Trigger reflow
                 void card.offsetWidth;
                 card.classList.add('highlight-animation');
-            }, 100);
+                // Update URL so Back works
+                history.pushState(null, '', '#' + card.id);
+            }, 120);
         }
 
-        let activeTag = "All";
+        // ── Filtering ─────────────────────────────────────────────────
+        let activeTag = 'All';
 
         function filterByTag(tag) {
-            activeTag = tag;
-            let btns = document.getElementsByClassName('tag-filter-btn');
-            for (let i = 0; i < btns.length; i++) {
-                if (btns[i].innerText === tag) {
-                    btns[i].classList.add('active');
-                } else {
-                    btns[i].classList.remove('active');
-                }
-            }
+            activeTag = tag === activeTag ? 'All' : tag; // toggle off if same tag
+            document.querySelectorAll('.tag-filter-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.tag === activeTag);
+            });
+            filterPapers();
+        }
+
+        function resetFilters() {
+            activeTag = 'All';
+            document.getElementById('paperSearch').value = '';
+            document.querySelectorAll('.tag-filter-btn').forEach(b => b.classList.remove('active'));
             filterPapers();
         }
 
         function filterPapers() {
-            var input, filter, cards, title, authors, summary, i, txtValue, tags;
-            input = document.getElementById("paperSearch");
-            filter = input.value.toLowerCase();
-            cards = document.getElementsByClassName("filterable-card");
-            
-            for (i = 0; i < cards.length; i++) {
-                title = cards[i].querySelector(".paper-title");
-                authors = cards[i].querySelector(".paper-authors");
-                summary = cards[i].querySelector(".paper-summary");
-                tags = cards[i].getAttribute("data-tags") || "";
-                
-                txtValue = (title ? title.textContent || title.innerText : "") + " " + 
-                           (authors ? authors.textContent || authors.innerText : "") + " " +
-                           (summary ? summary.textContent || summary.innerText : "");
-                           
-                let matchesText = txtValue.toLowerCase().indexOf(filter) > -1;
-                let matchesTag = (activeTag === "All" || tags.split(',').includes(activeTag));
-                
-                if (matchesText && matchesTag) {
-                    cards[i].style.display = "";
-                } else {
-                    cards[i].style.display = "none";
-                }
+            const filter = document.getElementById('paperSearch').value.toLowerCase();
+            const cards  = document.querySelectorAll('.filterable-card');
+            let visible  = 0;
+            cards.forEach(card => {
+                const text = (card.querySelector('.paper-title')?.textContent || '') + ' ' +
+                             (card.querySelector('.paper-authors')?.textContent || '') + ' ' +
+                             (card.querySelector('.paper-summary')?.textContent || '');
+                const tags = card.getAttribute('data-tags') || '';
+                const show = text.toLowerCase().includes(filter) &&
+                             (activeTag === 'All' || tags.split(',').includes(activeTag));
+                card.style.display = show ? '' : 'none';
+                if (show) visible++;
+            });
+            const total = cards.length;
+            const el = document.getElementById('result-count');
+            if (el) {
+                el.textContent = (filter || activeTag !== 'All')
+                    ? `Showing ${visible} of ${total} papers`
+                    : '';
             }
         }
+
+        // ── Back to top ───────────────────────────────────────────────
+        const btt = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            btt.classList.toggle('visible', window.scrollY > 400);
+        });
+
+        // ── Permalink copy on click ───────────────────────────────────
+        document.addEventListener('click', e => {
+            const pl = e.target.closest('.permalink');
+            if (!pl) return;
+            e.preventDefault();
+            const url = location.href.split('#')[0] + '#' + pl.dataset.id;
+            navigator.clipboard.writeText(url).then(() => {
+                const orig = pl.textContent;
+                pl.textContent = '✓';
+                setTimeout(() => pl.textContent = orig, 1200);
+            });
+        });
     </script>
 </body>
 </html>

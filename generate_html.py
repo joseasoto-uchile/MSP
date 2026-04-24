@@ -209,7 +209,9 @@ def generate_html(language="en"):
                 
                 p_idx = find_paper_index(papers, entry.get("search", []))
                 if p_idx != -1:
-                    ref_html = f"<a class='table-link' onclick='goToPaper({p_idx})'>{entry['ref']}</a>"
+                    card_anchor = f"paper-card-{p_idx}"
+                    ref_html = (f"<a class='table-link' href='#reading-list' "
+                                f"onclick='goToPaper({p_idx}); return false;'>{entry['ref']}</a>")
                 else:
                     ref_html = entry['ref']
                 
@@ -249,11 +251,20 @@ def generate_html(language="en"):
         
         bib_data = paper.get('bibtex', 'No BibTeX available.')
         if isinstance(bib_data, list):
-            bib_str = '\n\n'.join(bib_data)
+            bibs = bib_data
         else:
-            bib_str = bib_data
-            
-        bib_html = f'<div id="{bibtex_id}" class="bibtex-container">{bib_str}</div>'
+            bibs = [bib_data]
+
+        # Build BibTeX container with copy button and <pre> blocks
+        bib_inner = ''
+        for j, bib_block in enumerate(bibs):
+            label = paper.get('versions', [])
+            lbl = label[j] if j < len(label) else f'Version {j+1}'
+            bib_inner += f'<span class="bibtex-section-label"># {lbl}</span>'
+            bib_inner += f'<pre>{bib_block}</pre>'
+        bib_html = (f'<div id="{bibtex_id}" class="bibtex-container">'
+                    f'<button class="bibtex-copy-btn" onclick="copyBibtex(this)">Copy</button>'
+                    f'{bib_inner}</div>')
 
         is_core = (paper.get('category') == 'A')
         display_idx = core_idx if is_core else related_idx
@@ -265,27 +276,44 @@ def generate_html(language="en"):
         has_arxiv = 'arxiv.org' in paper.get('pdf_url', '')
         has_local = paper.get('local_pdf', '#') not in ('#', '')
 
-        card_html = f"""
-            <div class="paper-card filterable-card" id="paper-card-{i}" data-tags="{tags_data}">
-                <div style="float: right; margin-left: 10px; margin-bottom: 5px;">{tags_html}</div>
-                <h3 class="paper-title">{display_idx}. {paper['title']}</h3>
-                <div class="paper-authors">{t['by']} {paper['authors']}</div>
-                <ul class="paper-versions" style="color: var(--secondary-color); font-weight: 600; margin-top: -0.5rem; margin-bottom: 1rem; list-style-type: disc; padding-left: 20px; font-size: 0.9em;">
-                    """ + "".join(f"<li>{v}</li>" for v in paper.get('versions', [paper.get('venue', 'arXiv preprint')])) + f"""
-                </ul>
-                <div class="paper-summary">
-                    <strong>{t['abstract']}</strong> {paper['summary']}
-                </div>
-                <div class="action-buttons">
-                    """ + (f'<a href="{paper["local_pdf"]}" class="paper-link" target="_blank">{t["read_local"]}</a>' if has_local else '') + """
-                    """ + (f'<a href="{paper["pdf_url"]}" class="paper-link secondary" target="_blank">{t["view_arxiv"]}</a>' if has_arxiv else '') + """
-"""
+        # Action buttons
+        btn_local  = (f'<a href="{paper["local_pdf"]}" class="paper-link" target="_blank">{t["read_local"]}</a>'
+                      if has_local else '')
+        btn_arxiv  = (f'<a href="{paper["pdf_url"]}" class="paper-link secondary" target="_blank">{t["view_arxiv"]}</a>'
+                      if has_arxiv else '')
+        btn_dblp   = (f'<a href="{paper["dblp_url"]}" class="paper-link" style="background-color:#3182ce;" target="_blank">DBLP</a>'
+                      if paper.get('dblp_url') else '')
+        btn_bib    = (f'<button class="paper-link dark bibtex-toggle" '
+                      f'data-show-label="BibTeX \u25be" data-hide-label="BibTeX \u25b4" '
+                      f'onclick="toggleBibtex(\'{bibtex_id}\')">BibTeX &#9660;</button>')
 
-        if paper.get('dblp_url'):
-            card_html += f'                    <a href="{paper["dblp_url"]}" class="paper-link" style="background-color: #3182ce;" target="_blank">DBLP</a>\n'
-        card_html += f"""                    <button class="paper-link dark bibtex-toggle" onclick="toggleBibtex('{bibtex_id}')">{t['show_bibtex']}</button>
+        card_id = f'paper-card-{i}'
+        versions_li = "".join(f"<li>{v}</li>" for v in paper.get('versions', [paper.get('venue', 'arXiv preprint')]))
+
+        card_html = f"""
+            <div class="paper-card filterable-card" id="{card_id}" data-tags="{tags_data}">
+                <div class="card-header" onclick="toggleCard('{card_id}')">
+                    <div class="card-header-left">
+                        <div style="float:right;margin-left:8px;">{tags_html}</div>
+                        <h3 class="paper-title" style="margin-top:0;">{display_idx}. {paper['title']}
+                            <a class="permalink" href="#{card_id}" data-id="{card_id}" title="Copy link" onclick="event.stopPropagation()">&#128279;</a>
+                        </h3>
+                        <div class="paper-authors">{t['by']} {paper['authors']}</div>
+                    </div>
+                    <button class="card-toggle-btn" onclick="event.stopPropagation(); toggleCard('{card_id}')" title="Expand/collapse">&#9660; Hide</button>
                 </div>
-                {bib_html}
+                <div class="card-body collapsed">
+                    <ul class="paper-versions" style="color:var(--secondary-color);font-weight:600;margin-top:0.3rem;margin-bottom:0.8rem;list-style-type:disc;padding-left:20px;font-size:0.9em;">
+                        {versions_li}
+                    </ul>
+                    <div class="paper-summary">
+                        <strong>{t['abstract']}</strong> {paper['summary']}
+                    </div>
+                    <div class="action-buttons">
+                        {btn_local}{btn_arxiv}{btn_dblp}{btn_bib}
+                    </div>
+                    {bib_html}
+                </div>
             </div>
 """
         if paper.get('category') == 'A':
@@ -293,10 +321,9 @@ def generate_html(language="en"):
         else:
             related_work_html += card_html
 
-    tag_buttons_html = "<div id='tag-filters' style='margin-top: 1rem; margin-bottom: 1.5rem;'><button class='tag-filter-btn active' onclick='filterByTag(\"All\")'>All</button>"
+    tag_buttons_html = "<button class='tag-filter-btn active' data-tag='All' onclick='filterByTag(\"All\")'>All</button>"
     for tag in t['all_tags']:
-        tag_buttons_html += f"<button class='tag-filter-btn' onclick='filterByTag(\"{tag}\")'>{tag}</button>"
-    tag_buttons_html += "</div>"
+        tag_buttons_html += f"<button class='tag-filter-btn' data-tag='{tag}' onclick='filterByTag(\"{tag}\")'>{tag}</button>"
     t['tag_filters_html'] = tag_buttons_html
 
     t['table_content'] = table_html
