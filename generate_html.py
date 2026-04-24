@@ -346,14 +346,28 @@ para cada función de peso \(w\) no negativa consistente con el orden subyacente
         else:
             related_idx += 1
 
-        has_arxiv = 'arxiv.org' in paper.get('pdf_url', '')
-        has_local = paper.get('local_pdf', '#') not in ('#', '')
-
         # Action buttons
-        btn_local  = (f'<a href="{paper["local_pdf"]}" class="paper-link" target="_blank">{t["read_local"]}</a>'
-                      if has_local else '')
-        btn_arxiv  = (f'<a href="{paper["pdf_url"]}" class="paper-link secondary" target="_blank">{t["view_arxiv"]}</a>'
-                      if has_arxiv else '')
+        arxiv_match = None
+        if 'arxiv.org' in paper.get('pdf_url', ''):
+            import re
+            m = re.search(r'(\d{4}\.\d{4,5}|[a-z\-]+/\d{7})', paper['pdf_url'])
+            if m:
+                arxiv_id = m.group(1)
+                abs_url = f"https://arxiv.org/abs/{arxiv_id}"
+                pdf_url = f"https://arxiv.org/pdf/{arxiv_id}"
+                btn_arxiv = f'<a href="{abs_url}" class="paper-link secondary" target="_blank">{t["view_arxiv"]}</a>'
+                # If no local PDF, use arXiv PDF
+                if paper.get('local_pdf', '#') in ('#', ''):
+                    btn_local = f'<a href="{pdf_url}" class="paper-link" target="_blank">{t["read_local"]}</a>'
+                else:
+                    btn_local = f'<a href="{paper["local_pdf"]}" class="paper-link" target="_blank">{t["read_local"]}</a>'
+            else:
+                btn_arxiv = f'<a href="{paper["pdf_url"]}" class="paper-link secondary" target="_blank">{t["view_arxiv"]}</a>'
+                btn_local = (f'<a href="{paper["local_pdf"]}" class="paper-link" target="_blank">{t["read_local"]}</a>' if has_local else '')
+        else:
+            btn_arxiv = ''
+            btn_local = (f'<a href="{paper["local_pdf"]}" class="paper-link" target="_blank">{t["read_local"]}</a>' if has_local else '')
+
         btn_dblp   = (f'<a href="{paper["dblp_url"]}" class="paper-link" style="background-color:#3182ce;" target="_blank">DBLP</a>'
                       if paper.get('dblp_url') else '')
         btn_bib    = (f'<button class="paper-link dark bibtex-toggle" '
