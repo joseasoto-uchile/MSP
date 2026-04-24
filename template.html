@@ -265,17 +265,9 @@
             font-weight: bold;
         }
         
-        .badge.prob {
-            background-color: #e6ffed;
-            color: #1e7e34;
-            border: 1px solid #c3e6cb;
-        }
-        
-        .badge.util {
-            background-color: #e2e3e5;
-            color: #383d41;
-            border: 1px solid #d6d8db;
-        }
+        .badge.prob { background-color: #38a169; color: white; }
+        .badge.util { background-color: #3182ce; color: white; }
+        .badge.ordinal { background-color: #805ad5; color: white; }
 
         .paper-card {
             border: 1px solid var(--border-color);
@@ -671,7 +663,7 @@
         <!-- Tab 2: Ratios Table -->
         <section id="ratios-table" class="tab-content" role="tabpanel" aria-labelledby="btn-ratios-table">
             <details class="table-collapsible" open>
-                <summary><h2>{ratios_title}</h2></summary>
+                <summary><h2>A. {ratios_title}</h2></summary>
                 
             <p>{ratios_desc}</p>
             <div class="note-box" style="margin: 1rem 0; padding: 0.8rem 1.2rem; background: var(--accent-color); border-left: 4px solid var(--secondary-color); font-size: 0.9rem; line-height: 1.4; color: var(--text-color);">
@@ -696,7 +688,7 @@
             </details>
 
             <details class="table-collapsible" open style="margin-top: 3rem;">
-                <summary><h3>{variants_title}</h3></summary>
+                <summary><h2>B. {variants_title}</h2></summary>
                 
             <p>{variants_desc}</p>
             <div class="table-scroll">

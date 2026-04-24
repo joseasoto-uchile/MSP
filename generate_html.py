@@ -73,10 +73,20 @@ def generate_html(language="en"):
         "read_local": "PDF",
         "view_arxiv": "View on arXiv",
         "show_bibtex": "BibTeX \u25be",
-        "table_note": "All guarantees are normalized as values \u2264 1. Rows marked Prob denote probability-competitive guarantees. Since probability-competitive guarantees imply utility-competitive guarantees, every Prob row also gives the corresponding utility guarantee." if is_en else "Todas las garant\u00edas est\u00e1n normalizadas como valores \u2264 1. Las filas marcadas como Prob denotan garant\u00edas probabil\u00edsticas. Dado que las garant\u00edas probabil\u00edsticas implican garant\u00edas de utilidad, cada fila Prob tambi\u00e9n otorga la correspondiente garant\u00eda de utilidad."
+        "table_note": "All guarantees are normalized as values \u2264 1. Labels denote notions: Prob (\(p\)), Util (\(u\)), Ordinal (\(o\)). Since \(p\) implies \(u\), every \(p\) row also provides the corresponding utility guarantee." if is_en else "Todas las garant\u00edas est\u00e1n normalizadas como valores \u2264 1. Las etiquetas denotan nociones: Prob (\(p\)), Util (\(u\)), Ordinal (\(o\)). Como \(p\) implica \(u\), cada fila \(p\) tambi\u00e9n otorga la correspondiente garant\u00eda de utilidad."
     }
 
     table_data = [
+        {
+            "class": "General Matroids (Random Order)",
+            "entries": [
+                {"ref": "Babaioff, Immorlica, Kleinberg (2007)", "search": ["Babaioff", "Kleinberg", "2007"], "type": "Util", "val": r"\( \Omega(1/\log \rho) \)"},
+                {"ref": "Chakraborty & Lachish (2012)", "search": ["Lachish", "Chakraborty"], "type": "Util", "val": r"\( \Omega(1/\sqrt{\log \rho}) \)"},
+                {"ref": "Lachish (2014) / Feldman et al. (2015)", "search": ["Feldman"], "type": "Util", "val": r"\( \Omega(1/\log \log \rho) \)"},
+                {"ref": "Soto, Turkieltaub, Verdugo (2018/2021)", "search": ["Soto", "ordinal"], "type": "Prob", "val": r"\( \Omega(1/\log \rho) \)"},
+                {"ref": "Soto, Turkieltaub, Verdugo (2018/2021)", "search": ["Soto", "ordinal"], "type": "Ordinal", "val": r"\( \Omega(1/\log \log \rho) \)"}
+            ]
+        },
         {
             "class": "Graphic",
             "entries": [
@@ -124,7 +134,7 @@ def generate_html(language="en"):
             "class": "k-Uniform",
             "entries": [
                 {"ref": "Dynkin (1963)", "search": ["Dynkin"], "type": "Prob", "val": r"\( 1/e \approx 0.367 \)"},
-                {"ref": "Kleinberg (2005) / Soto et al. (2021)", "search": ["Kleinberg"], "type": "Prob", "val": r"\( 1 - O(\sqrt{\frac{\log \rho}{\rho}}) \)"},
+                {"ref": "Kleinberg (2005) / Soto et al. (2021)", "search": ["Kleinberg"], "type": "Prob", "val": r"\( 1 - O(\sqrt{\frac{\log k}{k}}) \)"},
                 {"ref": "Chan, Chen, Jiang (2015)", "search": ["Jiang"], "type": "Prob", "val": r"Exact thresholds (k-choice)"},
                 {"ref": "Albers & Ladewig (2019/2021)", "search": ["Albers"], "type": "Prob", "val": r"\( > 1/e \) for \( k \ge 2 \)"}
             ]
@@ -167,23 +177,10 @@ def generate_html(language="en"):
                 {"ref": "Conditional on Paving Conjecture", "search": ["Huynh"], "type": "Util", "val": r"\( 1/(1+o(1)) \approx 1.0 \)"}
             ]
         },
-        {
-            "class": "Open Conjecture: General Matroids (Random Order)",
-            "entries": [
-                {"ref": "Babaioff, Immorlica, Kleinberg (2007)", "search": ["Babaioff", "Kleinberg", "2007"], "type": "Util", "val": r"\( \Omega(1/\log \rho) \)"},
-                {"ref": "Chakraborty & Lachish (2012)", "search": ["Lachish", "Chakraborty"], "type": "Util", "val": r"\( \Omega(1/\sqrt{\log \rho}) \)"},
-                {"ref": "Lachish (2014) / Feldman et al. (2015)", "search": ["Feldman"], "type": "Util", "val": r"\( \Omega(1/\log \log \rho) \)"}
-            ]
         }
     ]
 
     variants_data = [
-        {
-            "class": "Ordinal Information Model",
-            "entries": [
-                {"ref": "Soto, Turkieltaub, Verdugo (2018/2021)", "search": ["Soto", "ordinal"], "type": "Prob", "val": r"\( \Omega(1/\log \rho) \)"}
-            ]
-        },
         {
             "class": "Random Assignment Model",
             "entries": [
@@ -205,8 +202,8 @@ def generate_html(language="en"):
             entries = group["entries"]
             rowspan = len(entries)
             for i, entry in enumerate(entries):
-                badge_class = "prob" if entry["type"] == "Prob" else "util"
-                badge_text = "Prob" if entry["type"] == "Prob" else "Util"
+                badge_class = entry["type"].lower()
+                badge_text = entry["type"]
                 
                 p_idx = find_paper_index(papers, entry.get("search", []))
                 if p_idx != -1:
