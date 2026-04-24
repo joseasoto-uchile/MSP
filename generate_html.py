@@ -152,20 +152,21 @@ para cada función de peso \(w\) no negativa consistente con el orden subyacente
         {
             "class": "Graphic",
             "entries": [
-                {"ref": "Babaioff, Immorlica, Kleinberg (2007)", "search": ["Babaioff", "Kleinberg", "2007"], "type": "Util", "val": r"\( 1/16 = 0.0625 \)"},
-                {"ref": "Korula & P\u00e1l (2009)", "search": ["Korula", "P\u00e1l"], "type": "Util", "val": r"\( 1/(2e) \approx 0.184 \)"},
+                {"ref": "Babaioff, Immorlica, Kleinberg (2007/2018)", "search": ["Babaioff", "Kleinberg", "2007"], "type": "Ordinal", "val": r"\( 1/16 = 0.0625 \)"},
+                {"ref": "Babaioff, Dinitz, Gupta, Immorlica, Talwar (2009)", "search": ["Babaioff", "Dinitz", "2009"], "type": "Ordinal", "val": r"\( 1/(3e) \approx 0.1226 \)"},
+                {"ref": "Korula & P\u00e1l (2009)", "search": ["Korula", "P\u00e1l"], "type": "Ordinal", "val": r"\( 1/(2e) \approx 0.1839 \)"},
                 {"ref": "Soto, Turkieltaub, Verdugo (2018/2021)", "search": ["Soto", "Turkieltaub", "ordinal"], "type": "Prob", "val": r"\( 1/4 = 0.25 \)"},
-                {"ref": "Banihashem et al. (2025)", "search": ["Banihashem", "graphic"], "type": "Prob", "val": r"\( 1/3.95 \approx 0.253 \) (General graphs) / \( 1/3.77 \approx 0.265 \) (Simple graphs)"},
-                {"ref": "B\u00e9rczi, Livanos, Soto, Verdugo (2025)", "search": ["Livanos", "labeling"], "type": "Prob", "val": r"\( 0.2504 \) (General graphs) / \( 0.2693 \) (Simple graphs)"}
+                {"ref": "Banihashem et al. (2025)", "search": ["Banihashem", "graphic"], "type": "Prob", "val": r"\( 1/3.95 \approx 0.253 \) (Gen) / \( 1/3.77 \approx 0.265 \) (Simple)"},
+                {"ref": "B\u00e9rczi, Livanos, Soto, Verdugo (2025)", "search": ["Livanos", "labeling"], "type": "Prob", "val": r"\( 0.2504 \) (Gen) / \( 0.2693 \) (Simple)"}
             ]
         },
         {
             "class": "Laminar",
             "entries": [
-                {"ref": "Im & Wang (2011)", "search": ["Im", "Wang"], "type": "Util", "val": r"\( 3/16000 \approx 0.00018 \)"},
+                {"ref": "Im & Wang (2011)", "search": ["Im", "Wang"], "type": "Ordinal", "val": r"\( 1/177.77 \approx 0.0056 \)"},
                 {"ref": "Harris & Purohit (2013)", "search": ["Harris", "Purohit"], "type": "Util", "val": r"\( 0.053 \)"},
-                {"ref": "Jaillet, Soto, Zenklusen (2012/2016)", "search": ["Jaillet", "Zenklusen"], "type": "Util", "val": r"\( \frac{1}{3\sqrt{3}e} \approx 0.070 \)"},
-                {"ref": "Ma, Tang, Wang (2013/2016)", "search": ["Tang", "submodular"], "type": "Util", "val": r"\( 1/9.6 \approx 0.104 \)"},
+                {"ref": "Jaillet, Soto, Zenklusen (2013/2016)", "search": ["Jaillet", "Zenklusen"], "type": "Ordinal", "val": r"\( 1/(3\sqrt{3}e) \approx 0.0708 \)"},
+                {"ref": "Ma, Tang, Wang (2013/2016)", "search": ["Tang", "submodular"], "type": "Prob", "val": r"\( 1/9.6 \approx 0.1042 \)"},
                 {"ref": "Soto, Turkieltaub, Verdugo (2018/2021)", "search": ["Soto", "ordinal"], "type": "Prob", "val": r"\( \frac{1}{3\sqrt{3}} \approx 0.192 \)"},
                 {"ref": "Huang, Parsaeian, Zhu (ESA 2024)", "search": ["Parsaeian"], "type": "Prob", "val": r"\( 1/4.75 \approx 0.2105 \)"},
                 {"ref": "B\u00e9rczi, Livanos, Soto, Verdugo (2025)", "search": ["Livanos", "labeling"], "type": "Prob", "val": r"\( 1 - \ln(2) \approx 0.3068 \)"}
@@ -174,22 +175,24 @@ para cada función de peso \(w\) no negativa consistente con el orden subyacente
         {
             "class": "Transversal",
             "entries": [
-                {"ref": "Babaioff, Immorlica, Kleinberg (2007)", "search": ["Babaioff", "Kleinberg", "2007"], "type": "Util", "val": r"\( 1/16 = 0.0625 \)"},
-                {"ref": "Dimitrov & Plaxton (2012)", "search": ["Dimitrov", "Plaxton"], "type": "Util", "val": r"\( 1/8 = 0.125 \)"},
-                {"ref": "Kesselheim et al. (ESA 2013)", "search": ["Kesselheim"], "type": "Util", "val": r"\( 1/e \approx 0.367 \)"},
+                {"ref": "Dimitrov & Plaxton (2012)", "search": ["Dimitrov", "Plaxton"], "type": "Ordinal", "val": r"\( 1/16 = 0.0625 \)"},
+                {"ref": "Korula & P\u00e1l (2009)", "search": ["Korula", "P\u00e1l"], "type": "Ordinal", "val": r"\( 1/8 = 0.125 \)"},
+                {"ref": "Kesselheim et al. (ESA 2013)", "search": ["Kesselheim"], "type": "Ordinal", "val": r"\( 1/e \approx 0.3679 \)"},
                 {"ref": "Soto, Turkieltaub, Verdugo (2021)", "search": ["Soto", "ordinal"], "type": "Prob", "val": r"\( 1/e \approx 0.367 \)"}
             ]
         },
         {
             "class": "Rank-2 Matroids",
             "entries": [
-                {"ref": "Bérczi, Livanos, Soto, Verdugo (2025)", "search": ["Livanos", "labeling"], "type": "Prob", "val": r"\( 0.3462 \)"}
+                {"ref": "Turkieltaub Melo (PhD thesis, 2025)", "search": ["Turkieltaub Melo", "PhD"], "type": "Prob", "val": r"\( 0.334 \)"},
+                {"ref": "Turkieltaub Melo (PhD thesis, 2025)", "search": ["Turkieltaub Melo", "PhD"], "type": "Ordinal", "val": r"\( 0.338 \)"},
+                {"ref": "B\u00e9rczi, Livanos, Soto, Verdugo (2025)", "search": ["Livanos", "labeling"], "type": "Prob", "val": r"\( 0.3462 \)"}
             ]
         },
         {
             "class": "Cographic",
             "entries": [
-                {"ref": "Soto (2011)", "search": ["Soto", "random assignment"], "type": "Util", "val": r"\( 1/(3e) \approx 0.122 \)"}
+                {"ref": "Soto (2011/2013)", "search": ["Soto", "random assignment"], "type": "Prob", "val": r"\( 1/(3e) \approx 0.122 \)"}
             ]
         },
         {
@@ -209,7 +212,7 @@ para cada función de peso \(w\) no negativa consistente con el orden subyacente
         {
             "class": "k-Uniform",
             "entries": [
-                {"ref": "Kleinberg (2005)", "search": ["Kleinberg"], "type": "Util", "val": r"\( 1 - O(1/\sqrt{k}) \)"},
+                {"ref": "Kleinberg (2005)", "search": ["Kleinberg"], "type": "Ordinal", "val": r"\( 1 - O(1/\sqrt{k}) \)"},
                 {"ref": "Soto, Turkieltaub, Verdugo (2018/2021)", "search": ["Soto", "ordinal"], "type": "Prob", "val": r"\( 1 - O(\sqrt{\frac{\log k}{k}}) \)"},
                 {"ref": "Chan, Chen, Jiang (2015)", "search": ["Jiang"], "type": "Prob", "val": r"Exact thresholds (k-choice)"},
                 {"ref": "Albers & Ladewig (2019/2021)", "search": ["Albers"], "type": "Prob", "val": r"\( > 1/e \) for \( k \ge 2 \)"}
@@ -224,7 +227,7 @@ para cada función de peso \(w\) no negativa consistente con el orden subyacente
         {
             "class": "Truncated Partition",
             "entries": [
-                {"ref": "Babaioff, Immorlica, Kleinberg (2007/2018)", "search": ["Babaioff", "Kleinberg"], "type": "Util", "val": r"\( 1/e^2 \approx 0.135 \)"},
+                {"ref": "Babaioff, Immorlica, Kleinberg (2007/2018)", "search": ["Babaioff", "Kleinberg"], "type": "Util", "val": r"\( 1/400 = 0.0025 \)"},
                 {"ref": "Soto, Turkieltaub, Verdugo (2018/2021)", "search": ["Soto", "ordinal"], "type": "Prob", "val": r"\( 1/4 = 0.25 \) (2-forbidden)"},
                 {"ref": "B\u00e9rczi, Livanos, Soto, Verdugo (2025)", "search": ["Livanos"], "type": "Prob", "val": r"\( 1 - \ln(2) \approx 0.3068 \) (laminar)"}
             ]
@@ -232,13 +235,13 @@ para cada función de peso \(w\) no negativa consistente con el orden subyacente
         {
             "class": "Regular & Max-Flow Min-Cut",
             "entries": [
-                {"ref": "Dinitz & Kortsarz (2013/2014)", "search": ["Dinitz"], "type": "Util", "val": r"\( 1/(9e) \approx 0.0408 \)"}
+                {"ref": "Dinitz & Kortsarz (2013/2014)", "search": ["Dinitz"], "type": "Ordinal", "val": r"\( 1/(9e) \approx 0.0409 \)"}
             ]
         },
         {
             "class": "k-Column Sparse Linear",
             "entries": [
-                {"ref": "Soto (2011/2013)", "search": ["Soto", "random assignment"], "type": "Util", "val": r"\( 1/(k \cdot e) \)"},
+                {"ref": "Soto (2011/2013)", "search": ["Soto", "random assignment"], "type": "Ordinal", "val": r"\( 1/(k \cdot e) \)"},
                 {"ref": "Soto, Turkieltaub, Verdugo (2018/2021)", "search": ["Soto", "ordinal"], "type": "Prob", "val": r"\( k^{-k/(k-1)} \) (\( k \ge 2 \))"}
             ]
         },
