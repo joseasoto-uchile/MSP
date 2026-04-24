@@ -9,6 +9,13 @@
     <meta property="og:type" content="website">
     <title>{title}</title>
     
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    };
+    </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
     <style>
@@ -385,7 +392,43 @@
             margin: 0;
             opacity: 0.8;
         }
-    </style>
+    
+        .tag-badge {
+            background-color: #edf2f7;
+            color: #4a5568;
+            padding: 0.2rem 0.5rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+        .tag-filter-btn {
+            background-color: white;
+            border: 1px solid #cbd5e0;
+            padding: 0.3rem 0.8rem;
+            margin: 0.2rem;
+            border-radius: 9999px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: all 0.2s;
+        }
+        .tag-filter-btn:hover {
+            background-color: #edf2f7;
+        }
+        .tag-filter-btn.active {
+            background-color: #3182ce;
+            color: white;
+            border-color: #3182ce;
+        }
+        details > summary {
+            cursor: pointer;
+            outline: none;
+            user-select: none;
+        }
+        details > summary h2, details > summary h3 {
+            display: inline-block;
+        }
+</style>
 </head>
 <body>
 
@@ -436,11 +479,20 @@
                 </ul>
             </div>
             <p>{msp_obj}</p>
+        
+            <h3 id="special-cases">{special_cases_title}</h3>
+            <p>{special_cases_desc}</p>
+            <ul>
+                <li><strong>k-Uniform Matroids ($U_{k,n}$):</strong> {k_uniform_desc}</li>
+                <li><strong>Rank-2 Matroids:</strong> {rank_2_desc}</li>
+            </ul>
         </section>
 
         <!-- Tab 2: Ratios Table -->
         <section id="ratios-table" class="tab-content" role="tabpanel" aria-labelledby="btn-ratios-table">
-            <h2>{ratios_title}</h2>
+            <details open>
+                <summary><h2>{ratios_title}</h2></summary>
+                
             <p>{ratios_desc}</p>
             
             <div style="overflow-x: auto;">
@@ -458,6 +510,28 @@
                     </tbody>
                 </table>
             </div>
+            </details>
+
+            <details open style="margin-top: 3rem;">
+                <summary><h3 style="margin-top: 0;">{variants_title}</h3></summary>
+                
+            <p>{variants_desc}</p>
+            <div style="overflow-x: auto;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>{th_class}</th>
+                            <th>{th_ref}</th>
+                            <th style="width: 120px; text-align: center;">{th_type}</th>
+                            <th>{th_guarantee}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+{variants_table_content}
+                    </tbody>
+                </table>
+            </div>
+            </details>
         </section>
 
         <!-- Tab 3: Reading List -->
@@ -468,8 +542,15 @@
             <div class="search-container">
                 <input type="text" id="paperSearch" class="search-input" placeholder="{search_placeholder}" onkeyup="filterPapers()">
             </div>
+            {tag_filters_html}
             
+
+            <h3 style="color: var(--primary-color); margin-top: 1rem;">{core_msp_title}</h3>
 {reading_list_content}
+
+            <h3 style="color: var(--primary-color); margin-top: 3rem; padding-top: 2rem; border-top: 2px dashed var(--border-color);">{related_work_title}</h3>
+{related_work_content}
+
         </section>
     </div>
 
@@ -536,22 +617,41 @@
             }, 100);
         }
 
+        let activeTag = "All";
+
+        function filterByTag(tag) {
+            activeTag = tag;
+            let btns = document.getElementsByClassName('tag-filter-btn');
+            for (let i = 0; i < btns.length; i++) {
+                if (btns[i].innerText === tag) {
+                    btns[i].classList.add('active');
+                } else {
+                    btns[i].classList.remove('active');
+                }
+            }
+            filterPapers();
+        }
+
         function filterPapers() {
-            var input, filter, cards, title, authors, summary, i, txtValue;
+            var input, filter, cards, title, authors, summary, i, txtValue, tags;
             input = document.getElementById("paperSearch");
             filter = input.value.toLowerCase();
-            cards = document.getElementsByClassName("paper-card");
+            cards = document.getElementsByClassName("filterable-card");
             
             for (i = 0; i < cards.length; i++) {
                 title = cards[i].querySelector(".paper-title");
                 authors = cards[i].querySelector(".paper-authors");
                 summary = cards[i].querySelector(".paper-summary");
+                tags = cards[i].getAttribute("data-tags") || "";
                 
                 txtValue = (title ? title.textContent || title.innerText : "") + " " + 
                            (authors ? authors.textContent || authors.innerText : "") + " " +
                            (summary ? summary.textContent || summary.innerText : "");
                            
-                if (txtValue.toLowerCase().indexOf(filter) > -1) {
+                let matchesText = txtValue.toLowerCase().indexOf(filter) > -1;
+                let matchesTag = (activeTag === "All" || tags.split(',').includes(activeTag));
+                
+                if (matchesText && matchesTag) {
                     cards[i].style.display = "";
                 } else {
                     cards[i].style.display = "none";

@@ -1,16 +1,10 @@
 import json
 import os
 import re
-import urllib.parse
 
 def find_paper_index(papers, search_terms):
-    """
-    Search for a paper in the list using keywords (e.g. authors or year).
-    Returns the index if found, else -1.
-    """
     for i, p in enumerate(papers):
         text_to_search = (p['authors'] + " " + p['title'] + " " + p.get('venue', '')).lower()
-        # If all search terms are in the text, it's a match
         if all(term.lower() in text_to_search for term in search_terms):
             return i
     return -1
@@ -21,7 +15,6 @@ def generate_html(language="en"):
         
     is_en = (language == "en")
     
-    # Translations
     t = {
         "language": language,
         "en_active": "active" if is_en else "",
@@ -53,16 +46,28 @@ def generate_html(language="en"):
         "dyn4": r"The set of accepted elements at any time must be an independent set \( I \in \mathcal{I} \)." if is_en else r"El conjunto de elementos aceptados en cualquier momento debe ser un conjunto independiente \( I \in \mathcal{I} \).",
         "msp_obj": r"<strong>Objective:</strong> Design an online algorithm that maximizes the expected value of the selected elements, compared to the maximum weight basis offline. The grand conjecture (Matroid Secretary Conjecture) states that there exists an algorithm with a constant competitive ratio \( \Omega(1) \) for any matroid." if is_en else r"<strong>Objetivo:</strong> Diseñar un algoritmo online que maximice el valor esperado de los elementos seleccionados, comparado con la base de peso máximo en offline. La gran conjetura (Matroid Secretary Conjecture) afirma que existe un algoritmo con un factor de competitividad constante \( \Omega(1) \) para cualquier matroide.",
         
+        "special_cases_title": "4. Special Cases and Small Parameters" if is_en else "4. Casos Especiales y Parámetros Pequeños",
+        "special_cases_desc": "Certain matroid classes exhibit stronger competitive ratios for small ranks or parameters." if is_en else "Ciertas clases de matroides exhiben ratios competitivos más fuertes para rangos o parámetros pequeños.",
+        "k_uniform_desc": r"The multiple-choice secretary problem. Kleinberg (2005) achieves \( 1 - O(1/\sqrt{k}) \). Albers and Ladewig (2019) provide explicit guarantees for small \( k \)." if is_en else r"El problema de la secretaria de opción múltiple. Kleinberg (2005) logra \( 1 - O(1/\sqrt{k}) \). Albers y Ladewig (2019) proveen garantías explícitas para \( k \) pequeño.",
+        "rank_2_desc": r"General matroids of rank 2. Bérczi et al. (2025) achieved a \( 0.3462 \) probability-competitive ratio." if is_en else r"Matroides generales de rango 2. Bérczi et al. (2025) lograron un ratio de probabilidad de \( 0.3462 \).",
+        
         "ratios_title": "Chronological Progression of Competitive Guarantees" if is_en else "Evolución Cronológica de Garantías Competitivas",
         "ratios_desc": r"The table below groups results by Matroid Class, detailing the exact constant or formula achieved by each paper historically. All constants have been normalized so that <strong>values \( \le 1 \) represent the approximation factor</strong> (i.e. \( 1/\alpha \) where \( \alpha \) is the traditional competitive ratio \( \ge 1 \)). We also note whether the guarantee is <strong>Probability-Competitive</strong> (\( p \)) or the traditional <strong>Utility-Competitive Ratio</strong>." if is_en else r"La siguiente tabla agrupa los resultados por clase de matroide, detallando la constante exacta o fórmula alcanzada por cada paper a lo largo de la historia. Todas las constantes han sido normalizadas para que <strong>valores \( \le 1 \) representen el factor de aproximación</strong> (es decir, \( 1/\alpha \) donde \( \alpha \) es el ratio competitivo tradicional \( \ge 1 \)). Se indica si la garantía es <strong>Probability-Competitive</strong> (\( p \)) o el tradicional <strong>Ratio de Utilidad</strong>.",
         
         "th_class": "Matroid Class" if is_en else "Clase de Matroide",
         "th_ref": "Reference" if is_en else "Referencia",
         "th_type": "Guarantee Type" if is_en else "Tipo de Garantía",
-        "th_guarantee": "Exact Bound ($\\le 1$)" if is_en else "Cota Exacta ($\\le 1$)",
+        "th_guarantee": r"Exact Bound ($\le 1$)" if is_en else r"Cota Exacta ($\le 1$)",
+        
+        "variants_title": "Neighboring Models and Variants" if is_en else "Modelos Vecinos y Variantes",
+        "variants_desc": "The following table groups results that fall outside the standard Matroid Secretary Problem (e.g. relaxed arrival orders, submodular objectives, or correlation)." if is_en else "La siguiente tabla agrupa resultados que se escapan del modelo estándar (ej. orden de llegada relajado, objetivos submodulares, o correlación).",
         
         "reading_title": "Reading List and Bibliography" if is_en else "Lista de Lectura y Bibliografía",
         "reading_desc": f"Below are <strong>{len(papers)}</strong> relevant articles on the Matroid Secretary Problem, including their export in <strong>BibTeX</strong>." if is_en else f"A continuación se presentan <strong>{len(papers)}</strong> artículos relevantes sobre el Problema de la Secretaria en Matroides, incluyendo su exportación en <strong>BibTeX</strong>.",
+        
+        "core_msp_title": "Core MSP Reading List" if is_en else "Lista de Lectura Principal",
+        "related_work_title": "Related Work (Variants, Prophet Inequalities, Contention Resolution)" if is_en else "Trabajo Relacionado (Variantes, Desigualdades del Profeta, Resolución de Contienda)",
+        
         "by": "By:" if is_en else "Por:",
         "abstract": "Abstract:" if is_en else "Resumen:",
         "read_local": "Read Local PDF" if is_en else "Leer PDF Local",
@@ -70,171 +75,238 @@ def generate_html(language="en"):
         "show_bibtex": "Show BibTeX" if is_en else "Mostrar BibTeX"
     }
 
-    # Data structure grouped by class
-    # "search" are keywords to find the paper in the reading list for auto-linking
     table_data = [
         {
             "class": "Graphic",
             "entries": [
-                {"ref": "Babaioff, Immorlica, Kleinberg (2007)", "search": ["Babaioff", "Kleinberg", "2007"], "type": "Util", "val": "\\( 1/16 = 0.0625 \\)"},
-                {"ref": "Korula & Pál (2009)", "search": ["Korula", "Pál"], "type": "Util", "val": "\\( 1/(2e) \\approx 0.184 \\)"},
-                {"ref": "Soto, Turkieltaub, Verdugo (2018/2021)", "search": ["Soto", "Turkieltaub", "ordinal"], "type": "Prob", "val": "\\( 1/4 = 0.25 \\)"},
-                {"ref": "Banihashem et al. (2025)", "search": ["Banihashem", "graphic"], "type": "Util", "val": "\\( 1/3.95 \\approx 0.253 \\) (Gen) / \\( 1/3.77 \\approx 0.265 \\) (Simple)"},
-                {"ref": "Bérczi, Livanos, Soto, Verdugo (2025)", "search": ["Livanos", "labeling"], "type": "Prob", "val": "\\( 0.2504 \\) (Gen) / \\( 0.2693 \\) (Simple)"}
+                {"ref": "Babaioff, Immorlica, Kleinberg (2007)", "search": ["Babaioff", "Kleinberg", "2007"], "type": "Util", "val": r"\( 1/16 = 0.0625 \)"},
+                {"ref": "Korula & Pál (2009)", "search": ["Korula", "Pál"], "type": "Util", "val": r"\( 1/(2e) \approx 0.184 \)"},
+                {"ref": "Soto, Turkieltaub, Verdugo (2018/2021)", "search": ["Soto", "Turkieltaub", "ordinal"], "type": "Prob", "val": r"\( 1/4 = 0.25 \)"},
+                {"ref": "Banihashem et al. (2025)", "search": ["Banihashem", "graphic"], "type": "Util", "val": r"\( 1/3.95 \approx 0.253 \) (Gen) / \( 1/3.77 \approx 0.265 \) (Simple)"},
+                {"ref": "Bérczi, Livanos, Soto, Verdugo (2025)", "search": ["Livanos", "labeling"], "type": "Prob", "val": r"\( 0.2504 \) (Gen) / \( 0.2693 \) (Simple)"}
             ]
         },
         {
             "class": "Laminar",
             "entries": [
-                {"ref": "Im & Wang (2011)", "search": ["Im", "Wang"], "type": "Util", "val": "\\( 3/16000 \\approx 0.00018 \\)"},
-                {"ref": "Jaillet, Soto, Zenklusen (2012)", "search": ["Jaillet", "Zenklusen"], "type": "Util", "val": "\\( \\frac{1}{3\\sqrt{3}e} \\approx 0.070 \\)"},
-                {"ref": "Soto, Turkieltaub, Verdugo (2018/2021)", "search": ["Soto", "ordinal"], "type": "Prob", "val": "\\( \\frac{1}{3\\sqrt{3}} \\approx 0.192 \\)"},
-                {"ref": "Huang, Parsaeian, Zhu (2023)", "search": ["Parsaeian"], "type": "Util", "val": "\\( 1/4.75 \\approx 0.210 \\)"},
-                {"ref": "Bérczi, Livanos, Soto, Verdugo (2025)", "search": ["Livanos", "labeling"], "type": "Prob", "val": "\\( 1 - \\ln(2) \\approx 0.3068 \\)"}
+                {"ref": "Im & Wang (2011)", "search": ["Im", "Wang"], "type": "Util", "val": r"\( 3/16000 \approx 0.00018 \)"},
+                {"ref": "Harris & Purohit (2013)", "search": ["Harris", "Purohit"], "type": "Util", "val": r"\( 0.053 \)"},
+                {"ref": "Jaillet, Soto, Zenklusen (2012/2016)", "search": ["Jaillet", "Zenklusen"], "type": "Util", "val": r"\( \frac{1}{3\sqrt{3}e} \approx 0.070 \)"},
+                {"ref": "Ma, Tang, Wang (2013/2016)", "search": ["Tang", "submodular"], "type": "Util", "val": r"\( 1/9.6 \approx 0.104 \)"},
+                {"ref": "Soto, Turkieltaub, Verdugo (2018/2021)", "search": ["Soto", "ordinal"], "type": "Prob", "val": r"\( \frac{1}{3\sqrt{3}} \approx 0.192 \)"},
+                {"ref": "Huang, Parsaeian, Zhu (2023)", "search": ["Parsaeian"], "type": "Util", "val": r"\( 1/4.75 \approx 0.210 \)"},
+                {"ref": "Bérczi, Livanos, Soto, Verdugo (2025)", "search": ["Livanos", "labeling"], "type": "Prob", "val": r"\( 1 - \ln(2) \approx 0.3068 \)"}
             ]
         },
         {
             "class": "Transversal",
             "entries": [
-                {"ref": "Babaioff, Immorlica, Kleinberg (2007)", "search": ["Babaioff", "Kleinberg", "2007"], "type": "Util", "val": "\\( 1/16 = 0.0625 \\)"},
-                {"ref": "Dimitrov & Plaxton (2012)", "search": ["Dimitrov", "Plaxton"], "type": "Util", "val": "\\( 1/8 = 0.125 \\)"},
-                {"ref": "Kesselheim et al. (2013)", "search": ["Kesselheim"], "type": "Util", "val": "\\( 1/e \\approx 0.367 \\)"},
-                {"ref": "Soto, Turkieltaub, Verdugo (2021)", "search": ["Soto", "ordinal"], "type": "Prob", "val": "\\( 1/e \\approx 0.367 \\)"}
+                {"ref": "Babaioff, Immorlica, Kleinberg (2007)", "search": ["Babaioff", "Kleinberg", "2007"], "type": "Util", "val": r"\( 1/16 = 0.0625 \)"},
+                {"ref": "Dimitrov & Plaxton (2012)", "search": ["Dimitrov", "Plaxton"], "type": "Util", "val": r"\( 1/8 = 0.125 \)"},
+                {"ref": "Kesselheim et al. (2013)", "search": ["Kesselheim"], "type": "Util", "val": r"\( 1/e \approx 0.367 \)"},
+                {"ref": "Soto, Turkieltaub, Verdugo (2021)", "search": ["Soto", "ordinal"], "type": "Prob", "val": r"\( 1/e \approx 0.367 \)"}
             ]
         },
         {
             "class": "Rank-2 Matroids",
             "entries": [
-                {"ref": "Bérczi, Livanos, Soto, Verdugo (2025)", "search": ["Livanos", "labeling"], "type": "Prob", "val": "\\( 0.3462 \\)"}
+                {"ref": "Bérczi, Livanos, Soto, Verdugo (2025)", "search": ["Livanos", "labeling"], "type": "Prob", "val": r"\( 0.3462 \)"}
             ]
         },
         {
             "class": "Cographic",
             "entries": [
-                {"ref": "Soto (2011)", "search": ["Soto", "random assignment"], "type": "Util", "val": "\\( 1/(3e) \\approx 0.122 \\)"}
+                {"ref": "Soto (2011)", "search": ["Soto", "random assignment"], "type": "Util", "val": r"\( 1/(3e) \approx 0.122 \)"}
             ]
         },
         {
             "class": "k-Uniform",
             "entries": [
-                {"ref": "Dynkin (1963)", "search": ["Dynkin"], "type": "Prob", "val": "\\( 1/e \\approx 0.367 \\)"},
-                {"ref": "Kleinberg (2005) / Soto et al. (2021)", "search": ["Kleinberg"], "type": "Prob", "val": "\\( 1 - O(\\sqrt{\\frac{\\log \\rho}{\\rho}}) \\)"},
-                {"ref": "Gujjar et al. (2025)", "search": ["Gujjar"], "type": "Prob", "val": "\\( 1 - O(\\sqrt{\\frac{\\log(n)}{k}}) \\) (k-Fold)"}
+                {"ref": "Dynkin (1963)", "search": ["Dynkin"], "type": "Prob", "val": r"\( 1/e \approx 0.367 \)"},
+                {"ref": "Kleinberg (2005) / Soto et al. (2021)", "search": ["Kleinberg"], "type": "Prob", "val": r"\( 1 - O(\sqrt{\frac{\log \rho}{\rho}}) \)"},
+                {"ref": "Chan, Chen, Jiang (2015)", "search": ["Jiang"], "type": "Prob", "val": r"Exact thresholds (k-choice)"},
+                {"ref": "Albers & Ladewig (2019/2021)", "search": ["Albers"], "type": "Prob", "val": r"\( > 1/e \) for \( k \ge 2 \)"}
+            ]
+        },
+        {
+            "class": "k-Fold Matroid Union",
+            "entries": [
+                {"ref": "Gujjar et al. (2025)", "search": ["Gujjar"], "type": "Prob", "val": r"\( 1 - O(\sqrt{\frac{\log(n)}{k}}) \)"}
             ]
         },
         {
             "class": "Partition",
             "entries": [
-                {"ref": "Folklore", "search": ["Folklore"], "type": "Prob", "val": "\\( 1/e \\approx 0.367 \\)"}
+                {"ref": "Folklore", "search": ["Folklore"], "type": "Prob", "val": r"\( 1/e \approx 0.367 \)"}
             ]
         },
         {
             "class": "Truncated Partition",
             "entries": [
-                {"ref": "Babaioff, Immorlica, Kleinberg (2007)", "search": ["Babaioff", "Kleinberg", "2007"], "type": "Util", "val": "\\( 1/e^2 \\approx 0.135 \\)"}
+                {"ref": "Babaioff, Immorlica, Kleinberg (2007)", "search": ["Babaioff", "Kleinberg", "2007"], "type": "Util", "val": r"\( 1/e^2 \approx 0.135 \)"}
             ]
         },
         {
             "class": "Regular & Max-Flow Min-Cut",
             "entries": [
-                {"ref": "Dinitz & Kortsarz (2012)", "search": ["Dinitz"], "type": "Util", "val": "\\( \\Omega(1) \\)"}
+                {"ref": "Dinitz & Kortsarz (2012/2014)", "search": ["Dinitz"], "type": "Util", "val": r"\( 1/(9e) \approx 0.0408 \)"}
             ]
         },
         {
             "class": "K-Column Sparse Linear",
             "entries": [
-                {"ref": "Soto (2011)", "search": ["Soto", "random assignment"], "type": "Util", "val": "\\( 1/(k \\cdot e) \\)"}
+                {"ref": "Soto (2011)", "search": ["Soto", "random assignment"], "type": "Util", "val": r"\( 1/(k \cdot e) \)"}
             ]
         },
         {
-            "class": "Paving",
+            "class": "Paving (Huynh & Nelson 2016/2020)",
             "entries": [
-                {"ref": "Huynh & Nelson (2016)", "search": ["Huynh"], "type": "Util", "val": "\\( \\approx 1/2 = 0.5 \\)"}
+                {"ref": "Minor-Closed F_p-representable", "search": ["Huynh"], "type": "Util", "val": r"\( \Omega(1) \)"},
+                {"ref": "Almost all matroids (Random)", "search": ["Huynh"], "type": "Util", "val": r"\( 1/(2+o(1)) \approx 0.5 \)"},
+                {"ref": "Conditional on Paving Conjecture", "search": ["Huynh"], "type": "Util", "val": r"\( 1/(1+o(1)) \approx 1.0 \)"}
             ]
         },
         {
             "class": "Open Conjecture: General Matroids (Random Order)",
             "entries": [
-                {"ref": "Babaioff, Immorlica, Kleinberg (2007)", "search": ["Babaioff", "Kleinberg", "2007"], "type": "Util", "val": "\\( \\Omega(1/\\log \\rho) \\)"},
-                {"ref": "Chakraborty & Lachish (2012)", "search": ["Lachish"], "type": "Util", "val": "\\( \\Omega(1/\\sqrt{\\log \\rho}) \\)"},
-                {"ref": "Lachish (2014) / Feldman et al. (2014)", "search": ["Feldman"], "type": "Util", "val": "\\( \\Omega(1/\\log \\log \\rho) \\)"},
-                {"ref": "Soto, Turkieltaub, Verdugo (2021)", "search": ["Soto", "ordinal"], "type": "Prob", "val": "\\( \\Omega(1/\\log \\rho) \\) (Ordinal access)"}
-            ]
-        },
-        {
-            "class": "Open Conjecture: General (Random Assignment Model)",
-            "entries": [
-                {"ref": "Soto (2011)", "search": ["Soto", "random assignment"], "type": "Util", "val": "\\( \\frac{e-1}{2e^2} \\approx 0.117 \\)"},
-                {"ref": "Santiago, Sergeev, Zenklusen (2023)", "search": ["Santiago", "Sergeev"], "type": "Util", "val": "\\( \\Omega(1) \\) (Without knowing matroid)"}
-            ]
-        },
-        {
-            "class": "Open Conjecture: General (Free Order Model)",
-            "entries": [
-                {"ref": "Jaillet, Soto, Zenklusen (2012)", "search": ["Jaillet", "Zenklusen"], "type": "Util", "val": "\\( 1/4 = 0.25 \\)"}
+                {"ref": "Babaioff, Immorlica, Kleinberg (2007)", "search": ["Babaioff", "Kleinberg", "2007"], "type": "Util", "val": r"\( \Omega(1/\log \rho) \)"},
+                {"ref": "Chakraborty & Lachish (2012)", "search": ["Lachish", "Chakraborty"], "type": "Util", "val": r"\( \Omega(1/\sqrt{\log \rho}) \)"},
+                {"ref": "Lachish (2014) / Feldman et al. (2015)", "search": ["Feldman"], "type": "Util", "val": r"\( \Omega(1/\log \log \rho) \)"}
             ]
         }
     ]
-        
-    table_html = ""
-    for group in table_data:
-        entries = group["entries"]
-        rowspan = len(entries)
-        for i, entry in enumerate(entries):
-            badge_class = "prob" if entry["type"] == "Prob" else "util"
-            badge_text = "Prob" if entry["type"] == "Prob" else "Util"
-            
-            # Find paper index to create hyperlink
-            p_idx = find_paper_index(papers, entry.get("search", []))
-            if p_idx != -1:
-                ref_html = f"<a class='table-link' onclick='goToPaper({p_idx})'>{entry['ref']}</a>"
-            else:
-                ref_html = entry['ref']
-            
-            row_class = "group-start" if i == 0 else ""
-            table_html += f"                    <tr class='{row_class}'>\n"
-            if i == 0:
-                table_html += f"                        <td rowspan='{rowspan}' class='class-cell'>{group['class']}</td>\n"
-            table_html += f"                        <td>{ref_html}</td>\n"
-            table_html += f"                        <td style='text-align: center;'><span class='badge {badge_class}'>{badge_text}</span></td>\n"
-            table_html += f"                        <td style='font-weight: 500;'>{entry['val']}</td>\n"
-            table_html += "                    </tr>\n"
+
+    variants_data = [
+        {
+            "class": "Ordinal Information Model",
+            "entries": [
+                {"ref": "Soto, Turkieltaub, Verdugo (2018/2021)", "search": ["Soto", "ordinal"], "type": "Prob", "val": r"\( \Omega(1/\log \rho) \)"}
+            ]
+        },
+        {
+            "class": "Random Assignment Model",
+            "entries": [
+                {"ref": "Soto (2011)", "search": ["Soto", "random assignment"], "type": "Util", "val": r"\( \frac{e-1}{2e^2} \approx 0.117 \)"},
+                {"ref": "Santiago, Sergeev, Zenklusen (2023)", "search": ["Santiago", "Sergeev"], "type": "Util", "val": r"\( \Omega(1) \) (Without knowing matroid)"}
+            ]
+        },
+        {
+            "class": "Free Order Model",
+            "entries": [
+                {"ref": "Jaillet, Soto, Zenklusen (2012/2016)", "search": ["Jaillet", "Zenklusen"], "type": "Util", "val": r"\( 1/4 = 0.25 \)"}
+            ]
+        }
+    ]
+
+    def render_table(t_data):
+        t_html = ""
+        for group in t_data:
+            entries = group["entries"]
+            rowspan = len(entries)
+            for i, entry in enumerate(entries):
+                badge_class = "prob" if entry["type"] == "Prob" else "util"
+                badge_text = "Prob" if entry["type"] == "Prob" else "Util"
+                
+                p_idx = find_paper_index(papers, entry.get("search", []))
+                if p_idx != -1:
+                    ref_html = f"<a class='table-link' onclick='goToPaper({p_idx})'>{entry['ref']}</a>"
+                else:
+                    ref_html = entry['ref']
+                
+                row_class = "group-start" if i == 0 else ""
+                t_html += f"                    <tr class='{row_class}'>\n"
+                if i == 0:
+                    t_html += f"                        <td rowspan='{rowspan}' class='class-cell'>{group['class']}</td>\n"
+                t_html += f"                        <td>{ref_html}</td>\n"
+                t_html += f"                        <td style='text-align: center;'><span class='badge {badge_class}'>{badge_text}</span></td>\n"
+                t_html += f"                        <td style='font-weight: 500;'>{entry['val']}</td>\n"
+                t_html += "                    </tr>\n"
+        return t_html
+
+    table_html = render_table(table_data)
+    variants_table_html = render_table(variants_data)
 
     reading_list_html = ""
+    related_work_html = ""
+    core_idx = 1
+    related_idx = 1
+    
+    # Collect all unique tags
+    all_tags = set()
+    for p in papers:
+        for t_val in p.get('tags', []):
+            all_tags.add(t_val)
+    t['all_tags'] = sorted(list(all_tags))
+
     for i, paper in enumerate(papers):
         bibtex_id = f"bibtex-{i}"
-        reading_list_html += f"""
-            <div class="paper-card" id="paper-card-{i}">
-                <h3 class="paper-title">{i+1}. {paper['title']}</h3>
+        
+        tags_html = ""
+        tags_list = paper.get('tags', [])
+        for tag in tags_list:
+            tags_html += f'<span class="badge tag-badge">{tag}</span> '
+        tags_data = ",".join(tags_list)
+        
+        bib_data = paper.get('bibtex', 'No BibTeX available.')
+        if isinstance(bib_data, list):
+            bib_str = '\n\n'.join(bib_data)
+        else:
+            bib_str = bib_data
+            
+        bib_html = f'<div id="{bibtex_id}" class="bibtex-container">{bib_str}</div>'
+
+        is_core = (paper.get('category') == 'A')
+        display_idx = core_idx if is_core else related_idx
+        if is_core:
+            core_idx += 1
+        else:
+            related_idx += 1
+
+        has_arxiv = 'arxiv.org' in paper.get('pdf_url', '')
+        has_local = paper.get('local_pdf', '#') not in ('#', '')
+
+        card_html = f"""
+            <div class="paper-card filterable-card" id="paper-card-{i}" data-tags="{tags_data}">
+                <div style="float: right; margin-left: 10px; margin-bottom: 5px;">{tags_html}</div>
+                <h3 class="paper-title">{display_idx}. {paper['title']}</h3>
                 <div class="paper-authors">{t['by']} {paper['authors']}</div>
-                <div class="paper-authors" style="color: var(--secondary-color); font-weight: 600; margin-top: -0.5rem; margin-bottom: 1rem;">
-                    {paper.get('venue', 'arXiv preprint')}
-                </div>
+                <ul class="paper-versions" style="color: var(--secondary-color); font-weight: 600; margin-top: -0.5rem; margin-bottom: 1rem; list-style-type: disc; padding-left: 20px; font-size: 0.9em;">
+                    """ + "".join(f"<li>{v}</li>" for v in paper.get('versions', [paper.get('venue', 'arXiv preprint')])) + f"""
+                </ul>
                 <div class="paper-summary">
                     <strong>{t['abstract']}</strong> {paper['summary']}
                 </div>
                 <div class="action-buttons">
-                    <a href="{paper['local_pdf']}" class="paper-link" target="_blank">{t['read_local']}</a>
-                    <a href="{paper['pdf_url']}" class="paper-link secondary" target="_blank">{t['view_arxiv']}</a>
-                    """
-        if paper.get('dblp_url'):
-            reading_list_html += f'<a href="{paper["dblp_url"]}" class="paper-link" style="background-color: #3182ce;" target="_blank">DBLP</a>'
-        reading_list_html += f"""
-                    <button class="paper-link dark bibtex-toggle" onclick="toggleBibtex('{bibtex_id}')">{t['show_bibtex']}</button>
-                </div>
-                <div id="{bibtex_id}" class="bibtex-container">{paper.get('bibtex', 'No BibTeX available.')}</div>
-            </div>
+                    """ + (f'<a href="{paper["local_pdf"]}" class="paper-link" target="_blank">{t["read_local"]}</a>' if has_local else '') + """
+                    """ + (f'<a href="{paper["pdf_url"]}" class="paper-link secondary" target="_blank">{t["view_arxiv"]}</a>' if has_arxiv else '') + """
 """
 
-    # Add components to translation dict for replacement
-    t['table_content'] = table_html
-    t['reading_list_content'] = reading_list_html
+        if paper.get('dblp_url'):
+            card_html += f'                    <a href="{paper["dblp_url"]}" class="paper-link" style="background-color: #3182ce;" target="_blank">DBLP</a>\n'
+        card_html += f"""                    <button class="paper-link dark bibtex-toggle" onclick="toggleBibtex('{bibtex_id}')">{t['show_bibtex']}</button>
+                </div>
+                {bib_html}
+            </div>
+"""
+        if paper.get('category') == 'A':
+            reading_list_html += card_html
+        else:
+            related_work_html += card_html
 
-    # Read template
+    tag_buttons_html = "<div id='tag-filters' style='margin-top: 1rem; margin-bottom: 1.5rem;'><button class='tag-filter-btn active' onclick='filterByTag(\"All\")'>All</button>"
+    for tag in t['all_tags']:
+        tag_buttons_html += f"<button class='tag-filter-btn' onclick='filterByTag(\"{tag}\")'>{tag}</button>"
+    tag_buttons_html += "</div>"
+    t['tag_filters_html'] = tag_buttons_html
+
+    t['table_content'] = table_html
+    t['variants_table_content'] = variants_table_html
+    t['reading_list_content'] = reading_list_html
+    t['related_work_content'] = related_work_html
+
     with open('template.html', 'r', encoding='utf-8') as f:
         html = f.read()
 
-    # Replace placeholders
     for key, value in t.items():
         html = html.replace(f"{{{key}}}", str(value))
 

@@ -1,5 +1,132 @@
 [
     {
+        "id": "kleinberg2005",
+        "title": "A Multiple-Choice Secretary Algorithm with Applications to Online Auctions",
+        "authors": "Robert Kleinberg",
+        "venue": "SODA 2005",
+        "summary": "Solves the multiple-choice secretary problem (equivalent to k-uniform matroids) with an asymptotically optimal success probability of 1 - O(1/sqrt(k)).",
+        "pdf_url": "https://dl.acm.org/doi/10.5555/1070432.1070523",
+        "local_pdf": "#",
+        "dblp_url": "https://dblp.org/rec/conf/soda/Kleinberg05",
+        "bibtex": [
+            "@inproceedings{DBLP:conf/soda/Kleinberg05,\n  author       = {Robert D. Kleinberg},\n  title        = {A multiple-choice secretary algorithm with applications to online\n                  auctions},\n  booktitle    = {Proceedings of the Sixteenth Annual {ACM-SIAM} Symposium on Discrete\n                  Algorithms, {SODA} 2005, Vancouver, British Columbia, Canada, January\n                  23-25, 2005},\n  pages        = {630--631},\n  publisher    = {{SIAM}},\n  year         = {2005},\n  url          = {http://dl.acm.org/citation.cfm?id=1070432.1070519},\n  timestamp    = {Fri, 07 Dec 2012 17:02:09 +0100},\n  biburl       = {https://dblp.org/rec/conf/soda/Kleinberg05.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
+        ],
+        "category": "A",
+        "versions": [
+            "SODA 2005"
+        ],
+        "tags": [
+            "Uniform/Small-k"
+        ]
+    },
+    {
+        "id": "chakraborty2012",
+        "title": "Improved Competitive Ratio for the Matroid Secretary Problem",
+        "authors": "Sourav Chakraborty, Oded Lachish",
+        "venue": "SODA 2012",
+        "summary": "Provides an improved O(sqrt(log rank)) competitive algorithm for the general Matroid Secretary Problem.",
+        "pdf_url": "https://dl.acm.org/doi/10.5555/2095116.2095208",
+        "local_pdf": "#",
+        "dblp_url": "https://dblp.org/rec/conf/soda/ChakrabortyL12",
+        "bibtex": [
+            "@inproceedings{DBLP:conf/soda/ChakrabortyL12,\n  author       = {Sourav Chakraborty and\n                  Oded Lachish},\n  editor       = {Yuval Rabani},\n  title        = {Improved competitive ratio for the matroid secretary problem},\n  booktitle    = {Proceedings of the Twenty-Third Annual {ACM-SIAM} Symposium on Discrete\n                  Algorithms, {SODA} 2012, Kyoto, Japan, January 17-19, 2012},\n  pages        = {1702--1712},\n  publisher    = {{SIAM}},\n  year         = {2012},\n  url          = {https://doi.org/10.1137/1.9781611973099.135},\n  doi          = {10.1137/1.9781611973099.135},\n  timestamp    = {Tue, 14 Oct 2025 19:39:21 +0200},\n  biburl       = {https://dblp.org/rec/conf/soda/ChakrabortyL12.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
+        ],
+        "category": "A",
+        "versions": [
+            "SODA 2012"
+        ],
+        "tags": [
+            "General"
+        ]
+    },
+    {
+        "id": "dimitrov2012",
+        "title": "Competitive Weighted Matching in Transversal Matroids",
+        "authors": "Nedialko B. Dimitrov, C. Greg Plaxton",
+        "venue": "ICALP 2012",
+        "summary": "Improves the competitive ratio for the transversal matroid secretary problem to 1/8.",
+        "pdf_url": "https://link.springer.com/chapter/10.1007/978-3-642-31594-7_34",
+        "local_pdf": "#",
+        "dblp_url": "https://dblp.org/rec/conf/icalp/DimitrovP12",
+        "bibtex": [
+            "@article{DBLP:journals/corr/abs-1204-6062,\n  author       = {Nedialko B. Dimitrov and C. Greg Plaxton},\n  title        = {Competitive Weighted Matching in Transversal Matroids},\n  journal      = {arXiv},\n  volume       = {abs/1204.6062},\n  year         = {2012}\n}",
+            "@inproceedings{DBLP:conf/icalp/DimitrovP12,\n  author       = {Nedialko B. Dimitrov and C. Greg Plaxton},\n  title        = {Competitive Weighted Matching in Transversal Matroids},\n  booktitle    = {Automata, Languages, and Programming - 39th International Colloquium, {ICALP} 2012, Warwick, UK, July 9-13, 2012, Proceedings, Part {I}},\n  series       = {Lecture Notes in Computer Science},\n  volume       = {7391},\n  pages        = {397--408},\n  year         = {2012},\n  doi          = {10.1007/978-3-642-31594-7\\_34}\n}",
+            "@article{DBLP:journals/algorithmica/DimitrovP12,\n  author       = {Nedialko B. Dimitrov and\n                  C. Greg Plaxton},\n  title        = {Competitive Weighted Matching in Transversal Matroids},\n  journal      = {Algorithmica},\n  volume       = {62},\n  number       = {1-2},\n  pages        = {333--348},\n  year         = {2012},\n  url          = {https://doi.org/10.1007/s00453-010-9457-2},\n  doi          = {10.1007/S00453-010-9457-2},\n  timestamp    = {Wed, 17 May 2017 14:25:15 +0200},\n  biburl       = {https://dblp.org/rec/journals/algorithmica/DimitrovP12.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
+        ],
+        "category": "A",
+        "versions": [
+            "arXiv",
+            "ICALP 2012",
+            "Algorithmica 2012"
+        ],
+        "tags": [
+            "Transversal"
+        ]
+    },
+    {
+        "id": "im2011",
+        "title": "Secretary Problems: Laminar Matroid and Interval Scheduling",
+        "authors": "Sungjin Im, Yajun Wang",
+        "venue": "SODA 2011",
+        "summary": "Presents the first constant competitive ratio algorithm for the Matroid Secretary Problem on laminar matroids.",
+        "pdf_url": "https://dl.acm.org/doi/10.5555/2133036.2133068",
+        "local_pdf": "#",
+        "dblp_url": "https://dblp.org/rec/conf/soda/ImW11",
+        "bibtex": [
+            "@inproceedings{DBLP:conf/soda/ImW11,\n  author       = {Sungjin Im and Yajun Wang},\n  title        = {Secretary Problems: Laminar Matroid and Interval Scheduling},\n  booktitle    = {Proceedings of the Twenty-Second Annual {ACM-SIAM} Symposium on Discrete Algorithms, {SODA} 2011, San Francisco, California, USA, January 23-25, 2011},\n  pages        = {1265--1274},\n  publisher    = {{SIAM}},\n  year         = {2011},\n  doi          = {10.1137/1.9781611973082.97}\n}"
+        ],
+        "category": "A",
+        "versions": [
+            "SODA 2011"
+        ],
+        "tags": [
+            "Laminar"
+        ]
+    },
+    {
+        "id": "kesselheim2013",
+        "title": "An Optimal Online Algorithm for Weighted Bipartite Matching and Extensions to Combinatorial Auctions",
+        "authors": "Thomas Kesselheim, Klaus Radke, Andreas Tönnis, Berthold Vöcking",
+        "venue": "ESA 2013",
+        "summary": "Provides an optimal 1/e-competitive online algorithm for the bipartite matching problem and generalizes it to transversal matroids.",
+        "pdf_url": "https://epubs.siam.org/doi/10.1137/1.9781611973105.42",
+        "local_pdf": "#",
+        "dblp_url": "https://dblp.org/rec/conf/esa/KesselheimRTV13",
+        "bibtex": [
+            "@inproceedings{DBLP:conf/esa/KesselheimRTV13,\n  author       = {Thomas Kesselheim and\n                  Klaus Radke and\n                  Andreas T{\\\"{o}}nnis and\n                  Berthold V{\\\"{o}}cking},\n  editor       = {Hans L. Bodlaender and\n                  Giuseppe F. Italiano},\n  title        = {An Optimal Online Algorithm for Weighted Bipartite Matching and Extensions\n                  to Combinatorial Auctions},\n  booktitle    = {Algorithms - {ESA} 2013 - 21st Annual European Symposium, Sophia Antipolis,\n                  France, September 2-4, 2013. Proceedings},\n  series       = {Lecture Notes in Computer Science},\n  pages        = {589--600},\n  publisher    = {Springer},\n  year         = {2013},\n  url          = {https://doi.org/10.1007/978-3-642-40450-4\\_50},\n  doi          = {10.1007/978-3-642-40450-4\\_50},\n  timestamp    = {Mon, 03 Jan 2022 22:19:39 +0100},\n  biburl       = {https://dblp.org/rec/conf/esa/KesselheimRTV13.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
+        ],
+        "category": "A",
+        "versions": [
+            "ESA 2013"
+        ],
+        "tags": [
+            "Transversal"
+        ]
+    },
+    {
+        "id": "babaioff2007",
+        "title": "Matroids, Secretary Problems, and Online Mechanisms",
+        "authors": "Moshe Babaioff, Nicole Immorlica, Robert Kleinberg",
+        "venue": "SODA 2007",
+        "summary": "Introduces the Matroid Secretary Problem and gives the first constant-competitive algorithms for Transversal, Graphic, and Truncated Partition matroids.",
+        "pdf_url": "https://dl.acm.org/doi/10.5555/1283383.1283430",
+        "local_pdf": "#",
+        "dblp_url": "https://dblp.org/rec/conf/soda/BabaioffIK07",
+        "bibtex": [
+            "@inproceedings{DBLP:conf/soda/BabaioffIK07,\n  author       = {Moshe Babaioff and\n                  Nicole Immorlica and\n                  Robert Kleinberg},\n  editor       = {Nikhil Bansal and\n                  Kirk Pruhs and\n                  Clifford Stein},\n  title        = {Matroids, secretary problems, and online mechanisms},\n  booktitle    = {Proceedings of the Eighteenth Annual {ACM-SIAM} Symposium on Discrete\n                  Algorithms, {SODA} 2007, New Orleans, Louisiana, USA, January 7-9,\n                  2007},\n  pages        = {434--443},\n  publisher    = {{SIAM}},\n  year         = {2007},\n  url          = {http://dl.acm.org/citation.cfm?id=1283383.1283429},\n  timestamp    = {Tue, 15 Feb 2022 07:54:27 +0100},\n  biburl       = {https://dblp.org/rec/conf/soda/BabaioffIK07.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+            "@article{DBLP:journals/jacm/BabaioffIKKM18,\n  author       = {Moshe Babaioff and Nicole Immorlica and David Kempe and Robert Kleinberg},\n  title        = {Matroid Secretary Problems},\n  journal      = {J. {ACM}},\n  volume       = {65},\n  number       = {6},\n  pages        = {35:1--35:26},\n  year         = {2018},\n  doi          = {10.1145/3212512}\n}"
+        ],
+        "category": "A",
+        "versions": [
+            "SODA 2007",
+            "J. ACM 2018"
+        ],
+        "tags": [
+            "Graphic",
+            "Transversal"
+        ]
+    },
+    {
         "title": "Matroid Secretary Is Equivalent to Contention Resolution",
         "authors": "Shaddin Dughmi",
         "venue": "ITCS 2022",
@@ -7,19 +134,44 @@
         "published": "2021-03-06T22:46:29Z",
         "pdf_url": "https://arxiv.org/pdf/2103.04205v3.pdf",
         "local_pdf": "papers/2103.04205v3.pdf",
-        "bibtex": "@article{Dughmi2021matroid,\n  title={Matroid Secretary Is Equivalent to Contention Resolution},\n  author={Shaddin Dughmi},\n  journal={arXiv preprint arXiv:2103.04205},\n  year={2021}\n}",
-        "dblp_url": "https://dblp.org/rec/conf/innovations/Dughmi22"
+        "bibtex": [
+            "@inproceedings{DBLP:conf/innovations/Dughmi22,\n  author       = {Shaddin Dughmi},\n  editor       = {Mark Braverman},\n  title        = {Matroid Secretary Is Equivalent to Contention Resolution},\n  booktitle    = {13th Innovations in Theoretical Computer Science Conference, {ITCS}\n                  2022, Berkeley, CA, USA, January 31 - February 3, 2022},\n  series       = {LIPIcs},\n  pages        = {58:1--58:23},\n  publisher    = {Schloss Dagstuhl - Leibniz-Zentrum f{\\\"{u}}r Informatik},\n  year         = {2022},\n  url          = {https://doi.org/10.4230/LIPIcs.ITCS.2022.58},\n  doi          = {10.4230/LIPICS.ITCS.2022.58},\n  timestamp    = {Fri, 21 Nov 2025 23:44:11 +0100},\n  biburl       = {https://dblp.org/rec/conf/innovations/Dughmi22.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+            "@article{DBLP:journals/corr/abs-2103-04205,\n  author       = {Shaddin Dughmi},\n  title        = {Matroid Secretary is Equivalent to Contention Resolution},\n  journal      = {arXiv},\n  volume       = {abs/2103.04205},\n  year         = {2021},\n  url          = {https://arxiv.org/abs/2103.04205},\n  eprinttype   = {arXiv},\n  eprint       = {2103.04205},\n  timestamp    = {Mon, 15 Mar 2021 17:30:55 +0100},\n  biburl       = {https://dblp.org/rec/journals/corr/abs-2103-04205.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
+        ],
+        "dblp_url": "https://dblp.org/rec/conf/innovations/Dughmi22",
+        "category": "B",
+        "versions": [
+            "arXiv",
+            "ITCS 2022"
+        ],
+        "tags": [
+            "Contention Resolution",
+            "Prophet Inequality"
+        ]
     },
     {
         "title": "Advances on Matroid Secretary Problems: Free Order Model and Laminar Case",
         "authors": "Patrick Jaillet, José A. Soto, Rico Zenklusen",
-        "venue": "IPCO 2013",
+        "venue": "Math. Oper. Res. 2016",
         "summary": "The most well-known conjecture in the context of matroid secretary problems claims the existence of a constant-factor approximation applicable to any matroid. Whereas this conjecture remains open, modified forms of it were shown to be true, when assuming that the assignment of weights to the secretaries is not adversarial but uniformly random (Soto [SODA 2011], Oveis Gharan and Vondrák [ESA 2011]). However, so far, there was no variant of the matroid secretary problem with adversarial weight assignment for which a constant-factor approximation was found. We address this point by presenting a 9-approximation for the \\emph{free order model}, a model suggested shortly after the introduction of the matroid secretary problem, and for which no constant-factor approximation was known so far. The free order model is a relaxed version of the original matroid secretary problem, with the only difference that one can choose the order in which secretaries are interviewed. Furthermore, we consider the classical matroid secretary problem for the special case of laminar matroids. Only recently, a constant-factor approximation has been found for this case, using a clever but rather involved method and analysis (Im and Wang, [SODA 2011]) that leads to a 16000/3-approximation. This is arguably the most involved special case of the matroid secretary problem for which a constant-factor approximation is known. We present a considerably simpler and stronger $3\\sqrt{3}e\\approx 14.12$-approximation, based on reducing the problem to a matroid secretary problem on a partition matroid.",
         "published": "2012-07-05T19:23:47Z",
         "pdf_url": "https://arxiv.org/pdf/1207.1333v2.pdf",
         "local_pdf": "papers/1207.1333v2.pdf",
-        "bibtex": "@article{Jaillet2012advances,\n  title={Advances on Matroid Secretary Problems: Free Order Model and Laminar Case},\n  author={Patrick Jaillet and José A. Soto and Rico Zenklusen},\n  journal={arXiv preprint arXiv:1207.1333},\n  year={2012}\n}",
-        "dblp_url": "https://dblp.org/rec/conf/ipco/JailletSZ13"
+        "bibtex": [
+            "@inproceedings{DBLP:conf/ipco/JailletSZ13,\n  author       = {Patrick Jaillet and\n                  Jos{\\'{e}} A. Soto and\n                  Rico Zenklusen},\n  editor       = {Michel X. Goemans and\n                  Jos{\\'{e}} Correa},\n  title        = {Advances on Matroid Secretary Problems: Free Order Model and Laminar\n                  Case},\n  booktitle    = {Integer Programming and Combinatorial Optimization - 16th International\n                  Conference, {IPCO} 2013, Valpara{\\'{\\i}}so, Chile, March 18-20, 2013.\n                  Proceedings},\n  series       = {Lecture Notes in Computer Science},\n  pages        = {254--265},\n  publisher    = {Springer},\n  year         = {2013},\n  url          = {https://doi.org/10.1007/978-3-642-36694-9\\_22},\n  doi          = {10.1007/978-3-642-36694-9\\_22},\n  timestamp    = {Wed, 03 Apr 2024 19:56:47 +0200},\n  biburl       = {https://dblp.org/rec/conf/ipco/JailletSZ13.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+            "@article{DBLP:journals/corr/abs-1207-1333,\n  author       = {Patrick Jaillet and\n                  Jos{\\'{e}} A. Soto and\n                  Rico Zenklusen},\n  title        = {Advances on Matroid Secretary Problems: Free Order Model and Laminar\n                  Case},\n  journal      = {arXiv},\n  volume       = {abs/1207.1333},\n  year         = {2012},\n  url          = {http://arxiv.org/abs/1207.1333},\n  eprinttype   = {arXiv},\n  eprint       = {1207.1333},\n  timestamp    = {Mon, 13 Aug 2018 16:47:57 +0200},\n  biburl       = {https://dblp.org/rec/journals/corr/abs-1207-1333.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
+        ],
+        "dblp_url": "https://dblp.org/rec/conf/ipco/JailletSZ13",
+        "category": "A",
+        "versions": [
+            "arXiv",
+            "IPCO 2013"
+        ],
+        "tags": [
+            "Laminar",
+            "Uniform/Small-k",
+            "Free Order"
+        ]
     },
     {
         "title": "A Framework for the Secretary Problem on the Intersection of Matroids",
@@ -29,19 +181,43 @@
         "published": "2017-04-09T14:19:17Z",
         "pdf_url": "https://arxiv.org/pdf/1704.02608v1.pdf",
         "local_pdf": "papers/1704.02608v1.pdf",
-        "bibtex": "@article{Feldman2017a,\n  title={A Framework for the Secretary Problem on the Intersection of Matroids},\n  author={Moran Feldman and Ola Svensson and Rico Zenklusen},\n  journal={arXiv preprint arXiv:1704.02608},\n  year={2017}\n}",
-        "dblp_url": "https://dblp.org/rec/journals/siamcomp/FeldmanSZ22"
+        "bibtex": [
+            "@article{DBLP:journals/siamcomp/FeldmanSZ22,\n  author       = {Moran Feldman and\n                  Ola Svensson and\n                  Rico Zenklusen},\n  title        = {A Framework for the Secretary Problem on the Intersection of Matroids},\n  journal      = {{SIAM} J. Comput.},\n  volume       = {51},\n  number       = {3},\n  pages        = {766--819},\n  year         = {2022},\n  url          = {https://doi.org/10.1137/21m1411822},\n  doi          = {10.1137/21M1411822},\n  timestamp    = {Tue, 28 Jun 2022 21:08:16 +0200},\n  biburl       = {https://dblp.org/rec/journals/siamcomp/FeldmanSZ22.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+            "@inproceedings{DBLP:conf/soda/FeldmanSZ18,\n  author       = {Moran Feldman and\n                  Ola Svensson and\n                  Rico Zenklusen},\n  editor       = {Artur Czumaj},\n  title        = {A Framework for the Secretary Problem on the Intersection of Matroids},\n  booktitle    = {Proceedings of the Twenty-Ninth Annual {ACM-SIAM} Symposium on Discrete\n                  Algorithms, {SODA} 2018, New Orleans, LA, USA, January 7-10, 2018},\n  pages        = {735--752},\n  publisher    = {{SIAM}},\n  year         = {2018},\n  url          = {https://doi.org/10.1137/1.9781611975031.48},\n  doi          = {10.1137/1.9781611975031.48},\n  timestamp    = {Tue, 02 Feb 2021 17:07:58 +0100},\n  biburl       = {https://dblp.org/rec/conf/soda/FeldmanSZ18.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+            "@article{DBLP:journals/corr/FeldmanSZ17,\n  author       = {Moran Feldman and\n                  Ola Svensson and\n                  Rico Zenklusen},\n  title        = {A Framework for the Secretary Problem on the Intersection of Matroids},\n  journal      = {arXiv},\n  volume       = {abs/1704.02608},\n  year         = {2017},\n  url          = {http://arxiv.org/abs/1704.02608},\n  eprinttype   = {arXiv},\n  eprint       = {1704.02608},\n  timestamp    = {Mon, 13 Aug 2018 16:47:04 +0200},\n  biburl       = {https://dblp.org/rec/journals/corr/FeldmanSZ17.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
+        ],
+        "dblp_url": "https://dblp.org/rec/journals/siamcomp/FeldmanSZ22",
+        "category": "A",
+        "versions": [
+            "arXiv",
+            "SODA 2018",
+            "SIAM J. Comput. 2022"
+        ],
+        "tags": [
+            "Submodular"
+        ]
     },
     {
         "title": "The matroid secretary problem for minor-closed classes and random matroids",
         "authors": "Tony Huynh, Peter Nelson",
-        "venue": "CoRR 2016",
+        "venue": "SIAM J. Discrete Math. 2020",
         "summary": "We prove that for every proper minor-closed class $M$ of matroids representable over a prime field, there exists a constant-competitive matroid secretary algorithm for the matroids in $M$. This result relies on the extremely powerful matroid minor structure theory being developed by Geelen, Gerards and Whittle. We also note that for asymptotically almost all matroids, the matroid secretary algorithm that selects a random basis, ignoring weights, is $(2+o(1))$-competitive. In fact, assuming the conjecture that almost all matroids are paving, there is a $(1+o(1))$-competitive algorithm for almost all matroids.",
         "published": "2016-03-22T15:14:38Z",
         "pdf_url": "https://arxiv.org/pdf/1603.06822v5.pdf",
         "local_pdf": "papers/1603.06822v5.pdf",
-        "bibtex": "@article{Huynh2016the,\n  title={The matroid secretary problem for minor-closed classes and random matroids},\n  author={Tony Huynh and Peter Nelson},\n  journal={arXiv preprint arXiv:1603.06822},\n  year={2016}\n}",
-        "dblp_url": "https://dblp.org/rec/journals/corr/HuynhN16"
+        "bibtex": [
+            "@article{DBLP:journals/corr/HuynhN16,\n  author       = {Tony Huynh and\n                  Peter Nelson},\n  title        = {The matroid secretary problem for minor-closed classes and random\n                  matroids},\n  journal      = {arXiv},\n  volume       = {abs/1603.06822},\n  year         = {2016},\n  url          = {http://arxiv.org/abs/1603.06822},\n  eprinttype   = {arXiv},\n  eprint       = {1603.06822},\n  timestamp    = {Mon, 13 Aug 2018 16:46:02 +0200},\n  biburl       = {https://dblp.org/rec/journals/corr/HuynhN16.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+            "@article{DBLP:journals/siamdm/HuynhN20,\n  author       = {Tony Huynh and\n                  Peter Nelson},\n  title        = {The Matroid Secretary Problem for Minor-Closed Classes and Random\n                  Matroids},\n  journal      = {{SIAM} J. Discret. Math.},\n  volume       = {34},\n  number       = {1},\n  pages        = {163--176},\n  year         = {2020},\n  url          = {https://doi.org/10.1137/16M1107899},\n  doi          = {10.1137/16M1107899},\n  timestamp    = {Sun, 02 Oct 2022 15:48:52 +0200},\n  biburl       = {https://dblp.org/rec/journals/siamdm/HuynhN20.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
+        ],
+        "dblp_url": "https://dblp.org/rec/journals/corr/HuynhN16",
+        "category": "A",
+        "versions": [
+            "arXiv",
+            "SIAM J. Discrete Math. 2020"
+        ],
+        "tags": [
+            "Paving/Minor-Closed"
+        ]
     },
     {
         "title": "Improved algorithms and analysis for the laminar matroid secretary problem",
@@ -51,8 +227,17 @@
         "published": "2013-01-21T18:51:55Z",
         "pdf_url": "https://arxiv.org/pdf/1301.4958v1.pdf",
         "local_pdf": "papers/1301.4958v1.pdf",
-        "bibtex": "@article{Harris2013improved,\n  title={Improved algorithms and analysis for the laminar matroid secretary problem},\n  author={David Harris and Manish Purohit},\n  journal={arXiv preprint arXiv:1301.4958},\n  year={2013}\n}",
-        "dblp_url": "https://dblp.org/rec/journals/corr/abs-1301-4958"
+        "bibtex": [
+            "@article{DBLP:journals/corr/abs-1301-4958,\n  author       = {David G. Harris and\n                  Manish Purohit},\n  title        = {Improved algorithms and analysis for the laminar matroid secretary\n                  problem},\n  journal      = {arXiv},\n  volume       = {abs/1301.4958},\n  year         = {2013},\n  url          = {http://arxiv.org/abs/1301.4958},\n  eprinttype   = {arXiv},\n  eprint       = {1301.4958},\n  timestamp    = {Thu, 24 Feb 2022 09:25:45 +0100},\n  biburl       = {https://dblp.org/rec/journals/corr/abs-1301-4958.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
+        ],
+        "dblp_url": "https://dblp.org/rec/journals/corr/abs-1301-4958",
+        "category": "A",
+        "versions": [
+            "arXiv"
+        ],
+        "tags": [
+            "Laminar"
+        ]
     },
     {
         "title": "On Variants of the Matroid Secretary Problem",
@@ -62,8 +247,21 @@
         "published": "2011-04-20T17:38:01Z",
         "pdf_url": "https://arxiv.org/pdf/1104.4081v2.pdf",
         "local_pdf": "papers/1104.4081v2.pdf",
-        "bibtex": "@article{Gharan2011on,\n  title={On Variants of the Matroid Secretary Problem},\n  author={Shayan Oveis Gharan and Jan Vondrák},\n  journal={arXiv preprint arXiv:1104.4081},\n  year={2011}\n}",
-        "dblp_url": "https://dblp.org/rec/journals/algorithmica/GharanV13"
+        "bibtex": [
+            "@article{DBLP:journals/algorithmica/GharanV13,\n  author       = {Shayan Oveis Gharan and\n                  Jan Vondr{\\'{a}}k},\n  title        = {On Variants of the Matroid Secretary Problem},\n  journal      = {Algorithmica},\n  volume       = {67},\n  number       = {4},\n  pages        = {472--497},\n  year         = {2013},\n  url          = {https://doi.org/10.1007/s00453-013-9795-y},\n  doi          = {10.1007/S00453-013-9795-Y},\n  timestamp    = {Wed, 17 May 2017 14:25:14 +0200},\n  biburl       = {https://dblp.org/rec/journals/algorithmica/GharanV13.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+            "@inproceedings{DBLP:conf/esa/GharanV11,\n  author       = {Shayan Oveis Gharan and\n                  Jan Vondr{\\'{a}}k},\n  editor       = {Camil Demetrescu and\n                  Magn{\\'{u}}s M. Halld{\\'{o}}rsson},\n  title        = {On Variants of the Matroid Secretary Problem},\n  booktitle    = {Algorithms - {ESA} 2011 - 19th Annual European Symposium, Saarbr{\\\"{u}}cken,\n                  Germany, September 5-9, 2011. Proceedings},\n  series       = {Lecture Notes in Computer Science},\n  pages        = {335--346},\n  publisher    = {Springer},\n  year         = {2011},\n  url          = {https://doi.org/10.1007/978-3-642-23719-5\\_29},\n  doi          = {10.1007/978-3-642-23719-5\\_29},\n  timestamp    = {Tue, 14 May 2019 10:00:54 +0200},\n  biburl       = {https://dblp.org/rec/conf/esa/GharanV11.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+            "@article{DBLP:journals/corr/abs-1104-4081,\n  author       = {Shayan Oveis Gharan and\n                  Jan Vondr{\\'{a}}k},\n  title        = {On Variants of the Matroid Secretary Problem},\n  journal      = {arXiv},\n  volume       = {abs/1104.4081},\n  year         = {2011},\n  url          = {http://arxiv.org/abs/1104.4081},\n  eprinttype   = {arXiv},\n  eprint       = {1104.4081},\n  timestamp    = {Mon, 13 Aug 2018 16:47:21 +0200},\n  biburl       = {https://dblp.org/rec/journals/corr/abs-1104-4081.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
+        ],
+        "dblp_url": "https://dblp.org/rec/journals/algorithmica/GharanV13",
+        "category": "A",
+        "versions": [
+            "arXiv",
+            "ESA 2011",
+            "Algorithmica 2013"
+        ],
+        "tags": [
+            "Random Assignment"
+        ]
     },
     {
         "title": "Extension of Simple Algorithms to the Matroid Secretary Problem",
@@ -73,8 +271,17 @@
         "published": "2022-11-04T21:34:04Z",
         "pdf_url": "https://arxiv.org/pdf/2211.02755v1.pdf",
         "local_pdf": "papers/2211.02755v1.pdf",
-        "bibtex": "@article{Park2022extension,\n  title={Extension of Simple Algorithms to the Matroid Secretary Problem},\n  author={Simon Park},\n  journal={arXiv preprint arXiv:2211.02755},\n  year={2022}\n}",
-        "dblp_url": "https://dblp.org/rec/journals/corr/abs-2211-02755"
+        "bibtex": [
+            "@article{DBLP:journals/corr/abs-2211-02755,\n  author       = {Simon Park},\n  title        = {Extension of Simple Algorithms to the Matroid Secretary Problem},\n  journal      = {arXiv},\n  volume       = {abs/2211.02755},\n  year         = {2022},\n  url          = {https://doi.org/10.48550/arXiv.2211.02755},\n  doi          = {10.48550/ARXIV.2211.02755},\n  eprinttype   = {arXiv},\n  eprint       = {2211.02755},\n  timestamp    = {Wed, 09 Nov 2022 17:33:26 +0100},\n  biburl       = {https://dblp.org/rec/journals/corr/abs-2211-02755.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
+        ],
+        "dblp_url": "https://dblp.org/rec/journals/corr/abs-2211-02755",
+        "category": "C",
+        "versions": [
+            "arXiv"
+        ],
+        "tags": [
+            "Graphic"
+        ]
     },
     {
         "title": "Formal Barriers to Simple Algorithms for the Matroid Secretary Problem",
@@ -84,8 +291,19 @@
         "published": "2021-11-07T15:58:23Z",
         "pdf_url": "https://arxiv.org/pdf/2111.04114v1.pdf",
         "local_pdf": "papers/2111.04114v1.pdf",
-        "bibtex": "@article{Bahrani2021formal,\n  title={Formal Barriers to Simple Algorithms for the Matroid Secretary Problem},\n  author={Maryam Bahrani and Hedyeh Beyhaghi and Sahil Singla and S. Matthew Weinberg},\n  journal={arXiv preprint arXiv:2111.04114},\n  year={2021}\n}",
-        "dblp_url": "https://dblp.org/rec/conf/wine/BahraniBSW21"
+        "bibtex": [
+            "@inproceedings{DBLP:conf/wine/BahraniBSW21,\n  author       = {Maryam Bahrani and\n                  Hedyeh Beyhaghi and\n                  Sahil Singla and\n                  S. Matthew Weinberg},\n  editor       = {Michal Feldman and\n                  Hu Fu and\n                  Inbal Talgam{-}Cohen},\n  title        = {Formal Barriers to Simple Algorithms for the Matroid Secretary Problem},\n  booktitle    = {Web and Internet Economics - 17th International Conference, {WINE}\n                  2021, Potsdam, Germany, December 14-17, 2021, Proceedings},\n  series       = {Lecture Notes in Computer Science},\n  pages        = {280--298},\n  publisher    = {Springer},\n  year         = {2021},\n  url          = {https://doi.org/10.1007/978-3-030-94676-0\\_16},\n  doi          = {10.1007/978-3-030-94676-0\\_16},\n  timestamp    = {Mon, 30 Oct 2023 12:09:00 +0100},\n  biburl       = {https://dblp.org/rec/conf/wine/BahraniBSW21.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+            "@article{DBLP:journals/corr/abs-2111-04114,\n  author       = {Maryam Bahrani and\n                  Hedyeh Beyhaghi and\n                  Sahil Singla and\n                  S. Matthew Weinberg},\n  title        = {Formal Barriers to Simple Algorithms for the Matroid Secretary Problem},\n  journal      = {arXiv},\n  volume       = {abs/2111.04114},\n  year         = {2021},\n  url          = {https://arxiv.org/abs/2111.04114},\n  eprinttype   = {arXiv},\n  eprint       = {2111.04114},\n  timestamp    = {Wed, 10 Nov 2021 16:07:30 +0100},\n  biburl       = {https://dblp.org/rec/journals/corr/abs-2111-04114.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
+        ],
+        "dblp_url": "https://dblp.org/rec/conf/wine/BahraniBSW21",
+        "category": "B",
+        "versions": [
+            "arXiv",
+            "WINE 2021"
+        ],
+        "tags": [
+            "General"
+        ]
     },
     {
         "title": "The $k$-Fold Matroid Secretary Problem",
@@ -95,8 +313,18 @@
         "published": "2025-12-07T01:03:07Z",
         "pdf_url": "https://arxiv.org/pdf/2512.06611v1.pdf",
         "local_pdf": "papers/2512.06611v1.pdf",
-        "bibtex": "@article{Gujjar2025the,\n  title={The $k$-Fold Matroid Secretary Problem},\n  author={Rishi Gujjar and Kevin Hua and Robert Kleinberg and Frederick V. Qiu},\n  journal={arXiv preprint arXiv:2512.06611},\n  year={2025}\n}",
-        "dblp_url": "https://dblp.org/rec/conf/sosa/GujjarHKQ26"
+        "bibtex": [
+            "@inproceedings{DBLP:conf/sosa/GujjarHKQ26,\n  author       = {Rishi Gujjar and\n                  Kevin Hua and\n                  Robert Kleinberg and\n                  Frederick V. Qiu},\n  editor       = {Sepehr Assadi and\n                  Eva Rotenberg},\n  title        = {The k-Fold Matroid Secretary Problem},\n  booktitle    = {2026 Symposium on Simplicity in Algorithms, {SOSA} 2026, Vancouver,\n                  BC, Canada, January 12-14, 2026},\n  pages        = {91--99},\n  publisher    = {{SIAM}},\n  year         = {2026},\n  url          = {https://doi.org/10.1137/1.9781611978964.8},\n  doi          = {10.1137/1.9781611978964.8},\n  timestamp    = {Thu, 19 Feb 2026 16:59:35 +0100},\n  biburl       = {https://dblp.org/rec/conf/sosa/GujjarHKQ26.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+            "@article{DBLP:journals/corr/abs-2512-06611,\n  author       = {Rishi Gujjar and\n                  Kevin Hua and\n                  Robert Kleinberg and\n                  Frederick V. Qiu},\n  title        = {The \\emph{k}-Fold Matroid Secretary Problem},\n  journal      = {arXiv},\n  volume       = {abs/2512.06611},\n  year         = {2025},\n  url          = {https://doi.org/10.48550/arXiv.2512.06611},\n  doi          = {10.48550/ARXIV.2512.06611},\n  eprinttype   = {arXiv},\n  eprint       = {2512.06611},\n  timestamp    = {Fri, 23 Jan 2026 09:39:08 +0100},\n  biburl       = {https://dblp.org/rec/journals/corr/abs-2512-06611.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
+        ],
+        "dblp_url": "https://dblp.org/rec/conf/sosa/GujjarHKQ26",
+        "versions": [
+            "arXiv",
+            "SOSA 2026"
+        ],
+        "tags": [
+            "Uniform/Small-k"
+        ]
     },
     {
         "title": "Beating Competitive Ratio 4 for Graphic Matroid Secretary",
@@ -106,8 +334,19 @@
         "published": "2025-01-15T14:58:41Z",
         "pdf_url": "https://arxiv.org/pdf/2501.08846v1.pdf",
         "local_pdf": "papers/2501.08846v1.pdf",
-        "bibtex": "@article{Banihashem2025beating,\n  title={Beating Competitive Ratio 4 for Graphic Matroid Secretary},\n  author={Kiarash Banihashem and MohammadTaghi Hajiaghayi and Dariusz R. Kowalski and Piotr Krysta and Danny Mittal and Jan Olkowski},\n  journal={arXiv preprint arXiv:2501.08846},\n  year={2025}\n}",
-        "dblp_url": "https://dblp.org/rec/conf/esa/BanihashemHKKMO25"
+        "bibtex": [
+            "@inproceedings{DBLP:conf/esa/BanihashemHKKMO25,\n  author       = {Kiarash Banihashem and\n                  MohammadTaghi Hajiaghayi and\n                  Dariusz R. Kowalski and\n                  Piotr Krysta and\n                  Danny Mittal and\n                  Jan Olkowski},\n  editor       = {Anne Benoit and\n                  Haim Kaplan and\n                  Sebastian Wild and\n                  Grzegorz Herman},\n  title        = {Beating Competitive Ratio 4 for Graphic Matroid Secretary},\n  booktitle    = {33rd Annual European Symposium on Algorithms, {ESA} 2025, Warsaw,\n                  Poland, September 15-17, 2025},\n  series       = {LIPIcs},\n  pages        = {52:1--52:16},\n  publisher    = {Schloss Dagstuhl - Leibniz-Zentrum f{\\\"{u}}r Informatik},\n  year         = {2025},\n  url          = {https://doi.org/10.4230/LIPIcs.ESA.2025.52},\n  doi          = {10.4230/LIPICS.ESA.2025.52},\n  timestamp    = {Wed, 25 Feb 2026 08:25:02 +0100},\n  biburl       = {https://dblp.org/rec/conf/esa/BanihashemHKKMO25.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+            "@article{DBLP:journals/corr/abs-2501-08846,\n  author       = {Kiarash Banihashem and\n                  MohammadTaghi Hajiaghayi and\n                  Dariusz R. Kowalski and\n                  Piotr Krysta and\n                  Danny Mittal and\n                  Jan Olkowski},\n  title        = {Beating Competitive Ratio 4 for Graphic Matroid Secretary},\n  journal      = {arXiv},\n  volume       = {abs/2501.08846},\n  year         = {2025},\n  url          = {https://doi.org/10.48550/arXiv.2501.08846},\n  doi          = {10.48550/ARXIV.2501.08846},\n  eprinttype   = {arXiv},\n  eprint       = {2501.08846},\n  timestamp    = {Fri, 21 Feb 2025 21:58:50 +0100},\n  biburl       = {https://dblp.org/rec/journals/corr/abs-2501-08846.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
+        ],
+        "dblp_url": "https://dblp.org/rec/conf/esa/BanihashemHKKMO25",
+        "category": "A",
+        "versions": [
+            "arXiv",
+            "ESA 2025"
+        ],
+        "tags": [
+            "Graphic"
+        ]
     },
     {
         "title": "Constant-Competitiveness for Random Assignment Matroid Secretary Without Knowing the Matroid",
@@ -117,8 +356,21 @@
         "published": "2023-05-09T11:37:20Z",
         "pdf_url": "https://arxiv.org/pdf/2305.05353v1.pdf",
         "local_pdf": "papers/2305.05353v1.pdf",
-        "bibtex": "@article{Santiago2023constantcompetitiveness,\n  title={Constant-Competitiveness for Random Assignment Matroid Secretary Without Knowing the Matroid},\n  author={Richard Santiago and Ivan Sergeev and Rico Zenklusen},\n  journal={arXiv preprint arXiv:2305.05353},\n  year={2023}\n}",
-        "dblp_url": "https://dblp.org/rec/journals/mp/SantiagoSZ25"
+        "bibtex": [
+            "@article{DBLP:journals/mp/SantiagoSZ25,\n  author       = {Richard Santiago and\n                  Ivan Sergeev and\n                  Rico Zenklusen},\n  title        = {Constant-competitiveness for random assignment Matroid secretary without\n                  knowing the Matroid},\n  journal      = {Math. Program.},\n  volume       = {210},\n  number       = {1},\n  pages        = {815--846},\n  year         = {2025},\n  url          = {https://doi.org/10.1007/s10107-024-02177-x},\n  doi          = {10.1007/S10107-024-02177-X},\n  timestamp    = {Tue, 01 Apr 2025 19:02:41 +0200},\n  biburl       = {https://dblp.org/rec/journals/mp/SantiagoSZ25.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+            "@inproceedings{DBLP:conf/ipco/SantiagoSZ23,\n  author       = {Richard Santiago and\n                  Ivan Sergeev and\n                  Rico Zenklusen},\n  editor       = {Alberto Del Pia and\n                  Volker Kaibel},\n  title        = {Constant-Competitiveness for Random Assignment Matroid Secretary Without\n                  Knowing the Matroid},\n  booktitle    = {Integer Programming and Combinatorial Optimization - 24th International\n                  Conference, {IPCO} 2023, Madison, WI, USA, June 21-23, 2023, Proceedings},\n  series       = {Lecture Notes in Computer Science},\n  pages        = {423--437},\n  publisher    = {Springer},\n  year         = {2023},\n  url          = {https://doi.org/10.1007/978-3-031-32726-1\\_30},\n  doi          = {10.1007/978-3-031-32726-1\\_30},\n  timestamp    = {Sat, 30 Sep 2023 09:49:13 +0200},\n  biburl       = {https://dblp.org/rec/conf/ipco/SantiagoSZ23.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+            "@article{DBLP:journals/corr/abs-2305-05353,\n  author       = {Richard Santiago and\n                  Ivan Sergeev and\n                  Rico Zenklusen},\n  title        = {Constant-Competitiveness for Random Assignment Matroid Secretary Without\n                  Knowing the Matroid},\n  journal      = {arXiv},\n  volume       = {abs/2305.05353},\n  year         = {2023},\n  url          = {https://doi.org/10.48550/arXiv.2305.05353},\n  doi          = {10.48550/ARXIV.2305.05353},\n  eprinttype   = {arXiv},\n  eprint       = {2305.05353},\n  timestamp    = {Mon, 15 May 2023 17:14:27 +0200},\n  biburl       = {https://dblp.org/rec/journals/corr/abs-2305-05353.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
+        ],
+        "dblp_url": "https://dblp.org/rec/journals/mp/SantiagoSZ25",
+        "category": "A",
+        "versions": [
+            "arXiv",
+            "IPCO 2023",
+            "Math. Program. 2025"
+        ],
+        "tags": [
+            "Random Assignment"
+        ]
     },
     {
         "title": "Matroid Secretary Problem in the Random Assignment Model",
@@ -128,8 +380,23 @@
         "published": "2010-07-13T17:09:33Z",
         "pdf_url": "https://arxiv.org/pdf/1007.2152v1.pdf",
         "local_pdf": "papers/1007.2152v1.pdf",
-        "bibtex": "@article{Soto2010matroid,\n  title={Matroid Secretary Problem in the Random Assignment Model},\n  author={José A. Soto},\n  journal={arXiv preprint arXiv:1007.2152},\n  year={2010}\n}",
-        "dblp_url": "https://dblp.org/rec/journals/siamcomp/Soto13"
+        "bibtex": [
+            "@article{DBLP:journals/siamcomp/Soto13,\n  author       = {Jos{\\'{e}} A. Soto},\n  title        = {Matroid Secretary Problem in the Random-Assignment Model},\n  journal      = {{SIAM} J. Comput.},\n  volume       = {42},\n  number       = {1},\n  pages        = {178--211},\n  year         = {2013},\n  url          = {https://doi.org/10.1137/110852061},\n  doi          = {10.1137/110852061},\n  timestamp    = {Sat, 27 May 2017 14:22:59 +0200},\n  biburl       = {https://dblp.org/rec/journals/siamcomp/Soto13.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+            "@inproceedings{DBLP:conf/soda/Soto11,\n  author       = {Jos{\\'{e}} A. Soto},\n  editor       = {Dana Randall},\n  title        = {Matroid Secretary Problem in the Random Assignment Model},\n  booktitle    = {Proceedings of the Twenty-Second Annual {ACM-SIAM} Symposium on Discrete\n                  Algorithms, {SODA} 2011, San Francisco, California, USA, January 23-25,\n                  2011},\n  pages        = {1275--1284},\n  publisher    = {{SIAM}},\n  year         = {2011},\n  url          = {https://doi.org/10.1137/1.9781611973082.97},\n  doi          = {10.1137/1.9781611973082.97},\n  timestamp    = {Tue, 02 Feb 2021 17:07:27 +0100},\n  biburl       = {https://dblp.org/rec/conf/soda/Soto11.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+            "@article{DBLP:journals/corr/abs-1007-2152,\n  author       = {Jos{\\'{e}} A. Soto},\n  title        = {Matroid Secretary Problem in the Random Assignment Model},\n  journal      = {arXiv},\n  volume       = {abs/1007.2152},\n  year         = {2010},\n  url          = {http://arxiv.org/abs/1007.2152},\n  eprinttype   = {arXiv},\n  eprint       = {1007.2152},\n  timestamp    = {Mon, 13 Aug 2018 16:46:03 +0200},\n  biburl       = {https://dblp.org/rec/journals/corr/abs-1007-2152.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
+        ],
+        "dblp_url": "https://dblp.org/rec/journals/siamcomp/Soto13",
+        "category": "A",
+        "versions": [
+            "arXiv",
+            "SODA 2011",
+            "SIAM J. Comput. 2013"
+        ],
+        "tags": [
+            "Graphic",
+            "Uniform/Small-k",
+            "Random Assignment"
+        ]
     },
     {
         "title": "The Simulated Greedy Algorithm for Several Submodular Matroid Secretary Problems",
@@ -139,8 +406,22 @@
         "published": "2011-07-12T04:35:02Z",
         "pdf_url": "https://arxiv.org/pdf/1107.2188v3.pdf",
         "local_pdf": "papers/1107.2188v3.pdf",
-        "bibtex": "@article{Ma2011the,\n  title={The Simulated Greedy Algorithm for Several Submodular Matroid Secretary Problems},\n  author={Tengyu Ma and Bo Tang and Yajun Wang},\n  journal={arXiv preprint arXiv:1107.2188},\n  year={2011}\n}",
-        "dblp_url": "https://dblp.org/rec/journals/mst/Ma0W16"
+        "bibtex": [
+            "@article{DBLP:journals/mst/Ma0W16,\n  author       = {Tengyu Ma and\n                  Bo Tang and\n                  Yajun Wang},\n  title        = {The Simulated Greedy Algorithm for Several Submodular Matroid Secretary\n                  Problems},\n  journal      = {Theory Comput. Syst.},\n  volume       = {58},\n  number       = {4},\n  pages        = {681--706},\n  year         = {2016},\n  url          = {https://doi.org/10.1007/s00224-015-9642-4},\n  doi          = {10.1007/S00224-015-9642-4},\n  timestamp    = {Sun, 08 Aug 2021 16:40:51 +0200},\n  biburl       = {https://dblp.org/rec/journals/mst/Ma0W16.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+            "@inproceedings{DBLP:conf/stacs/Ma0W13,\n  author       = {Tengyu Ma and\n                  Bo Tang and\n                  Yajun Wang},\n  editor       = {Natacha Portier and\n                  Thomas Wilke},\n  title        = {The Simulated Greedy Algorithm for Several Submodular Matroid Secretary\n                  Problems},\n  booktitle    = {30th International Symposium on Theoretical Aspects of Computer Science,\n                  {STACS} 2013, Kiel, Germany, February 27 - March 2, 2013},\n  series       = {LIPIcs},\n  pages        = {478--489},\n  publisher    = {Schloss Dagstuhl - Leibniz-Zentrum f{\\\"{u}}r Informatik},\n  year         = {2013},\n  url          = {https://doi.org/10.4230/LIPIcs.STACS.2013.478},\n  doi          = {10.4230/LIPICS.STACS.2013.478},\n  timestamp    = {Fri, 21 Nov 2025 14:06:54 +0100},\n  biburl       = {https://dblp.org/rec/conf/stacs/Ma0W13.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
+        ],
+        "dblp_url": "https://dblp.org/rec/journals/mst/Ma0W16",
+        "category": "A",
+        "versions": [
+            "STACS 2013",
+            "Theory Comput. Syst. 2016"
+        ],
+        "tags": [
+            "Laminar",
+            "Transversal",
+            "Uniform/Small-k",
+            "Submodular"
+        ]
     },
     {
         "title": "Matroid Partition Property and the Secretary Problem",
@@ -150,19 +431,44 @@
         "published": "2021-11-24T11:32:56Z",
         "pdf_url": "https://arxiv.org/pdf/2111.12436v1.pdf",
         "local_pdf": "papers/2111.12436v1.pdf",
-        "bibtex": "@article{Abdolazimi2021matroid,\n  title={Matroid Partition Property and the Secretary Problem},\n  author={Dorna Abdolazimi and Anna R. Karlin and Nathan Klein and Shayan Oveis Gharan},\n  journal={arXiv preprint arXiv:2111.12436},\n  year={2021}\n}",
-        "dblp_url": "https://dblp.org/rec/conf/innovations/AbdolazimiKKG23"
+        "bibtex": [
+            "@inproceedings{DBLP:conf/innovations/AbdolazimiKKG23,\n  author       = {Dorna Abdolazimi and\n                  Anna R. Karlin and\n                  Nathan Klein and\n                  Shayan Oveis Gharan},\n  editor       = {Yael Tauman Kalai},\n  title        = {Matroid Partition Property and the Secretary Problem},\n  booktitle    = {14th Innovations in Theoretical Computer Science Conference, {ITCS}\n                  2023, MIT, Cambridge, Massachusetts, USA, January 10-13, 2023},\n  series       = {LIPIcs},\n  pages        = {2:1--2:9},\n  publisher    = {Schloss Dagstuhl - Leibniz-Zentrum f{\\\"{u}}r Informatik},\n  year         = {2023},\n  url          = {https://doi.org/10.4230/LIPIcs.ITCS.2023.2},\n  doi          = {10.4230/LIPICS.ITCS.2023.2},\n  timestamp    = {Fri, 21 Nov 2025 23:44:11 +0100},\n  biburl       = {https://dblp.org/rec/conf/innovations/AbdolazimiKKG23.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+            "@article{DBLP:journals/corr/abs-2111-12436,\n  author       = {Dorna Abdolazimi and\n                  Anna R. Karlin and\n                  Nathan Klein and\n                  Shayan Oveis Gharan},\n  title        = {Matroid Partition Property and the Secretary Problem},\n  journal      = {arXiv},\n  volume       = {abs/2111.12436},\n  year         = {2021},\n  url          = {https://arxiv.org/abs/2111.12436},\n  eprinttype   = {arXiv},\n  eprint       = {2111.12436},\n  timestamp    = {Fri, 26 Nov 2021 13:48:43 +0100},\n  biburl       = {https://dblp.org/rec/journals/corr/abs-2111-12436.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
+        ],
+        "dblp_url": "https://dblp.org/rec/conf/innovations/AbdolazimiKKG23",
+        "category": "B",
+        "versions": [
+            "arXiv",
+            "ITCS 2023"
+        ],
+        "tags": [
+            "General"
+        ]
     },
     {
         "title": "Matroid Secretary for Regular and Decomposable Matroids",
         "authors": "Michael Dinitz, Guy Kortsarz",
-        "venue": "SODA 2013",
+        "venue": "SIAM J. Comput. 2014",
         "summary": "In the matroid secretary problem we are given a stream of elements and asked to choose a set of elements that maximizes the total value of the set, subject to being an independent set of a matroid given in advance. The difficulty comes from the assumption that decisions are irrevocable: if we choose to accept an element when it is presented by the stream then we can never get rid of it, and if we choose not to accept it then we cannot later add it. Babaioff, Immorlica, and Kleinberg [SODA 2007] introduced this problem, gave O(1)-competitive algorithms for certain classes of matroids, and conjectured that every matroid admits an O(1)-competitive algorithm. However, most matroids that are known to admit an O(1)-competitive algorithm can be easily represented using graphs (e.g. graphic and transversal matroids). In particular, there is very little known about F-representable matroids (the class of matroids that can be represented as elements of a vector space over a field F), which are one of the foundational matroid classes. Moreover, most of the known techniques are as dependent on graph theory as they are on matroid theory. We go beyond graphs by giving an O(1)-competitive algorithm for regular matroids (the class of matroids that are representable over every field), and use techniques that are matroid-theoretic rather than graph-theoretic. We use the regular matroid decomposition theorem of Seymour to decompose any regular matroid into matroids which are either graphic, cographic, or isomorphic to R_{10}, and then show how to combine algorithms for these basic classes into an algorithm for regular matroids. This allows us to generalize beyond regular matroids to any class of matroids that admits such a decomposition into classes for which we already have good algorithms. In particular, we give an O(1)-competitive algorithm for the class of max-flow min-cut matroids.",
         "published": "2012-07-21T14:36:38Z",
         "pdf_url": "https://arxiv.org/pdf/1207.5146v1.pdf",
         "local_pdf": "papers/1207.5146v1.pdf",
-        "bibtex": "@article{Dinitz2012matroid,\n  title={Matroid Secretary for Regular and Decomposable Matroids},\n  author={Michael Dinitz and Guy Kortsarz},\n  journal={arXiv preprint arXiv:1207.5146},\n  year={2012}\n}",
-        "dblp_url": "https://dblp.org/rec/conf/soda/DinitzK13"
+        "bibtex": [
+            "@inproceedings{DBLP:conf/soda/DinitzK13,\n  author       = {Michael Dinitz and\n                  Guy Kortsarz},\n  editor       = {Sanjeev Khanna},\n  title        = {Matroid Secretary for Regular and Decomposable Matroids},\n  booktitle    = {Proceedings of the Twenty-Fourth Annual {ACM-SIAM} Symposium on Discrete\n                  Algorithms, {SODA} 2013, New Orleans, Louisiana, USA, January 6-8,\n                  2013},\n  pages        = {108--117},\n  publisher    = {{SIAM}},\n  year         = {2013},\n  url          = {https://doi.org/10.1137/1.9781611973105.8},\n  doi          = {10.1137/1.9781611973105.8},\n  timestamp    = {Thu, 14 Oct 2021 09:46:24 +0200},\n  biburl       = {https://dblp.org/rec/conf/soda/DinitzK13.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+            "@article{DBLP:journals/corr/abs-1207-5146,\n  author       = {Michael Dinitz and\n                  Guy Kortsarz},\n  title        = {Matroid Secretary for Regular and Decomposable Matroids},\n  journal      = {arXiv},\n  volume       = {abs/1207.5146},\n  year         = {2012},\n  url          = {http://arxiv.org/abs/1207.5146},\n  eprinttype   = {arXiv},\n  eprint       = {1207.5146},\n  timestamp    = {Mon, 13 Aug 2018 16:48:03 +0200},\n  biburl       = {https://dblp.org/rec/journals/corr/abs-1207-5146.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+            "@article{DBLP:journals/siamcomp/DinitzK14,\n  author       = {Michael Dinitz and\n                  Guy Kortsarz},\n  title        = {Matroid Secretary for Regular and Decomposable Matroids},\n  journal      = {{SIAM} J. Comput.},\n  volume       = {43},\n  number       = {5},\n  pages        = {1807--1830},\n  year         = {2014},\n  url          = {https://doi.org/10.1137/13094030X},\n  doi          = {10.1137/13094030X},\n  timestamp    = {Thu, 14 Oct 2021 09:34:56 +0200},\n  biburl       = {https://dblp.org/rec/journals/siamcomp/DinitzK14.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
+        ],
+        "dblp_url": "https://dblp.org/rec/conf/soda/DinitzK13",
+        "category": "A",
+        "versions": [
+            "arXiv",
+            "SODA 2013",
+            "SIAM J. Comput. 2014"
+        ],
+        "tags": [
+            "Graphic",
+            "Transversal"
+        ]
     },
     {
         "title": "The Outer Limits of Contention Resolution on Matroids and Connections to the Secretary Problem",
@@ -172,8 +478,19 @@
         "published": "2019-09-10T03:49:20Z",
         "pdf_url": "https://arxiv.org/pdf/1909.04268v3.pdf",
         "local_pdf": "papers/1909.04268v3.pdf",
-        "bibtex": "@article{Dughmi2019the,\n  title={The Outer Limits of Contention Resolution on Matroids and Connections to the Secretary Problem},\n  author={Shaddin Dughmi},\n  journal={arXiv preprint arXiv:1909.04268},\n  year={2019}\n}",
-        "dblp_url": "https://dblp.org/rec/conf/icalp/Dughmi20"
+        "bibtex": [
+            "@inproceedings{DBLP:conf/icalp/Dughmi20,\n  author       = {Shaddin Dughmi},\n  editor       = {Artur Czumaj and\n                  Anuj Dawar and\n                  Emanuela Merelli},\n  title        = {The Outer Limits of Contention Resolution on Matroids and Connections\n                  to the Secretary Problem},\n  booktitle    = {47th International Colloquium on Automata, Languages, and Programming,\n                  {ICALP} 2020, Saarbr{\\\"{u}}cken, Germany (Virtual Conference), July\n                  8-11, 2020},\n  series       = {LIPIcs},\n  pages        = {42:1--42:18},\n  publisher    = {Schloss Dagstuhl - Leibniz-Zentrum f{\\\"{u}}r Informatik},\n  year         = {2020},\n  url          = {https://doi.org/10.4230/LIPIcs.ICALP.2020.42},\n  doi          = {10.4230/LIPICS.ICALP.2020.42},\n  timestamp    = {Fri, 21 Nov 2025 23:44:11 +0100},\n  biburl       = {https://dblp.org/rec/conf/icalp/Dughmi20.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+            "@article{DBLP:journals/corr/abs-1909-04268,\n  author       = {Shaddin Dughmi},\n  title        = {The Outer Limits of Contention Resolution on Matroids and Connections\n                  to the Secretary Problem},\n  journal      = {arXiv},\n  volume       = {abs/1909.04268},\n  year         = {2019},\n  url          = {http://arxiv.org/abs/1909.04268},\n  eprinttype   = {arXiv},\n  eprint       = {1909.04268},\n  timestamp    = {Tue, 17 Sep 2019 11:23:44 +0200},\n  biburl       = {https://dblp.org/rec/journals/corr/abs-1909-04268.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
+        ],
+        "dblp_url": "https://dblp.org/rec/conf/icalp/Dughmi20",
+        "category": "B",
+        "versions": [
+            "arXiv",
+            "ICALP 2020"
+        ],
+        "tags": [
+            "Contention Resolution"
+        ]
     },
     {
         "title": "Beyond matroids: Secretary Problem and Prophet Inequality with general constraints",
@@ -183,18 +500,41 @@
         "published": "2016-04-01T18:53:08Z",
         "pdf_url": "https://arxiv.org/pdf/1604.00357v2.pdf",
         "local_pdf": "papers/1604.00357v2.pdf",
-        "bibtex": "@article{Rubinstein2016beyond,\n  title={Beyond matroids: Secretary Problem and Prophet Inequality with general constraints},\n  author={Aviad Rubinstein},\n  journal={arXiv preprint arXiv:1604.00357},\n  year={2016}\n}",
-        "dblp_url": "https://dblp.org/rec/conf/stoc/Rubinstein16"
+        "bibtex": [
+            "@inproceedings{DBLP:conf/stoc/Rubinstein16,\n  author       = {Aviad Rubinstein},\n  editor       = {Daniel Wichs and\n                  Yishay Mansour},\n  title        = {Beyond matroids: secretary problem and prophet inequality with general\n                  constraints},\n  booktitle    = {Proceedings of the 48th Annual {ACM} {SIGACT} Symposium on Theory\n                  of Computing, {STOC} 2016, Cambridge, MA, USA, June 18-21, 2016},\n  pages        = {324--332},\n  publisher    = {{ACM}},\n  year         = {2016},\n  url          = {https://doi.org/10.1145/2897518.2897540},\n  doi          = {10.1145/2897518.2897540},\n  timestamp    = {Mon, 30 Mar 2026 15:37:35 +0200},\n  biburl       = {https://dblp.org/rec/conf/stoc/Rubinstein16.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+            "@article{DBLP:journals/corr/Rubinstein16,\n  author       = {Aviad Rubinstein},\n  title        = {Beyond matroids: Secretary Problem and Prophet Inequality with general\n                  constraints},\n  journal      = {arXiv},\n  volume       = {abs/1604.00357},\n  year         = {2016},\n  url          = {http://arxiv.org/abs/1604.00357},\n  eprinttype   = {arXiv},\n  eprint       = {1604.00357},\n  timestamp    = {Mon, 13 Aug 2018 16:47:08 +0200},\n  biburl       = {https://dblp.org/rec/journals/corr/Rubinstein16.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
+        ],
+        "dblp_url": "https://dblp.org/rec/conf/stoc/Rubinstein16",
+        "category": "B",
+        "versions": [
+            "arXiv",
+            "STOC 2016"
+        ],
+        "tags": [
+            "Prophet Inequality"
+        ]
     },
     {
         "title": "A Simple $O(\\log\\log(\\mathrm{rank}))$-Competitive Algorithm for the Matroid Secretary Problem",
         "authors": "Moran Feldman, Ola Svensson, Rico Zenklusen",
-        "venue": "arXiv preprint arXiv:1404.4473",
+        "venue": "SODA 2015",
         "summary": "Only recently progress has been made in obtaining $o(\\log(\\mathrm{rank}))$-competitive algorithms for the matroid secretary problem. More precisely, Chakraborty and Lachish (2012) presented a $O(\\sqrt{\\log(\\mathrm{rank})})$-competitive procedure, and Lachish (2014) later presented a $O(\\log\\log(\\mathrm{rank}))$-competitive algorithm. Both these algorithms and their analyses are very involved, which is also reflected in the extremely high constants in their competitive ratios. Using different tools, we present a considerably simpler $O(\\log\\log(\\mathrm{rank}))$-competitive algorithm for the matroid secretary problem. Our algorithm can be interpreted as a distribution over a simple type of matroid secretary algorithms which are easy to analyze. Due to the simplicity of our procedure, we are also able to vastly improve on the hidden constant in the competitive ratio.",
         "published": "2014-04-17T10:16:28Z",
         "pdf_url": "https://arxiv.org/pdf/1404.4473v2.pdf",
         "local_pdf": "papers/1404.4473v2.pdf",
-        "bibtex": "@article{Feldman2014a,\n  title={A Simple $O(\\log\\log(\\mathrm{rank}))$-Competitive Algorithm for the Matroid Secretary Problem},\n  author={Moran Feldman and Ola Svensson and Rico Zenklusen},\n  journal={arXiv preprint arXiv:1404.4473},\n  year={2014}\n}"
+        "bibtex": [
+            "@article{FeldmanSZ14arxiv,\n  author       = {Moran Feldman and Ola Svensson and Rico Zenklusen},\n  title        = {A Simple O(log log rank)-Competitive Algorithm for the Matroid Secretary Problem},\n  journal      = {arXiv},\n  volume       = {abs/1404.4473},\n  year         = {2014},\n  url          = {https://arxiv.org/abs/1404.4473}\n}",
+            "@inproceedings{DBLP:conf/soda/FeldmanSZ15,\n  author       = {Moran Feldman and\n                  Ola Svensson and\n                  Rico Zenklusen},\n  editor       = {Piotr Indyk},\n  title        = {A Simple \\emph{O}(log log(rank))-Competitive Algorithm for the Matroid\n                  Secretary Problem},\n  booktitle    = {Proceedings of the Twenty-Sixth Annual {ACM-SIAM} Symposium on Discrete\n                  Algorithms, {SODA} 2015, San Diego, CA, USA, January 4-6, 2015},\n  pages        = {1189--1201},\n  publisher    = {{SIAM}},\n  year         = {2015},\n  url          = {https://doi.org/10.1137/1.9781611973730.79},\n  doi          = {10.1137/1.9781611973730.79},\n  timestamp    = {Tue, 02 Feb 2021 17:07:42 +0100},\n  biburl       = {https://dblp.org/rec/conf/soda/FeldmanSZ15.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
+        ],
+        "category": "A",
+        "versions": [
+            "arXiv",
+            "SODA 2015"
+        ],
+        "tags": [
+            "General"
+        ],
+        "dblp_url": "https://dblp.org/rec/conf/soda/FeldmanSZ15"
     },
     {
         "title": "Laminar Matroid Secretary: Greedy Strikes Back",
@@ -204,8 +544,19 @@
         "published": "2023-08-19T02:15:58Z",
         "pdf_url": "https://arxiv.org/pdf/2308.09880v2.pdf",
         "local_pdf": "papers/2308.09880v2.pdf",
-        "bibtex": "@article{Huang2023laminar,\n  title={Laminar Matroid Secretary: Greedy Strikes Back},\n  author={Zhiyi Huang and Zahra Parsaeian and Zixuan Zhu},\n  journal={arXiv preprint arXiv:2308.09880},\n  year={2023}\n}",
-        "dblp_url": "https://dblp.org/rec/conf/esa/0002PZ24"
+        "bibtex": [
+            "@inproceedings{DBLP:conf/esa/0002PZ24,\n  author       = {Zhiyi Huang and\n                  Zahra Parsaeian and\n                  Zixuan Zhu},\n  editor       = {Timothy M. Chan and\n                  Johannes Fischer and\n                  John Iacono and\n                  Grzegorz Herman},\n  title        = {Laminar Matroid Secretary: Greedy Strikes Back},\n  booktitle    = {32nd Annual European Symposium on Algorithms, {ESA} 2024, Royal Holloway,\n                  London, United Kingdom, September 2-4, 2024},\n  series       = {LIPIcs},\n  pages        = {73:1--73:8},\n  publisher    = {Schloss Dagstuhl - Leibniz-Zentrum f{\\\"{u}}r Informatik},\n  year         = {2024},\n  url          = {https://doi.org/10.4230/LIPIcs.ESA.2024.73},\n  doi          = {10.4230/LIPICS.ESA.2024.73},\n  timestamp    = {Fri, 21 Nov 2025 23:44:11 +0100},\n  biburl       = {https://dblp.org/rec/conf/esa/0002PZ24.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+            "@article{DBLP:journals/corr/abs-2308-09880,\n  author       = {Zhiyi Huang and\n                  Zahra Parsaeian and\n                  Zixuan Zhu},\n  title        = {Laminar Matroid Secretary: Greedy Strikes Back},\n  journal      = {arXiv},\n  volume       = {abs/2308.09880},\n  year         = {2023},\n  url          = {https://doi.org/10.48550/arXiv.2308.09880},\n  doi          = {10.48550/ARXIV.2308.09880},\n  eprinttype   = {arXiv},\n  eprint       = {2308.09880},\n  timestamp    = {Sat, 15 Nov 2025 13:49:17 +0100},\n  biburl       = {https://dblp.org/rec/journals/corr/abs-2308-09880.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
+        ],
+        "dblp_url": "https://dblp.org/rec/conf/esa/0002PZ24",
+        "category": "A",
+        "versions": [
+            "arXiv",
+            "ESA 2024"
+        ],
+        "tags": [
+            "Laminar"
+        ]
     },
     {
         "title": "Submodular Matroid Secretary Problem with Shortlists",
@@ -215,8 +566,17 @@
         "published": "2020-01-03T17:13:52Z",
         "pdf_url": "https://arxiv.org/pdf/2001.00894v1.pdf",
         "local_pdf": "papers/2001.00894v1.pdf",
-        "bibtex": "@article{Shadravan2020submodular,\n  title={Submodular Matroid Secretary Problem with Shortlists},\n  author={Mohammad Shadravan},\n  journal={arXiv preprint arXiv:2001.00894},\n  year={2020}\n}",
-        "dblp_url": "https://dblp.org/rec/journals/corr/abs-2001-00894"
+        "bibtex": [
+            "@article{DBLP:journals/corr/abs-2001-00894,\n  author       = {Mohammad Shadravan},\n  title        = {Submodular Matroid Secretary Problem with Shortlists},\n  journal      = {arXiv},\n  volume       = {abs/2001.00894},\n  year         = {2020},\n  url          = {http://arxiv.org/abs/2001.00894},\n  eprinttype   = {arXiv},\n  eprint       = {2001.00894},\n  timestamp    = {Fri, 10 Jan 2020 13:10:19 +0100},\n  biburl       = {https://dblp.org/rec/journals/corr/abs-2001-00894.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
+        ],
+        "dblp_url": "https://dblp.org/rec/journals/corr/abs-2001-00894",
+        "category": "B",
+        "versions": [
+            "arXiv"
+        ],
+        "tags": [
+            "Submodular"
+        ]
     },
     {
         "title": "Matroid Secretary via Labeling Schemes",
@@ -226,8 +586,21 @@
         "published": "2024-11-18T21:27:51Z",
         "pdf_url": "https://arxiv.org/pdf/2411.12069v2.pdf",
         "local_pdf": "papers/2411.12069v2.pdf",
-        "bibtex": "@article{Brczi2024matroid,\n  title={Matroid Secretary via Labeling Schemes},\n  author={Kristóf Bérczi and Vasilis Livanos and José Soto and Victor Verdugo},\n  journal={arXiv preprint arXiv:2411.12069},\n  year={2024}\n}",
-        "dblp_url": "https://dblp.org/rec/conf/ipco/BercziLSV25"
+        "bibtex": [
+            "@inproceedings{DBLP:conf/ipco/BercziLSV25,\n  author       = {Krist{\\'{o}}f B{\\'{e}}rczi and\n                  Vasilis Livanos and\n                  Jos{\\'{e}} A. Soto and\n                  Victor Verdugo},\n  editor       = {Nicole Megow and\n                  Amitabh Basu},\n  title        = {Matroid Secretary via Labeling Schemes},\n  booktitle    = {Integer Programming and Combinatorial Optimization - 26th International\n                  Conference, {IPCO} 2025, Baltimore, MD, USA, June 11-13, 2025, Proceedings},\n  series       = {Lecture Notes in Computer Science},\n  pages        = {128--141},\n  publisher    = {Springer},\n  year         = {2025},\n  url          = {https://doi.org/10.1007/978-3-031-93112-3\\_10},\n  doi          = {10.1007/978-3-031-93112-3\\_10},\n  timestamp    = {Sun, 06 Jul 2025 13:23:39 +0200},\n  biburl       = {https://dblp.org/rec/conf/ipco/BercziLSV25.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+            "@article{DBLP:journals/corr/abs-2411-12069,\n  author       = {Krist{\\'{o}}f B{\\'{e}}rczi and\n                  Vasilis Livanos and\n                  Jos{\\'{e}} A. Soto and\n                  Victor Verdugo},\n  title        = {Matroid Secretary via Labeling Schemes},\n  journal      = {arXiv},\n  volume       = {abs/2411.12069},\n  year         = {2024},\n  url          = {https://doi.org/10.48550/arXiv.2411.12069},\n  doi          = {10.48550/ARXIV.2411.12069},\n  eprinttype   = {arXiv},\n  eprint       = {2411.12069},\n  timestamp    = {Sun, 07 Dec 2025 22:14:18 +0100},\n  biburl       = {https://dblp.org/rec/journals/corr/abs-2411-12069.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
+        ],
+        "dblp_url": "https://dblp.org/rec/conf/ipco/BercziLSV25",
+        "category": "A",
+        "versions": [
+            "arXiv",
+            "IPCO 2025"
+        ],
+        "tags": [
+            "Laminar",
+            "Graphic",
+            "Ordinal Model"
+        ]
     },
     {
         "title": "Strong Algorithms for the Ordinal Matroid Secretary Problem",
@@ -237,8 +610,24 @@
         "published": "2018-02-06T15:26:37Z",
         "pdf_url": "https://arxiv.org/pdf/1802.01997v1.pdf",
         "local_pdf": "papers/1802.01997v1.pdf",
-        "bibtex": "@article{Soto2018strong,\n  title={Strong Algorithms for the Ordinal Matroid Secretary Problem},\n  author={José A. Soto and Abner Turkieltaub and Victor Verdugo},\n  journal={arXiv preprint arXiv:1802.01997},\n  year={2018}\n}",
-        "dblp_url": "https://dblp.org/rec/journals/mor/SotoTV21"
+        "bibtex": [
+            "@article{DBLP:journals/mor/SotoTV21,\n  author       = {Jos{\\'{e}} A. Soto and\n                  Abner Turkieltaub and\n                  Victor Verdugo},\n  title        = {Strong Algorithms for the Ordinal Matroid Secretary Problem},\n  journal      = {Math. Oper. Res.},\n  volume       = {46},\n  number       = {2},\n  pages        = {642--673},\n  year         = {2021},\n  url          = {https://doi.org/10.1287/moor.2020.1083},\n  doi          = {10.1287/MOOR.2020.1083},\n  timestamp    = {Mon, 20 Sep 2021 09:50:01 +0200},\n  biburl       = {https://dblp.org/rec/journals/mor/SotoTV21.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+            "@inproceedings{DBLP:conf/soda/SotoTV18,\n  author       = {Jos{\\'{e}} A. Soto and\n                  Abner Turkieltaub and\n                  Victor Verdugo},\n  editor       = {Artur Czumaj},\n  title        = {Strong Algorithms for the Ordinal Matroid Secretary Problem},\n  booktitle    = {Proceedings of the Twenty-Ninth Annual {ACM-SIAM} Symposium on Discrete\n                  Algorithms, {SODA} 2018, New Orleans, LA, USA, January 7-10, 2018},\n  pages        = {715--734},\n  publisher    = {{SIAM}},\n  year         = {2018},\n  url          = {https://doi.org/10.1137/1.9781611975031.47},\n  doi          = {10.1137/1.9781611975031.47},\n  timestamp    = {Sat, 30 Sep 2023 09:57:09 +0200},\n  biburl       = {https://dblp.org/rec/conf/soda/SotoTV18.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+            "@article{DBLP:journals/corr/abs-1802-01997,\n  author       = {Jos{\\'{e}} A. Soto and\n                  Abner Turkieltaub and\n                  Victor Verdugo},\n  title        = {Strong Algorithms for the Ordinal Matroid Secretary Problem},\n  journal      = {arXiv},\n  volume       = {abs/1802.01997},\n  year         = {2018},\n  url          = {http://arxiv.org/abs/1802.01997},\n  eprinttype   = {arXiv},\n  eprint       = {1802.01997},\n  timestamp    = {Mon, 13 Aug 2018 16:47:34 +0200},\n  biburl       = {https://dblp.org/rec/journals/corr/abs-1802-01997.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
+        ],
+        "dblp_url": "https://dblp.org/rec/journals/mor/SotoTV21",
+        "category": "A",
+        "versions": [
+            "arXiv",
+            "SODA 2018",
+            "Math. Oper. Res. 2021"
+        ],
+        "tags": [
+            "Laminar",
+            "Graphic",
+            "Uniform/Small-k",
+            "Ordinal Model"
+        ]
     },
     {
         "title": "Secretary problem: graphs, matroids and greedoids",
@@ -248,8 +637,20 @@
         "published": "2018-01-02T19:34:57Z",
         "pdf_url": "https://arxiv.org/pdf/1801.00814v1.pdf",
         "local_pdf": "papers/1801.00814v1.pdf",
-        "bibtex": "@article{Kordecki2018secretary,\n  title={Secretary problem: graphs, matroids and greedoids},\n  author={Wojciech Kordecki},\n  journal={Operations Research Forum 2(4) 2021},\n  year={2018}\n}",
-        "dblp_url": "https://dblp.org/rec/journals/corr/abs-1801-00814"
+        "bibtex": [
+            "@article{DBLP:journals/corr/abs-1801-00814,\n  author       = {Wojciech Kordecki},\n  title        = {Secretary problem: graphs, matroids and greedoids},\n  journal      = {arXiv},\n  volume       = {abs/1801.00814},\n  year         = {2018},\n  url          = {http://arxiv.org/abs/1801.00814},\n  eprinttype   = {arXiv},\n  eprint       = {1801.00814},\n  timestamp    = {Mon, 13 Aug 2018 16:48:50 +0200},\n  biburl       = {https://dblp.org/rec/journals/corr/abs-1801-00814.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+            "@article{DBLP:journals/orf/Kordecki21,\n  author       = {Wojciech Kordecki},\n  title        = {Secretary Problem: Graphs, Matroids and Greedoids},\n  journal      = {Oper. Res. Forum},\n  volume       = {2},\n  number       = {4},\n  year         = {2021},\n  url          = {https://doi.org/10.1007/s43069-021-00092-x},\n  doi          = {10.1007/S43069-021-00092-X},\n  timestamp    = {Sat, 10 Sep 2022 20:59:36 +0200},\n  biburl       = {https://dblp.org/rec/journals/orf/Kordecki21.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
+        ],
+        "dblp_url": "https://dblp.org/rec/journals/corr/abs-1801-00814",
+        "category": "C",
+        "versions": [
+            "arXiv",
+            "Oper. Res. Forum 2021"
+        ],
+        "tags": [
+            "Graphic",
+            "Uniform/Small-k"
+        ]
     },
     {
         "title": "Prophet Secretary for Combinatorial Auctions and Matroids",
@@ -259,18 +660,44 @@
         "published": "2017-10-30T19:41:38Z",
         "pdf_url": "https://arxiv.org/pdf/1710.11213v2.pdf",
         "local_pdf": "papers/1710.11213v2.pdf",
-        "bibtex": "@article{Ehsani2017prophet,\n  title={Prophet Secretary for Combinatorial Auctions and Matroids},\n  author={Soheil Ehsani and MohammadTaghi Hajiaghayi and Thomas Kesselheim and Sahil Singla},\n  journal={arXiv preprint arXiv:1710.11213},\n  year={2017}\n}",
-        "dblp_url": "https://dblp.org/rec/conf/soda/EhsaniHKS18"
+        "bibtex": [
+            "@inproceedings{DBLP:conf/soda/EhsaniHKS18,\n  author       = {Soheil Ehsani and\n                  MohammadTaghi Hajiaghayi and\n                  Thomas Kesselheim and\n                  Sahil Singla},\n  editor       = {Artur Czumaj},\n  title        = {Prophet Secretary for Combinatorial Auctions and Matroids},\n  booktitle    = {Proceedings of the Twenty-Ninth Annual {ACM-SIAM} Symposium on Discrete\n                  Algorithms, {SODA} 2018, New Orleans, LA, USA, January 7-10, 2018},\n  pages        = {700--714},\n  publisher    = {{SIAM}},\n  year         = {2018},\n  url          = {https://doi.org/10.1137/1.9781611975031.46},\n  doi          = {10.1137/1.9781611975031.46},\n  timestamp    = {Tue, 02 Feb 2021 17:07:58 +0100},\n  biburl       = {https://dblp.org/rec/conf/soda/EhsaniHKS18.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+            "@article{DBLP:journals/corr/abs-1710-11213,\n  author       = {Soheil Ehsani and\n                  MohammadTaghi Hajiaghayi and\n                  Thomas Kesselheim and\n                  Sahil Singla},\n  title        = {Prophet Secretary for Combinatorial Auctions and Matroids},\n  journal      = {arXiv},\n  volume       = {abs/1710.11213},\n  year         = {2017},\n  url          = {http://arxiv.org/abs/1710.11213},\n  eprinttype   = {arXiv},\n  eprint       = {1710.11213},\n  timestamp    = {Mon, 17 Jun 2019 07:28:00 +0200},\n  biburl       = {https://dblp.org/rec/journals/corr/abs-1710-11213.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+            "@article{DBLP:journals/siamcomp/EhsaniHKS24,\n  author       = {Soheil Ehsani and\n                  MohammadTaghi Hajiaghayi and\n                  Thomas Kesselheim and\n                  Sahil Singla},\n  title        = {Prophet Secretary for Combinatorial Auctions and Matroids},\n  journal      = {{SIAM} J. Comput.},\n  volume       = {53},\n  number       = {6},\n  pages        = {1641--1662},\n  year         = {2024},\n  url          = {https://doi.org/10.1137/19m1264047},\n  doi          = {10.1137/19M1264047},\n  timestamp    = {Sun, 22 Dec 2024 15:49:23 +0100},\n  biburl       = {https://dblp.org/rec/journals/siamcomp/EhsaniHKS24.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
+        ],
+        "dblp_url": "https://dblp.org/rec/conf/soda/EhsaniHKS18",
+        "category": "B",
+        "versions": [
+            "arXiv",
+            "SODA 2018",
+            "SIAM J. Comput. 2024"
+        ],
+        "tags": [
+            "Uniform/Small-k",
+            "Prophet Inequality"
+        ]
     },
     {
         "title": "O(log log rank) Competitive-Ratio for the Matroid Secretary Problem",
         "authors": "Oded Lachish",
-        "venue": "arXiv preprint arXiv:1403.7343",
+        "venue": "FOCS 2014",
         "summary": "In the \\textit{Matroid Secretary Problem} (MSP), the elements of the ground set of a Matroid are revealed on-line one by one, each together with its value. An algorithm for the MSP is \\textit{Matroid-Unknown} if, at every stage of its execution: (i) it only knows the elements that have been revealed so far and their values, and (ii) it has access to an oracle for testing whether or not any subset of the elements that have been revealed so far is an independent set. An algorithm is \\textit{Known-Cardinality} if, in addition to (i) and (ii), it also initially knows the cardinality of the ground set of the Matroid. We present here a Known-Cardinality and \\textit{Order-Oblivious} algorithm that, with constant probability, selects an independent set of elements, whose value is at least the optimal value divided by $O(\\log{\\logρ})$, where $ρ$ is the rank of the Matroid; that is, the algorithm has a \\textit{competitive-ratio} of $O(\\log{\\logρ})$. The best previous results for a Known-Cardinality algorithm are a competitive-ratio of $O(\\logρ)$, by Babaioff \\textit{et al.} (2007), and a competitive-ratio of $O(\\sqrt{\\logρ})$, by Chakraborty and Lachish (2012). In many non-trivial cases the algorithm we present has a competitive-ratio that is better than the $O(\\log{\\logρ})$. The cases in which it fails to do so are easily characterized. Understanding these cases may lead to improved algorithms for the problem or, conversely, to non-trivial lower bounds.",
         "published": "2014-03-26T18:37:57Z",
         "pdf_url": "https://arxiv.org/pdf/1403.7343v4.pdf",
         "local_pdf": "papers/1403.7343v4.pdf",
-        "bibtex": "@article{Lachish2014olog,\n  title={O(log log rank) Competitive-Ratio for the Matroid Secretary Problem},\n  author={Oded Lachish},\n  journal={arXiv preprint arXiv:1403.7343},\n  year={2014}\n}"
+        "bibtex": [
+            "@article{DBLP:journals/corr/Lachish14,\n  author       = {Oded Lachish},\n  title        = {O(log log rank) Competitive Ratio for the Matroid Secretary Problem},\n  journal      = {arXiv},\n  volume       = {abs/1403.7343},\n  year         = {2014}\n}",
+            "@inproceedings{DBLP:conf/focs/Lachish14,\n  author       = {Oded Lachish},\n  title        = {O(log log Rank) Competitive Ratio for the Matroid Secretary Problem},\n  booktitle    = {55th {IEEE} Annual Symposium on Foundations of Computer Science, {FOCS}\n                  2014, Philadelphia, PA, USA, October 18-21, 2014},\n  pages        = {326--335},\n  publisher    = {{IEEE} Computer Society},\n  year         = {2014},\n  url          = {https://doi.org/10.1109/FOCS.2014.42},\n  doi          = {10.1109/FOCS.2014.42},\n  timestamp    = {Tue, 08 Jul 2025 16:37:45 +0200},\n  biburl       = {https://dblp.org/rec/conf/focs/Lachish14.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
+        ],
+        "category": "A",
+        "versions": [
+            "arXiv",
+            "FOCS 2014"
+        ],
+        "tags": [
+            "General"
+        ],
+        "dblp_url": "https://dblp.org/rec/conf/focs/Lachish14"
     },
     {
         "title": "The secretary returns",
@@ -280,8 +707,17 @@
         "published": "2014-04-02T17:00:12Z",
         "pdf_url": "https://arxiv.org/pdf/1404.0614v2.pdf",
         "local_pdf": "papers/1404.0614v2.pdf",
-        "bibtex": "@article{Vardi2014the,\n  title={The secretary returns},\n  author={Shai Vardi},\n  journal={arXiv preprint arXiv:1404.0614},\n  year={2014}\n}",
-        "dblp_url": "https://dblp.org/rec/journals/corr/Vardi14"
+        "bibtex": [
+            "@article{DBLP:journals/corr/Vardi14,\n  author       = {Shai Vardi},\n  title        = {The secretary returns},\n  journal      = {arXiv},\n  volume       = {abs/1404.0614},\n  year         = {2014},\n  url          = {http://arxiv.org/abs/1404.0614},\n  eprinttype   = {arXiv},\n  eprint       = {1404.0614},\n  timestamp    = {Mon, 13 Aug 2018 16:46:10 +0200},\n  biburl       = {https://dblp.org/rec/journals/corr/Vardi14.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
+        ],
+        "dblp_url": "https://dblp.org/rec/journals/corr/Vardi14",
+        "category": "B",
+        "versions": [
+            "arXiv"
+        ],
+        "tags": [
+            "General"
+        ]
     },
     {
         "title": "Combinatorial Secretary Problems with Ordinal Information",
@@ -291,8 +727,20 @@
         "published": "2017-02-04T14:09:46Z",
         "pdf_url": "https://arxiv.org/pdf/1702.01290v3.pdf",
         "local_pdf": "papers/1702.01290v3.pdf",
-        "bibtex": "@article{Hoefer2017combinatorial,\n  title={Combinatorial Secretary Problems with Ordinal Information},\n  author={Martin Hoefer and Bojana Kodric},\n  journal={arXiv preprint arXiv:1702.01290},\n  year={2017}\n}",
-        "dblp_url": "https://dblp.org/rec/conf/icalp/HoeferK17"
+        "bibtex": [
+            "@inproceedings{DBLP:conf/icalp/HoeferK17,\n  author       = {Martin Hoefer and\n                  Bojana Kodric},\n  editor       = {Ioannis Chatzigiannakis and\n                  Piotr Indyk and\n                  Fabian Kuhn and\n                  Anca Muscholl},\n  title        = {Combinatorial Secretary Problems with Ordinal Information},\n  booktitle    = {44th International Colloquium on Automata, Languages, and Programming,\n                  {ICALP} 2017, Warsaw, Poland, July 10-14, 2017},\n  series       = {LIPIcs},\n  pages        = {133:1--133:14},\n  publisher    = {Schloss Dagstuhl - Leibniz-Zentrum f{\\\"{u}}r Informatik},\n  year         = {2017},\n  url          = {https://doi.org/10.4230/LIPIcs.ICALP.2017.133},\n  doi          = {10.4230/LIPICS.ICALP.2017.133},\n  timestamp    = {Fri, 21 Nov 2025 23:44:11 +0100},\n  biburl       = {https://dblp.org/rec/conf/icalp/HoeferK17.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+            "@article{DBLP:journals/corr/HoeferK17,\n  author       = {Martin Hoefer and\n                  Bojana Kodric},\n  title        = {Combinatorial Secretary Problems with Ordinal Information},\n  journal      = {arXiv},\n  volume       = {abs/1702.01290},\n  year         = {2017},\n  url          = {http://arxiv.org/abs/1702.01290},\n  eprinttype   = {arXiv},\n  eprint       = {1702.01290},\n  timestamp    = {Fri, 26 Mar 2021 08:28:27 +0100},\n  biburl       = {https://dblp.org/rec/journals/corr/HoeferK17.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
+        ],
+        "dblp_url": "https://dblp.org/rec/conf/icalp/HoeferK17",
+        "category": "B",
+        "versions": [
+            "arXiv",
+            "ICALP 2017"
+        ],
+        "tags": [
+            "Submodular",
+            "Ordinal Model"
+        ]
     },
     {
         "title": "The Submodular Secretary Problem Goes Linear",
@@ -302,8 +750,21 @@
         "published": "2015-07-30T05:28:46Z",
         "pdf_url": "https://arxiv.org/pdf/1507.08384v1.pdf",
         "local_pdf": "papers/1507.08384v1.pdf",
-        "bibtex": "@article{Feldman2015the,\n  title={The Submodular Secretary Problem Goes Linear},\n  author={Moran Feldman and Rico Zenklusen},\n  journal={arXiv preprint arXiv:1507.08384},\n  year={2015}\n}",
-        "dblp_url": "https://dblp.org/rec/journals/siamcomp/FeldmanZ18"
+        "bibtex": [
+            "@article{DBLP:journals/siamcomp/FeldmanZ18,\n  author       = {Moran Feldman and\n                  Rico Zenklusen},\n  title        = {The Submodular Secretary Problem Goes Linear},\n  journal      = {{SIAM} J. Comput.},\n  volume       = {47},\n  number       = {2},\n  pages        = {330--366},\n  year         = {2018},\n  url          = {https://doi.org/10.1137/16M1105220},\n  doi          = {10.1137/16M1105220},\n  timestamp    = {Sun, 19 Jan 2025 14:37:00 +0100},\n  biburl       = {https://dblp.org/rec/journals/siamcomp/FeldmanZ18.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+            "@inproceedings{DBLP:conf/focs/FeldmanZ15,\n  author       = {Moran Feldman and\n                  Rico Zenklusen},\n  editor       = {Venkatesan Guruswami},\n  title        = {The Submodular Secretary Problem Goes Linear},\n  booktitle    = {{IEEE} 56th Annual Symposium on Foundations of Computer Science, {FOCS}\n                  2015, Berkeley, CA, USA, 17-20 October, 2015},\n  pages        = {486--505},\n  publisher    = {{IEEE} Computer Society},\n  year         = {2015},\n  url          = {https://doi.org/10.1109/FOCS.2015.37},\n  doi          = {10.1109/FOCS.2015.37},\n  timestamp    = {Tue, 08 Jul 2025 16:38:00 +0200},\n  biburl       = {https://dblp.org/rec/conf/focs/FeldmanZ15.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+            "@article{DBLP:journals/corr/FeldmanZ15,\n  author       = {Moran Feldman and\n                  Rico Zenklusen},\n  title        = {The Submodular Secretary Problem Goes Linear},\n  journal      = {arXiv},\n  volume       = {abs/1507.08384},\n  year         = {2015},\n  url          = {http://arxiv.org/abs/1507.08384},\n  eprinttype   = {arXiv},\n  eprint       = {1507.08384},\n  timestamp    = {Mon, 13 Aug 2018 16:48:14 +0200},\n  biburl       = {https://dblp.org/rec/journals/corr/FeldmanZ15.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
+        ],
+        "dblp_url": "https://dblp.org/rec/journals/siamcomp/FeldmanZ18",
+        "category": "A",
+        "versions": [
+            "arXiv",
+            "FOCS 2015",
+            "SIAM J. Comput. 2018"
+        ],
+        "tags": [
+            "Submodular"
+        ]
     },
     {
         "title": "Algorithms for Secretary Problems on Graphs and Hypergraphs",
@@ -313,8 +774,20 @@
         "published": "2008-07-07T22:51:46Z",
         "pdf_url": "https://arxiv.org/pdf/0807.1139v1.pdf",
         "local_pdf": "papers/0807.1139v1.pdf",
-        "bibtex": "@article{Korula2008algorithms,\n  title={Algorithms for Secretary Problems on Graphs and Hypergraphs},\n  author={Nitish Korula and Martin Pal},\n  journal={arXiv preprint arXiv:0807.1139},\n  year={2008}\n}",
-        "dblp_url": "https://dblp.org/rec/conf/icalp/KorulaP09"
+        "bibtex": [
+            "@inproceedings{DBLP:conf/icalp/KorulaP09,\n  author       = {Nitish Korula and\n                  Martin P{\\'{a}}l},\n  editor       = {Susanne Albers and\n                  Alberto Marchetti{-}Spaccamela and\n                  Yossi Matias and\n                  Sotiris E. Nikoletseas and\n                  Wolfgang Thomas},\n  title        = {Algorithms for Secretary Problems on Graphs and Hypergraphs},\n  booktitle    = {Automata, Languages and Programming, 36th Internatilonal Colloquium,\n                  {ICALP} 2009, Rhodes, Greece, July 5-12, 2009, Proceedings, Part {II}},\n  series       = {Lecture Notes in Computer Science},\n  pages        = {508--520},\n  publisher    = {Springer},\n  year         = {2009},\n  url          = {https://doi.org/10.1007/978-3-642-02930-1\\_42},\n  doi          = {10.1007/978-3-642-02930-1\\_42},\n  timestamp    = {Tue, 14 May 2019 10:00:44 +0200},\n  biburl       = {https://dblp.org/rec/conf/icalp/KorulaP09.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+            "@article{DBLP:journals/corr/abs-0807-1139,\n  author       = {Nitish Korula and\n                  Martin Pal},\n  title        = {Algorithms for Secretary Problems on Graphs and Hypergraphs},\n  journal      = {arXiv},\n  volume       = {abs/0807.1139},\n  year         = {2008},\n  url          = {http://arxiv.org/abs/0807.1139},\n  eprinttype   = {arXiv},\n  eprint       = {0807.1139},\n  timestamp    = {Mon, 13 Aug 2018 16:47:34 +0200},\n  biburl       = {https://dblp.org/rec/journals/corr/abs-0807-1139.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
+        ],
+        "dblp_url": "https://dblp.org/rec/conf/icalp/KorulaP09",
+        "category": "A",
+        "versions": [
+            "arXiv",
+            "ICALP 2009"
+        ],
+        "tags": [
+            "Graphic",
+            "Transversal"
+        ]
     },
     {
         "title": "Online Matroid Embeddings",
@@ -324,8 +797,17 @@
         "published": "2024-07-14T20:23:15Z",
         "pdf_url": "https://arxiv.org/pdf/2407.10316v2.pdf",
         "local_pdf": "papers/2407.10316v2.pdf",
-        "bibtex": "@article{Cristi2024online,\n  title={Online Matroid Embeddings},\n  author={Andrés Cristi and Paul Dütting and Robert Kleinberg and Renato Paes Leme and Neel Patel},\n  journal={arXiv preprint arXiv:2407.10316},\n  year={2024}\n}",
-        "dblp_url": "https://dblp.org/rec/journals/corr/abs-2407-10316"
+        "bibtex": [
+            "@article{DBLP:journals/corr/abs-2407-10316,\n  author       = {Andr{\\'{e}}s Cristi and\n                  Paul D{\\\"{u}}tting and\n                  Robert Kleinberg and\n                  Renato Paes Leme},\n  title        = {Online Matroid Embeddings},\n  journal      = {arXiv},\n  volume       = {abs/2407.10316},\n  year         = {2024},\n  url          = {https://doi.org/10.48550/arXiv.2407.10316},\n  doi          = {10.48550/ARXIV.2407.10316},\n  eprinttype   = {arXiv},\n  eprint       = {2407.10316},\n  timestamp    = {Thu, 15 Aug 2024 11:21:00 +0200},\n  biburl       = {https://dblp.org/rec/journals/corr/abs-2407-10316.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
+        ],
+        "dblp_url": "https://dblp.org/rec/journals/corr/abs-2407-10316",
+        "category": "B",
+        "versions": [
+            "arXiv"
+        ],
+        "tags": [
+            "General"
+        ]
     },
     {
         "title": "Improved Submodular Secretary Problem with Shortlists",
@@ -335,7 +817,16 @@
         "published": "2020-10-02T17:59:42Z",
         "pdf_url": "https://arxiv.org/pdf/2010.01901v2.pdf",
         "local_pdf": "papers/2010.01901v2.pdf",
-        "bibtex": "@article{Shadravan2020improved,\n  title={Improved Submodular Secretary Problem with Shortlists},\n  author={Mohammad Shadravan},\n  journal={arXiv preprint arXiv:2010.01901},\n  year={2020}\n}"
+        "bibtex": [
+            "@article{DBLP:journals/corr/abs-2010-01901,\n  author       = {Mohammad Shadravan},\n  title        = {Improved Submodular Secretary Problem with Shortlists},\n  journal      = {arXiv},\n  volume       = {abs/2010.01901},\n  year         = {2020},\n  url          = {https://arxiv.org/abs/2010.01901},\n  eprinttype   = {arXiv},\n  eprint       = {2010.01901},\n  timestamp    = {Mon, 12 Oct 2020 17:53:10 +0200},\n  biburl       = {https://dblp.org/rec/journals/corr/abs-2010-01901.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
+        ],
+        "category": "B",
+        "versions": [
+            "arXiv"
+        ],
+        "tags": [
+            "Submodular"
+        ]
     },
     {
         "title": "Robust Secretary and Prophet Algorithms for Packing Integer Programs",
@@ -345,7 +836,19 @@
         "published": "2021-12-24T02:47:36Z",
         "pdf_url": "https://arxiv.org/pdf/2112.12920v1.pdf",
         "local_pdf": "papers/2112.12920v1.pdf",
-        "bibtex": "@article{Argue2021robust,\n  title={Robust Secretary and Prophet Algorithms for Packing Integer Programs},\n  author={C. J. Argue and Anupam Gupta and Marco Molinaro and Sahil Singla},\n  journal={arXiv preprint arXiv:2112.12920},\n  year={2021}\n}"
+        "bibtex": [
+            "@inproceedings{DBLP:conf/soda/ArgueGMS22,\n  author       = {C. J. Argue and\n                  Anupam Gupta and\n                  Marco Molinaro and\n                  Sahil Singla},\n  editor       = {Joseph (Seffi) Naor and\n                  Niv Buchbinder},\n  title        = {Robust Secretary and Prophet Algorithms for Packing Integer Programs},\n  booktitle    = {Proceedings of the 2022 {ACM-SIAM} Symposium on Discrete Algorithms,\n                  {SODA} 2022, Virtual Conference / Alexandria, VA, USA, January 9 -\n                  12, 2022},\n  pages        = {1273--1297},\n  publisher    = {{SIAM}},\n  year         = {2022},\n  url          = {https://doi.org/10.1137/1.9781611977073.53},\n  doi          = {10.1137/1.9781611977073.53},\n  timestamp    = {Sun, 04 Aug 2024 19:38:54 +0200},\n  biburl       = {https://dblp.org/rec/conf/soda/ArgueGMS22.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+            "@article{DBLP:journals/corr/abs-2112-12920,\n  author       = {C. J. Argue and\n                  Anupam Gupta and\n                  Marco Molinaro and\n                  Sahil Singla},\n  title        = {Robust Secretary and Prophet Algorithms for Packing Integer Programs},\n  journal      = {arXiv},\n  volume       = {abs/2112.12920},\n  year         = {2021},\n  url          = {https://arxiv.org/abs/2112.12920},\n  eprinttype   = {arXiv},\n  eprint       = {2112.12920},\n  timestamp    = {Sat, 05 Mar 2022 15:53:30 +0100},\n  biburl       = {https://dblp.org/rec/journals/corr/abs-2112-12920.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
+        ],
+        "category": "B",
+        "versions": [
+            "arXiv",
+            "SODA 2022"
+        ],
+        "tags": [
+            "Uniform/Small-k",
+            "Prophet Inequality"
+        ]
     },
     {
         "title": "Free-order secretary for two-sided independence systems",
@@ -355,7 +858,16 @@
         "published": "2025-11-06T14:20:06Z",
         "pdf_url": "https://arxiv.org/pdf/2511.04390v1.pdf",
         "local_pdf": "papers/2511.04390v1.pdf",
-        "bibtex": "@article{Brczi2025freeorder,\n  title={Free-order secretary for two-sided independence systems},\n  author={Kristóf Bérczi and Vasilis Livanos and José A. Soto and Victor Verdugo},\n  journal={arXiv preprint arXiv:2511.04390},\n  year={2025}\n}"
+        "bibtex": [
+            "@article{DBLP:journals/corr/abs-2511-04390,\n  author       = {Krist{\\'{o}}f B{\\'{e}}rczi and\n                  Vasilis Livanos and\n                  Jos{\\'{e}} A. Soto and\n                  Victor Verdugo},\n  title        = {Free-order secretary for two-sided independence systems},\n  journal      = {arXiv},\n  volume       = {abs/2511.04390},\n  year         = {2025},\n  url          = {https://doi.org/10.48550/arXiv.2511.04390},\n  doi          = {10.48550/ARXIV.2511.04390},\n  eprinttype   = {arXiv},\n  eprint       = {2511.04390},\n  timestamp    = {Thu, 27 Nov 2025 20:57:34 +0100},\n  biburl       = {https://dblp.org/rec/journals/corr/abs-2511-04390.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
+        ],
+        "category": "B",
+        "versions": [
+            "arXiv"
+        ],
+        "tags": [
+            "Free Order"
+        ]
     },
     {
         "title": "Sample-Based Matroid Prophet Inequalities",
@@ -365,7 +877,19 @@
         "published": "2024-06-18T17:11:55Z",
         "pdf_url": "https://arxiv.org/pdf/2406.12799v1.pdf",
         "local_pdf": "papers/2406.12799v1.pdf",
-        "bibtex": "@article{Fu2024samplebased,\n  title={Sample-Based Matroid Prophet Inequalities},\n  author={Hu Fu and Pinyan Lu and Zhihao Gavin Tang and Hongxun Wu and Jinzhao Wu and Qianfan Zhang},\n  journal={arXiv preprint arXiv:2406.12799},\n  year={2024}\n}"
+        "bibtex": [
+            "@inproceedings{DBLP:conf/sigecom/0001LTWW024,\n  author       = {Hu Fu and\n                  Pinyan Lu and\n                  Zhihao Gavin Tang and\n                  Hongxun Wu and\n                  Jinzhao Wu and\n                  Qianfan Zhang},\n  editor       = {Dirk Bergemann and\n                  Robert Kleinberg and\n                  Daniela Sab{\\'{a}}n},\n  title        = {Sample-Based Matroid Prophet Inequalities},\n  booktitle    = {Proceedings of the 25th {ACM} Conference on Economics and Computation,\n                  {EC} 2024, New Haven, CT, USA, July 8-11, 2024},\n  pages        = {781},\n  publisher    = {{ACM}},\n  year         = {2024},\n  url          = {https://doi.org/10.1145/3670865.3673506},\n  doi          = {10.1145/3670865.3673506},\n  timestamp    = {Sun, 22 Dec 2024 15:48:36 +0100},\n  biburl       = {https://dblp.org/rec/conf/sigecom/0001LTWW024.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+            "@article{DBLP:journals/corr/abs-2406-12799,\n  author       = {Hu Fu and\n                  Pinyan Lu and\n                  Zhihao Gavin Tang and\n                  Hongxun Wu and\n                  Jinzhao Wu and\n                  Qianfan Zhang},\n  title        = {Sample-Based Matroid Prophet Inequalities},\n  journal      = {arXiv},\n  volume       = {abs/2406.12799},\n  year         = {2024},\n  url          = {https://doi.org/10.48550/arXiv.2406.12799},\n  doi          = {10.48550/ARXIV.2406.12799},\n  eprinttype   = {arXiv},\n  eprint       = {2406.12799},\n  timestamp    = {Mon, 03 Mar 2025 21:34:39 +0100},\n  biburl       = {https://dblp.org/rec/journals/corr/abs-2406-12799.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
+        ],
+        "category": "B",
+        "versions": [
+            "arXiv",
+            "EC 024"
+        ],
+        "tags": [
+            "Contention Resolution",
+            "Prophet Inequality"
+        ]
     },
     {
         "title": "Constrained Non-Monotone Submodular Maximization: Offline and Secretary Algorithms",
@@ -375,7 +899,19 @@
         "published": "2010-03-07T19:27:48Z",
         "pdf_url": "https://arxiv.org/pdf/1003.1517v2.pdf",
         "local_pdf": "papers/1003.1517v2.pdf",
-        "bibtex": "@article{Gupta2010constrained,\n  title={Constrained Non-Monotone Submodular Maximization: Offline and Secretary Algorithms},\n  author={Anupam Gupta and Aaron Roth and Grant Schoenebeck and Kunal Talwar},\n  journal={arXiv preprint arXiv:1003.1517},\n  year={2010}\n}"
+        "bibtex": [
+            "@inproceedings{DBLP:conf/wine/GuptaRST10,\n  author       = {Anupam Gupta and\n                  Aaron Roth and\n                  Grant Schoenebeck and\n                  Kunal Talwar},\n  editor       = {Amin Saberi},\n  title        = {Constrained Non-monotone Submodular Maximization: Offline and Secretary\n                  Algorithms},\n  booktitle    = {Internet and Network Economics - 6th International Workshop, {WINE}\n                  2010, Stanford, CA, USA, December 13-17, 2010. Proceedings},\n  series       = {Lecture Notes in Computer Science},\n  pages        = {246--257},\n  publisher    = {Springer},\n  year         = {2010},\n  url          = {https://doi.org/10.1007/978-3-642-17572-5\\_20},\n  doi          = {10.1007/978-3-642-17572-5\\_20},\n  timestamp    = {Sat, 30 Sep 2023 09:59:10 +0200},\n  biburl       = {https://dblp.org/rec/conf/wine/GuptaRST10.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+            "@article{DBLP:journals/corr/abs-1003-1517,\n  author       = {Anupam Gupta and\n                  Aaron Roth and\n                  Grant Schoenebeck and\n                  Kunal Talwar},\n  title        = {Constrained Non-Monotone Submodular Maximization: Offline and Secretary\n                  Algorithms},\n  journal      = {arXiv},\n  volume       = {abs/1003.1517},\n  year         = {2010},\n  url          = {http://arxiv.org/abs/1003.1517},\n  eprinttype   = {arXiv},\n  eprint       = {1003.1517},\n  timestamp    = {Wed, 18 Aug 2021 17:14:16 +0200},\n  biburl       = {https://dblp.org/rec/journals/corr/abs-1003-1517.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
+        ],
+        "category": "B",
+        "versions": [
+            "arXiv",
+            "WINE 2010"
+        ],
+        "tags": [
+            "Uniform/Small-k",
+            "Submodular"
+        ]
     },
     {
         "title": "Secretary and Online Matching Problems with Machine Learned Advice",
@@ -385,7 +921,20 @@
         "published": "2020-06-01T15:44:29Z",
         "pdf_url": "https://arxiv.org/pdf/2006.01026v2.pdf",
         "local_pdf": "papers/2006.01026v2.pdf",
-        "bibtex": "@article{Antoniadis2020secretary,\n  title={Secretary and Online Matching Problems with Machine Learned Advice},\n  author={Antonios Antoniadis and Themis Gouleakis and Pieter Kleer and Pavel Kolev},\n  journal={arXiv preprint arXiv:2006.01026},\n  year={2020}\n}"
+        "bibtex": [
+            "@inproceedings{DBLP:conf/nips/AntoniadisGKK20,\n  author       = {Antonios Antoniadis and\n                  Themis Gouleakis and\n                  Pieter Kleer and\n                  Pavel Kolev},\n  editor       = {Hugo Larochelle and\n                  Marc'Aurelio Ranzato and\n                  Raia Hadsell and\n                  Maria{-}Florina Balcan and\n                  Hsuan{-}Tien Lin},\n  title        = {Secretary and Online Matching Problems with Machine Learned Advice},\n  booktitle    = {Advances in Neural Information Processing Systems 33: Annual Conference\n                  on Neural Information Processing Systems 2020, NeurIPS 2020, December\n                  6-12, 2020, virtual},\n  year         = {2020},\n  url          = {https://proceedings.neurips.cc/paper/2020/hash/5a378f8490c8d6af8647a753812f6e31-Abstract.html},\n  timestamp    = {Wed, 10 May 2023 10:24:10 +0200},\n  biburl       = {https://dblp.org/rec/conf/nips/AntoniadisGKK20.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+            "@article{DBLP:journals/corr/abs-2006-01026,\n  author       = {Antonios Antoniadis and\n                  Themis Gouleakis and\n                  Pieter Kleer and\n                  Pavel Kolev},\n  title        = {Secretary and Online Matching Problems with Machine Learned Advice},\n  journal      = {arXiv},\n  volume       = {abs/2006.01026},\n  year         = {2020},\n  url          = {https://arxiv.org/abs/2006.01026},\n  eprinttype   = {arXiv},\n  eprint       = {2006.01026},\n  timestamp    = {Wed, 10 May 2023 10:24:10 +0200},\n  biburl       = {https://dblp.org/rec/journals/corr/abs-2006-01026.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+            "@article{DBLP:journals/disopt/AntoniadisGKK23,\n  author       = {Antonios Antoniadis and\n                  Themis Gouleakis and\n                  Pieter Kleer and\n                  Pavel Kolev},\n  title        = {Secretary and online matching problems with machine learned advice},\n  journal      = {Discret. Optim.},\n  volume       = {48},\n  number       = {Part 2},\n  pages        = {100778},\n  year         = {2023},\n  url          = {https://doi.org/10.1016/j.disopt.2023.100778},\n  doi          = {10.1016/J.DISOPT.2023.100778},\n  timestamp    = {Mon, 03 Mar 2025 21:36:54 +0100},\n  biburl       = {https://dblp.org/rec/journals/disopt/AntoniadisGKK23.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
+        ],
+        "category": "B",
+        "versions": [
+            "arXiv",
+            "NeurIPS 2020",
+            "Discret. Optim. 2023"
+        ],
+        "tags": [
+            "Graphic"
+        ]
     },
     {
         "title": "Building a Good Team: Secretary Problems and the Supermodular Degree",
@@ -395,7 +944,18 @@
         "published": "2015-07-22T14:15:10Z",
         "pdf_url": "https://arxiv.org/pdf/1507.06199v1.pdf",
         "local_pdf": "papers/1507.06199v1.pdf",
-        "bibtex": "@article{Feldman2015building,\n  title={Building a Good Team: Secretary Problems and the Supermodular Degree},\n  author={Moran Feldman and Rani Izsak},\n  journal={arXiv preprint arXiv:1507.06199},\n  year={2015}\n}"
+        "bibtex": [
+            "@inproceedings{DBLP:conf/soda/FeldmanI17,\n  author       = {Moran Feldman and\n                  Rani Izsak},\n  editor       = {Philip N. Klein},\n  title        = {Building a Good Team: Secretary Problems and the Supermodular Degree},\n  booktitle    = {Proceedings of the Twenty-Eighth Annual {ACM-SIAM} Symposium on Discrete\n                  Algorithms, {SODA} 2017, Barcelona, Spain, Hotel Porta Fira, January\n                  16-19},\n  pages        = {1651--1670},\n  publisher    = {{SIAM}},\n  year         = {2017},\n  url          = {https://doi.org/10.1137/1.9781611974782.109},\n  doi          = {10.1137/1.9781611974782.109},\n  timestamp    = {Tue, 02 Feb 2021 17:07:42 +0100},\n  biburl       = {https://dblp.org/rec/conf/soda/FeldmanI17.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+            "@article{DBLP:journals/corr/FeldmanI15,\n  author       = {Moran Feldman and\n                  Rani Izsak},\n  title        = {Building a Good Team: Secretary Problems and the Supermodular Degree},\n  journal      = {arXiv},\n  volume       = {abs/1507.06199},\n  year         = {2015},\n  url          = {http://arxiv.org/abs/1507.06199},\n  eprinttype   = {arXiv},\n  eprint       = {1507.06199},\n  timestamp    = {Mon, 13 Aug 2018 16:48:04 +0200},\n  biburl       = {https://dblp.org/rec/journals/corr/FeldmanI15.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
+        ],
+        "category": "B",
+        "versions": [
+            "arXiv",
+            "SODA 2017"
+        ],
+        "tags": [
+            "Submodular"
+        ]
     },
     {
         "title": "Packing Returning Secretaries",
@@ -405,7 +965,20 @@
         "published": "2018-10-26T07:51:43Z",
         "pdf_url": "https://arxiv.org/pdf/1810.11216v2.pdf",
         "local_pdf": "papers/1810.11216v2.pdf",
-        "bibtex": "@article{Hoefer2018packing,\n  title={Packing Returning Secretaries},\n  author={Martin Hoefer and Lisa Wilhelmi},\n  journal={arXiv preprint arXiv:1810.11216},\n  year={2018}\n}"
+        "bibtex": [
+            "@article{DBLP:journals/networks/HoeferW21,\n  author       = {Martin Hoefer and\n                  Lisa Wilhelmi},\n  title        = {Packing returning secretaries},\n  journal      = {Networks},\n  volume       = {77},\n  number       = {3},\n  pages        = {454--471},\n  year         = {2021},\n  url          = {https://doi.org/10.1002/net.22000},\n  doi          = {10.1002/NET.22000},\n  timestamp    = {Fri, 14 May 2021 08:30:54 +0200},\n  biburl       = {https://dblp.org/rec/journals/networks/HoeferW21.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+            "@inproceedings{DBLP:conf/isaac/HoeferW18,\n  author       = {Martin Hoefer and\n                  Lisa Wilhelmi},\n  editor       = {Wen{-}Lian Hsu and\n                  Der{-}Tsai Lee and\n                  Chung{-}Shou Liao},\n  title        = {Packing Returning Secretaries},\n  booktitle    = {29th International Symposium on Algorithms and Computation, {ISAAC}\n                  2018, Jiaoxi, Yilan, Taiwan, December 16-19, 2018},\n  series       = {LIPIcs},\n  pages        = {65:1--65:12},\n  publisher    = {Schloss Dagstuhl - Leibniz-Zentrum f{\\\"{u}}r Informatik},\n  year         = {2018},\n  url          = {https://doi.org/10.4230/LIPIcs.ISAAC.2018.65},\n  doi          = {10.4230/LIPICS.ISAAC.2018.65},\n  timestamp    = {Fri, 21 Nov 2025 23:44:11 +0100},\n  biburl       = {https://dblp.org/rec/conf/isaac/HoeferW18.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+            "@article{DBLP:journals/corr/abs-1810-11216,\n  author       = {Martin Hoefer and\n                  Lisa Wilhelmi},\n  title        = {Packing Returning Secretaries},\n  journal      = {arXiv},\n  volume       = {abs/1810.11216},\n  year         = {2018},\n  url          = {http://arxiv.org/abs/1810.11216},\n  eprinttype   = {arXiv},\n  eprint       = {1810.11216},\n  timestamp    = {Fri, 26 Mar 2021 08:28:27 +0100},\n  biburl       = {https://dblp.org/rec/journals/corr/abs-1810-11216.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
+        ],
+        "category": "B",
+        "versions": [
+            "arXiv",
+            "ISAAC 2018",
+            "Networks 2021"
+        ],
+        "tags": [
+            "General"
+        ]
     },
     {
         "title": "Simple Random Order Contention Resolution for Graphic Matroids with Almost no Prior Information",
@@ -415,7 +988,19 @@
         "published": "2022-11-28T08:57:07Z",
         "pdf_url": "https://arxiv.org/pdf/2211.15146v1.pdf",
         "local_pdf": "papers/2211.15146v1.pdf",
-        "bibtex": "@article{Santiago2022simple,\n  title={Simple Random Order Contention Resolution for Graphic Matroids with Almost no Prior Information},\n  author={Richard Santiago and Ivan Sergeev and Rico Zenklusen},\n  journal={arXiv preprint arXiv:2211.15146},\n  year={2022}\n}"
+        "bibtex": [
+            "@inproceedings{DBLP:conf/sosa/SantiagoSZ23,\n  author       = {Richard Santiago and\n                  Ivan Sergeev and\n                  Rico Zenklusen},\n  editor       = {Telikepalli Kavitha and\n                  Kurt Mehlhorn},\n  title        = {Simple Random Order Contention Resolution for Graphic Matroids with\n                  Almost no Prior Information},\n  booktitle    = {2023 Symposium on Simplicity in Algorithms, {SOSA} 2023, Florence,\n                  Italy, January 23-25, 2023},\n  pages        = {84--95},\n  publisher    = {{SIAM}},\n  year         = {2023},\n  url          = {https://doi.org/10.1137/1.9781611977585.ch8},\n  doi          = {10.1137/1.9781611977585.CH8},\n  timestamp    = {Sat, 30 Sep 2023 09:57:13 +0200},\n  biburl       = {https://dblp.org/rec/conf/sosa/SantiagoSZ23.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+            "@article{DBLP:journals/corr/abs-2211-15146,\n  author       = {Richard Santiago and\n                  Ivan Sergeev and\n                  Rico Zenklusen},\n  title        = {Simple Random Order Contention Resolution for Graphic Matroids with\n                  Almost no Prior Information},\n  journal      = {arXiv},\n  volume       = {abs/2211.15146},\n  year         = {2022},\n  url          = {https://doi.org/10.48550/arXiv.2211.15146},\n  doi          = {10.48550/ARXIV.2211.15146},\n  eprinttype   = {arXiv},\n  eprint       = {2211.15146},\n  timestamp    = {Fri, 02 Dec 2022 15:51:04 +0100},\n  biburl       = {https://dblp.org/rec/journals/corr/abs-2211-15146.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
+        ],
+        "category": "B",
+        "versions": [
+            "arXiv",
+            "SOSA 2023"
+        ],
+        "tags": [
+            "Graphic",
+            "Contention Resolution"
+        ]
     },
     {
         "title": "Universal Online Contention Resolution with Preselected Order",
@@ -425,7 +1010,18 @@
         "published": "2025-04-23T00:09:58Z",
         "pdf_url": "https://arxiv.org/pdf/2504.16327v1.pdf",
         "local_pdf": "papers/2504.16327v1.pdf",
-        "bibtex": "@article{Zhao2025universal,\n  title={Universal Online Contention Resolution with Preselected Order},\n  author={Junyao Zhao},\n  journal={arXiv preprint arXiv:2504.16327},\n  year={2025}\n}"
+        "bibtex": [
+            "@inproceedings{DBLP:conf/icalp/000125a,\n  author       = {Junyao Zhao},\n  editor       = {Keren Censor{-}Hillel and\n                  Fabrizio Grandoni and\n                  Jo{\\\"{e}}l Ouaknine and\n                  Gabriele Puppis},\n  title        = {Universal Online Contention Resolution with Preselected Order},\n  booktitle    = {52nd International Colloquium on Automata, Languages, and Programming,\n                  {ICALP} 2025, Aarhus, Denmark, July 8-11, 2025},\n  series       = {LIPIcs},\n  pages        = {137:1--137:17},\n  publisher    = {Schloss Dagstuhl - Leibniz-Zentrum f{\\\"{u}}r Informatik},\n  year         = {2025},\n  url          = {https://doi.org/10.4230/LIPIcs.ICALP.2025.137},\n  doi          = {10.4230/LIPICS.ICALP.2025.137},\n  timestamp    = {Fri, 21 Nov 2025 23:44:11 +0100},\n  biburl       = {https://dblp.org/rec/conf/icalp/000125a.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+            "@article{DBLP:journals/corr/abs-2504-16327,\n  author       = {Junyao Zhao},\n  title        = {Universal Online Contention Resolution with Preselected Order},\n  journal      = {arXiv},\n  volume       = {abs/2504.16327},\n  year         = {2025},\n  url          = {https://doi.org/10.48550/arXiv.2504.16327},\n  doi          = {10.48550/ARXIV.2504.16327},\n  eprinttype   = {arXiv},\n  eprint       = {2504.16327},\n  timestamp    = {Wed, 23 Jul 2025 15:20:55 +0200},\n  biburl       = {https://dblp.org/rec/journals/corr/abs-2504-16327.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
+        ],
+        "category": "B",
+        "versions": [
+            "arXiv",
+            "ICALP"
+        ],
+        "tags": [
+            "Contention Resolution"
+        ]
     },
     {
         "title": "Maximizing Profit with Convex Costs in the Random-order Model",
@@ -435,7 +1031,18 @@
         "published": "2018-04-22T21:07:54Z",
         "pdf_url": "https://arxiv.org/pdf/1804.08172v1.pdf",
         "local_pdf": "papers/1804.08172v1.pdf",
-        "bibtex": "@article{Gupta2018maximizing,\n  title={Maximizing Profit with Convex Costs in the Random-order Model},\n  author={Anupam Gupta and Ruta Mehta and Marco Molinaro},\n  journal={arXiv preprint arXiv:1804.08172},\n  year={2018}\n}"
+        "bibtex": [
+            "@inproceedings{DBLP:conf/icalp/GuptaMM18,\n  author       = {Anupam Gupta and\n                  Ruta Mehta and\n                  Marco Molinaro},\n  editor       = {Ioannis Chatzigiannakis and\n                  Christos Kaklamanis and\n                  D{\\'{a}}niel Marx and\n                  Donald Sannella},\n  title        = {Maximizing Profit with Convex Costs in the Random-order Model},\n  booktitle    = {45th International Colloquium on Automata, Languages, and Programming,\n                  {ICALP} 2018, Prague, Czech Republic, July 9-13, 2018},\n  series       = {LIPIcs},\n  pages        = {71:1--71:14},\n  publisher    = {Schloss Dagstuhl - Leibniz-Zentrum f{\\\"{u}}r Informatik},\n  year         = {2018},\n  url          = {https://doi.org/10.4230/LIPIcs.ICALP.2018.71},\n  doi          = {10.4230/LIPICS.ICALP.2018.71},\n  timestamp    = {Fri, 21 Nov 2025 23:44:11 +0100},\n  biburl       = {https://dblp.org/rec/conf/icalp/GuptaMM18.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+            "@article{DBLP:journals/corr/abs-1804-08172,\n  author       = {Anupam Gupta and\n                  Ruta Mehta and\n                  Marco Molinaro},\n  title        = {Maximizing Profit with Convex Costs in the Random-order Model},\n  journal      = {arXiv},\n  volume       = {abs/1804.08172},\n  year         = {2018},\n  url          = {http://arxiv.org/abs/1804.08172},\n  eprinttype   = {arXiv},\n  eprint       = {1804.08172},\n  timestamp    = {Sat, 05 Mar 2022 15:53:29 +0100},\n  biburl       = {https://dblp.org/rec/journals/corr/abs-1804-08172.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
+        ],
+        "category": "B",
+        "versions": [
+            "arXiv",
+            "ICALP 2018"
+        ],
+        "tags": [
+            "Submodular"
+        ]
     },
     {
         "title": "Single-Sample Prophet Inequalities Revisited",
@@ -445,7 +1052,17 @@
         "published": "2021-03-24T11:03:05Z",
         "pdf_url": "https://arxiv.org/pdf/2103.13089v2.pdf",
         "local_pdf": "papers/2103.13089v2.pdf",
-        "bibtex": "@article{Caramanis2021singlesample,\n  title={Single-Sample Prophet Inequalities Revisited},\n  author={Constantine Caramanis and Matthew Faw and Orestis Papadigenopoulos and Emmanouil Pountourakis},\n  journal={arXiv preprint arXiv:2103.13089},\n  year={2021}\n}"
+        "bibtex": [
+            "@article{DBLP:journals/corr/abs-2103-13089,\n  author       = {Constantine Caramanis and\n                  Matthew Faw and\n                  Orestis Papadigenopoulos and\n                  Emmanouil Pountourakis},\n  title        = {Single-Sample Prophet Inequalities Revisited},\n  journal      = {arXiv},\n  volume       = {abs/2103.13089},\n  year         = {2021},\n  url          = {https://arxiv.org/abs/2103.13089},\n  eprinttype   = {arXiv},\n  eprint       = {2103.13089},\n  timestamp    = {Tue, 06 Apr 2021 19:06:07 +0200},\n  biburl       = {https://dblp.org/rec/journals/corr/abs-2103-13089.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
+        ],
+        "category": "B",
+        "versions": [
+            "arXiv"
+        ],
+        "tags": [
+            "Transversal",
+            "Prophet Inequality"
+        ]
     },
     {
         "title": "Online Ordinal Problems: Optimality of Comparison-based Algorithms and their Cardinal Complexity",
@@ -455,7 +1072,16 @@
         "published": "2022-04-04T12:11:48Z",
         "pdf_url": "https://arxiv.org/pdf/2204.01418v3.pdf",
         "local_pdf": "papers/2204.01418v3.pdf",
-        "bibtex": "@article{Gravin2022online,\n  title={Online Ordinal Problems: Optimality of Comparison-based Algorithms and their Cardinal Complexity},\n  author={Nick Gravin and Enze Sun and Zhihao Gavin Tang},\n  journal={arXiv preprint arXiv:2204.01418},\n  year={2022}\n}"
+        "bibtex": [
+            "@inproceedings{DBLP:conf/focs/GravinST23,\n  author       = {Nick Gravin and\n                  Enze Sun and\n                  Zhihao Gavin Tang},\n  title        = {Online Ordinal Problems: Optimality of Comparison-based Algorithms\n                  and their Cardinal Complexity},\n  booktitle    = {64th {IEEE} Annual Symposium on Foundations of Computer Science, {FOCS}\n                  2023, Santa Cruz, CA, USA, November 6-9, 2023},\n  pages        = {1863--1876},\n  publisher    = {{IEEE}},\n  year         = {2023},\n  url          = {https://doi.org/10.1109/FOCS57990.2023.00113},\n  doi          = {10.1109/FOCS57990.2023.00113},\n  timestamp    = {Tue, 08 Jul 2025 16:39:40 +0200},\n  biburl       = {https://dblp.org/rec/conf/focs/GravinST23.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
+        ],
+        "category": "B",
+        "versions": [
+            "FOCS 2023"
+        ],
+        "tags": [
+            "Ordinal Model"
+        ]
     },
     {
         "title": "On Submodular Prophet Inequalities and Correlation Gap",
@@ -465,7 +1091,22 @@
         "published": "2021-07-08T07:48:04Z",
         "pdf_url": "https://arxiv.org/pdf/2107.03662v1.pdf",
         "local_pdf": "papers/2107.03662v1.pdf",
-        "bibtex": "@article{Chekuri2021on,\n  title={On Submodular Prophet Inequalities and Correlation Gap},\n  author={Chandra Chekuri and Vasilis Livanos},\n  journal={arXiv preprint arXiv:2107.03662},\n  year={2021}\n}"
+        "bibtex": [
+            "@inproceedings{DBLP:conf/sagt/ChekuriL21,\n  author       = {Chandra Chekuri and\n                  Vasilis Livanos},\n  editor       = {Ioannis Caragiannis and\n                  Kristoffer Arnsfelt Hansen},\n  title        = {On Submodular Prophet Inequalities and Correlation Gap},\n  booktitle    = {Algorithmic Game Theory - 14th International Symposium, {SAGT} 2021,\n                  Aarhus, Denmark, September 21-24, 2021, Proceedings},\n  series       = {Lecture Notes in Computer Science},\n  pages        = {410},\n  publisher    = {Springer},\n  year         = {2021},\n  url          = {https://link.springer.com/content/pdf/bbm\\%3A978-3-030-85947-3\\%2F1.pdf},\n  timestamp    = {Wed, 27 Oct 2021 09:32:07 +0200},\n  biburl       = {https://dblp.org/rec/conf/sagt/ChekuriL21.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+            "@article{DBLP:journals/corr/abs-2107-03662,\n  author       = {Chandra Chekuri and\n                  Vasilis Livanos},\n  title        = {On Submodular Prophet Inequalities and Correlation Gap},\n  journal      = {arXiv},\n  volume       = {abs/2107.03662},\n  year         = {2021},\n  url          = {https://arxiv.org/abs/2107.03662},\n  eprinttype   = {arXiv},\n  eprint       = {2107.03662},\n  timestamp    = {Tue, 20 Jul 2021 15:08:33 +0200},\n  biburl       = {https://dblp.org/rec/journals/corr/abs-2107-03662.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+            "@article{DBLP:journals/tcs/ChekuriL24,\n  author       = {Chandra Chekuri and\n                  Vasilis Livanos},\n  title        = {On submodular prophet inequalities and correlation gap},\n  journal      = {Theor. Comput. Sci.},\n  volume       = {1019},\n  pages        = {114814},\n  year         = {2024},\n  url          = {https://doi.org/10.1016/j.tcs.2024.114814},\n  doi          = {10.1016/J.TCS.2024.114814},\n  timestamp    = {Sun, 01 Feb 2026 13:43:52 +0100},\n  biburl       = {https://dblp.org/rec/journals/tcs/ChekuriL24.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
+        ],
+        "category": "B",
+        "versions": [
+            "arXiv",
+            "SAGT 2021",
+            "Theor. Comput. Sci. 2024"
+        ],
+        "tags": [
+            "Submodular",
+            "Contention Resolution",
+            "Prophet Inequality"
+        ]
     },
     {
         "title": "Online Combinatorial Assignment in Independence Systems",
@@ -475,36 +1116,126 @@
         "published": "2023-11-01T22:46:41Z",
         "pdf_url": "https://arxiv.org/pdf/2311.00890v1.pdf",
         "local_pdf": "papers/2311.00890v1.pdf",
-        "bibtex": "@article{Marinkovic2023online,\n  title={Online Combinatorial Assignment in Independence Systems},\n  author={Javier Marinkovic and José A. Soto and Victor Verdugo},\n  journal={arXiv preprint arXiv:2311.00890},\n  year={2023}\n}"
+        "bibtex": [
+            "@inproceedings{DBLP:conf/ipco/MarinkovicSV24,\n  author       = {Javier Marinkovic and\n                  Jos{\\'{e}} A. Soto and\n                  Victor Verdugo},\n  editor       = {Jens Vygen and\n                  Jaroslaw Byrka},\n  title        = {Online Combinatorial Assignment in Independence Systems},\n  booktitle    = {Integer Programming and Combinatorial Optimization - 25th International\n                  Conference, {IPCO} 2024, Wroc{\\l}aw, Poland, July 3-5, 2024, Proceedings},\n  series       = {Lecture Notes in Computer Science},\n  pages        = {294--308},\n  publisher    = {Springer},\n  year         = {2024},\n  url          = {https://doi.org/10.1007/978-3-031-59835-7\\_22},\n  doi          = {10.1007/978-3-031-59835-7\\_22},\n  timestamp    = {Thu, 04 Jul 2024 22:05:26 +0200},\n  biburl       = {https://dblp.org/rec/conf/ipco/MarinkovicSV24.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+            "@article{DBLP:journals/corr/abs-2311-00890,\n  author       = {Javier Marinkovic and\n                  Jos{\\'{e}} A. Soto and\n                  Victor Verdugo},\n  title        = {Online Combinatorial Assignment in Independence Systems},\n  journal      = {arXiv},\n  volume       = {abs/2311.00890},\n  year         = {2023},\n  url          = {https://doi.org/10.48550/arXiv.2311.00890},\n  doi          = {10.48550/ARXIV.2311.00890},\n  eprinttype   = {arXiv},\n  eprint       = {2311.00890},\n  timestamp    = {Tue, 07 Nov 2023 18:17:14 +0100},\n  biburl       = {https://dblp.org/rec/journals/corr/abs-2311-00890.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
+        ],
+        "category": "B",
+        "versions": [
+            "arXiv",
+            "IPCO 2024"
+        ],
+        "tags": [
+            "Prophet Inequality"
+        ]
     },
     {
         "title": "Combinatorial Prophet Inequalities",
         "authors": "Aviad Rubinstein, Sahil Singla",
-        "venue": "arXiv preprint arXiv:1611.00665",
+        "venue": "SODA 2017",
         "summary": "We introduce a novel framework of Prophet Inequalities for combinatorial valuation functions. For a (non-monotone) submodular objective function over an arbitrary matroid feasibility constraint, we give an $O(1)$-competitive algorithm. For a monotone subadditive objective function over an arbitrary downward-closed feasibility constraint, we give an $O(\\log n \\log^2 r)$-competitive algorithm (where $r$ is the cardinality of the largest feasible subset). Inspired by the proof of our subadditive prophet inequality, we also obtain an $O(\\log n \\cdot \\log^2 r)$-competitive algorithm for the Secretary Problem with a monotone subadditive objective function subject to an arbitrary downward-closed feasibility constraint. Even for the special case of a cardinality feasibility constraint, our algorithm circumvents an $Ω(\\sqrt{n})$ lower bound by Bateni, Hajiaghayi, and Zadimoghaddam \\cite{BHZ13-submodular-secretary_original} in a restricted query model. En route to our submodular prophet inequality, we prove a technical result of independent interest: we show a variant of the Correlation Gap Lemma for non-monotone submodular functions.",
         "published": "2016-11-02T16:09:26Z",
-        "pdf_url": "https://arxiv.org/pdf/1611.00665v1.pdf",
+        "pdf_url": "https://arxiv.org/abs/1611.00665",
         "local_pdf": "papers/1611.00665v1.pdf",
-        "bibtex": "@article{Rubinstein2016combinatorial,\n  title={Combinatorial Prophet Inequalities},\n  author={Aviad Rubinstein and Sahil Singla},\n  journal={arXiv preprint arXiv:1611.00665},\n  year={2016}\n}"
+        "bibtex": [
+            "@article{RubinsteinS16arxiv,\n  author       = {Aviad Rubinstein and Sahil Singla},\n  title        = {Combinatorial Prophet Inequalities},\n  journal      = {arXiv},\n  volume       = {abs/1611.00665},\n  year         = {2016},\n  url          = {https://arxiv.org/abs/1611.00665}\n}",
+            "@inproceedings{DBLP:conf/soda/RubinsteinS17,\n  author       = {Aviad Rubinstein and\n                  Sahil Singla},\n  editor       = {Philip N. Klein},\n  title        = {Combinatorial Prophet Inequalities},\n  booktitle    = {Proceedings of the Twenty-Eighth Annual {ACM-SIAM} Symposium on Discrete\n                  Algorithms, {SODA} 2017, Barcelona, Spain, Hotel Porta Fira, January\n                  16-19},\n  pages        = {1671--1687},\n  publisher    = {{SIAM}},\n  year         = {2017},\n  url          = {https://doi.org/10.1137/1.9781611974782.110},\n  doi          = {10.1137/1.9781611974782.110},\n  timestamp    = {Tue, 02 Feb 2021 17:07:39 +0100},\n  biburl       = {https://dblp.org/rec/conf/soda/RubinsteinS17.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
+        ],
+        "category": "B",
+        "versions": [
+            "arXiv",
+            "SODA 2017"
+        ],
+        "tags": [
+            "Submodular",
+            "Prophet Inequality"
+        ],
+        "dblp_url": "https://dblp.org/rec/conf/soda/RubinsteinS17"
     },
     {
         "title": "Single-Sample Prophet Inequalities via Greedy-Ordered Selection",
         "authors": "Constantine Caramanis, Paul Dütting, Matthew Faw, Federico Fusco, Philip Lazos, Stefano Leonardi, Orestis Papadigenopoulos, Emmanouil Pountourakis, Rebecca Reiffenhäuser",
-        "venue": "Proceedings of the 2022 Annual ACM-SIAM Symposium on Discrete Algorithms (SODA 2022)",
+        "venue": "SODA 2022",
         "summary": "We study single-sample prophet inequalities (SSPIs), i.e., prophet inequalities where only a single sample from each prior distribution is available. Besides a direct, and optimal, SSPI for the basic single choice problem [Rubinstein et al., 2020], most existing SSPI results were obtained via an elegant, but inherently lossy, reduction to order-oblivious secretary (OOS) policies [Azar et al., 2014]. Motivated by this discrepancy, we develop an intuitive and versatile greedy-based technique that yields SSPIs directly rather than through the reduction to OOSs. Our results can be seen as generalizing and unifying a number of existing results in the area of prophet and secretary problems. Our algorithms significantly improve on the competitive guarantees for a number of interesting scenarios (including general matching with edge arrivals, bipartite matching with vertex arrivals, and certain matroids), and capture new settings (such as budget additive combinatorial auctions). Complementing our algorithmic results, we also consider mechanism design variants. Finally, we analyze the power and limitations of different SSPI approaches by providing a partial converse to the reduction from SSPI to OOS given by Azar et al.",
         "published": "2021-11-04T21:56:23Z",
         "pdf_url": "https://arxiv.org/pdf/2111.03174v2.pdf",
         "local_pdf": "papers/2111.03174v2.pdf",
-        "bibtex": "@article{Caramanis2021singlesample,\n  title={Single-Sample Prophet Inequalities via Greedy-Ordered Selection},\n  author={Constantine Caramanis and Paul Dütting and Matthew Faw and Federico Fusco and Philip Lazos and Stefano Leonardi and Orestis Papadigenopoulos and Emmanouil Pountourakis and Rebecca Reiffenhäuser},\n  journal={Proceedings of the 2022 Annual ACM-SIAM Symposium on Discrete Algorithms (SODA 2022)},\n  year={2021}\n}"
+        "bibtex": [
+            "@article{DBLP:journals/corr/abs-2111-03174,\n  author       = {Constantine Caramanis and Paul D{\\\"u}tting and Matthew Faw and Federico Fusco and Philip Lazos and Stefano Leonardi and Orestis Papadigenopoulos and Emmanouil Pountourakis and Rebecca Reiffenhauser},\n  title        = {Single-Sample Prophet Inequalities via Greedy-Ordered Selection},\n  journal      = {arXiv},\n  volume       = {abs/2111.03174},\n  year         = {2021}\n}",
+            "@inproceedings{DBLP:conf/soda/CaramanisDFFLLPPR22,\n  author       = {Constantine Caramanis and Paul D{\\\"u}tting and Matthew Faw and Federico Fusco and Philip Lazos and Stefano Leonardi and Orestis Papadigenopoulos and Emmanouil Pountourakis and Rebecca Reiffenhauser},\n  title        = {Single-Sample Prophet Inequalities via Greedy-Ordered Selection},\n  booktitle    = {Proceedings of the 2022 {ACM-SIAM} Symposium on Discrete Algorithms, {SODA} 2022, Virtual Conference / Alexandria, VA, USA, January 9 - 12, 2022},\n  pages        = {1298--1325},\n  year         = {2022},\n  doi          = {10.1137/1.9781611977073.54}\n}"
+        ],
+        "category": "B",
+        "versions": [
+            "arXiv",
+            "SODA 2022"
+        ],
+        "tags": [
+            "Prophet Inequality"
+        ],
+        "dblp_url": "https://dblp.org/rec/conf/soda/CaramanisDFFLLPPR22"
     },
     {
         "title": "Prophet Inequalities with Limited Information",
         "authors": "Pablo D. Azar, Robert Kleinberg, S. Matthew Weinberg",
-        "venue": "arXiv preprint arXiv:1307.3736",
+        "venue": "SODA 2014",
         "summary": "In the classical prophet inequality, a gambler observes a sequence of stochastic rewards $V_1,...,V_n$ and must decide, for each reward $V_i$, whether to keep it and stop the game or to forfeit the reward forever and reveal the next value $V_i$. The gambler's goal is to obtain a constant fraction of the expected reward that the optimal offline algorithm would get. Recently, prophet inequalities have been generalized to settings where the gambler can choose $k$ items, and, more generally, where he can choose any independent set in a matroid. However, all the existing algorithms require the gambler to know the distribution from which the rewards $V_1,...,V_n$ are drawn. The assumption that the gambler knows the distribution from which $V_1,...,V_n$ are drawn is very strong. Instead, we work with the much simpler assumption that the gambler only knows a few samples from this distribution. We construct the first single-sample prophet inequalities for many settings of interest, whose guarantees all match the best possible asymptotically, \\emph{even with full knowledge of the distribution}. Specifically, we provide a novel single-sample algorithm when the gambler can choose any $k$ elements whose analysis is based on random walks with limited correlation. In addition, we provide a black-box method for converting specific types of solutions to the related \\emph{secretary problem} to single-sample prophet inequalities, and apply it to several existing algorithms. Finally, we provide a constant-sample prophet inequality for constant-degree bipartite matchings. We apply these results to design the first posted-price and multi-dimensional auction mechanisms with limited information in settings with asymmetric bidders.",
         "published": "2013-07-14T13:26:26Z",
         "pdf_url": "https://arxiv.org/pdf/1307.3736v1.pdf",
         "local_pdf": "papers/1307.3736v1.pdf",
-        "bibtex": "@article{Azar2013prophet,\n  title={Prophet Inequalities with Limited Information},\n  author={Pablo D. Azar and Robert Kleinberg and S. Matthew Weinberg},\n  journal={arXiv preprint arXiv:1307.3736},\n  year={2013}\n}"
+        "bibtex": [
+            "@article{DBLP:journals/corr/abs-1307-3736,\n  author       = {Pablo D. Azar and Robert Kleinberg and S. Matthew Weinberg},\n  title        = {Prophet Inequalities with Limited Information},\n  journal      = {arXiv},\n  volume       = {abs/1307.3736},\n  year         = {2013}\n}",
+            "@inproceedings{DBLP:conf/soda/AzarKW14,\n  author       = {Pablo D. Azar and Robert Kleinberg and S. Matthew Weinberg},\n  title        = {Prophet Inequalities with Limited Information},\n  booktitle    = {Proceedings of the Twenty-Fifth Annual {ACM-SIAM} Symposium on Discrete Algorithms, {SODA} 2014, Portland, Oregon, USA, January 5-7, 2014},\n  pages        = {1358--1377},\n  year         = {2014},\n  doi          = {10.1137/1.9781611973402.100}\n}"
+        ],
+        "category": "B",
+        "versions": [
+            "arXiv",
+            "SODA 2014"
+        ],
+        "tags": [
+            "Prophet Inequality"
+        ],
+        "dblp_url": "https://dblp.org/rec/conf/soda/AzarKW14"
+    },
+    {
+        "title": "Revealing Optimal Thresholds for Generalized Secretary Problem via Continuous LP",
+        "authors": "T.-H. Hubert Chan, Fei Chen, Shaofeng H.-C. Jiang",
+        "venue": "SODA 2015",
+        "summary": "Provides optimal competitive ratios for the generalized secretary problem, including the 2-choice 2-best case, which corresponds to small uniform matroids.",
+        "pdf_url": "https://dl.acm.org/doi/10.5555/2794367.2794451",
+        "local_pdf": "#",
+        "dblp_url": "https://dblp.org/rec/conf/soda/ChanCJ15",
+        "bibtex": [
+            "@inproceedings{DBLP:conf/soda/ChanCJ15,\n  author       = {T.{-}H. Hubert Chan and\n                  Fei Chen and\n                  Shaofeng H.{-}C. Jiang},\n  editor       = {Piotr Indyk},\n  title        = {Revealing Optimal Thresholds for Generalized Secretary Problem via\n                  Continuous {LP:} Impacts on Online \\emph{K}-Item Auction and Bipartite\n                  \\emph{K}-Matching with Random Arrival Order},\n  booktitle    = {Proceedings of the Twenty-Sixth Annual {ACM-SIAM} Symposium on Discrete\n                  Algorithms, {SODA} 2015, San Diego, CA, USA, January 4-6, 2015},\n  pages        = {1169--1188},\n  publisher    = {{SIAM}},\n  year         = {2015},\n  url          = {https://doi.org/10.1137/1.9781611973730.78},\n  doi          = {10.1137/1.9781611973730.78},\n  timestamp    = {Tue, 02 Feb 2021 17:07:44 +0100},\n  biburl       = {https://dblp.org/rec/conf/soda/ChanCJ15.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
+        ],
+        "category": "A",
+        "versions": [
+            "SODA 2015"
+        ],
+        "tags": [
+            "Uniform/Small-k"
+        ]
+    },
+    {
+        "title": "New Results for the k-Secretary Problem",
+        "authors": "Susanne Albers, Leon Ladewig",
+        "venue": "Algorithmica 2021",
+        "summary": "Proposes and analyzes simple deterministic algorithms for the k-secretary problem that achieve competitive ratios strictly greater than 1/e for k >= 2.",
+        "pdf_url": "https://link.springer.com/article/10.1007/s00453-021-00816-4",
+        "local_pdf": "#",
+        "dblp_url": "https://dblp.org/rec/journals/algorithmica/AlbersL21",
+        "bibtex": [
+            "@article{DBLP:journals/tcs/AlbersL21,\n  author       = {Susanne Albers and\n                  Leon Ladewig},\n  title        = {New results for the \\emph{k}-secretary problem},\n  journal      = {Theor. Comput. Sci.},\n  volume       = {863},\n  pages        = {102--119},\n  year         = {2021},\n  url          = {https://doi.org/10.1016/j.tcs.2021.02.022},\n  doi          = {10.1016/J.TCS.2021.02.022},\n  timestamp    = {Fri, 14 May 2021 08:32:29 +0200},\n  biburl       = {https://dblp.org/rec/journals/tcs/AlbersL21.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+            "@article{DBLP:journals/corr/abs-2012-00488,\n  author       = {Susanne Albers and\n                  Leon Ladewig},\n  title        = {New Results for the k-Secretary Problem},\n  journal      = {arXiv},\n  volume       = {abs/2012.00488},\n  year         = {2020},\n  url          = {https://arxiv.org/abs/2012.00488},\n  eprinttype   = {arXiv},\n  eprint       = {2012.00488},\n  timestamp    = {Fri, 04 Dec 2020 12:07:23 +0100},\n  biburl       = {https://dblp.org/rec/journals/corr/abs-2012-00488.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+            "@inproceedings{DBLP:conf/isaac/AlbersL19,\n  author       = {Susanne Albers and\n                  Leon Ladewig},\n  editor       = {Pinyan Lu and\n                  Guochuan Zhang},\n  title        = {New Results for the k-Secretary Problem},\n  booktitle    = {30th International Symposium on Algorithms and Computation, {ISAAC}\n                  2019, Shanghai University of Finance and Economics, Shanghai, China,\n                  December 8-11, 2019},\n  series       = {LIPIcs},\n  pages        = {18:1--18:19},\n  publisher    = {Schloss Dagstuhl - Leibniz-Zentrum f{\\\"{u}}r Informatik},\n  year         = {2019},\n  url          = {https://doi.org/10.4230/LIPIcs.ISAAC.2019.18},\n  doi          = {10.4230/LIPICS.ISAAC.2019.18},\n  timestamp    = {Fri, 21 Nov 2025 23:44:11 +0100},\n  biburl       = {https://dblp.org/rec/conf/isaac/AlbersL19.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
+        ],
+        "category": "A",
+        "versions": [
+            "arXiv",
+            "ISAAC 2019",
+            "Theor. Comput. Sci. 2021"
+        ],
+        "tags": [
+            "Uniform/Small-k"
+        ]
     }
 ]
