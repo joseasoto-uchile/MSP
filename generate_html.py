@@ -9,7 +9,7 @@ def find_paper_index(papers, search_terms):
             return i
     return -1
 
-def generate_html(language="en"):
+def generate_html(language="en", is_local=False):
     with open('papers_metadata.json', 'r', encoding='utf-8') as f:
         papers = json.load(f)
         
@@ -356,20 +356,25 @@ para cada función de peso \(w\) no negativa consistente con el orden subyacente
                 abs_url = f"https://arxiv.org/abs/{arxiv_id}"
                 pdf_url = f"https://arxiv.org/pdf/{arxiv_id}"
                 btn_arxiv = f'<a href="{abs_url}" class="paper-link secondary" target="_blank">{t["view_arxiv"]}</a>'
-                # If no local PDF, use arXiv PDF
-                if paper.get('local_pdf', '#') in ('#', ''):
-                    btn_local = f'<a href="{pdf_url}" class="paper-link" target="_blank">{t["read_local"]}</a>'
-                else:
-                    btn_local = f'<a href="{paper["local_pdf"]}" class="paper-link" target="_blank">{t["read_local"]}</a>'
+                btn_local = ""
+                if is_local:
+                    if paper.get('local_pdf', '#') in ('#', ''):
+                        btn_local = f'<a href="{pdf_url}" class="paper-link" target="_blank">{t["read_local"]}</a>'
+                    else:
+                        btn_local = f'<a href="{paper["local_pdf"]}" class="paper-link" target="_blank">{t["read_local"]}</a>'
             else:
                 btn_arxiv = f'<a href="{paper["pdf_url"]}" class="paper-link secondary" target="_blank">{t["view_arxiv"]}</a>'
                 has_local_file = paper.get('local_pdf', '#') not in ('#', '')
-                btn_local = (f'<a href="{paper["local_pdf"]}" class="paper-link" target="_blank">{t["read_local"]}</a>' if has_local_file else '')
+                btn_local = ""
+                if is_local and has_local_file:
+                    btn_local = f'<a href="{paper["local_pdf"]}" class="paper-link" target="_blank">{t["read_local"]}</a>'
         else:
-            btn_arxiv = ''
+            btn_arxiv = ""
             has_local_file = paper.get('local_pdf', '#') not in ('#', '')
-            btn_local = (f'<a href="{paper["local_pdf"]}" class="paper-link" target="_blank">{t["read_local"]}</a>' if has_local_file else '')
-
+            btn_local = ""
+            if is_local and has_local_file:
+                btn_local = f'<a href="{paper["local_pdf"]}" class="paper-link" target="_blank">{t["read_local"]}</a>'
+            
         btn_dblp   = (f'<a href="{paper["dblp_url"]}" class="paper-link" style="background-color:#3182ce;" target="_blank">DBLP</a>'
                       if paper.get('dblp_url') else '')
         btn_bib    = (f'<button class="paper-link dark bibtex-toggle" '
@@ -377,7 +382,25 @@ para cada función de peso \(w\) no negativa consistente con el orden subyacente
                       f'onclick="toggleBibtex(\'{bibtex_id}\')">BibTeX &#9660;</button>')
 
         card_id = f'paper-card-{i}'
-        versions_li = "".join(f"<li>{v}</li>" for v in paper.get('versions', [paper.get('venue', 'arXiv preprint')]))
+        
+        versions_li = ""
+        btn_versions = ""
+        for v in paper.get('versions', [paper.get('venue', 'arXiv preprint')]):
+            if isinstance(v, dict):
+                v_name = v.get('name', 'Unknown')
+                v_url = v.get('url')
+                v_note_text = v.get('note')
+                v_note = f" <span class='version-note'>({v_note_text})</span>" if v_note_text else ""
+                
+                if v_url:
+                    versions_li += f"<li><a class='version-link' href='{v_url}' target='_blank'>{v_name}</a>{v_note}</li>"
+                    # Create a button for this version ONLY if it's not arXiv (to avoid duplicates)
+                    if 'arxiv' not in v_name.lower():
+                        btn_versions += f'<a href="{v_url}" class="paper-link" style="background-color:#4a5568;" target="_blank">{v_name}</a>'
+                else:
+                    versions_li += f"<li>{v_name}{v_note}</li>"
+            else:
+                versions_li += f"<li>{v}</li>"
 
         card_html = f"""
             <div class="paper-card filterable-card" id="{card_id}" data-tags="{tags_data}">
@@ -399,7 +422,7 @@ para cada función de peso \(w\) no negativa consistente con el orden subyacente
                         <strong>{t['abstract']}</strong> {paper['summary']}
                     </div>
                     <div class="action-buttons">
-                        {btn_local}{btn_arxiv}{btn_dblp}{btn_bib}
+                        {btn_local}{btn_arxiv}{btn_versions}{btn_dblp}{btn_bib}
                     </div>
                     {bib_html}
                 </div>
@@ -424,17 +447,28 @@ para cada función de peso \(w\) no negativa consistente con el orden subyacente
     t['related_work_content'] = related_work_html
 
     with open('template.html', 'r', encoding='utf-8') as f:
-        html = f.read()
+        template_html = f.read()
 
+    import datetime
+    now = datetime.datetime.now()
+    t['year'] = now.strftime("%Y")
+    t['timestamp'] = now.strftime("%Y-%m-%d %H:%M:%S")
+    t['last_updated_label'] = "Last updated" if is_en else "Última actualización"
+
+    html_content = template_html
     for key, value in t.items():
-        html = html.replace(f"{{{key}}}", str(value))
-
-    filename = 'index.html' if is_en else 'index_es.html'
-    with open(filename, 'w', encoding='utf-8') as f:
-        f.write(html)
+        html_content = html_content.replace(f"{{{key}}}", str(value))
+    
+    filename = 'index_local.html' if is_local else 'index.html'
+    if not is_en:
+        filename = 'index_local_es.html' if is_local else 'index_es.html'
         
+    with open(filename, 'w', encoding='utf-8') as f:
+        f.write(html_content)
     print(f"Successfully generated {filename}")
 
 if __name__ == '__main__':
-    generate_html(language="en")
-    generate_html(language="es")
+    generate_html(language="en", is_local=False)
+    generate_html(language="es", is_local=False)
+    generate_html(language="en", is_local=True)
+    generate_html(language="es", is_local=True)

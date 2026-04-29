@@ -610,6 +610,26 @@
             .tab-button { color: #9ca3af; }
             .tab-button.active { color: #60a5fa; border-bottom-color: #60a5fa; }
             .bibtex-container pre { background: #111827; }
+            
+            .version-link { color: #60a5fa !important; }
+            .version-link:hover { color: #93c5fd !important; }
+            .version-note { color: #9ca3af; }
+        }
+        
+        .version-link {
+            color: #2b6cb0;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            font-weight: 700;
+        }
+        .version-link:hover {
+            color: #1a365d;
+        }
+        .version-note {
+            font-size: 0.85em;
+            font-style: italic;
+            color: #718096;
+            margin-left: 6px;
         }
 </style>
 
@@ -749,6 +769,8 @@
 
     <footer>
         <p>{disclaimer}</p>
+        <p>&copy; {year} <a href="http://www.dim.uchile.cl/~jsoto" target="_blank" style="color: #cbd5e0; text-decoration: underline; text-underline-offset: 2px;">José Soto</a>, Universidad de Chile.</p>
+        <p style="font-size: 0.85em; margin-top: 5px; color: #a0aec0;">{last_updated_label}: {timestamp}</p>
     </footer>
 
     <!-- Script for Tabs, BibTeX, Filters, Back-to-top -->

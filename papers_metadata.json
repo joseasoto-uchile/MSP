@@ -5,15 +5,18 @@
         "authors": "Robert Kleinberg",
         "venue": "SODA 2005",
         "summary": "Solves the multiple-choice secretary problem (equivalent to k-uniform matroids) with an asymptotically optimal success probability of 1 - O(1/sqrt(k)).",
-        "pdf_url": "https://arxiv.org/abs/0432.10705",
+        "pdf_url": "https://dblp.org/rec/conf/soda/Kleinberg05",
         "local_pdf": "#",
         "dblp_url": "https://dblp.org/rec/conf/soda/Kleinberg05",
         "bibtex": [
-            "@inproceedings{DBLP:conf/soda/Kleinberg05,\n  author       = {Robert D. Kleinberg},\n  title        = {A multiple-choice secretary algorithm with applications to online\n                  auctions},\n  booktitle    = {Proceedings of the Sixteenth Annual {ACM-SIAM} Symposium on Discrete\n                  Algorithms, {SODA} 2005, Vancouver, British Columbia, Canada, January\n                  23-25, 2005},\n  pages        = {630--631},\n  publisher    = {{SIAM}},\n  year         = {2005},\n  timestamp    = {Fri, 07 Dec 2012 17:02:09 +0100},\n  bibsource    = {dblp computer science bibliography, https://dblp.org},\n  url = {https://arxiv.org/abs/0432.10705},\n  eprinttype = {arXiv},\n  eprint = {0432.10705}\n}"
+            "@inproceedings{DBLP:conf/soda/Kleinberg05,\n  author       = {Robert D. Kleinberg},\n  title        = {A multiple-choice secretary algorithm with applications to online\n                  auctions},\n  booktitle    = {Proceedings of the Sixteenth Annual {ACM-SIAM} Symposium on Discrete\n                  Algorithms, {SODA} 2005, Vancouver, British Columbia, Canada, January\n                  23-25, 2005},\n  pages        = {630--631},\n  publisher    = {{SIAM}},\n  year         = {2005},\n  timestamp    = {Fri, 07 Dec 2012 17:02:09 +0100},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
         ],
         "category": "A",
         "versions": [
-            "SODA 2005"
+            {
+                "name": "SODA 2005",
+                "url": "https://dl.acm.org/doi/10.5555/1070432.1070519"
+            }
         ],
         "tags": [
             "Uniform/Small-k"
@@ -25,15 +28,18 @@
         "authors": "Sourav Chakraborty, Oded Lachish",
         "venue": "SODA 2012",
         "summary": "Provides an improved O(sqrt(log rank)) competitive algorithm for the general Matroid Secretary Problem.",
-        "pdf_url": "https://arxiv.org/abs/5116.20952",
+        "pdf_url": "https://dblp.org/rec/conf/soda/ChakrabortyL12",
         "local_pdf": "#",
         "dblp_url": "https://dblp.org/rec/conf/soda/ChakrabortyL12",
         "bibtex": [
-            "@inproceedings{DBLP:conf/soda/ChakrabortyL12,\n  author       = {Sourav Chakraborty and\n                  Oded Lachish},\n  editor       = {Yuval Rabani},\n  title        = {Improved competitive ratio for the matroid secretary problem},\n  booktitle    = {Proceedings of the Twenty-Third Annual {ACM-SIAM} Symposium on Discrete\n                  Algorithms, {SODA} 2012, Kyoto, Japan, January 17-19, 2012},\n  pages        = {1702--1712},\n  publisher    = {{SIAM}},\n  year         = {2012},\n  doi          = {10.1137/1.9781611973099.135},\n  timestamp    = {Tue, 14 Oct 2025 19:39:21 +0200},\n  bibsource    = {dblp computer science bibliography, https://dblp.org},\n  url = {https://arxiv.org/abs/5116.20952},\n  eprinttype = {arXiv},\n  eprint = {5116.20952}\n}"
+            "@inproceedings{DBLP:conf/soda/ChakrabortyL12,\n  author       = {Sourav Chakraborty and\n                  Oded Lachish},\n  editor       = {Yuval Rabani},\n  title        = {Improved competitive ratio for the matroid secretary problem},\n  booktitle    = {Proceedings of the Twenty-Third Annual {ACM-SIAM} Symposium on Discrete\n                  Algorithms, {SODA} 2012, Kyoto, Japan, January 17-19, 2012},\n  pages        = {1702--1712},\n  publisher    = {{SIAM}},\n  year         = {2012},\n  doi          = {10.1137/1.9781611973099.135},\n  timestamp    = {Tue, 14 Oct 2025 19:39:21 +0200},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
         ],
         "category": "A",
         "versions": [
-            "SODA 2012"
+            {
+                "name": "SODA 2012",
+                "url": "https://doi.org/10.1137/1.9781611973099.135"
+            }
         ],
         "tags": [
             "General"
@@ -55,9 +61,18 @@
         ],
         "category": "A",
         "versions": [
-            "UT Austin Technical Report TR-08-03, 2008",
-            "ICALP 2008",
-            "Algorithmica 2012"
+            {
+                "name": "Tech Report 2008",
+                "url": "https://www.cs.utexas.edu/~plaxton/c/336/techrep.html"
+            },
+            {
+                "name": "ICALP 2008",
+                "url": "https://doi.org/10.1007/978-3-540-70575-8_33"
+            },
+            {
+                "name": "Algorithmica 2012",
+                "url": "https://doi.org/10.1007/s00453-010-9457-2"
+            }
         ],
         "tags": [
             "Transversal"
@@ -69,15 +84,18 @@
         "authors": "Sungjin Im, Yajun Wang",
         "venue": "SODA 2011",
         "summary": "Presents the first constant competitive ratio algorithm for the Matroid Secretary Problem on laminar matroids.",
-        "pdf_url": "https://arxiv.org/abs/3036.21330",
+        "pdf_url": "https://dblp.org/rec/conf/soda/ImW11",
         "local_pdf": "#",
         "dblp_url": "https://dblp.org/rec/conf/soda/ImW11",
         "bibtex": [
-            "@inproceedings{DBLP:conf/soda/ImW11,\n  author       = {Sungjin Im and Yajun Wang},\n  title        = {Secretary Problems: Laminar Matroid and Interval Scheduling},\n  booktitle    = {Proceedings of the Twenty-Second Annual {ACM-SIAM} Symposium on Discrete Algorithms, {SODA} 2011, San Francisco, California, USA, January 23-25, 2011},\n  pages        = {1265--1274},\n  publisher    = {{SIAM}},\n  year         = {2011},\n  doi          = {10.1137/1.9781611973082.97},\n  url = {https://arxiv.org/abs/3036.21330},\n  eprinttype = {arXiv},\n  eprint = {3036.21330}\n}"
+            "@inproceedings{DBLP:conf/soda/ImW11,\n  author       = {Sungjin Im and Yajun Wang},\n  title        = {Secretary Problems: Laminar Matroid and Interval Scheduling},\n  booktitle    = {Proceedings of the Twenty-Second Annual {ACM-SIAM} Symposium on Discrete Algorithms, {SODA} 2011, San Francisco, California, USA, January 23-25, 2011},\n  pages        = {1265--1274},\n  publisher    = {{SIAM}},\n  year         = {2011},\n  doi          = {10.1137/1.9781611973082.97}\n}"
         ],
         "category": "A",
         "versions": [
-            "SODA 2011"
+            {
+                "name": "SODA 2011",
+                "url": "https://doi.org/10.1137/1.9781611973082.97"
+            }
         ],
         "tags": [
             "Laminar"
@@ -97,7 +115,10 @@
         ],
         "category": "A",
         "versions": [
-            "ESA 2013"
+            {
+                "name": "ESA 2013",
+                "url": "https://doi.org/10.1007/978-3-642-40450-4\\_50"
+            }
         ],
         "tags": [
             "Transversal"
@@ -109,17 +130,23 @@
         "authors": "Moshe Babaioff, Nicole Immorlica, Robert Kleinberg",
         "venue": "SODA 2007",
         "summary": "Introduces the Matroid Secretary Problem and gives the first constant-competitive algorithms for Transversal, Graphic, and Truncated Partition matroids.",
-        "pdf_url": "https://arxiv.org/abs/3383.12834",
+        "pdf_url": "https://dblp.org/rec/conf/soda/BabaioffIK07",
         "local_pdf": "#",
         "dblp_url": "https://dblp.org/rec/conf/soda/BabaioffIK07",
         "bibtex": [
-            "@inproceedings{DBLP:conf/soda/BabaioffIK07,\n  author       = {Moshe Babaioff and\n                  Nicole Immorlica and\n                  Robert Kleinberg},\n  editor       = {Nikhil Bansal and\n                  Kirk Pruhs and\n                  Clifford Stein},\n  title        = {Matroids, secretary problems, and online mechanisms},\n  booktitle    = {Proceedings of the Eighteenth Annual {ACM-SIAM} Symposium on Discrete\n                  Algorithms, {SODA} 2007, New Orleans, Louisiana, USA, January 7-9,\n                  2007},\n  pages        = {434--443},\n  publisher    = {{SIAM}},\n  year         = {2007},\n  timestamp    = {Tue, 15 Feb 2022 07:54:27 +0100},\n  bibsource    = {dblp computer science bibliography, https://dblp.org},\n  url = {https://arxiv.org/abs/3383.12834},\n  eprinttype = {arXiv},\n  eprint = {3383.12834}\n}",
-            "@article{DBLP:journals/jacm/BabaioffIKKM18,\n  author       = {Moshe Babaioff and Nicole Immorlica and David Kempe and Robert Kleinberg},\n  title        = {Matroid Secretary Problems},\n  journal      = {J. {ACM}},\n  volume       = {65},\n  number       = {6},\n  pages        = {35:1--35:26},\n  year         = {2018},\n  doi          = {10.1145/3212512},\n  url = {https://arxiv.org/abs/3383.12834},\n  eprinttype = {arXiv},\n  eprint = {3383.12834}\n}"
+            "@inproceedings{DBLP:conf/soda/BabaioffIK07,\n  author       = {Moshe Babaioff and\n                  Nicole Immorlica and\n                  Robert Kleinberg},\n  editor       = {Nikhil Bansal and\n                  Kirk Pruhs and\n                  Clifford Stein},\n  title        = {Matroids, secretary problems, and online mechanisms},\n  booktitle    = {Proceedings of the Eighteenth Annual {ACM-SIAM} Symposium on Discrete\n                  Algorithms, {SODA} 2007, New Orleans, Louisiana, USA, January 7-9,\n                  2007},\n  pages        = {434--443},\n  publisher    = {{SIAM}},\n  year         = {2007},\n  timestamp    = {Tue, 15 Feb 2022 07:54:27 +0100},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+            "@article{DBLP:journals/jacm/BabaioffIKKM18,\n  author       = {Moshe Babaioff and Nicole Immorlica and David Kempe and Robert Kleinberg},\n  title        = {Matroid Secretary Problems},\n  journal      = {J. {ACM}},\n  volume       = {65},\n  number       = {6},\n  pages        = {35:1--35:26},\n  year         = {2018},\n  doi          = {10.1145/3212512}\n}"
         ],
         "category": "A",
         "versions": [
-            "SODA 2007",
-            "J. ACM 2018"
+            {
+                "name": "SODA 2007",
+                "url": "https://dl.acm.org/doi/10.1145/1283383.1283429"
+            },
+            {
+                "name": "J. ACM 2018",
+                "url": "https://doi.org/10.1145/3212512"
+            }
         ],
         "tags": [
             "Graphic",
@@ -141,8 +168,14 @@
         "dblp_url": "https://dblp.org/rec/conf/innovations/Dughmi22",
         "category": "B",
         "versions": [
-            "arXiv",
-            "ITCS 2022"
+            {
+                "name": "INNOVATIONS 2022",
+                "url": "https://doi.org/10.4230/LIPICS.ITCS.2022.58"
+            },
+            {
+                "name": "arXiv",
+                "url": "https://arxiv.org/abs/2103.04205"
+            }
         ],
         "tags": [
             "Contention Resolution",
@@ -164,8 +197,14 @@
         "dblp_url": "https://dblp.org/rec/conf/ipco/JailletSZ13",
         "category": "A",
         "versions": [
-            "arXiv",
-            "IPCO 2013"
+            {
+                "name": "IPCO 2013",
+                "url": "https://doi.org/10.1007/978-3-642-36694-9\\_22"
+            },
+            {
+                "name": "arXiv",
+                "url": "https://arxiv.org/abs/1207.1333"
+            }
         ],
         "tags": [
             "Laminar",
@@ -189,9 +228,18 @@
         "dblp_url": "https://dblp.org/rec/journals/siamcomp/FeldmanSZ22",
         "category": "A",
         "versions": [
-            "arXiv",
-            "SODA 2018",
-            "SIAM J. Comput. 2022"
+            {
+                "name": "SICOMP 2022",
+                "url": "https://doi.org/10.1137/21M1411822"
+            },
+            {
+                "name": "SODA 2018",
+                "url": "https://doi.org/10.1137/1.9781611975031.48"
+            },
+            {
+                "name": "arXiv",
+                "url": "https://arxiv.org/abs/1704.02608"
+            }
         ],
         "tags": [
             "Submodular"
@@ -212,8 +260,14 @@
         "dblp_url": "https://dblp.org/rec/journals/corr/HuynhN16",
         "category": "A",
         "versions": [
-            "arXiv",
-            "SIAM J. Discrete Math. 2020"
+            {
+                "name": "arXiv",
+                "url": "https://arxiv.org/abs/1603.06822"
+            },
+            {
+                "name": "SIDMA 2020",
+                "url": "https://doi.org/10.1137/16M1107899"
+            }
         ],
         "tags": [
             "Paving/Minor-Closed"
@@ -233,7 +287,10 @@
         "dblp_url": "https://dblp.org/rec/journals/corr/abs-1301-4958",
         "category": "A",
         "versions": [
-            "arXiv"
+            {
+                "name": "arXiv",
+                "url": "https://arxiv.org/abs/1301.4958"
+            }
         ],
         "tags": [
             "Laminar"
@@ -255,9 +312,18 @@
         "dblp_url": "https://dblp.org/rec/journals/algorithmica/GharanV13",
         "category": "A",
         "versions": [
-            "arXiv",
-            "ESA 2011",
-            "Algorithmica 2013"
+            {
+                "name": "Algorithmica 2013",
+                "url": "https://doi.org/10.1007/S00453-013-9795-Y"
+            },
+            {
+                "name": "ESA 2011",
+                "url": "https://doi.org/10.1007/978-3-642-23719-5\\_29"
+            },
+            {
+                "name": "arXiv",
+                "url": "https://arxiv.org/abs/1104.4081"
+            }
         ],
         "tags": [
             "Random Assignment"
@@ -277,7 +343,10 @@
         "dblp_url": "https://dblp.org/rec/journals/corr/abs-2211-02755",
         "category": "C",
         "versions": [
-            "arXiv"
+            {
+                "name": "arXiv",
+                "url": "https://doi.org/10.48550/ARXIV.2211.02755"
+            }
         ],
         "tags": [
             "Graphic"
@@ -298,8 +367,14 @@
         "dblp_url": "https://dblp.org/rec/conf/wine/BahraniBSW21",
         "category": "B",
         "versions": [
-            "arXiv",
-            "WINE 2021"
+            {
+                "name": "WINE 2021",
+                "url": "https://doi.org/10.1007/978-3-030-94676-0\\_16"
+            },
+            {
+                "name": "arXiv",
+                "url": "https://arxiv.org/abs/2111.04114"
+            }
         ],
         "tags": [
             "General"
@@ -319,8 +394,14 @@
         ],
         "dblp_url": "https://dblp.org/rec/conf/sosa/GujjarHKQ26",
         "versions": [
-            "arXiv",
-            "SOSA 2026"
+            {
+                "name": "SOSA 2026",
+                "url": "https://doi.org/10.1137/1.9781611978964.8"
+            },
+            {
+                "name": "arXiv",
+                "url": "https://doi.org/10.48550/ARXIV.2512.06611"
+            }
         ],
         "tags": [
             "Uniform/Small-k"
@@ -341,8 +422,14 @@
         "dblp_url": "https://dblp.org/rec/conf/esa/BanihashemHKKMO25",
         "category": "A",
         "versions": [
-            "arXiv",
-            "ESA 2025"
+            {
+                "name": "ESA 2025",
+                "url": "https://doi.org/10.4230/LIPICS.ESA.2025.52"
+            },
+            {
+                "name": "arXiv",
+                "url": "https://doi.org/10.48550/ARXIV.2501.08846"
+            }
         ],
         "tags": [
             "Graphic"
@@ -364,9 +451,18 @@
         "dblp_url": "https://dblp.org/rec/journals/mp/SantiagoSZ25",
         "category": "A",
         "versions": [
-            "arXiv",
-            "IPCO 2023",
-            "Math. Program. 2025"
+            {
+                "name": "Math. Program. 2025",
+                "url": "https://doi.org/10.1007/S10107-024-02177-X"
+            },
+            {
+                "name": "IPCO 2023",
+                "url": "https://doi.org/10.1007/978-3-031-32726-1\\_30"
+            },
+            {
+                "name": "arXiv",
+                "url": "https://doi.org/10.48550/ARXIV.2305.05353"
+            }
         ],
         "tags": [
             "Random Assignment"
@@ -388,9 +484,18 @@
         "dblp_url": "https://dblp.org/rec/journals/siamcomp/Soto13",
         "category": "A",
         "versions": [
-            "arXiv",
-            "SODA 2011",
-            "SIAM J. Comput. 2013"
+            {
+                "name": "SICOMP 2013",
+                "url": "https://doi.org/10.1137/110852061"
+            },
+            {
+                "name": "SODA 2011",
+                "url": "https://doi.org/10.1137/1.9781611973082.97"
+            },
+            {
+                "name": "arXiv",
+                "url": "https://arxiv.org/abs/1007.2152"
+            }
         ],
         "tags": [
             "Graphic",
@@ -413,8 +518,14 @@
         "dblp_url": "https://dblp.org/rec/journals/mst/Ma0W16",
         "category": "A",
         "versions": [
-            "STACS 2013",
-            "Theory Comput. Syst. 2016"
+            {
+                "name": "Theory Comput. Syst. 2016",
+                "url": "https://doi.org/10.1007/S00224-015-9642-4"
+            },
+            {
+                "name": "STACS 2013",
+                "url": "https://doi.org/10.4230/LIPICS.STACS.2013.478"
+            }
         ],
         "tags": [
             "Laminar",
@@ -438,8 +549,14 @@
         "dblp_url": "https://dblp.org/rec/conf/innovations/AbdolazimiKKG23",
         "category": "B",
         "versions": [
-            "arXiv",
-            "ITCS 2023"
+            {
+                "name": "INNOVATIONS 2023",
+                "url": "https://doi.org/10.4230/LIPICS.ITCS.2023.2"
+            },
+            {
+                "name": "arXiv",
+                "url": "https://arxiv.org/abs/2111.12436"
+            }
         ],
         "tags": [
             "General"
@@ -461,9 +578,18 @@
         "dblp_url": "https://dblp.org/rec/conf/soda/DinitzK13",
         "category": "A",
         "versions": [
-            "arXiv",
-            "SODA 2013",
-            "SIAM J. Comput. 2014"
+            {
+                "name": "SODA 2013",
+                "url": "https://doi.org/10.1137/1.9781611973105.8"
+            },
+            {
+                "name": "arXiv",
+                "url": "https://arxiv.org/abs/1207.5146"
+            },
+            {
+                "name": "SICOMP 2014",
+                "url": "https://doi.org/10.1137/13094030X"
+            }
         ],
         "tags": [
             "Graphic",
@@ -485,8 +611,14 @@
         "dblp_url": "https://dblp.org/rec/conf/icalp/Dughmi20",
         "category": "B",
         "versions": [
-            "arXiv",
-            "ICALP 2020"
+            {
+                "name": "ICALP 2020",
+                "url": "https://doi.org/10.4230/LIPICS.ICALP.2020.42"
+            },
+            {
+                "name": "arXiv",
+                "url": "https://arxiv.org/abs/1909.04268"
+            }
         ],
         "tags": [
             "Contention Resolution"
@@ -507,8 +639,14 @@
         "dblp_url": "https://dblp.org/rec/conf/stoc/Rubinstein16",
         "category": "B",
         "versions": [
-            "arXiv",
-            "STOC 2016"
+            {
+                "name": "STOC 2016",
+                "url": "https://doi.org/10.1145/2897518.2897540"
+            },
+            {
+                "name": "arXiv",
+                "url": "https://arxiv.org/abs/1604.00357"
+            }
         ],
         "tags": [
             "Prophet Inequality"
@@ -528,8 +666,14 @@
         ],
         "category": "A",
         "versions": [
-            "arXiv",
-            "SODA 2015"
+            {
+                "name": "arXiv",
+                "url": "https://arxiv.org/abs/1404.4473"
+            },
+            {
+                "name": "SODA 2015",
+                "url": "https://doi.org/10.1137/1.9781611973730.79"
+            }
         ],
         "tags": [
             "General"
@@ -551,8 +695,14 @@
         "dblp_url": "https://dblp.org/rec/conf/esa/0002PZ24",
         "category": "A",
         "versions": [
-            "arXiv",
-            "ESA 2024"
+            {
+                "name": "ESA 2024",
+                "url": "https://doi.org/10.4230/LIPICS.ESA.2024.73"
+            },
+            {
+                "name": "arXiv",
+                "url": "https://doi.org/10.48550/ARXIV.2308.09880"
+            }
         ],
         "tags": [
             "Laminar"
@@ -572,7 +722,10 @@
         "dblp_url": "https://dblp.org/rec/journals/corr/abs-2001-00894",
         "category": "B",
         "versions": [
-            "arXiv"
+            {
+                "name": "arXiv",
+                "url": "https://arxiv.org/abs/2001.00894"
+            }
         ],
         "tags": [
             "Submodular"
@@ -593,8 +746,14 @@
         "dblp_url": "https://dblp.org/rec/conf/ipco/BercziLSV25",
         "category": "A",
         "versions": [
-            "arXiv",
-            "IPCO 2025"
+            {
+                "name": "IPCO 2025",
+                "url": "https://doi.org/10.1007/978-3-031-93112-3\\_10"
+            },
+            {
+                "name": "arXiv",
+                "url": "https://doi.org/10.48550/ARXIV.2411.12069"
+            }
         ],
         "tags": [
             "Laminar",
@@ -618,9 +777,18 @@
         "dblp_url": "https://dblp.org/rec/journals/mor/SotoTV21",
         "category": "A",
         "versions": [
-            "arXiv",
-            "SODA 2018",
-            "Math. Oper. Res. 2021"
+            {
+                "name": "Math. Oper. Res. 2021",
+                "url": "https://doi.org/10.1287/MOOR.2020.1083"
+            },
+            {
+                "name": "SODA 2018",
+                "url": "https://doi.org/10.1137/1.9781611975031.47"
+            },
+            {
+                "name": "arXiv",
+                "url": "https://arxiv.org/abs/1802.01997"
+            }
         ],
         "tags": [
             "Laminar",
@@ -644,8 +812,14 @@
         "dblp_url": "https://dblp.org/rec/journals/corr/abs-1801-00814",
         "category": "C",
         "versions": [
-            "arXiv",
-            "Oper. Res. Forum 2021"
+            {
+                "name": "arXiv",
+                "url": "https://arxiv.org/abs/1801.00814"
+            },
+            {
+                "name": "Oper. Res. Forum 2021",
+                "url": "https://doi.org/10.1007/S43069-021-00092-X"
+            }
         ],
         "tags": [
             "Graphic",
@@ -668,9 +842,18 @@
         "dblp_url": "https://dblp.org/rec/conf/soda/EhsaniHKS18",
         "category": "B",
         "versions": [
-            "arXiv",
-            "SODA 2018",
-            "SIAM J. Comput. 2024"
+            {
+                "name": "SODA 2018",
+                "url": "https://doi.org/10.1137/1.9781611975031.46"
+            },
+            {
+                "name": "arXiv",
+                "url": "https://arxiv.org/abs/1710.11213"
+            },
+            {
+                "name": "SICOMP 2024",
+                "url": "https://doi.org/10.1137/19M1264047"
+            }
         ],
         "tags": [
             "Uniform/Small-k",
@@ -691,8 +874,14 @@
         ],
         "category": "A",
         "versions": [
-            "arXiv",
-            "FOCS 2014"
+            {
+                "name": "arXiv",
+                "url": "https://arxiv.org/abs/1403.7343"
+            },
+            {
+                "name": "FOCS 2014",
+                "url": "https://doi.org/10.1109/FOCS.2014.42"
+            }
         ],
         "tags": [
             "General"
@@ -713,7 +902,10 @@
         "dblp_url": "https://dblp.org/rec/journals/corr/Vardi14",
         "category": "B",
         "versions": [
-            "arXiv"
+            {
+                "name": "arXiv",
+                "url": "https://arxiv.org/abs/1404.0614"
+            }
         ],
         "tags": [
             "General"
@@ -734,8 +926,14 @@
         "dblp_url": "https://dblp.org/rec/conf/icalp/HoeferK17",
         "category": "B",
         "versions": [
-            "arXiv",
-            "ICALP 2017"
+            {
+                "name": "ICALP 2017",
+                "url": "https://doi.org/10.4230/LIPICS.ICALP.2017.133"
+            },
+            {
+                "name": "arXiv",
+                "url": "https://arxiv.org/abs/1702.01290"
+            }
         ],
         "tags": [
             "Submodular",
@@ -758,9 +956,18 @@
         "dblp_url": "https://dblp.org/rec/journals/siamcomp/FeldmanZ18",
         "category": "A",
         "versions": [
-            "arXiv",
-            "FOCS 2015",
-            "SIAM J. Comput. 2018"
+            {
+                "name": "SICOMP 2018",
+                "url": "https://doi.org/10.1137/16M1105220"
+            },
+            {
+                "name": "FOCS 2015",
+                "url": "https://doi.org/10.1109/FOCS.2015.37"
+            },
+            {
+                "name": "arXiv",
+                "url": "https://arxiv.org/abs/1507.08384"
+            }
         ],
         "tags": [
             "Submodular"
@@ -768,7 +975,7 @@
     },
     {
         "title": "Algorithms for Secretary Problems on Graphs and Hypergraphs",
-        "authors": "Nitish Korula, Martin Pal",
+        "authors": "Nitish Korula, Martin Pál",
         "venue": "ICALP 2009",
         "summary": "We examine several online matching problems, with applications to Internet advertising reservation systems. Consider an edge-weighted bipartite graph G, with partite sets L, R. We develop an 8-competitive algorithm for the following secretary problem: Initially given R, and the size of L, the algorithm receives the vertices of L sequentially, in a random order. When a vertex l \\in L is seen, all edges incident to l are revealed, together with their weights. The algorithm must immediately either match l to an available vertex of R, or decide that l will remain unmatched. Dimitrov and Plaxton show a 16-competitive algorithm for the transversal matroid secretary problem, which is the special case with weights on vertices, not edges. (Equivalently, one may assume that for each l \\in L, the weights on all edges incident to l are identical.) We use a similar algorithm, but simplify and improve the analysis to obtain a better competitive ratio for the more general problem. Perhaps of more interest is the fact that our analysis is easily extended to obtain competitive algorithms for similar problems, such as to find disjoint sets of edges in hypergraphs where edges arrive online. We also introduce secretary problems with adversarially chosen groups. Finally, we give a 2e-competitive algorithm for the secretary problem on graphic matroids, where, with edges appearing online, the goal is to find a maximum-weight acyclic subgraph of a given graph.",
         "published": "2008-07-07T22:51:46Z",
@@ -781,8 +988,14 @@
         "dblp_url": "https://dblp.org/rec/conf/icalp/KorulaP09",
         "category": "A",
         "versions": [
-            "arXiv",
-            "ICALP 2009"
+            {
+                "name": "ICALP 2009",
+                "url": "https://doi.org/10.1007/978-3-642-02930-1\\_42"
+            },
+            {
+                "name": "arXiv",
+                "url": "https://arxiv.org/abs/0807.1139"
+            }
         ],
         "tags": [
             "Graphic",
@@ -803,7 +1016,10 @@
         "dblp_url": "https://dblp.org/rec/journals/corr/abs-2407-10316",
         "category": "B",
         "versions": [
-            "arXiv"
+            {
+                "name": "arXiv",
+                "url": "https://doi.org/10.48550/ARXIV.2407.10316"
+            }
         ],
         "tags": [
             "General"
@@ -822,7 +1038,10 @@
         ],
         "category": "B",
         "versions": [
-            "arXiv"
+            {
+                "name": "arXiv",
+                "url": "https://arxiv.org/abs/2010.01901"
+            }
         ],
         "tags": [
             "Submodular"
@@ -842,8 +1061,14 @@
         ],
         "category": "B",
         "versions": [
-            "arXiv",
-            "SODA 2022"
+            {
+                "name": "SODA 2022",
+                "url": "https://doi.org/10.1137/1.9781611977073.53"
+            },
+            {
+                "name": "arXiv",
+                "url": "https://arxiv.org/abs/2112.12920"
+            }
         ],
         "tags": [
             "Uniform/Small-k",
@@ -863,7 +1088,10 @@
         ],
         "category": "B",
         "versions": [
-            "arXiv"
+            {
+                "name": "arXiv",
+                "url": "https://doi.org/10.48550/ARXIV.2511.04390"
+            }
         ],
         "tags": [
             "Free Order"
@@ -883,8 +1111,14 @@
         ],
         "category": "B",
         "versions": [
-            "arXiv",
-            "EC 024"
+            {
+                "name": "EC 024",
+                "url": "https://doi.org/10.1145/3670865.3673506"
+            },
+            {
+                "name": "arXiv",
+                "url": "https://doi.org/10.48550/ARXIV.2406.12799"
+            }
         ],
         "tags": [
             "Contention Resolution",
@@ -905,8 +1139,14 @@
         ],
         "category": "B",
         "versions": [
-            "arXiv",
-            "WINE 2010"
+            {
+                "name": "WINE 2010",
+                "url": "https://doi.org/10.1007/978-3-642-17572-5\\_20"
+            },
+            {
+                "name": "arXiv",
+                "url": "https://arxiv.org/abs/1003.1517"
+            }
         ],
         "tags": [
             "Uniform/Small-k",
@@ -928,9 +1168,18 @@
         ],
         "category": "B",
         "versions": [
-            "arXiv",
-            "NeurIPS 2020",
-            "Discret. Optim. 2023"
+            {
+                "name": "NeurIPS 2020",
+                "url": "https://arxiv.org/abs/2006.01026"
+            },
+            {
+                "name": "arXiv",
+                "url": "https://arxiv.org/abs/2006.01026"
+            },
+            {
+                "name": "Discret. Optim. 2023",
+                "url": "https://doi.org/10.1016/J.DISOPT.2023.100778"
+            }
         ],
         "tags": [
             "Graphic"
@@ -950,8 +1199,14 @@
         ],
         "category": "B",
         "versions": [
-            "arXiv",
-            "SODA 2017"
+            {
+                "name": "SODA 2017",
+                "url": "https://doi.org/10.1137/1.9781611974782.109"
+            },
+            {
+                "name": "arXiv",
+                "url": "https://arxiv.org/abs/1507.06199"
+            }
         ],
         "tags": [
             "Submodular"
@@ -972,9 +1227,18 @@
         ],
         "category": "B",
         "versions": [
-            "arXiv",
-            "ISAAC 2018",
-            "Networks 2021"
+            {
+                "name": "Networks 2021",
+                "url": "https://doi.org/10.1002/NET.22000"
+            },
+            {
+                "name": "ISAAC 2018",
+                "url": "https://doi.org/10.4230/LIPICS.ISAAC.2018.65"
+            },
+            {
+                "name": "arXiv",
+                "url": "https://arxiv.org/abs/1810.11216"
+            }
         ],
         "tags": [
             "General"
@@ -994,8 +1258,14 @@
         ],
         "category": "B",
         "versions": [
-            "arXiv",
-            "SOSA 2023"
+            {
+                "name": "SOSA 2023",
+                "url": "https://doi.org/10.1137/1.9781611977585.CH8"
+            },
+            {
+                "name": "arXiv",
+                "url": "https://doi.org/10.48550/ARXIV.2211.15146"
+            }
         ],
         "tags": [
             "Graphic",
@@ -1016,8 +1286,14 @@
         ],
         "category": "B",
         "versions": [
-            "arXiv",
-            "ICALP"
+            {
+                "name": "ICALP",
+                "url": "https://doi.org/10.4230/LIPICS.ICALP.2025.137"
+            },
+            {
+                "name": "arXiv",
+                "url": "https://doi.org/10.48550/ARXIV.2504.16327"
+            }
         ],
         "tags": [
             "Contention Resolution"
@@ -1037,8 +1313,14 @@
         ],
         "category": "B",
         "versions": [
-            "arXiv",
-            "ICALP 2018"
+            {
+                "name": "ICALP 2018",
+                "url": "https://doi.org/10.4230/LIPICS.ICALP.2018.71"
+            },
+            {
+                "name": "arXiv",
+                "url": "https://arxiv.org/abs/1804.08172"
+            }
         ],
         "tags": [
             "Submodular"
@@ -1057,7 +1339,10 @@
         ],
         "category": "B",
         "versions": [
-            "arXiv"
+            {
+                "name": "arXiv",
+                "url": "https://arxiv.org/abs/2103.13089"
+            }
         ],
         "tags": [
             "Transversal",
@@ -1077,7 +1362,10 @@
         ],
         "category": "B",
         "versions": [
-            "FOCS 2023"
+            {
+                "name": "FOCS 2023",
+                "url": "https://doi.org/10.1109/FOCS57990.2023.00113"
+            }
         ],
         "tags": [
             "Ordinal Model"
@@ -1098,9 +1386,18 @@
         ],
         "category": "B",
         "versions": [
-            "arXiv",
-            "SAGT 2021",
-            "Theor. Comput. Sci. 2024"
+            {
+                "name": "SAGT 2021",
+                "url": "https://arxiv.org/abs/2107.03662"
+            },
+            {
+                "name": "arXiv",
+                "url": "https://arxiv.org/abs/2107.03662"
+            },
+            {
+                "name": "Theor. Comput. Sci. 2024",
+                "url": "https://doi.org/10.1016/J.TCS.2024.114814"
+            }
         ],
         "tags": [
             "Submodular",
@@ -1122,8 +1419,14 @@
         ],
         "category": "B",
         "versions": [
-            "arXiv",
-            "IPCO 2024"
+            {
+                "name": "IPCO 2024",
+                "url": "https://doi.org/10.1007/978-3-031-59835-7\\_22"
+            },
+            {
+                "name": "arXiv",
+                "url": "https://doi.org/10.48550/ARXIV.2311.00890"
+            }
         ],
         "tags": [
             "Prophet Inequality"
@@ -1143,8 +1446,14 @@
         ],
         "category": "B",
         "versions": [
-            "arXiv",
-            "SODA 2017"
+            {
+                "name": "arXiv",
+                "url": "https://arxiv.org/abs/1611.00665"
+            },
+            {
+                "name": "SODA 2017",
+                "url": "https://doi.org/10.1137/1.9781611974782.110"
+            }
         ],
         "tags": [
             "Submodular",
@@ -1166,8 +1475,14 @@
         ],
         "category": "B",
         "versions": [
-            "arXiv",
-            "SODA 2022"
+            {
+                "name": "arXiv",
+                "url": "https://arxiv.org/abs/2111.03174"
+            },
+            {
+                "name": "SODA 2022",
+                "url": "https://doi.org/10.1137/1.9781611977073.54"
+            }
         ],
         "tags": [
             "Prophet Inequality"
@@ -1188,8 +1503,14 @@
         ],
         "category": "B",
         "versions": [
-            "arXiv",
-            "SODA 2014"
+            {
+                "name": "arXiv",
+                "url": "https://arxiv.org/abs/1307.3736"
+            },
+            {
+                "name": "SODA 2014",
+                "url": "https://doi.org/10.1137/1.9781611973402.100"
+            }
         ],
         "tags": [
             "Prophet Inequality"
@@ -1201,15 +1522,18 @@
         "authors": "T.-H. Hubert Chan, Fei Chen, Shaofeng H.-C. Jiang",
         "venue": "SODA 2015",
         "summary": "Provides optimal competitive ratios for the generalized secretary problem, including the 2-choice 2-best case, which corresponds to small uniform matroids.",
-        "pdf_url": "https://arxiv.org/abs/4367.27944",
+        "pdf_url": "https://dblp.org/rec/conf/soda/ChanCJ15",
         "local_pdf": "#",
         "dblp_url": "https://dblp.org/rec/conf/soda/ChanCJ15",
         "bibtex": [
-            "@inproceedings{DBLP:conf/soda/ChanCJ15,\n  author       = {T.{-}H. Hubert Chan and\n                  Fei Chen and\n                  Shaofeng H.{-}C. Jiang},\n  editor       = {Piotr Indyk},\n  title        = {Revealing Optimal Thresholds for Generalized Secretary Problem via\n                  Continuous {LP:} Impacts on Online \\emph{K}-Item Auction and Bipartite\n                  \\emph{K}-Matching with Random Arrival Order},\n  booktitle    = {Proceedings of the Twenty-Sixth Annual {ACM-SIAM} Symposium on Discrete\n                  Algorithms, {SODA} 2015, San Diego, CA, USA, January 4-6, 2015},\n  pages        = {1169--1188},\n  publisher    = {{SIAM}},\n  year         = {2015},\n  doi          = {10.1137/1.9781611973730.78},\n  timestamp    = {Tue, 02 Feb 2021 17:07:44 +0100},\n  bibsource    = {dblp computer science bibliography, https://dblp.org},\n  url = {https://arxiv.org/abs/4367.27944},\n  eprinttype = {arXiv},\n  eprint = {4367.27944}\n}"
+            "@inproceedings{DBLP:conf/soda/ChanCJ15,\n  author       = {T.{-}H. Hubert Chan and\n                  Fei Chen and\n                  Shaofeng H.{-}C. Jiang},\n  editor       = {Piotr Indyk},\n  title        = {Revealing Optimal Thresholds for Generalized Secretary Problem via\n                  Continuous {LP:} Impacts on Online \\emph{K}-Item Auction and Bipartite\n                  \\emph{K}-Matching with Random Arrival Order},\n  booktitle    = {Proceedings of the Twenty-Sixth Annual {ACM-SIAM} Symposium on Discrete\n                  Algorithms, {SODA} 2015, San Diego, CA, USA, January 4-6, 2015},\n  pages        = {1169--1188},\n  publisher    = {{SIAM}},\n  year         = {2015},\n  doi          = {10.1137/1.9781611973730.78},\n  timestamp    = {Tue, 02 Feb 2021 17:07:44 +0100},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
         ],
         "category": "A",
         "versions": [
-            "SODA 2015"
+            {
+                "name": "SODA 2015",
+                "url": "https://doi.org/10.1137/1.9781611973730.78"
+            }
         ],
         "tags": [
             "Uniform/Small-k"
@@ -1220,18 +1544,28 @@
         "authors": "Susanne Albers, Leon Ladewig",
         "venue": "Algorithmica 2021",
         "summary": "Proposes and analyzes simple deterministic algorithms for the k-secretary problem that achieve competitive ratios strictly greater than 1/e for k >= 2.",
-        "pdf_url": "https://link.springer.com/article/10.1007/s00453-021-00816-4",
+        "pdf_url": "https://arxiv.org/abs/2012.00488",
         "local_pdf": "#",
         "dblp_url": "https://dblp.org/rec/journals/algorithmica/AlbersL21",
         "bibtex": [
-            "@article{DBLP:journals/tcs/AlbersL21,\n  author       = {Susanne Albers and\n                  Leon Ladewig},\n  title        = {New results for the \\emph{k}-secretary problem},\n  journal      = {Theor. Comput. Sci.},\n  volume       = {863},\n  pages        = {102--119},\n  year         = {2021},\n  url          = {https://doi.org/10.1016/j.tcs.2021.02.022},\n  doi          = {10.1016/J.TCS.2021.02.022},\n  timestamp    = {Fri, 14 May 2021 08:32:29 +0200},\n  biburl       = {https://dblp.org/rec/journals/tcs/AlbersL21.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
-            "@article{DBLP:journals/corr/abs-2012-00488,\n  author       = {Susanne Albers and\n                  Leon Ladewig},\n  title        = {New Results for the k-Secretary Problem},\n  journal      = {arXiv},\n  volume       = {abs/2012.00488},\n  year         = {2020},\n  url          = {https://arxiv.org/abs/2012.00488},\n  eprinttype   = {arXiv},\n  eprint       = {2012.00488},\n  timestamp    = {Fri, 04 Dec 2020 12:07:23 +0100},\n  biburl       = {https://dblp.org/rec/journals/corr/abs-2012-00488.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
-            "@inproceedings{DBLP:conf/isaac/AlbersL19,\n  author       = {Susanne Albers and\n                  Leon Ladewig},\n  editor       = {Pinyan Lu and\n                  Guochuan Zhang},\n  title        = {New Results for the k-Secretary Problem},\n  booktitle    = {30th International Symposium on Algorithms and Computation, {ISAAC}\n                  2019, Shanghai University of Finance and Economics, Shanghai, China,\n                  December 8-11, 2019},\n  series       = {LIPIcs},\n  pages        = {18:1--18:19},\n  publisher    = {Schloss Dagstuhl - Leibniz-Zentrum f{\\\"{u}}r Informatik},\n  year         = {2019},\n  url          = {https://doi.org/10.4230/LIPIcs.ISAAC.2019.18},\n  doi          = {10.4230/LIPICS.ISAAC.2019.18},\n  timestamp    = {Fri, 21 Nov 2025 23:44:11 +0100},\n  biburl       = {https://dblp.org/rec/conf/isaac/AlbersL19.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
+            "@article{DBLP:journals/tcs/AlbersL21,\n  author       = {Susanne Albers and\n                  Leon Ladewig},\n  title        = {New results for the \\emph{k}-secretary problem},\n  journal      = {Theor. Comput. Sci.},\n  volume       = {863},\n  pages        = {102--119},\n  year         = {2021},\n  url          = {https://doi.org/10.1016/j.tcs.2021.02.022},\n  doi          = {10.1016/J.TCS.2021.02.022},\n  timestamp    = {Fri, 14 May 2021 08:32:29 +0200},\n  biburl       = {https://dblp.org/rec/journals/tcs/AlbersL21.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org},\n  url = {https://arxiv.org/abs/2012.00488},\n  eprinttype = {arXiv},\n  eprint = {2012.00488}\n}",
+            "@article{DBLP:journals/corr/abs-2012-00488,\n  author       = {Susanne Albers and\n                  Leon Ladewig},\n  title        = {New Results for the k-Secretary Problem},\n  journal      = {arXiv},\n  volume       = {abs/2012.00488},\n  year         = {2020},\n  timestamp    = {Fri, 04 Dec 2020 12:07:23 +0100},\n  biburl       = {https://dblp.org/rec/journals/corr/abs-2012-00488.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org},\n  url = {https://arxiv.org/abs/2012.00488},\n  eprinttype = {arXiv},\n  eprint = {2012.00488}\n}",
+            "@inproceedings{DBLP:conf/isaac/AlbersL19,\n  author       = {Susanne Albers and\n                  Leon Ladewig},\n  editor       = {Pinyan Lu and\n                  Guochuan Zhang},\n  title        = {New Results for the k-Secretary Problem},\n  booktitle    = {30th International Symposium on Algorithms and Computation, {ISAAC}\n                  2019, Shanghai University of Finance and Economics, Shanghai, China,\n                  December 8-11, 2019},\n  series       = {LIPIcs},\n  pages        = {18:1--18:19},\n  publisher    = {Schloss Dagstuhl - Leibniz-Zentrum f{\\\"{u}}r Informatik},\n  year         = {2019},\n  url          = {https://doi.org/10.4230/LIPIcs.ISAAC.2019.18},\n  doi          = {10.4230/LIPICS.ISAAC.2019.18},\n  timestamp    = {Fri, 21 Nov 2025 23:44:11 +0100},\n  biburl       = {https://dblp.org/rec/conf/isaac/AlbersL19.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org},\n  url = {https://arxiv.org/abs/2012.00488},\n  eprinttype = {arXiv},\n  eprint = {2012.00488}\n}"
         ],
         "category": "A",
         "versions": [
-            "ISAAC 2019",
-            "Theor. Comput. Sci. 2021"
+            {
+                "name": "Theor. Comput. Sci. 2021",
+                "url": "https://doi.org/10.1016/J.TCS.2021.02.022"
+            },
+            {
+                "name": "arXiv",
+                "url": "https://arxiv.org/abs/2012.00488"
+            },
+            {
+                "name": "ISAAC 2019",
+                "url": "https://doi.org/10.4230/LIPICS.ISAAC.2019.18"
+            }
         ],
         "tags": [
             "Uniform/Small-k"
@@ -1250,11 +1584,58 @@
         ],
         "category": "A",
         "versions": [
-            "PhD Thesis 2025"
+            {
+                "name": "Ph.D. Thesis 2025",
+                "url": "https://open.library.ubc.ca/cIRcle/collections/ubctheses/24/items/1.0452345"
+            }
         ],
         "tags": [
             "Uniform/Small-k",
             "Rank-2"
+        ]
+    },
+    {
+        "title": "Secretary Problems: Weights and Discounts",
+        "authors": "Moshe Babaioff, Michael Dinitz, Anupam Gupta, Nicole Immorlica, Kunal Talwar",
+        "venue": "SODA 2009",
+        "summary": "We study several extensions of the classic secretary problem. In the weighted secretary problem, each candidate has a weight, and the goal is to select candidates to maximize the sum of their weights times their qualities. We give constant-competitive algorithms for this and related problems.",
+        "category": "A",
+        "tags": [
+            "Secretary",
+            "Weights",
+            "Discounts"
+        ],
+        "pdf_url": "https://doi.org/10.1137/1.9781611973068.135",
+        "dblp_url": "https://dblp.org/rec/conf/soda/BabaioffDGIT09",
+        "bibtex": [
+            "@inproceedings{babaioff2009secretary,\n  author    = {Moshe Babaioff and Michael Dinitz and Anupam Gupta and Nicole Immorlica and Kunal Talwar},\n  title     = {Secretary problems: weights and discounts},\n  booktitle = {Proceedings of the Twentieth Annual {ACM-SIAM} Symposium on Discrete Algorithms, {SODA} 2009},\n  pages     = {1245--1254},\n  publisher = {SIAM},\n  year      = {2009},\n  doi       = {10.1137/1.9781611973068.135}\n}"
+        ],
+        "versions": [
+            {
+                "name": "SODA 2009",
+                "url": "https://doi.org/10.1137/1.9781611973068.135"
+            }
+        ]
+    },
+    {
+        "title": "The optimum choice of the instant for stopping a Markov process",
+        "authors": "Eugene B. Dynkin",
+        "venue": "Sov. Math. Dokl. 1963",
+        "summary": "This foundational paper presents the mathematical formulation of the optimal stopping problem (also known as the secretary problem) as a Markov process. It rigorously derives the optimal 1/e stopping strategy.",
+        "category": "B",
+        "tags": [
+            "Classical Secretary",
+            "Optimal Stopping"
+        ],
+        "pdf_url": "",
+        "dblp_url": "",
+        "bibtex": [
+            "@article{dynkin1963optimum,\n  title={The optimum choice of the instant for stopping a Markov process},\n  author={Dynkin, Evgenii Borisovich},\n  journal={Soviet Mathematics Doklady},\n  volume={4},\n  pages={627--629},\n  year={1963}\n}"
+        ],
+        "versions": [
+            {
+                "name": "Sov. Math. Dokl. 1963"
+            }
         ]
     }
 ]

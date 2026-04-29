@@ -2,3 +2,6 @@
 __pycache__/
 *.pyc
 .DS_Store
+papers/
+index_local.html
+index_local_es.html
