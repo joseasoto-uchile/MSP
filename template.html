@@ -858,6 +858,7 @@
         // ── Navigate from table to paper card ─────────────────────────
         function goToPaper(idx) {
             openTab(null, 'reading-list');
+            resetFilters(); // Ensure the card is visible before scrolling
             const cardId = 'paper-card-' + idx;
             // Short delay to ensure tab is visible
             setTimeout(() => {

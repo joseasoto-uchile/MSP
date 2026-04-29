@@ -23,7 +23,7 @@ CONF_MAP = {
 }
 
 JOURNAL_MAP = {
-    'siamcomp':    'SIAM J. Comput.',
+    'siamcomp':    'SICOMP',
     'siamdm':      'SIAM J. Discrete Math.',
     'mor':         'Math. Oper. Res.',
     'mp':          'Math. Program.',

@@ -4215,7 +4215,7 @@ para cada función de peso \(w\) no negativa consistente con el orden subyacente
     <footer>
         <p>Esta página fue generada automáticamente usando Antigravity/Gemini.</p>
         <p>&copy; 2026 <a href="http://www.dim.uchile.cl/~jsoto" target="_blank" style="color: #cbd5e0; text-decoration: underline; text-underline-offset: 2px;">José Soto</a>, Universidad de Chile.</p>
-        <p style="font-size: 0.85em; margin-top: 5px; color: #a0aec0;">Última actualización: 2026-04-29 11:55:46</p>
+        <p style="font-size: 0.85em; margin-top: 5px; color: #a0aec0;">Última actualización: 2026-04-29 11:58:58</p>
     </footer>
 
     <!-- Script for Tabs, BibTeX, Filters, Back-to-top -->
@@ -4303,6 +4303,7 @@ para cada función de peso \(w\) no negativa consistente con el orden subyacente
         // ── Navigate from table to paper card ─────────────────────────
         function goToPaper(idx) {
             openTab(null, 'reading-list');
+            resetFilters(); // Ensure the card is visible before scrolling
             const cardId = 'paper-card-' + idx;
             // Short delay to ensure tab is visible
             setTimeout(() => {
