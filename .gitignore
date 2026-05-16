@@ -1,7 +1,54 @@
-.gemini/
+# Python cache
 __pycache__/
 *.pyc
+
+# System files
 .DS_Store
-papers/
+.gemini/
+
+# Local HTML previews
 index_local.html
 index_local_es.html
+
+# Downloaded PDFs (kept locally, not in repo)
+papers/
+
+# One-off / maintenance scripts (not needed in repo)
+fix_*.py
+patch_*.py
+add_*.py
+dblp_*.py
+download_*.py
+check_*.py
+search_*.py
+enrich_*.py
+fetch_*.py
+rename_*.py
+update_*.py
+verify_*.py
+test_*.py
+dry_run*.py
+force_*.py
+apply_*.py
+audit_*.py
+validate_*.py
+create_generate_html.py
+fix_generate.py
+fix_html.py
+fix_labels2.py
+fix_imwang.py
+fix_rubinstein.py
+fix_rubinstein2.py
+
+# Temporary audit/report/workspace files
+*.code-workspace
+audit_report.md
+msp_audit_report.md
+link_verification_report.md
+link_actions.json
+bib_problems.json
+dblp_audit.json
+implementation_plan.md
+task.md
+walkthrough.md
+download_papers.ps1
